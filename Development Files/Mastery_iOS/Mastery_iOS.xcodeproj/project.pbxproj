@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC022E0007100210C0F /* AppDelegate.swift */; };
+		9CD53FC422E0007100210C0F /* Mastery_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC222E0007100210C0F /* Mastery_iOS.xcdatamodeld */; };
+		9CD53FC622E0007100210C0F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC522E0007100210C0F /* MasterViewController.swift */; };
+		9CD53FC822E0007100210C0F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC722E0007100210C0F /* DetailViewController.swift */; };
+		9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FC922E0007100210C0F /* Main.storyboard */; };
+		9CD53FCD22E0007200210C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FCC22E0007200210C0F /* Assets.xcassets */; };
+		9CD53FD022E0007200210C0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FCE22E0007200210C0F /* LaunchScreen.storyboard */; };
+		9CD53FDB22E0007200210C0F /* Mastery_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FDA22E0007200210C0F /* Mastery_iOSTests.swift */; };
+		9CD53FE622E0007200210C0F /* Mastery_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FE522E0007200210C0F /* Mastery_iOSUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9CD53FD722E0007200210C0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CD53FB522E0007100210C0F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CD53FBC22E0007100210C0F;
+			remoteInfo = Mastery_iOS;
+		};
+		9CD53FE222E0007200210C0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CD53FB522E0007100210C0F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CD53FBC22E0007100210C0F;
+			remoteInfo = Mastery_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9CD53FBD22E0007100210C0F /* Mastery_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mastery_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CD53FC022E0007100210C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9CD53FC322E0007100210C0F /* Mastery_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mastery_iOS.xcdatamodel; sourceTree = "<group>"; };
+		9CD53FC522E0007100210C0F /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		9CD53FC722E0007100210C0F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9CD53FCA22E0007100210C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9CD53FCC22E0007200210C0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9CD53FCF22E0007200210C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9CD53FD122E0007200210C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CD53FD622E0007200210C0F /* Mastery_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mastery_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CD53FDA22E0007200210C0F /* Mastery_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mastery_iOSTests.swift; sourceTree = "<group>"; };
+		9CD53FDC22E0007200210C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CD53FE122E0007200210C0F /* Mastery_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mastery_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CD53FE522E0007200210C0F /* Mastery_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mastery_iOSUITests.swift; sourceTree = "<group>"; };
+		9CD53FE722E0007200210C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9CD53FBA22E0007100210C0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CD53FD322E0007200210C0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CD53FDE22E0007200210C0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9CD53FB422E0007100210C0F = {
+			isa = PBXGroup;
+			children = (
+				9CD53FBF22E0007100210C0F /* Mastery_iOS */,
+				9CD53FD922E0007200210C0F /* Mastery_iOSTests */,
+				9CD53FE422E0007200210C0F /* Mastery_iOSUITests */,
+				9CD53FBE22E0007100210C0F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9CD53FBE22E0007100210C0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CD53FBD22E0007100210C0F /* Mastery_iOS.app */,
+				9CD53FD622E0007200210C0F /* Mastery_iOSTests.xctest */,
+				9CD53FE122E0007200210C0F /* Mastery_iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9CD53FBF22E0007100210C0F /* Mastery_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9CD53FC022E0007100210C0F /* AppDelegate.swift */,
+				9CD53FC522E0007100210C0F /* MasterViewController.swift */,
+				9CD53FC722E0007100210C0F /* DetailViewController.swift */,
+				9CD53FC922E0007100210C0F /* Main.storyboard */,
+				9CD53FCC22E0007200210C0F /* Assets.xcassets */,
+				9CD53FCE22E0007200210C0F /* LaunchScreen.storyboard */,
+				9CD53FD122E0007200210C0F /* Info.plist */,
+				9CD53FC222E0007100210C0F /* Mastery_iOS.xcdatamodeld */,
+			);
+			path = Mastery_iOS;
+			sourceTree = "<group>";
+		};
+		9CD53FD922E0007200210C0F /* Mastery_iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				9CD53FDA22E0007200210C0F /* Mastery_iOSTests.swift */,
+				9CD53FDC22E0007200210C0F /* Info.plist */,
+			);
+			path = Mastery_iOSTests;
+			sourceTree = "<group>";
+		};
+		9CD53FE422E0007200210C0F /* Mastery_iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9CD53FE522E0007200210C0F /* Mastery_iOSUITests.swift */,
+				9CD53FE722E0007200210C0F /* Info.plist */,
+			);
+			path = Mastery_iOSUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9CD53FBC22E0007100210C0F /* Mastery_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CD53FEA22E0007200210C0F /* Build configuration list for PBXNativeTarget "Mastery_iOS" */;
+			buildPhases = (
+				9CD53FB922E0007100210C0F /* Sources */,
+				9CD53FBA22E0007100210C0F /* Frameworks */,
+				9CD53FBB22E0007100210C0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mastery_iOS;
+			productName = Mastery_iOS;
+			productReference = 9CD53FBD22E0007100210C0F /* Mastery_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9CD53FD522E0007200210C0F /* Mastery_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CD53FED22E0007200210C0F /* Build configuration list for PBXNativeTarget "Mastery_iOSTests" */;
+			buildPhases = (
+				9CD53FD222E0007200210C0F /* Sources */,
+				9CD53FD322E0007200210C0F /* Frameworks */,
+				9CD53FD422E0007200210C0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CD53FD822E0007200210C0F /* PBXTargetDependency */,
+			);
+			name = Mastery_iOSTests;
+			productName = Mastery_iOSTests;
+			productReference = 9CD53FD622E0007200210C0F /* Mastery_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9CD53FE022E0007200210C0F /* Mastery_iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CD53FF022E0007200210C0F /* Build configuration list for PBXNativeTarget "Mastery_iOSUITests" */;
+			buildPhases = (
+				9CD53FDD22E0007200210C0F /* Sources */,
+				9CD53FDE22E0007200210C0F /* Frameworks */,
+				9CD53FDF22E0007200210C0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CD53FE322E0007200210C0F /* PBXTargetDependency */,
+			);
+			name = Mastery_iOSUITests;
+			productName = Mastery_iOSUITests;
+			productReference = 9CD53FE122E0007200210C0F /* Mastery_iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9CD53FB522E0007100210C0F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Marina Mona June McPeak";
+				TargetAttributes = {
+					9CD53FBC22E0007100210C0F = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					9CD53FD522E0007200210C0F = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 9CD53FBC22E0007100210C0F;
+					};
+					9CD53FE022E0007200210C0F = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 9CD53FBC22E0007100210C0F;
+					};
+				};
+			};
+			buildConfigurationList = 9CD53FB822E0007100210C0F /* Build configuration list for PBXProject "Mastery_iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9CD53FB422E0007100210C0F;
+			productRefGroup = 9CD53FBE22E0007100210C0F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9CD53FBC22E0007100210C0F /* Mastery_iOS */,
+				9CD53FD522E0007200210C0F /* Mastery_iOSTests */,
+				9CD53FE022E0007200210C0F /* Mastery_iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9CD53FBB22E0007100210C0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CD53FD022E0007200210C0F /* LaunchScreen.storyboard in Resources */,
+				9CD53FCD22E0007200210C0F /* Assets.xcassets in Resources */,
+				9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CD53FD422E0007200210C0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CD53FDF22E0007200210C0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9CD53FB922E0007100210C0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */,
+				9CD53FC422E0007100210C0F /* Mastery_iOS.xcdatamodeld in Sources */,
+				9CD53FC622E0007100210C0F /* MasterViewController.swift in Sources */,
+				9CD53FC822E0007100210C0F /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CD53FD222E0007200210C0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CD53FDB22E0007200210C0F /* Mastery_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CD53FDD22E0007200210C0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CD53FE622E0007200210C0F /* Mastery_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9CD53FD822E0007200210C0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CD53FBC22E0007100210C0F /* Mastery_iOS */;
+			targetProxy = 9CD53FD722E0007200210C0F /* PBXContainerItemProxy */;
+		};
+		9CD53FE322E0007200210C0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CD53FBC22E0007100210C0F /* Mastery_iOS */;
+			targetProxy = 9CD53FE222E0007200210C0F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9CD53FC922E0007100210C0F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CD53FCA22E0007100210C0F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9CD53FCE22E0007200210C0F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CD53FCF22E0007200210C0F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9CD53FE822E0007200210C0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9CD53FE922E0007200210C0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9CD53FEB22E0007200210C0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69CPQG929Z;
+				INFOPLIST_FILE = Mastery_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarinaMcPeak.Mastery-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9CD53FEC22E0007200210C0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69CPQG929Z;
+				INFOPLIST_FILE = Mastery_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarinaMcPeak.Mastery-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9CD53FEE22E0007200210C0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69CPQG929Z;
+				INFOPLIST_FILE = Mastery_iOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarinaMcPeak.Mastery-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mastery_iOS.app/Mastery_iOS";
+			};
+			name = Debug;
+		};
+		9CD53FEF22E0007200210C0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69CPQG929Z;
+				INFOPLIST_FILE = Mastery_iOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarinaMcPeak.Mastery-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mastery_iOS.app/Mastery_iOS";
+			};
+			name = Release;
+		};
+		9CD53FF122E0007200210C0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69CPQG929Z;
+				INFOPLIST_FILE = Mastery_iOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarinaMcPeak.Mastery-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mastery_iOS;
+			};
+			name = Debug;
+		};
+		9CD53FF222E0007200210C0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69CPQG929Z;
+				INFOPLIST_FILE = Mastery_iOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarinaMcPeak.Mastery-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mastery_iOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9CD53FB822E0007100210C0F /* Build configuration list for PBXProject "Mastery_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CD53FE822E0007200210C0F /* Debug */,
+				9CD53FE922E0007200210C0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CD53FEA22E0007200210C0F /* Build configuration list for PBXNativeTarget "Mastery_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CD53FEB22E0007200210C0F /* Debug */,
+				9CD53FEC22E0007200210C0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CD53FED22E0007200210C0F /* Build configuration list for PBXNativeTarget "Mastery_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CD53FEE22E0007200210C0F /* Debug */,
+				9CD53FEF22E0007200210C0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CD53FF022E0007200210C0F /* Build configuration list for PBXNativeTarget "Mastery_iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CD53FF122E0007200210C0F /* Debug */,
+				9CD53FF222E0007200210C0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9CD53FC222E0007100210C0F /* Mastery_iOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9CD53FC322E0007100210C0F /* Mastery_iOS.xcdatamodel */,
+			);
+			currentVersion = 9CD53FC322E0007100210C0F /* Mastery_iOS.xcdatamodel */;
+			path = Mastery_iOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9CD53FB522E0007100210C0F /* Project object */;
+}
