@@ -69,3 +69,5 @@ A dream of mastery starts with specific goals, which broken down into steps beco
 [logo]: https://github.com/marinamcpeak/Mastery/blob/master/PM%20and%20Brainstorming/ComfortZone.jpeg "The Comfort Zone"
 
 Long press “quick tasks"
+
+"keep your tree alive"
