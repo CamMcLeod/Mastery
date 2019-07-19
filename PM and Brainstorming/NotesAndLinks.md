@@ -44,8 +44,9 @@ Time “blocks” -> “ tap and go” within available time block
 
 A dream of mastery starts with specific goals, which broken down into steps becomes a plan. The plan is then backed by deliberate effort and individual actions.
 
-“The comfort zone”
+“The comfort zone”: 
+![alt text][logo]
 
-
+[logo]: https://github.com/marinamcpeak/Mastery/blob/master/PM%20and%20Brainstorming/ComfortZone.jpeg "The Comfort Zone"
 
 Long press “quick tasks"
