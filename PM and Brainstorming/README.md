@@ -19,7 +19,7 @@ https://app.creately.com/diagram/wc1ZDXYkSbA/view
 
 ![alt text][ReferenceScreenshots]
 
-[ReferenceScreenshots]: https://github.com/marinamcpeak/Mastery/blob/master/PM%20and%20Brainstorming/Reference%20ScreenShots.jpg "Current Flow Chart"
+[ReferenceScreenshots]: https://github.com/marinamcpeak/Mastery/blob/master/PM%20and%20Brainstorming/Reference%20Screenshots.jpg "Current Flow Chart"
 
 Work in Progress - Project Submission Proposal (current version PDF in this folder):
 https://docs.google.com/document/d/1tXMmslVAZOcbg3vqPG_CMqWt1ryXBrIZbSP0FMO2-ew/edit#
