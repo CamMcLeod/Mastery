@@ -10,9 +10,9 @@ https://medium.com/boostnote/5-amazing-open-source-calendar-libraries-653738d00c
 Work in Progress -  FlowChart:
 https://app.creately.com/diagram/8qgMRvOG9XT/edit
 
-![alt text][logo]
+![alt text][CurrentFlowChart]
 
-[logo]: https://github.com/marinamcpeak/Mastery/blob/master/PM%20and%20Brainstorming/User%20Mastery.jpg "FlowChart"
+[CurrentFlowChart]: https://github.com/marinamcpeak/Mastery/blob/master/PM%20and%20Brainstorming/User%20Mastery.jpg "Current Flow Chart"
 
 Work in Progress - Project Submission Proposal:
 https://docs.google.com/document/d/1tXMmslVAZOcbg3vqPG_CMqWt1ryXBrIZbSP0FMO2-ew/edit#
