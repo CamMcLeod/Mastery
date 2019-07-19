@@ -14,7 +14,7 @@ https://app.creately.com/diagram/8qgMRvOG9XT/edit
 
 [CurrentFlowChart]: https://github.com/marinamcpeak/Mastery/blob/master/PM%20and%20Brainstorming/User%20Mastery.jpg "Current Flow Chart"
 
-Work in Progress - Project Submission Proposal:
+Work in Progress - Project Submission Proposal (current version PDF in this folder):
 https://docs.google.com/document/d/1tXMmslVAZOcbg3vqPG_CMqWt1ryXBrIZbSP0FMO2-ew/edit#
 
 
