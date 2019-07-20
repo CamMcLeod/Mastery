@@ -8,6 +8,7 @@ struct Goal {
     var id: String
     var name: String
     var purpose: String
+    var isComplete: Bool
     var dateOfBirth: Date
     var targetDate: Date?
     var planList: [String]  // list of id's for Plan
