@@ -26,6 +26,22 @@ struct Goal {
 //        return  Float(completePlans) / Float(planList.count)
 //
 //    }
+    
+    mutating func changeDeadline(newDate: Date)  {
+        deadline = newDate
+    }
+    
+      mutating func addPlan(plan: Plan) {
+        planList.append(plan.id)
+    }
+    
+    func getAllPlans() -> [String] {
+        return planList
+    }
+    
+    func getCountPlanList() -> Int {
+        return planList.count
+    }
 }
 
 
@@ -38,6 +54,22 @@ struct Plan {
     var deadline: [Date]? // array of deadlines that user has set for this plan
     var taskList: [String]  // list of id's for Tasks
     var purpose: String
+    
+      func getAllTasks() -> [String] {
+        return taskList
+    }
+    
+    mutating func changeDeadline(newDate: Date)  {
+        deadline = newDate
+    }
+    
+    mutating func addTaskToTasklist(taskId: String) {  //wonder if it is better to add id directly or adding type Task as argument is okay
+        taskList.append(taskId)
+    }
+    
+    func getCountTaskList() -> Int {
+        return taskList.count
+    }
 }
 
 struct Task {
@@ -46,19 +78,83 @@ struct Task {
     var taskDescription: String
     var isComplete: Bool
     var dateOfBirth: Date
-    var dateOfActivity: Date
-    var lengthOfActivity: Float
-    var deadline: [Date]? // array of deadlines that user has set for this task
+    var dateOfActivity: Date?
+    var lengthOfActivity: Float = 0
+    var deadline: Date
+    var completionDate: Date?
     var timeEstimate: Float
     var location: CLLocation?
-    var prerequisiteTasks : [String]?  // list of id's for Tasks
+    var preRequisiteTasks : [String]?  // list of id's for Tasks
     
-    // what is the difference between lengthOfActivity and timeEstimate?
+    func hasPrerequisiteTasks() -> Bool {
+        guard preRequisiteTasks != nil else {
+            return false
+        }
+        return true
+    }
     
+    func getPrerequisiteTasks() -> [String] {
+        guard let preRequisiteTasks = preRequisiteTasks else {
+            return []
+        }
+        return preRequisiteTasks
+    }
+    
+    mutating func changeDeadline(newDate: Date)  {
+        deadline = newDate
+    }
+    
+    mutating func changeCompletionStatus() {
+        isComplete = !isComplete
+    }
+    
+    mutating func startTask() {
+        dateOfActivity = Date()
+        lengthOfActivity = 0
+    }
+    
+    mutating func pauseTask() {
+        let currentTime = Date()
+        guard let dateOfActivity = dateOfActivity else {
+            print("No date time for activity was selected")
+            return
+        }
+        lengthOfActivity = lengthOfActivity + Float((currentTime.timeIntervalSince(dateOfActivity)))
+    }
+    
+    mutating func resumeTask() {
+        dateOfActivity = Date()
+    }
+    
+    mutating func completeTask() {
+        let currentDate = Date()
+        completionDate = Date()
+        guard let dateOfActivity = dateOfActivity else {
+            print("No date time for activity was selected")
+            return
+        }
+        lengthOfActivity = lengthOfActivity + Float((currentDate.timeIntervalSince(dateOfActivity)))
+        self.changeCompletionStatus()
+    }
+    
+    func getCompletionMetric() -> Float {
+        let result = abs(timeEstimate - lengthOfActivity)
+        if timeEstimate > lengthOfActivity {
+            print("Nice, you finished your task \(result) seconds faster than expected")
+        } else {
+            print("Oh no, you took \(result) seconds longer than expected to finish your task")
+        }
+        return result
+    }
+    
+    func startDelay() -> Float {
+        guard let dateOfActivity = dateOfActivity else {
+            print("You have no date of activity")
+            return 0
+        }
+        return Float(dateOfActivity.timeIntervalSince(dateOfBirth))
+    }
 }
-
-
-
 
 
 
