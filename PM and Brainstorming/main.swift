@@ -2,7 +2,12 @@
 import Foundation
 import CoreLocation
 
-
+struct User {
+    var id: String
+    var name: String
+    var goals: [String]   // list of id's for Goals
+    // auth values
+}
 
 struct Goal {
     var id: String
@@ -10,7 +15,7 @@ struct Goal {
     var purpose: String
     var isComplete: Bool
     var dateOfBirth: Date
-    var targetDate: Date?
+    var deadline: [Date]? // array of deadlines that user has set for this goal
     var planList: [String]  // list of id's for Plan
     
 //    func percentComplete() -> Float {
@@ -29,19 +34,11 @@ struct Plan {
     var name: String
     var dateOfBirth: Date
     var isComplete: Bool
-    var preRequisitePlans: [String]?  // list of id's for Plan
-    var targetCompletionDate: Date
-    var taskList: [String]  // listi of id's for Tasks
+    var prerequisitePlans: [String]?  // list of id's for Plan
+    var deadline: [Date]? // array of deadlines that user has set for this plan
+    var taskList: [String]  // list of id's for Tasks
     var purpose: String
 }
-
-struct User {
-    var id: String
-    var name: String
-    var goals: [String]   // list of id's for Goals
-    // auth values
-}
-
 
 struct Task {
     var id: String
@@ -51,10 +48,10 @@ struct Task {
     var dateOfBirth: Date
     var dateOfActivity: Date
     var lengthOfActivity: Float
-    var deadline: Date
+    var deadline: [Date]? // array of deadlines that user has set for this task
     var timeEstimate: Float
     var location: CLLocation?
-    var preRequisiteTasks : [String]?  // list of id's for Tasks
+    var prerequisiteTasks : [String]?  // list of id's for Tasks
     
     // what is the difference between lengthOfActivity and timeEstimate?
     
