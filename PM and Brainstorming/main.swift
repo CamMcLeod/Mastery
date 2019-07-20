@@ -85,6 +85,17 @@ struct Task {
     var timeEstimate: Float
     var location: CLLocation?
     var preRequisiteTasks : [String]?  // list of id's for Tasks
+     var priority: Priority
+    
+    enum Priority {
+        case low
+        case medium
+        case high
+    }
+    
+    mutating func changePriority(priorityType: Priority) {
+        priority = priorityType
+    }
     
     func hasPrerequisiteTasks() -> Bool {
         guard preRequisiteTasks != nil else {
