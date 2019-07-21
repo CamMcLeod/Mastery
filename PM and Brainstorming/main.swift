@@ -250,22 +250,6 @@ struct Plan {
     }
 }
 
-struct Task {
-    var id: String
-    var name: String
-    var taskDescription: String
-    var isComplete: Bool
-    var dateOfBirth: Date
-    var dateOfActivity: Date
-    var lengthOfActivity: Float
-    var deadline: [Date]? // array of deadlines that user has set for this task
-    var timeEstimate: Float
-    var location: CLLocation?
-    var prerequisiteTasks : [String]?  // list of id's for Tasks
-    
-    // what is the difference between lengthOfActivity and timeEstimate?
-    
-}
 
 struct Task {
     var id: String
