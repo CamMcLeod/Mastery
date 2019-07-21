@@ -217,6 +217,18 @@ struct Goal {
     //        return  Float(completePlans) / Float(planList.count)
     //
     //    }
+    
+     mutating func addPlan(plan: Plan) {
+        planList.append(plan.id)
+    }
+    
+    func getAllPlans() -> [String] {
+        return planList
+    }
+    
+    func getCountPlanList() -> Int {
+        return planList.count
+    }
 }
 
 
@@ -229,6 +241,13 @@ struct Plan {
     var deadline: [Date]? // array of deadlines that user has set for this plan
     var taskList: [String]?  // list of id's for Tasks
     var purpose: String
+    
+    func getAllTasks() -> [String] {
+        return taskList
+    }
+    func getCountTaskList() -> Int {
+        return taskList.count
+    }
 }
 
 struct Task {
@@ -248,13 +267,100 @@ struct Task {
     
 }
 
-
-
-
-
-
-
-var goalList: [String]  //list that takes in class Goal
+struct Task {
+    var id: String
+    var name: String
+    var taskDescription: String
+    var isComplete: Bool
+    var dateOfBirth: Date
+    var dateOfActivity: Date?
+    var lengthOfActivity: Float = 0
+    var deadline: Date
+    var completionDate: Date?
+    var timeEstimate: Float
+    var location: CLLocation?
+    var preRequisiteTasks : [String]?  // list of id's for Tasks
+    var priority: Priority
+    
+    enum Priority {
+        case low
+        case medium
+        case high
+    }
+    
+    mutating func changePriority(priorityType: Priority) {
+        priority = priorityType
+    }
+    
+    func hasPrerequisiteTasks() -> Bool {
+        guard preRequisiteTasks != nil else {
+            return false
+        }
+        return true
+    }
+    
+    func getPrerequisiteTasks() -> [String] {
+        guard let preRequisiteTasks = preRequisiteTasks else {
+            return []
+        }
+        return preRequisiteTasks
+    }
+    
+    mutating func changeDeadline(newDate: Date)  {
+        deadline = newDate
+    }
+    
+    mutating func changeCompletionStatus() {
+        isComplete = !isComplete
+    }
+    
+    mutating func startTask() {
+        dateOfActivity = Date()
+        lengthOfActivity = 0
+    }
+    
+    mutating func pauseTask() {
+        let currentTime = Date()
+        guard let dateOfActivity = dateOfActivity else {
+            print("No date time for activity was selected")
+            return
+        }
+        lengthOfActivity = lengthOfActivity + Float((currentTime.timeIntervalSince(dateOfActivity)))
+    }
+    
+    mutating func resumeTask() {
+        dateOfActivity = Date()
+    }
+    
+    mutating func completeTask() {
+        let currentDate = Date()
+        completionDate = Date()
+        guard let dateOfActivity = dateOfActivity else {
+            print("No date time for activity was selected")
+            return
+        }
+        lengthOfActivity = lengthOfActivity + Float((currentDate.timeIntervalSince(dateOfActivity)))
+        self.changeCompletionStatus()
+    }
+    
+    func getCompletionMetric() -> Float {
+        let result = abs(timeEstimate - lengthOfActivity)
+        if timeEstimate > lengthOfActivity {
+            print("Nice, you finished your task \(result) seconds faster than expected")
+        } else {
+            print("Oh no, you took \(result) seconds longer than expected to finish your task")
+        }
+        return result
+    }
+    
+    func startDelay() -> Float {
+        guard let dateOfActivity = dateOfActivity else {
+            print("You have no date of activity")
+            return 0
+        }
+        return Float(dateOfActivity.timeIntervalSince(dateOfBirth))
+    }
+}
 
 
 
@@ -267,10 +373,10 @@ var t1 = Task(id: UUID().uuidString,
               dateOfBirth: Date.init(),
               dateOfActivity: Date.init(timeIntervalSinceNow: 3600),
               lengthOfActivity: 2,
-              deadline: Date.init(timeIntervalSinceNow: 3600),
+              deadline: Date.init(timeIntervalSinceNow: 3600), completionDate: nil,
               timeEstimate: 2,
               location: nil,
-              preRequisiteTasks: nil)
+              preRequisiteTasks: nil, priority: .low)
 
 var t2 = Task(id: UUID().uuidString,
               name: "practice assignment",
@@ -279,10 +385,10 @@ var t2 = Task(id: UUID().uuidString,
               dateOfBirth: Date.init(),
               dateOfActivity: Date.init(timeIntervalSinceNow: 3600),
               lengthOfActivity: 2,
-              deadline: Date.init(timeIntervalSinceNow: 3600),
+              deadline: Date.init(timeIntervalSinceNow: 3600), completionDate: nil,
               timeEstimate: 2,
               location: nil,
-              preRequisiteTasks: nil)
+              preRequisiteTasks: nil, priority: .low)
 
 var t3 = Task(id: UUID().uuidString,
               name: "create storyboard",
@@ -291,10 +397,10 @@ var t3 = Task(id: UUID().uuidString,
               dateOfBirth: Date.init(),
               dateOfActivity: Date.init(timeIntervalSinceNow: 45000),
               lengthOfActivity: 1,
-              deadline: Date.init(timeIntervalSinceNow: 45000),
+              deadline: Date.init(timeIntervalSinceNow: 45000), completionDate: nil,
               timeEstimate: 1,
               location: nil,
-              preRequisiteTasks: nil)
+              preRequisiteTasks: nil, priority: .low)
 
 var t4 = Task(id: UUID().uuidString,
               name: "create fake data",
@@ -303,36 +409,36 @@ var t4 = Task(id: UUID().uuidString,
               dateOfBirth: Date.init(),
               dateOfActivity: Date.init(timeIntervalSinceNow: 3600),
               lengthOfActivity: 2.5,
-              deadline: Date.init(timeIntervalSinceNow: 3600),
+              deadline: Date.init(timeIntervalSinceNow: 3600), completionDate: nil,
               timeEstimate: 2.5,
               location: nil,
-              preRequisiteTasks: nil)
+              preRequisiteTasks: nil, priority: .low)
 
 var amirCourse = Plan(id: UUID().uuidString,
-                      name: "Amir Course",
-                      dateOfBirth: Date.init(),
-                      isComplete: false,
-                      preRequisitePlans: nil,
-                      targetCompletionDate: Date.init(timeIntervalSinceNow: 15000),
-                      taskList: [t1.id, t2.id],
-                      purpose: "Learn to make an app")
+                  name: "Amir Course",
+                  dateOfBirth: Date.init(),
+                  isComplete: false,
+                  preRequisitePlans: nil,
+                  targetCompletionDate: Date.init(timeIntervalSinceNow: 15000),
+                  taskList: [t1.id, t2.id],
+                  purpose: "Learn to make an app")
 
 var lhl = Plan(id: UUID().uuidString,
-               name: "final project",
-               dateOfBirth: Date.init(),
-               isComplete: false,
-               preRequisitePlans: nil,
-               targetCompletionDate: Date.init(timeIntervalSinceNow: 3600),
-               taskList: [t3.id, t4.id],
-               purpose: "finish the bootcamp")
+           name: "final project",
+           dateOfBirth: Date.init(),
+           isComplete: false,
+           preRequisitePlans: nil,
+           targetCompletionDate: Date.init(timeIntervalSinceNow: 3600),
+           taskList: [t3.id, t4.id],
+           purpose: "finish the bootcamp")
 
 
 var goal1 = Goal(id: UUID().uuidString,
-                 name: "learn iOS",
-                 purpose: "I want to be a programmer",
-                 dateOfBirth: Date.init(),
-                 targetDate: Date.init(timeIntervalSinceNow: 3600),
-                 planList: [])
+             name: "learn iOS",
+             purpose: "I want to be a programmer",
+             dateOfBirth: Date.init(),
+             targetDate: Date.init(timeIntervalSinceNow: 3600),
+             planList: [])
 
 
 
@@ -343,16 +449,16 @@ goal1.planList = [amirCourse.id, lhl.id]
 
 
 var t5: Task = Task(id: UUID().uuidString,
-                    name: "run 1 mile",
-                    taskDescription: "run 1 mile",
-                    isComplete: false,
-                    dateOfBirth: Date.init(),
-                    dateOfActivity: Date.init(timeIntervalSinceNow: 3600),
-                    lengthOfActivity: 1,
-                    deadline: Date.init(timeIntervalSinceNow: 3600),
-                    timeEstimate: 1,
-                    location: nil,
-                    preRequisiteTasks: nil)
+                       name: "run 1 mile",
+                       taskDescription: "run 1 mile",
+                       isComplete: false,
+                       dateOfBirth: Date.init(),
+                       dateOfActivity: Date.init(timeIntervalSinceNow: 3600),
+                       lengthOfActivity: 1,
+                       deadline: Date.init(timeIntervalSinceNow: 3600), completionDate: nil,
+                       timeEstimate: 1,
+                       location: nil,
+                       preRequisiteTasks: nil, priority: .low)
 var t6: Task = Task(id: UUID().uuidString,
                     name: "run 2 mile",
                     taskDescription: "run 2 miles",
@@ -360,22 +466,22 @@ var t6: Task = Task(id: UUID().uuidString,
                     dateOfBirth: Date.init(),
                     dateOfActivity: Date.init(timeIntervalSinceNow: 3600),
                     lengthOfActivity: 1,
-                    deadline: Date.init(timeIntervalSinceNow: 3600),
+                    deadline: Date.init(timeIntervalSinceNow: 3600), completionDate: nil,
                     timeEstimate: 1,
                     location: nil,
-                    preRequisiteTasks: [t5.id])
+                    preRequisiteTasks: [t5.id], priority: .low)
 
 var t7: Task = Task(id: UUID().uuidString,
                     name: "deadlift",
                     taskDescription: "get a new PR with deadlift",
-                    isComplete: true,
+                    isComplete: false,
                     dateOfBirth: Date.init(),
-                    dateOfActivity: Date.init(timeIntervalSinceNow: 120),
-                    lengthOfActivity: 0.45,
-                    deadline: Date.init(timeIntervalSinceNow: 3600),
-                    timeEstimate: 1,
+                    dateOfActivity: nil,
+                    lengthOfActivity: 0,
+                    deadline: Date.init(timeIntervalSinceNow: 3600), completionDate: nil,
+                    timeEstimate: 20,
                     location: nil,
-                    preRequisiteTasks: nil)
+                    preRequisiteTasks: nil, priority: .low)
 
 var t8: Task = Task(id: UUID().uuidString,
                     name: "squat",
@@ -384,10 +490,10 @@ var t8: Task = Task(id: UUID().uuidString,
                     dateOfBirth: Date.init(),
                     dateOfActivity: Date.init(timeIntervalSinceNow: 4200),
                     lengthOfActivity: 1,
-                    deadline: Date.init(timeIntervalSinceNow: 4200),
+                    deadline: Date.init(timeIntervalSinceNow: 4200), completionDate: nil,
                     timeEstimate: 1,
                     location: nil,
-                    preRequisiteTasks: nil)
+                    preRequisiteTasks: nil, priority: .medium)
 
 var t9: Task = Task(id: UUID().uuidString,
                     name: "hip flexor stretch",
@@ -396,52 +502,51 @@ var t9: Task = Task(id: UUID().uuidString,
                     dateOfBirth: Date.init(),
                     dateOfActivity: Date.init(),
                     lengthOfActivity: 0.2,
-                    deadline: Date.init(),
+                    deadline: Date.init(), completionDate: nil,
                     timeEstimate: 0.2,
                     location: nil,
-                    preRequisiteTasks: nil)
+                    preRequisiteTasks: nil, priority: .medium)
 
 var t10: Task = Task(id: UUID().uuidString,
                      name: "glutes",
                      taskDescription: "them glutes are too tight",
                      isComplete: true,
                      dateOfBirth: Date.init(),
-                     dateOfActivity: Date.init(),
-                     lengthOfActivity: 1,
-                     deadline: Date.init(),
+                     dateOfActivity: Date.init(), lengthOfActivity: 0,
+                     deadline: Date.init(), completionDate: nil,
                      timeEstimate: 1,
                      location: nil,
-                     preRequisiteTasks: nil)
+                     preRequisiteTasks: nil, priority: .high)
 
 
 var run = Plan(id: UUID().uuidString,
-               name: "running",
-               dateOfBirth: Date.init(),
-               isComplete: false,
-               preRequisitePlans: nil,
-               targetCompletionDate: Date.init(timeIntervalSinceNow: 50000),
-               taskList: [t5.id, t6.id],
-               purpose: "Be faster than a cheetah?")
+           name: "running",
+           dateOfBirth: Date.init(),
+           isComplete: false,
+           preRequisitePlans: nil,
+           targetCompletionDate: Date.init(timeIntervalSinceNow: 50000),
+           taskList: [t5.id, t6.id],
+           purpose: "Be faster than a cheetah?")
 
 var strengthTraining = Plan(id: UUID().uuidString,
-                            name: "Stregth Training",
-                            dateOfBirth: Date.init(),
-                            isComplete: false,
-                            preRequisitePlans: nil,
-                            targetCompletionDate: Date.init(timeIntervalSinceNow: 45000),
-                            taskList: [t7.id, t8.id],
-                            purpose: "outlift a gorilla")
+                        name: "Stregth Training",
+                        dateOfBirth: Date.init(),
+                        isComplete: false,
+                        preRequisitePlans: nil,
+                        targetCompletionDate: Date.init(timeIntervalSinceNow: 45000),
+                        taskList: [t7.id, t8.id],
+                        purpose: "outlift a gorilla")
 
 
 
 var stretch = Plan(id: UUID().uuidString,
-                   name: "stretching",
-                   dateOfBirth: Date.init(),
-                   isComplete: false,
-                   preRequisitePlans: [strengthTraining.id],
-                   targetCompletionDate: Date.init(timeIntervalSinceNow: 238289372987),
-                   taskList: [t9.id, t10.id],
-                   purpose: "be as nimble as a ballerina")
+               name: "stretching",
+               dateOfBirth: Date.init(),
+               isComplete: false,
+               preRequisitePlans: [strengthTraining.id],
+               targetCompletionDate: Date.init(timeIntervalSinceNow: 238289372987),
+               taskList: [t9.id, t10.id],
+               purpose: "be as nimble as a ballerina")
 
 
 var goal2 = Goal(id: UUID().uuidString,
@@ -453,9 +558,12 @@ var goal2 = Goal(id: UUID().uuidString,
                             strengthTraining.id,
                             stretch.id])
 
-
+var goalList: [String]
+//Since type Goal is the top level, Is it better to have a list of type Goal or a list of type String that will be their id's
 goalList = [goal1.id, goal2.id]
-
+var totalGoalList = [goal1, goal2]
+var planList = [amirCourse, lhl, run, strengthTraining, stretch]
+var taskList = [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10]
 
 
 
@@ -463,7 +571,11 @@ var myUser = User (id: UUID().uuidString,
                    name: "Ekam",
                    goals: goalList)
 
-
-print ("The user is:\n\(myUser.goals.count)")
-
 //dump(myUser)
+
+
+
+
+
+
+
