@@ -9,6 +9,39 @@ enum DataModelError: Error {
     case invalidTask
 }
 
+class manipulateElements {
+    
+//    Get Complete Goals
+//    Get Complete Plans
+//    Get Complete Tasks
+    
+//    Get Incomplete Goals
+//    Get Incomplete Plans
+//    Get Incomplete Tasks
+    
+//    Get Percent Complete
+
+//    Get Most Recent Task (dateOfActivity)
+    
+//    Get Task Closest to Deadline
+//    Get Plan Closest to Deadline
+//    Get Goal Closest to Deadline
+    
+//    Get Most Incomplete Plan
+//    Get Most Incomplete Goal
+    
+//    Sort by Most Complete Goal (by Total # Tasks)
+//    Sort by Least Complete Goal (by Total # Tasks)
+//    Sort by Complete/Incomplete
+    
+//    Sort by dateOfBirth Youngest First
+//    Sort by Most Recent Task
+//    Sort Tasks by deadline closest to now (completed below last deadline)
+//    Sort Plans by deadline closest to now (completed below last deadline)
+//    Sort Goals by deadline closest to now (completed below last deadline)
+
+    
+}
 struct User {
     var id: String
     var name: String
@@ -166,8 +199,16 @@ struct User {
         
         if (allElements[goalID] as? Goal) != nil {
             
-            allElements.removeValue(forKey: goalID)
+            for taskID, task in self.allTasksOfGoal(goalID)
+            {
+                allElements.removeValue(forKey: taskID)
+            }
             
+            for planID, plan in self.allPlansOfGoal(goalID)
+            {
+                allElements.removeValue(forKey: planID)
+            }
+            allElements.removeValue(forKey: goalID)
         }
         
     }
@@ -177,7 +218,10 @@ struct User {
         
         if (allElements[planID] as? Plan) != nil {
             
-            allElements.removeValue(forKey: planID)
+            for taskID, task in self.allTasksofPlan(planID)
+            {
+                allElements.removeValue(forKey: taskID)
+            }
             
         }
         
@@ -193,7 +237,6 @@ struct User {
         }
         
     }
-    
     
 }
 
