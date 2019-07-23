@@ -1,6 +1,7 @@
 Final Project Lighthouse - skill building
 
 Links:
+
 https://www.thebalancecareers.com/time-management-techniques-2276138
 
 https://heartbeat.fritz.ai/training-a-sentiment-analysis-core-ml-model-28823b21322c
@@ -10,6 +11,8 @@ building our own "tutorial":
 https://github.com/ruipfcosta/SwiftyWalkthrough
 
 calendars:
+
+https://iosexample.com/the-unofficial-apple-ios-swift-calendar-view/
 
 https://prograils.com/posts/simple-calendar-date-picker-tutorial-how-to-do
 
