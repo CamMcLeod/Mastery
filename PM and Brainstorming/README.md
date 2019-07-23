@@ -2,15 +2,32 @@ Final Project Lighthouse - skill building
 
 Links:
 https://www.thebalancecareers.com/time-management-techniques-2276138
+
 https://heartbeat.fritz.ai/training-a-sentiment-analysis-core-ml-model-28823b21322c
+
+building our own "tutorial":
+
 https://github.com/ruipfcosta/SwiftyWalkthrough
+
+calendars:
+
+https://prograils.com/posts/simple-calendar-date-picker-tutorial-how-to-do
+
 https://medium.com/boostnote/5-amazing-open-source-calendar-libraries-653738d00cd
-http://www.swiftkickmobile.com/elegant-custom-uiviewcontroller-transitioning-uiviewcontrollertransitioningdelegate-uiviewcontrolleranimatedtransitioning/
-https://www.raywenderlich.com/322-custom-uiviewcontroller-transitions-getting-started
+
 https://www.raywenderlich.com/2291-eventkit-tutorial-making-a-calendar-reminder
 
+UI transitions:
+
+http://www.swiftkickmobile.com/elegant-custom-uiviewcontroller-transitioning-uiviewcontrollertransitioningdelegate-uiviewcontrolleranimatedtransitioning/
+
+https://www.raywenderlich.com/322-custom-uiviewcontroller-transitions-getting-started
+
+
 server side tuts:
+
 https://www.raywenderlich.com/2866-how-to-synchronize-core-data-with-a-web-service-part-1
+
 https://parseplatform.org/#signup
 
 
