@@ -2,6 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Mastery_iOS.xcodeproj">
+      location = "group:/Users/EkamSingh/Desktop/LighthouseLabs/Mastery/Development Files/Mastery_iOS/Mastery_iOS/Mastery_iOS.xcdatamodeld"
+      assignedFileDataType = "com.apple.xcode.model.data">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/EkamSingh/Desktop/LighthouseLabs/Mastery/Development Files/Mastery_iOS/Mastery_iOS/testing.xcdatamodeld">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

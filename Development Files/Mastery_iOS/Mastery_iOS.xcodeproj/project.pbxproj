@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		065216EA22E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 065216E822E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld */; };
+		065216F322E7BA3C00DC1C44 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216EB22E7BA3C00DC1C44 /* User+CoreDataClass.swift */; };
+		065216F422E7BA3C00DC1C44 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216EC22E7BA3C00DC1C44 /* User+CoreDataProperties.swift */; };
+		065216F522E7BA3C00DC1C44 /* Plan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216ED22E7BA3C00DC1C44 /* Plan+CoreDataClass.swift */; };
+		065216F622E7BA3C00DC1C44 /* Plan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216EE22E7BA3C00DC1C44 /* Plan+CoreDataProperties.swift */; };
+		065216F722E7BA3C00DC1C44 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216EF22E7BA3C00DC1C44 /* Task+CoreDataClass.swift */; };
+		065216F822E7BA3C00DC1C44 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216F022E7BA3C00DC1C44 /* Task+CoreDataProperties.swift */; };
+		065216F922E7BA3C00DC1C44 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216F122E7BA3C00DC1C44 /* Goal+CoreDataClass.swift */; };
+		065216FA22E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216F222E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift */; };
+		069B087622E7B21B000FD048 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B087522E7B21B000FD048 /* PersistenceService.swift */; };
 		9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC022E0007100210C0F /* AppDelegate.swift */; };
-		9CD53FC422E0007100210C0F /* Mastery_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC222E0007100210C0F /* Mastery_iOS.xcdatamodeld */; };
-		9CD53FC622E0007100210C0F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC522E0007100210C0F /* MasterViewController.swift */; };
-		9CD53FC822E0007100210C0F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC722E0007100210C0F /* DetailViewController.swift */; };
 		9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FC922E0007100210C0F /* Main.storyboard */; };
 		9CD53FCD22E0007200210C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FCC22E0007200210C0F /* Assets.xcassets */; };
 		9CD53FD022E0007200210C0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FCE22E0007200210C0F /* LaunchScreen.storyboard */; };
@@ -36,11 +43,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		065216E922E7B66300DC1C44 /* Mastery_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mastery_iOS.xcdatamodel; sourceTree = "<group>"; };
+		065216EB22E7BA3C00DC1C44 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		065216EC22E7BA3C00DC1C44 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		065216ED22E7BA3C00DC1C44 /* Plan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataClass.swift"; sourceTree = "<group>"; };
+		065216EE22E7BA3C00DC1C44 /* Plan+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		065216EF22E7BA3C00DC1C44 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		065216F022E7BA3C00DC1C44 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		065216F122E7BA3C00DC1C44 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		065216F222E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		069B087522E7B21B000FD048 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		9CD53FBD22E0007100210C0F /* Mastery_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mastery_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD53FC022E0007100210C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9CD53FC322E0007100210C0F /* Mastery_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mastery_iOS.xcdatamodel; sourceTree = "<group>"; };
-		9CD53FC522E0007100210C0F /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		9CD53FC722E0007100210C0F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9CD53FCA22E0007100210C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CD53FCC22E0007200210C0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CD53FCF22E0007200210C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,6 +92,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		065216FC22E7BA8F00DC1C44 /* CoreDataProperties */ = {
+			isa = PBXGroup;
+			children = (
+				069B087522E7B21B000FD048 /* PersistenceService.swift */,
+				065216F222E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift */,
+				065216F122E7BA3C00DC1C44 /* Goal+CoreDataClass.swift */,
+				065216F022E7BA3C00DC1C44 /* Task+CoreDataProperties.swift */,
+				065216EC22E7BA3C00DC1C44 /* User+CoreDataProperties.swift */,
+				065216EF22E7BA3C00DC1C44 /* Task+CoreDataClass.swift */,
+				065216EB22E7BA3C00DC1C44 /* User+CoreDataClass.swift */,
+				065216EE22E7BA3C00DC1C44 /* Plan+CoreDataProperties.swift */,
+				065216ED22E7BA3C00DC1C44 /* Plan+CoreDataClass.swift */,
+			);
+			path = CoreDataProperties;
+			sourceTree = "<group>";
+		};
 		9CD53FB422E0007100210C0F = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +131,13 @@
 		9CD53FBF22E0007100210C0F /* Mastery_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				065216FC22E7BA8F00DC1C44 /* CoreDataProperties */,
 				9CD53FC022E0007100210C0F /* AppDelegate.swift */,
-				9CD53FC522E0007100210C0F /* MasterViewController.swift */,
-				9CD53FC722E0007100210C0F /* DetailViewController.swift */,
 				9CD53FC922E0007100210C0F /* Main.storyboard */,
 				9CD53FCC22E0007200210C0F /* Assets.xcassets */,
 				9CD53FCE22E0007200210C0F /* LaunchScreen.storyboard */,
 				9CD53FD122E0007200210C0F /* Info.plist */,
-				9CD53FC222E0007100210C0F /* Mastery_iOS.xcdatamodeld */,
+				065216E822E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld */,
 			);
 			path = Mastery_iOS;
 			sourceTree = "<group>";
@@ -262,10 +291,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				065216F922E7BA3C00DC1C44 /* Goal+CoreDataClass.swift in Sources */,
+				065216F622E7BA3C00DC1C44 /* Plan+CoreDataProperties.swift in Sources */,
+				065216FA22E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift in Sources */,
+				065216F522E7BA3C00DC1C44 /* Plan+CoreDataClass.swift in Sources */,
+				065216F722E7BA3C00DC1C44 /* Task+CoreDataClass.swift in Sources */,
 				9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */,
-				9CD53FC422E0007100210C0F /* Mastery_iOS.xcdatamodeld in Sources */,
-				9CD53FC622E0007100210C0F /* MasterViewController.swift in Sources */,
-				9CD53FC822E0007100210C0F /* DetailViewController.swift in Sources */,
+				065216F822E7BA3C00DC1C44 /* Task+CoreDataProperties.swift in Sources */,
+				065216EA22E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld in Sources */,
+				065216F322E7BA3C00DC1C44 /* User+CoreDataClass.swift in Sources */,
+				065216F422E7BA3C00DC1C44 /* User+CoreDataProperties.swift in Sources */,
+				069B087622E7B21B000FD048 /* PersistenceService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,12 +632,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9CD53FC222E0007100210C0F /* Mastery_iOS.xcdatamodeld */ = {
+		065216E822E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9CD53FC322E0007100210C0F /* Mastery_iOS.xcdatamodel */,
+				065216E922E7B66300DC1C44 /* Mastery_iOS.xcdatamodel */,
 			);
-			currentVersion = 9CD53FC322E0007100210C0F /* Mastery_iOS.xcdatamodel */;
+			currentVersion = 065216E922E7B66300DC1C44 /* Mastery_iOS.xcdatamodel */;
 			path = Mastery_iOS.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
