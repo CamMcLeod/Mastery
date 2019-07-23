@@ -7,6 +7,7 @@ https://github.com/ruipfcosta/SwiftyWalkthrough
 https://medium.com/boostnote/5-amazing-open-source-calendar-libraries-653738d00cd
 http://www.swiftkickmobile.com/elegant-custom-uiviewcontroller-transitioning-uiviewcontrollertransitioningdelegate-uiviewcontrolleranimatedtransitioning/
 https://www.raywenderlich.com/322-custom-uiviewcontroller-transitions-getting-started
+https://www.raywenderlich.com/2291-eventkit-tutorial-making-a-calendar-reminder
 
 server side tuts:
 https://www.raywenderlich.com/2866-how-to-synchronize-core-data-with-a-web-service-part-1
