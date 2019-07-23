@@ -5,6 +5,7 @@ https://www.thebalancecareers.com/time-management-techniques-2276138
 https://heartbeat.fritz.ai/training-a-sentiment-analysis-core-ml-model-28823b21322c
 https://github.com/ruipfcosta/SwiftyWalkthrough
 https://medium.com/boostnote/5-amazing-open-source-calendar-libraries-653738d00cd
+http://www.swiftkickmobile.com/elegant-custom-uiviewcontroller-transitioning-uiviewcontrollertransitioningdelegate-uiviewcontrolleranimatedtransitioning/
 
 
 Work in Progress -  FlowChart:
