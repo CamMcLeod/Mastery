@@ -28,14 +28,9 @@ class GoalListTableViewController: UITableViewController {
             print("Oh no, there is no data to load")
         }
         
-        
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+  
 
     // MARK: - Table view data source
 
@@ -58,10 +53,10 @@ class GoalListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedGoal = goals[indexPath.row]
-        print(selectedGoal.name)
         print(selectedGoal.plans!.count)
-        for user in selectedGoal.plans! {
-            print(user)
+        if let someValue = selectedGoal.plans?.allObjects {
+            let value = someValue[0] as! Plan
+            print(value.name!)
         }
     }
    
