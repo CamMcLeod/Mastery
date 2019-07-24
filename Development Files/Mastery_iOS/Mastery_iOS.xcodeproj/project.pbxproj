@@ -16,6 +16,11 @@
 		065216F822E7BA3C00DC1C44 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216F022E7BA3C00DC1C44 /* Task+CoreDataProperties.swift */; };
 		065216F922E7BA3C00DC1C44 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216F122E7BA3C00DC1C44 /* Goal+CoreDataClass.swift */; };
 		065216FA22E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216F222E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift */; };
+		065216FE22E7BB6100DC1C44 /* GoalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */; };
+		0652170022E7BBB700DC1C44 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216FF22E7BBB700DC1C44 /* AddGoalViewController.swift */; };
+		0652170222E7BBC700DC1C44 /* AddGoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */; };
+		0652170822E7D12800DC1C44 /* AddPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170722E7D12800DC1C44 /* AddPlanViewController.swift */; };
+		0652170A22E7D22400DC1C44 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170922E7D22400DC1C44 /* AddTaskViewController.swift */; };
 		069B087622E7B21B000FD048 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B087522E7B21B000FD048 /* PersistenceService.swift */; };
 		9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC022E0007100210C0F /* AppDelegate.swift */; };
 		9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FC922E0007100210C0F /* Main.storyboard */; };
@@ -52,6 +57,11 @@
 		065216F022E7BA3C00DC1C44 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		065216F122E7BA3C00DC1C44 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		065216F222E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListTableViewController.swift; sourceTree = "<group>"; };
+		065216FF22E7BBB700DC1C44 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
+		0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalDetailsViewController.swift; sourceTree = "<group>"; };
+		0652170722E7D12800DC1C44 /* AddPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanViewController.swift; sourceTree = "<group>"; };
+		0652170922E7D22400DC1C44 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		069B087522E7B21B000FD048 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		9CD53FBD22E0007100210C0F /* Mastery_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mastery_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD53FC022E0007100210C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +143,11 @@
 			children = (
 				065216FC22E7BA8F00DC1C44 /* CoreDataProperties */,
 				9CD53FC022E0007100210C0F /* AppDelegate.swift */,
+				065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */,
+				065216FF22E7BBB700DC1C44 /* AddGoalViewController.swift */,
+				0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */,
+				0652170722E7D12800DC1C44 /* AddPlanViewController.swift */,
+				0652170922E7D22400DC1C44 /* AddTaskViewController.swift */,
 				9CD53FC922E0007100210C0F /* Main.storyboard */,
 				9CD53FCC22E0007200210C0F /* Assets.xcassets */,
 				9CD53FCE22E0007200210C0F /* LaunchScreen.storyboard */,
@@ -292,11 +307,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				065216F922E7BA3C00DC1C44 /* Goal+CoreDataClass.swift in Sources */,
+				0652170A22E7D22400DC1C44 /* AddTaskViewController.swift in Sources */,
+				0652170022E7BBB700DC1C44 /* AddGoalViewController.swift in Sources */,
 				065216F622E7BA3C00DC1C44 /* Plan+CoreDataProperties.swift in Sources */,
 				065216FA22E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift in Sources */,
 				065216F522E7BA3C00DC1C44 /* Plan+CoreDataClass.swift in Sources */,
 				065216F722E7BA3C00DC1C44 /* Task+CoreDataClass.swift in Sources */,
+				0652170222E7BBC700DC1C44 /* AddGoalDetailsViewController.swift in Sources */,
 				9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */,
+				0652170822E7D12800DC1C44 /* AddPlanViewController.swift in Sources */,
+				065216FE22E7BB6100DC1C44 /* GoalListTableViewController.swift in Sources */,
 				065216F822E7BA3C00DC1C44 /* Task+CoreDataProperties.swift in Sources */,
 				065216EA22E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld in Sources */,
 				065216F322E7BA3C00DC1C44 /* User+CoreDataClass.swift in Sources */,
