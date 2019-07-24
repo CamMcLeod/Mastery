@@ -2,7 +2,7 @@
 //  Goal+CoreDataProperties.swift
 //  Mastery_iOS
 //
-//  Created by Ekam Singh Dhaliwal on 2019-07-23.
+//  Created by Ekam Singh Dhaliwal on 2019-07-24.
 //  Copyright © 2019 Marina Mona June McPeak. All rights reserved.
 //
 //
@@ -24,6 +24,7 @@ extension Goal {
     @NSManaged public var name: String?
     @NSManaged public var purpose: String?
     @NSManaged public var image: NSData?
+    @NSManaged public var opened: Bool
     @NSManaged public var user: User?
     @NSManaged public var plans: NSSet?
 

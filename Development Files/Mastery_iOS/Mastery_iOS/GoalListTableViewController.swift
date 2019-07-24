@@ -12,10 +12,17 @@ import CoreData
 class GoalListTableViewController: UITableViewController {
     
     var goals = [Goal]()
+    var valueToPass: Plan?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+    
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
         //        let sortDescriptor = NSSortDescriptor(key: "deadline", ascending: false)
         //        fetchRequest.sortDescriptors = [sortDescriptor]
@@ -27,47 +34,98 @@ class GoalListTableViewController: UITableViewController {
         } catch {
             print("Oh no, there is no data to load")
         }
-        
+    }
+  
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
     }
     
-  
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
+        let label = UILabel(frame: CGRect(x: 10, y: tableView.sectionHeaderHeight / 2 , width: tableView.frame.size.width, height: 25))
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        label.text = goals[section].name
+        
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
+        button.backgroundColor = #colorLiteral(red: 0.462745098, green: 0.8392156863, blue: 1, alpha: 0.4490582192)
+        button.setTitle("－", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.tag = section
+        button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
+        button.contentHorizontalAlignment = .right
+        view.addSubview(button)
+        button.addSubview(label)
+        return button
+    }
+    
+    @objc func handleExpandClose(button: UIButton) {
+        let section = button.tag
+        var indexPaths = [IndexPath]()
+        if let plans = goals[section].plans?.allObjects {
+            for row in plans.indices {
+                let indexPath = IndexPath(row: row, section: section)
+                indexPaths.append(indexPath)
+            }
+        }
+        
+        let isExpanded = goals[section].opened
+        goals[section].opened = !isExpanded
+        button.setTitle(isExpanded ? "＋" :"－", for: .normal)
+        if isExpanded {
+            tableView.deleteRows(at: indexPaths, with: .fade)
+        } else {
+            tableView.insertRows(at: indexPaths, with: .fade)
+        }
+        
+        
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return goals.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return goals.count
+        if goals[section].opened == true {
+            guard let rows = goals[section].plans else {return 0}
+            return rows.count
+        } else {
+            return 0
+        }
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = goals[indexPath.row].name
+        if let plans = goals[indexPath.section].plans?.allObjects {
+            let name = plans[indexPath.row] as! Plan
+            cell.textLabel?.text = name.name
+            return cell
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedGoal = goals[indexPath.row]
-        print(selectedGoal.plans!.count)
-        if let someValue = selectedGoal.plans?.allObjects {
-            let value = someValue[0] as! Plan
-            print(value.name!)
+        let selectedGoal = goals[indexPath.section]
+        if let values = selectedGoal.plans?.allObjects {
+            let value = values[indexPath.row] as! Plan
+            valueToPass = value
+            performSegue(withIdentifier: "showPlan", sender: self)
+            
         }
     }
+    
    
 
-    /*
+/*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+ */
 
     /*
     // Override to support editing the table view.
@@ -96,14 +154,15 @@ class GoalListTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+  
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showPlan" {
+            let controller = segue.destination as! DetailedPlanViewController
+            controller.plan = valueToPass
+            
+        }
     }
-    */
+ 
 
 }

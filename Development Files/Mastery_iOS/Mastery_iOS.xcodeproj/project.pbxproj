@@ -8,19 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		065216EA22E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 065216E822E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld */; };
-		065216F322E7BA3C00DC1C44 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216EB22E7BA3C00DC1C44 /* User+CoreDataClass.swift */; };
-		065216F422E7BA3C00DC1C44 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216EC22E7BA3C00DC1C44 /* User+CoreDataProperties.swift */; };
-		065216F522E7BA3C00DC1C44 /* Plan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216ED22E7BA3C00DC1C44 /* Plan+CoreDataClass.swift */; };
-		065216F622E7BA3C00DC1C44 /* Plan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216EE22E7BA3C00DC1C44 /* Plan+CoreDataProperties.swift */; };
-		065216F722E7BA3C00DC1C44 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216EF22E7BA3C00DC1C44 /* Task+CoreDataClass.swift */; };
-		065216F822E7BA3C00DC1C44 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216F022E7BA3C00DC1C44 /* Task+CoreDataProperties.swift */; };
-		065216F922E7BA3C00DC1C44 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216F122E7BA3C00DC1C44 /* Goal+CoreDataClass.swift */; };
-		065216FA22E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216F222E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift */; };
 		065216FE22E7BB6100DC1C44 /* GoalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */; };
 		0652170022E7BBB700DC1C44 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216FF22E7BBB700DC1C44 /* AddGoalViewController.swift */; };
 		0652170222E7BBC700DC1C44 /* AddGoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */; };
 		0652170822E7D12800DC1C44 /* AddPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170722E7D12800DC1C44 /* AddPlanViewController.swift */; };
 		0652170A22E7D22400DC1C44 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170922E7D22400DC1C44 /* AddTaskViewController.swift */; };
+		0652171322E90BA500DC1C44 /* Plan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170B22E90BA500DC1C44 /* Plan+CoreDataClass.swift */; };
+		0652171422E90BA500DC1C44 /* Plan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170C22E90BA500DC1C44 /* Plan+CoreDataProperties.swift */; };
+		0652171522E90BA500DC1C44 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170D22E90BA500DC1C44 /* Task+CoreDataClass.swift */; };
+		0652171622E90BA500DC1C44 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170E22E90BA500DC1C44 /* Task+CoreDataProperties.swift */; };
+		0652171722E90BA500DC1C44 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170F22E90BA500DC1C44 /* Goal+CoreDataClass.swift */; };
+		0652171822E90BA500DC1C44 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171022E90BA500DC1C44 /* Goal+CoreDataProperties.swift */; };
+		0652171922E90BA500DC1C44 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171122E90BA500DC1C44 /* User+CoreDataClass.swift */; };
+		0652171A22E90BA500DC1C44 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171222E90BA500DC1C44 /* User+CoreDataProperties.swift */; };
+		0652171C22E90E7600DC1C44 /* DetailedPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171B22E90E7600DC1C44 /* DetailedPlanViewController.swift */; };
 		069B087622E7B21B000FD048 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B087522E7B21B000FD048 /* PersistenceService.swift */; };
 		9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC022E0007100210C0F /* AppDelegate.swift */; };
 		9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FC922E0007100210C0F /* Main.storyboard */; };
@@ -49,19 +50,20 @@
 
 /* Begin PBXFileReference section */
 		065216E922E7B66300DC1C44 /* Mastery_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mastery_iOS.xcdatamodel; sourceTree = "<group>"; };
-		065216EB22E7BA3C00DC1C44 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		065216EC22E7BA3C00DC1C44 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		065216ED22E7BA3C00DC1C44 /* Plan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataClass.swift"; sourceTree = "<group>"; };
-		065216EE22E7BA3C00DC1C44 /* Plan+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		065216EF22E7BA3C00DC1C44 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
-		065216F022E7BA3C00DC1C44 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		065216F122E7BA3C00DC1C44 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		065216F222E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListTableViewController.swift; sourceTree = "<group>"; };
 		065216FF22E7BBB700DC1C44 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalDetailsViewController.swift; sourceTree = "<group>"; };
 		0652170722E7D12800DC1C44 /* AddPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanViewController.swift; sourceTree = "<group>"; };
 		0652170922E7D22400DC1C44 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		0652170B22E90BA500DC1C44 /* Plan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Plan+CoreDataClass.swift"; path = "../Plan+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0652170C22E90BA500DC1C44 /* Plan+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Plan+CoreDataProperties.swift"; path = "../Plan+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0652170D22E90BA500DC1C44 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataClass.swift"; path = "../Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0652170E22E90BA500DC1C44 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataProperties.swift"; path = "../Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0652170F22E90BA500DC1C44 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Goal+CoreDataClass.swift"; path = "../Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0652171022E90BA500DC1C44 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Goal+CoreDataProperties.swift"; path = "../Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0652171122E90BA500DC1C44 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "../User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0652171222E90BA500DC1C44 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0652171B22E90E7600DC1C44 /* DetailedPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPlanViewController.swift; sourceTree = "<group>"; };
 		069B087522E7B21B000FD048 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		9CD53FBD22E0007100210C0F /* Mastery_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mastery_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD53FC022E0007100210C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,15 +107,15 @@
 		065216FC22E7BA8F00DC1C44 /* CoreDataProperties */ = {
 			isa = PBXGroup;
 			children = (
+				0652170B22E90BA500DC1C44 /* Plan+CoreDataClass.swift */,
+				0652170C22E90BA500DC1C44 /* Plan+CoreDataProperties.swift */,
+				0652170D22E90BA500DC1C44 /* Task+CoreDataClass.swift */,
+				0652170E22E90BA500DC1C44 /* Task+CoreDataProperties.swift */,
+				0652170F22E90BA500DC1C44 /* Goal+CoreDataClass.swift */,
+				0652171022E90BA500DC1C44 /* Goal+CoreDataProperties.swift */,
+				0652171122E90BA500DC1C44 /* User+CoreDataClass.swift */,
+				0652171222E90BA500DC1C44 /* User+CoreDataProperties.swift */,
 				069B087522E7B21B000FD048 /* PersistenceService.swift */,
-				065216F222E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift */,
-				065216F122E7BA3C00DC1C44 /* Goal+CoreDataClass.swift */,
-				065216F022E7BA3C00DC1C44 /* Task+CoreDataProperties.swift */,
-				065216EC22E7BA3C00DC1C44 /* User+CoreDataProperties.swift */,
-				065216EF22E7BA3C00DC1C44 /* Task+CoreDataClass.swift */,
-				065216EB22E7BA3C00DC1C44 /* User+CoreDataClass.swift */,
-				065216EE22E7BA3C00DC1C44 /* Plan+CoreDataProperties.swift */,
-				065216ED22E7BA3C00DC1C44 /* Plan+CoreDataClass.swift */,
 			);
 			path = CoreDataProperties;
 			sourceTree = "<group>";
@@ -148,6 +150,7 @@
 				0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */,
 				0652170722E7D12800DC1C44 /* AddPlanViewController.swift */,
 				0652170922E7D22400DC1C44 /* AddTaskViewController.swift */,
+				0652171B22E90E7600DC1C44 /* DetailedPlanViewController.swift */,
 				9CD53FC922E0007100210C0F /* Main.storyboard */,
 				9CD53FCC22E0007200210C0F /* Assets.xcassets */,
 				9CD53FCE22E0007200210C0F /* LaunchScreen.storyboard */,
@@ -306,22 +309,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				065216F922E7BA3C00DC1C44 /* Goal+CoreDataClass.swift in Sources */,
 				0652170A22E7D22400DC1C44 /* AddTaskViewController.swift in Sources */,
 				0652170022E7BBB700DC1C44 /* AddGoalViewController.swift in Sources */,
-				065216F622E7BA3C00DC1C44 /* Plan+CoreDataProperties.swift in Sources */,
-				065216FA22E7BA3C00DC1C44 /* Goal+CoreDataProperties.swift in Sources */,
-				065216F522E7BA3C00DC1C44 /* Plan+CoreDataClass.swift in Sources */,
-				065216F722E7BA3C00DC1C44 /* Task+CoreDataClass.swift in Sources */,
+				0652171A22E90BA500DC1C44 /* User+CoreDataProperties.swift in Sources */,
 				0652170222E7BBC700DC1C44 /* AddGoalDetailsViewController.swift in Sources */,
+				0652171322E90BA500DC1C44 /* Plan+CoreDataClass.swift in Sources */,
+				0652171422E90BA500DC1C44 /* Plan+CoreDataProperties.swift in Sources */,
 				9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */,
 				0652170822E7D12800DC1C44 /* AddPlanViewController.swift in Sources */,
+				0652171722E90BA500DC1C44 /* Goal+CoreDataClass.swift in Sources */,
 				065216FE22E7BB6100DC1C44 /* GoalListTableViewController.swift in Sources */,
-				065216F822E7BA3C00DC1C44 /* Task+CoreDataProperties.swift in Sources */,
+				0652171C22E90E7600DC1C44 /* DetailedPlanViewController.swift in Sources */,
+				0652171522E90BA500DC1C44 /* Task+CoreDataClass.swift in Sources */,
 				065216EA22E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld in Sources */,
-				065216F322E7BA3C00DC1C44 /* User+CoreDataClass.swift in Sources */,
-				065216F422E7BA3C00DC1C44 /* User+CoreDataProperties.swift in Sources */,
+				0652171622E90BA500DC1C44 /* Task+CoreDataProperties.swift in Sources */,
+				0652171822E90BA500DC1C44 /* Goal+CoreDataProperties.swift in Sources */,
 				069B087622E7B21B000FD048 /* PersistenceService.swift in Sources */,
+				0652171922E90BA500DC1C44 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69CPQG929Z;
+				DEVELOPMENT_TEAM = 6356UMD9VX;
 				INFOPLIST_FILE = Mastery_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -515,7 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69CPQG929Z;
+				DEVELOPMENT_TEAM = 6356UMD9VX;
 				INFOPLIST_FILE = Mastery_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

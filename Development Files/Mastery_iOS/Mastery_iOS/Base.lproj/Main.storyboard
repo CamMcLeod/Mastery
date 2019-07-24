@@ -49,6 +49,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="uYJ-nL-3BX" kind="show" identifier="showPlan" id="NiE-wT-ACU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2O-eY-Jhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,7 +100,7 @@
                                 <rect key="frame" x="20" y="163" width="374" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -560,12 +563,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hG-ZN-nd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223" y="526"/>
+            <point key="canvasLocation" x="129" y="-992"/>
         </scene>
-        <!--View Controller-->
+        <!--Detailed Plan View Controller-->
         <scene sceneID="IuW-Gs-98f">
             <objects>
-                <viewController id="uYJ-nL-3BX" sceneMemberID="viewController">
+                <viewController id="uYJ-nL-3BX" customClass="DetailedPlanViewController" customModule="Mastery_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NWS-xV-Vtr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -581,7 +584,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Plan Details As Confirmation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Syu-LL-Ce6">
-                                <rect key="frame" x="115" y="135" width="184" height="140"/>
+                                <rect key="frame" x="115" y="179" width="184" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="cDQ-pJ-24O"/>
                                 </constraints>
@@ -601,10 +604,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UPY-K8-sPc"/>
                     </view>
+                    <connections>
+                        <outlet property="showDetails" destination="Syu-LL-Ce6" id="UpF-zE-lXu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="312-0C-cXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2142" y="526"/>
+            <point key="canvasLocation" x="129" y="446"/>
         </scene>
     </scenes>
 </document>
