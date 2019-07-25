@@ -32,8 +32,8 @@ class AddGoalDetailsViewController: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addPlan" {
-            if let detailViewController = segue.destination as? AddPlanViewController {
+        if segue.identifier == "addTask" {
+            if let detailViewController = segue.destination as? AddTaskViewController {
                 detailViewController.goal = saveGoalData()
             }
         }

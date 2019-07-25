@@ -12,7 +12,7 @@ class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var name: UIView!
-    var numberOfPlans: Int!
+//    var numberOfTasks: Int!
 
     override func awakeFromNib() {
 
@@ -25,7 +25,8 @@ class HomeTableViewCell: UITableViewCell {
             flowLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
         }
         collectionView.layoutIfNeeded()
-        print("What the hell is going on")
+        
+//        print("What the hell is going on")
         
        
        
@@ -45,6 +46,7 @@ class HomeTableViewCell: UITableViewCell {
 //        
 //        collectionView.delegate = dataSourceDelegate
 //        collectionView.dataSource = dataSourceDelegate
+//        collectionView.tag =
 //        collectionView.reloadData()
 //    }
 //}

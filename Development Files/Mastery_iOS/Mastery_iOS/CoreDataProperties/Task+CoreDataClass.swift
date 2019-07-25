@@ -1,8 +1,8 @@
 //
-//  User+CoreDataClass.swift
+//  Task+CoreDataClass.swift
 //  Mastery_iOS
 //
-//  Created by Ekam Singh Dhaliwal on 2019-07-24.
+//  Created by Ekam Singh Dhaliwal on 2019-07-25.
 //  Copyright © 2019 Marina Mona June McPeak. All rights reserved.
 //
 //
@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 
-public class User: NSManagedObject {
+public class Task: NSManagedObject {
 
 }

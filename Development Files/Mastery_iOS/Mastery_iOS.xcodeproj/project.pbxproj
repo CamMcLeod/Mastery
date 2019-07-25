@@ -8,21 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		061099F422E94D3D00A9DC7A /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061099F322E94D3D00A9DC7A /* DynamicHeightCollectionView.swift */; };
+		061099FB22EA51D200A9DC7A /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061099F522EA51D200A9DC7A /* Goal+CoreDataClass.swift */; };
+		061099FC22EA51D200A9DC7A /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061099F622EA51D200A9DC7A /* Goal+CoreDataProperties.swift */; };
+		061099FD22EA51D200A9DC7A /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061099F722EA51D200A9DC7A /* Task+CoreDataClass.swift */; };
+		061099FE22EA51D200A9DC7A /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061099F822EA51D200A9DC7A /* Task+CoreDataProperties.swift */; };
+		061099FF22EA51D200A9DC7A /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061099F922EA51D200A9DC7A /* User+CoreDataClass.swift */; };
+		06109A0022EA51D200A9DC7A /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061099FA22EA51D200A9DC7A /* User+CoreDataProperties.swift */; };
+		06109A0222EA52D500A9DC7A /* DetailedTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06109A0122EA52D500A9DC7A /* DetailedTaskViewController.swift */; };
+		06109A0422EA5CC900A9DC7A /* AddAnotherTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06109A0322EA5CC900A9DC7A /* AddAnotherTaskViewController.swift */; };
 		065216EA22E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 065216E822E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld */; };
 		065216FE22E7BB6100DC1C44 /* GoalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */; };
 		0652170022E7BBB700DC1C44 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216FF22E7BBB700DC1C44 /* AddGoalViewController.swift */; };
 		0652170222E7BBC700DC1C44 /* AddGoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */; };
-		0652170822E7D12800DC1C44 /* AddPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170722E7D12800DC1C44 /* AddPlanViewController.swift */; };
 		0652170A22E7D22400DC1C44 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170922E7D22400DC1C44 /* AddTaskViewController.swift */; };
-		0652171322E90BA500DC1C44 /* Plan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170B22E90BA500DC1C44 /* Plan+CoreDataClass.swift */; };
-		0652171422E90BA500DC1C44 /* Plan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170C22E90BA500DC1C44 /* Plan+CoreDataProperties.swift */; };
-		0652171522E90BA500DC1C44 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170D22E90BA500DC1C44 /* Task+CoreDataClass.swift */; };
-		0652171622E90BA500DC1C44 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170E22E90BA500DC1C44 /* Task+CoreDataProperties.swift */; };
-		0652171722E90BA500DC1C44 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170F22E90BA500DC1C44 /* Goal+CoreDataClass.swift */; };
-		0652171822E90BA500DC1C44 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171022E90BA500DC1C44 /* Goal+CoreDataProperties.swift */; };
-		0652171922E90BA500DC1C44 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171122E90BA500DC1C44 /* User+CoreDataClass.swift */; };
-		0652171A22E90BA500DC1C44 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171222E90BA500DC1C44 /* User+CoreDataProperties.swift */; };
-		0652171C22E90E7600DC1C44 /* DetailedPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171B22E90E7600DC1C44 /* DetailedPlanViewController.swift */; };
 		0652171E22E91FF000DC1C44 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171D22E91FF000DC1C44 /* HomeTableViewCell.swift */; };
 		0652172022E9216A00DC1C44 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */; };
 		069B087622E7B21B000FD048 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B087522E7B21B000FD048 /* PersistenceService.swift */; };
@@ -53,21 +51,19 @@
 
 /* Begin PBXFileReference section */
 		061099F322E94D3D00A9DC7A /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
+		061099F522EA51D200A9DC7A /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		061099F622EA51D200A9DC7A /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		061099F722EA51D200A9DC7A /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		061099F822EA51D200A9DC7A /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		061099F922EA51D200A9DC7A /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		061099FA22EA51D200A9DC7A /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		06109A0122EA52D500A9DC7A /* DetailedTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTaskViewController.swift; sourceTree = "<group>"; };
+		06109A0322EA5CC900A9DC7A /* AddAnotherTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnotherTaskViewController.swift; sourceTree = "<group>"; };
 		065216E922E7B66300DC1C44 /* Mastery_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mastery_iOS.xcdatamodel; sourceTree = "<group>"; };
 		065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListTableViewController.swift; sourceTree = "<group>"; };
 		065216FF22E7BBB700DC1C44 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalDetailsViewController.swift; sourceTree = "<group>"; };
-		0652170722E7D12800DC1C44 /* AddPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanViewController.swift; sourceTree = "<group>"; };
 		0652170922E7D22400DC1C44 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
-		0652170B22E90BA500DC1C44 /* Plan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Plan+CoreDataClass.swift"; path = "../Plan+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0652170C22E90BA500DC1C44 /* Plan+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Plan+CoreDataProperties.swift"; path = "../Plan+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0652170D22E90BA500DC1C44 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataClass.swift"; path = "../Task+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0652170E22E90BA500DC1C44 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataProperties.swift"; path = "../Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0652170F22E90BA500DC1C44 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Goal+CoreDataClass.swift"; path = "../Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0652171022E90BA500DC1C44 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Goal+CoreDataProperties.swift"; path = "../Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0652171122E90BA500DC1C44 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "../User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0652171222E90BA500DC1C44 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0652171B22E90E7600DC1C44 /* DetailedPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPlanViewController.swift; sourceTree = "<group>"; };
 		0652171D22E91FF000DC1C44 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTableViewCell.swift; path = ../HomeTableViewCell.swift; sourceTree = "<group>"; };
 		0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		069B087522E7B21B000FD048 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
@@ -113,14 +109,12 @@
 		065216FC22E7BA8F00DC1C44 /* CoreDataProperties */ = {
 			isa = PBXGroup;
 			children = (
-				0652170B22E90BA500DC1C44 /* Plan+CoreDataClass.swift */,
-				0652170C22E90BA500DC1C44 /* Plan+CoreDataProperties.swift */,
-				0652170D22E90BA500DC1C44 /* Task+CoreDataClass.swift */,
-				0652170E22E90BA500DC1C44 /* Task+CoreDataProperties.swift */,
-				0652170F22E90BA500DC1C44 /* Goal+CoreDataClass.swift */,
-				0652171022E90BA500DC1C44 /* Goal+CoreDataProperties.swift */,
-				0652171122E90BA500DC1C44 /* User+CoreDataClass.swift */,
-				0652171222E90BA500DC1C44 /* User+CoreDataProperties.swift */,
+				061099F522EA51D200A9DC7A /* Goal+CoreDataClass.swift */,
+				061099F622EA51D200A9DC7A /* Goal+CoreDataProperties.swift */,
+				061099F722EA51D200A9DC7A /* Task+CoreDataClass.swift */,
+				061099F822EA51D200A9DC7A /* Task+CoreDataProperties.swift */,
+				061099F922EA51D200A9DC7A /* User+CoreDataClass.swift */,
+				061099FA22EA51D200A9DC7A /* User+CoreDataProperties.swift */,
 				069B087522E7B21B000FD048 /* PersistenceService.swift */,
 			);
 			path = CoreDataProperties;
@@ -157,9 +151,9 @@
 				065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */,
 				065216FF22E7BBB700DC1C44 /* AddGoalViewController.swift */,
 				0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */,
-				0652170722E7D12800DC1C44 /* AddPlanViewController.swift */,
 				0652170922E7D22400DC1C44 /* AddTaskViewController.swift */,
-				0652171B22E90E7600DC1C44 /* DetailedPlanViewController.swift */,
+				06109A0122EA52D500A9DC7A /* DetailedTaskViewController.swift */,
+				06109A0322EA5CC900A9DC7A /* AddAnotherTaskViewController.swift */,
 				9CD53FC922E0007100210C0F /* Main.storyboard */,
 				9CD53FCC22E0007200210C0F /* Assets.xcassets */,
 				9CD53FCE22E0007200210C0F /* LaunchScreen.storyboard */,
@@ -320,24 +314,22 @@
 			files = (
 				0652170A22E7D22400DC1C44 /* AddTaskViewController.swift in Sources */,
 				0652170022E7BBB700DC1C44 /* AddGoalViewController.swift in Sources */,
-				0652171A22E90BA500DC1C44 /* User+CoreDataProperties.swift in Sources */,
+				06109A0022EA51D200A9DC7A /* User+CoreDataProperties.swift in Sources */,
+				06109A0422EA5CC900A9DC7A /* AddAnotherTaskViewController.swift in Sources */,
+				061099FD22EA51D200A9DC7A /* Task+CoreDataClass.swift in Sources */,
+				061099FC22EA51D200A9DC7A /* Goal+CoreDataProperties.swift in Sources */,
+				061099FE22EA51D200A9DC7A /* Task+CoreDataProperties.swift in Sources */,
 				0652170222E7BBC700DC1C44 /* AddGoalDetailsViewController.swift in Sources */,
-				0652171322E90BA500DC1C44 /* Plan+CoreDataClass.swift in Sources */,
-				0652171422E90BA500DC1C44 /* Plan+CoreDataProperties.swift in Sources */,
 				0652171E22E91FF000DC1C44 /* HomeTableViewCell.swift in Sources */,
+				06109A0222EA52D500A9DC7A /* DetailedTaskViewController.swift in Sources */,
 				061099F422E94D3D00A9DC7A /* DynamicHeightCollectionView.swift in Sources */,
 				9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */,
-				0652170822E7D12800DC1C44 /* AddPlanViewController.swift in Sources */,
-				0652171722E90BA500DC1C44 /* Goal+CoreDataClass.swift in Sources */,
 				065216FE22E7BB6100DC1C44 /* GoalListTableViewController.swift in Sources */,
+				061099FB22EA51D200A9DC7A /* Goal+CoreDataClass.swift in Sources */,
 				0652172022E9216A00DC1C44 /* IconCollectionViewCell.swift in Sources */,
-				0652171C22E90E7600DC1C44 /* DetailedPlanViewController.swift in Sources */,
-				0652171522E90BA500DC1C44 /* Task+CoreDataClass.swift in Sources */,
 				065216EA22E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld in Sources */,
-				0652171622E90BA500DC1C44 /* Task+CoreDataProperties.swift in Sources */,
-				0652171822E90BA500DC1C44 /* Goal+CoreDataProperties.swift in Sources */,
 				069B087622E7B21B000FD048 /* PersistenceService.swift in Sources */,
-				0652171922E90BA500DC1C44 /* User+CoreDataClass.swift in Sources */,
+				061099FF22EA51D200A9DC7A /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,14 +1,14 @@
 //
-//  AddTaskViewController.swift
+//  AddAnotherTaskViewController.swift
 //  Mastery_iOS
 //
-//  Created by Ekam Singh Dhaliwal on 2019-07-23.
+//  Created by Ekam Singh Dhaliwal on 2019-07-25.
 //  Copyright © 2019 Marina Mona June McPeak. All rights reserved.
 //
 
 import UIKit
 
-class AddTaskViewController: UIViewController {
+class AddAnotherTaskViewController: UIViewController {
     
     var goal: Goal?
     
@@ -17,15 +17,14 @@ class AddTaskViewController: UIViewController {
     @IBOutlet weak var taskDescription: UITextView!
     @IBOutlet weak var timeEstimate: UISegmentedControl!
     @IBOutlet weak var deadline: UIDatePicker!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
     
-
+    
     @IBAction func saveTask(_ sender: UIButton) {
         let task = Task(context: PersistenceService.context)
         task.name = name.text
@@ -38,11 +37,19 @@ class AddTaskViewController: UIViewController {
         task.priority = priority.titleForSegment(at: priority.selectedSegmentIndex)
         goal?.addToTasks(task)
         PersistenceService.saveContext()
+        
     }
     
-    @IBAction func goBackHome(_ sender: UIBarButtonItem) {
-        navigationController?.popToRootViewController(animated: true)
+//    navigationController?.popToRootViewController(animated: true)
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
-    
-    
+    */
+
 }

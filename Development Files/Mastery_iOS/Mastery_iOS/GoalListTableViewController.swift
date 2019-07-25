@@ -14,8 +14,12 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
     
     
     var goals = [Goal]()
-    var valueToPass: Plan?
+    var valueToPass: Task?
+    var goalToPassIndex: Int!
+    var button: UIButton!
+    var button2: UIButton!
     
+    var sectionForCell: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +37,7 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
         do {
             let goals =  try PersistenceService.context.fetch(fetchRequest)
             self.goals = goals
-            print(goals.count)
+//            print(goals.count)
             self.tableView.reloadData()
         } catch {
             print("Oh no, there is no data to load")
@@ -47,20 +51,38 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
-        let label = UILabel(frame: CGRect(x: 10, y: tableView.sectionHeaderHeight / 2 , width: tableView.frame.size.width, height: 25))
+        let labelWidth = tableView.frame.size.width
+        let label = UILabel(frame: CGRect(x: tableView.center.x , y: tableView.sectionHeaderHeight / 2 , width: labelWidth, height: 25))
         label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        label.center.x = tableView.center.x
+        label.textAlignment = .center
+//        label.center.x =
         label.text = goals[section].name
         
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
+        button = UIButton(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width - 60 , height: 50))
         button.backgroundColor = #colorLiteral(red: 0.462745098, green: 0.8392156863, blue: 1, alpha: 0.4490582192)
         button.setTitle("－", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.tag = section
         button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
-        button.contentHorizontalAlignment = .right
+        button.contentHorizontalAlignment = .center
         view.addSubview(button)
         button.addSubview(label)
-        return button
+       
+        
+        button2 = UIButton(frame: CGRect(x: tableView.frame.size.width - 60, y: 0, width: 60, height: 50))
+        button2.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        button2.setTitle("Add Task", for: .normal)
+        button2.tag = section
+        button2.addTarget(self, action: #selector(addTask), for: .touchUpInside)
+        view.addSubview(button2)
+        return view
+    }
+    
+    @objc func addTask(button: UIButton) {
+        print("I have been touched")
+        goalToPassIndex = button2.tag
+        performSegue(withIdentifier: "addTask", sender: self)
     }
     
     var numberOfItems: Int!
@@ -68,12 +90,12 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
     @objc func handleExpandClose(button: UIButton) {
         let section = button.tag
         var indexPaths = [IndexPath]()
-        if let plans = goals[section].plans?.allObjects {
-            for row in plans.indices {
+        if let tasks = goals[section].tasks?.allObjects {
+            for row in tasks.indices {
                 let indexPath = IndexPath(row: 0, section: section)
                 indexPaths.append(indexPath)
             }
-             numberOfItems = plans.count
+             numberOfItems = tasks.count
         }
         
       
@@ -111,9 +133,16 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
-        cell.numberOfPlans = numberOfItems
+        cell.collectionView.tag = indexPath.section
+        cell.collectionView.reloadData()
+        sectionForCell = indexPath.section
         return cell
     }
+    
+//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        guard let tableViewCell = cell as? HomeTableViewCell else { return }
+//        tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
+//    }
     
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let selectedGoal = goals[indexPath.section]
@@ -124,67 +153,40 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
 //        }
 //    }
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if goals[section].opened == true {
-            guard let rows = goals[section].plans else {return 0}
-            return 5
-            
-//        } else {
-//            return 0
-//        }
+            guard let rows = goals[collectionView.tag].tasks else {return 0}
+            return rows.count
 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath) as! IconCollectionViewCell
-        cell.imageView.image = UIImage(named: "dawn-3358468_1920")
+        let selectedGoal = goals[collectionView.tag]
+        if let values = selectedGoal.tasks?.allObjects {
+            let value = values[indexPath.row] as! Task
+            cell.imageView.image = UIImage(named: "dawn-3358468_1920")
+            cell.name.text = value.name
+            print(value.name!)
+          
+        }
+        
         return cell
     }
     
 
 
-/*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
- */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+    
   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPlan" {
-            let controller = segue.destination as! DetailedPlanViewController
-            controller.plan = valueToPass
+        if segue.identifier == "showTaskDetail" {
+            let controller = segue.destination as! DetailedTaskViewController
+            controller.task = valueToPass
             
+        } else if segue.identifier == "addTask" {
+            let controller = segue.destination as! AddAnotherTaskViewController
+            controller.goal = goals[goalToPassIndex]
         }
     }
  

@@ -2,7 +2,7 @@
 //  Task+CoreDataProperties.swift
 //  Mastery_iOS
 //
-//  Created by Ekam Singh Dhaliwal on 2019-07-24.
+//  Created by Ekam Singh Dhaliwal on 2019-07-25.
 //  Copyright © 2019 Marina Mona June McPeak. All rights reserved.
 //
 //
@@ -23,6 +23,7 @@ extension Task {
     @NSManaged public var dateOfBirth: NSDate?
     @NSManaged public var deadline: NSDate?
     @NSManaged public var id: UUID?
+    @NSManaged public var image: NSData?
     @NSManaged public var isComplete: Bool
     @NSManaged public var lengthOfActivity: Float
     @NSManaged public var location: CLLocation?
@@ -31,7 +32,6 @@ extension Task {
     @NSManaged public var priority: String?
     @NSManaged public var taskDescription: String?
     @NSManaged public var timeEstimate: Float
-    @NSManaged public var image: NSData?
-    @NSManaged public var plan: Plan?
+    @NSManaged public var goal: Goal?
 
 }
