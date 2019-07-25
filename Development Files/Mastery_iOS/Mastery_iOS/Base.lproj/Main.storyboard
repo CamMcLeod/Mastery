@@ -19,22 +19,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="OTg-lt-80v" rowHeight="72" style="IBUITableViewCellStyleDefault" id="tVk-BU-JgR">
-                                <rect key="frame" x="0.0" y="28" width="414" height="72"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="tVk-BU-JgR" customClass="HomeTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tVk-BU-JgR" id="d4l-qG-tJB">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="71.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tVk-BU-JgR" id="d4l-qG-tJB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OTg-lt-80v">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="71.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pam-Db-XLU" customClass="DynamicHeightCollectionView" customModule="Mastery_iOS" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="25" width="374" height="150.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5hF-Gv-0fj">
+                                                <size key="itemSize" width="171" height="121"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iconCell" id="YLb-uw-sfr" customClass="IconCollectionViewCell" customModule="Mastery_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="121"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="171" height="121"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M6n-bm-Mhh">
+                                                                <rect key="frame" x="0.0" y="0.0" width="171" height="121"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstItem="M6n-bm-Mhh" firstAttribute="top" secondItem="YLb-uw-sfr" secondAttribute="top" id="6q4-90-5yH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="M6n-bm-Mhh" secondAttribute="bottom" id="Nwx-MQ-Hsf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="M6n-bm-Mhh" secondAttribute="trailing" id="WKa-SS-Lx6"/>
+                                                        <constraint firstItem="M6n-bm-Mhh" firstAttribute="leading" secondItem="YLb-uw-sfr" secondAttribute="leading" id="wcu-QE-Ft7"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="imageView" destination="M6n-bm-Mhh" id="V6H-UX-eCW"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="kJt-Jz-W4x" id="kPG-dH-MhS"/>
+                                                <outlet property="delegate" destination="kJt-Jz-W4x" id="Wlz-KT-c0j"/>
+                                            </connections>
+                                        </collectionView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="pam-Db-XLU" secondAttribute="bottom" constant="20" id="C3R-RY-EtG"/>
+                                        <constraint firstAttribute="trailing" secondItem="pam-Db-XLU" secondAttribute="trailing" constant="20" id="irw-bA-yhG"/>
+                                        <constraint firstItem="pam-Db-XLU" firstAttribute="leading" secondItem="d4l-qG-tJB" secondAttribute="leading" constant="20" id="kB3-S3-Rbg"/>
+                                        <constraint firstItem="pam-Db-XLU" firstAttribute="top" secondItem="d4l-qG-tJB" secondAttribute="top" constant="25" id="trH-fE-ioz"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="collectionView" destination="pam-Db-XLU" id="Q0x-GV-YDO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -100,7 +140,7 @@
                                 <rect key="frame" x="20" y="163" width="374" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

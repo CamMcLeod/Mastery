@@ -9,16 +9,20 @@
 import UIKit
 import CoreData
 
-class GoalListTableViewController: UITableViewController {
+class GoalListTableViewController: UITableViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+   
+    
     
     var goals = [Goal]()
     var valueToPass: Plan?
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-    
+        
+      
         
     }
     
@@ -59,20 +63,26 @@ class GoalListTableViewController: UITableViewController {
         return button
     }
     
+    var numberOfItems: Int!
+    
     @objc func handleExpandClose(button: UIButton) {
         let section = button.tag
         var indexPaths = [IndexPath]()
         if let plans = goals[section].plans?.allObjects {
             for row in plans.indices {
-                let indexPath = IndexPath(row: row, section: section)
+                let indexPath = IndexPath(row: 0, section: section)
                 indexPaths.append(indexPath)
             }
+             numberOfItems = plans.count
         }
+        
+      
         
         let isExpanded = goals[section].opened
         goals[section].opened = !isExpanded
         button.setTitle(isExpanded ? "＋" :"－", for: .normal)
         if isExpanded {
+            
             tableView.deleteRows(at: indexPaths, with: .fade)
         } else {
             tableView.insertRows(at: indexPaths, with: .fade)
@@ -89,35 +99,49 @@ class GoalListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if goals[section].opened == true {
-            guard let rows = goals[section].plans else {return 0}
-            return rows.count
+//            guard let rows = goals[section].plans else {return 0}
+            return 1
+
         } else {
             return 0
         }
+       
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        if let plans = goals[indexPath.section].plans?.allObjects {
-            let name = plans[indexPath.row] as! Plan
-            cell.textLabel?.text = name.name
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
+        cell.numberOfPlans = numberOfItems
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedGoal = goals[indexPath.section]
-        if let values = selectedGoal.plans?.allObjects {
-            let value = values[indexPath.row] as! Plan
-            valueToPass = value
-            performSegue(withIdentifier: "showPlan", sender: self)
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let selectedGoal = goals[indexPath.section]
+//        if let values = selectedGoal.plans?.allObjects {
+//            let value = values[indexPath.row] as! Plan
+//            valueToPass = value
+//            performSegue(withIdentifier: "showPlan", sender: self)
+//        }
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        if goals[section].opened == true {
+            guard let rows = goals[section].plans else {return 0}
+            return 5
             
-        }
+//        } else {
+//            return 0
+//        }
+
     }
     
-   
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell", for: indexPath) as! IconCollectionViewCell
+        cell.imageView.image = UIImage(named: "dawn-3358468_1920")
+        return cell
+    }
+    
+
 
 /*
     // Override to support conditional editing of the table view.
@@ -166,3 +190,5 @@ class GoalListTableViewController: UITableViewController {
  
 
 }
+
+
