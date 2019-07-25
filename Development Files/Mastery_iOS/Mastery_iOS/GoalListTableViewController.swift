@@ -176,7 +176,9 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
     
 
 
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showTaskDetail", sender: self)
+    }
   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
