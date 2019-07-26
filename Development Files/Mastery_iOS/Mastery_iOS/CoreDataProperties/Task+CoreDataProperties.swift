@@ -19,7 +19,6 @@ extension Task {
     }
 
     @NSManaged public var completionDate: NSDate?
-    @NSManaged public var taskDatesAndDurations: [Date : Float]?
     @NSManaged public var dateOfBirth: NSDate?
     @NSManaged public var deadline: NSDate?
     @NSManaged public var id: UUID?
@@ -27,12 +26,14 @@ extension Task {
     @NSManaged public var isComplete: Bool
     @NSManaged public var location: CLLocation?
     @NSManaged public var name: String?
+    @NSManaged public var notes: [String]?
     @NSManaged public var preRequisiteTasks: [UUID]?
     @NSManaged public var priority: Int16
+    @NSManaged public var tags: [String]?
+    @NSManaged public var taskDatesAndDurations: [Date : Float]?
     @NSManaged public var taskDescription: String?
     @NSManaged public var timeEstimate: Float
-    @NSManaged public var tags: [String]?
-    @NSManaged public var notes: [String]?
+    @NSManaged public var daysAvailable: [Bool]?
     @NSManaged public var goal: Goal?
 
 }

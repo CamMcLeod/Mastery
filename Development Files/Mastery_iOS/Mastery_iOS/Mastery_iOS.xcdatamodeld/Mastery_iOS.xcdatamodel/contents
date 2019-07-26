@@ -18,6 +18,7 @@
     <entity name="Task" representedClassName=".Task" syncable="YES">
         <attribute name="completionDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="dateOfBirth" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="daysAvailable" optional="YES" attributeType="Transformable" customClassName="[Bool]" syncable="YES"/>
         <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -40,7 +41,7 @@
     </entity>
     <elements>
         <element name="Goal" positionX="-36" positionY="108" width="128" height="240"/>
-        <element name="Task" positionX="-54" positionY="9" width="128" height="285"/>
+        <element name="Task" positionX="-54" positionY="9" width="128" height="300"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>
