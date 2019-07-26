@@ -34,7 +34,7 @@ class AddAnotherTaskViewController: UIViewController {
         task.dateOfBirth = Date() as NSDate
         task.timeEstimate = (timeEstimate.titleForSegment(at: timeEstimate.selectedSegmentIndex)! as NSString).floatValue
         task.deadline = deadline.date as NSDate
-        task.priority = priority.titleForSegment(at: priority.selectedSegmentIndex)
+        task.priority = 1
         goal?.addToTasks(task)
         PersistenceService.saveContext()
         

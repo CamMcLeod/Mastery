@@ -44,10 +44,14 @@ class AddGoalDetailsViewController: UIViewController {
         let goal = Goal(context: PersistenceService.context)
         goal.id = UUID()
         goal.name = goalName
-        goal.purpose = purpose
+        goal.goalDescription = purpose
         goal.isComplete = false
         goal.dateOfBirth = dateOfBirth.date as NSDate
         goal.deadline?.append((deadline.date) as Date)
+        goal.hoursEstimate = 10.0
+        goal.hoursCompleted = 0.0
+        goal.priority = 1
+        
         PersistenceService.saveContext()
        return goal
     }

@@ -10,8 +10,8 @@ import UIKit
 import CoreData
 
 class GoalListTableViewController: UITableViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-   
     
+   
     
     var goals = [Goal]()
     var valueToPass: Task?
@@ -37,7 +37,7 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
         do {
             let goals =  try PersistenceService.context.fetch(fetchRequest)
             self.goals = goals
-//            print(goals.count)
+            print(goals.count)
             self.tableView.reloadData()
         } catch {
             print("Oh no, there is no data to load")
@@ -70,7 +70,6 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
 //        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.center.x = tableView.center.x
         button.tag = section
-        button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
         button.contentHorizontalAlignment = .center
         view.addSubview(button)
 //        button.addSubview(label)
@@ -93,32 +92,6 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
     }
     
     var numberOfItems: Int!
-    
-    @objc func handleExpandClose(button: UIButton) {
-        let section = button.tag
-        var indexPaths = [IndexPath]()
-        if let tasks = goals[section].tasks?.allObjects {
-            
-            let indexPath = IndexPath(row: 0, section: section)
-            indexPaths.append(indexPath)
-            
-            numberOfItems = tasks.count
-        }
-        
-      
-        
-        let isExpanded = goals[section].opened
-        goals[section].opened = !isExpanded
-        button.setTitle(isExpanded ? "\(goals[section].name!.capitalized) ▾" :"\(goals[section].name!.capitalized) ▴", for: .normal)
-        if isExpanded {
-            
-            tableView.deleteRows(at: indexPaths, with: .fade)
-        } else {
-            tableView.insertRows(at: indexPaths, with: .fade)
-        }
-        
-        
-    }
 
     // MARK: - Table view data source
 
@@ -127,22 +100,15 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if goals[section].opened == true {
-//            guard let rows = goals[section].plans else {return 0}
-            return 1
-
-        } else {
-            return 0
-        }
-       
+        return 1
     }
+    
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
         cell.collectionView.tag = indexPath.section
         cell.collectionView.reloadData()
-        sectionForCell = indexPath.section
         return cell
     }
     
@@ -199,8 +165,7 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
             
         }
     }
- 
-
 }
+
 
 

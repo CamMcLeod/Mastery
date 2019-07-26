@@ -2,14 +2,14 @@
 //  Goal+CoreDataProperties.swift
 //  Mastery_iOS
 //
-//  Created by Ekam Singh Dhaliwal on 2019-07-25.
+//  Created by Cameron Mcleod on 2019-07-26.
 //  Copyright © 2019 Marina Mona June McPeak. All rights reserved.
 //
 //
 
 import Foundation
 import CoreData
-
+import UIKit
 
 extension Goal {
 
@@ -20,13 +20,16 @@ extension Goal {
     @NSManaged public var dateOfBirth: NSDate?
     @NSManaged public var deadline: [Date]?
     @NSManaged public var id: UUID?
-    @NSManaged public var image: NSData?
+    @NSManaged public var color: UIColor?
     @NSManaged public var isComplete: Bool
     @NSManaged public var name: String?
-    @NSManaged public var opened: Bool
-    @NSManaged public var purpose: String?
-    @NSManaged public var user: User?
+    @NSManaged public var goalDescription: String?
+    @NSManaged public var hoursEstimate: Float
+    @NSManaged public var hoursCompleted: Float
+    @NSManaged public var priority: Int16
+    @NSManaged public var tags: [String]?
     @NSManaged public var tasks: NSSet?
+    @NSManaged public var user: User?
 
 }
 

@@ -1,8 +1,8 @@
 //
-//  User+CoreDataClass.swift
+//  Goal+CoreDataClass.swift
 //  Mastery_iOS
 //
-//  Created by Ekam Singh Dhaliwal on 2019-07-25.
+//  Created by Cameron Mcleod on 2019-07-26.
 //  Copyright © 2019 Marina Mona June McPeak. All rights reserved.
 //
 //
@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 
-public class User: NSManagedObject {
+public class Goal: NSManagedObject {
 
 }
