@@ -51,38 +51,45 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
+        view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        view.layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        view.layer.shadowOpacity = 1
+        view.layer.shadowRadius = 1
         let labelWidth = tableView.frame.size.width
         let label = UILabel(frame: CGRect(x: tableView.center.x , y: tableView.sectionHeaderHeight / 2 , width: labelWidth, height: 25))
         label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         label.center.x = tableView.center.x
         label.textAlignment = .center
 //        label.center.x =
-        label.text = goals[section].name
+//        label.text = goals[section].name?.capitalized
         
-        button = UIButton(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width - 60 , height: 50))
-        button.backgroundColor = #colorLiteral(red: 0.462745098, green: 0.8392156863, blue: 1, alpha: 0.4490582192)
-        button.setTitle("－", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button = UIButton(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width / 2 , height: 50))
+//        button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        button.setTitle("\(goals[section].name!.capitalized) ▴", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.center.x = tableView.center.x
         button.tag = section
         button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
         button.contentHorizontalAlignment = .center
         view.addSubview(button)
-        button.addSubview(label)
+//        button.addSubview(label)
        
         
-        button2 = UIButton(frame: CGRect(x: tableView.frame.size.width - 60, y: 0, width: 60, height: 50))
-        button2.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        button2.setTitle("Add Task", for: .normal)
+        button2 = UIButton(frame: CGRect(x: (tableView.frame.size.width) - (tableView.frame.size.width / 4 ) , y: 0, width: tableView.frame.size.width / 4, height: 50))
+//        button2.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        button2.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        button2.setTitle("▻", for: .normal)
         button2.tag = section
-        button2.addTarget(self, action: #selector(addTask), for: .touchUpInside)
+        button2.addTarget(self, action: #selector(showGoalDetails), for: .touchUpInside)
         view.addSubview(button2)
         return view
     }
     
-    @objc func addTask(button: UIButton) {
+    @objc func showGoalDetails(button: UIButton) {
         print("I have been touched")
         goalToPassIndex = button2.tag
-        performSegue(withIdentifier: "addTask", sender: self)
+        performSegue(withIdentifier: "showGoalDetails", sender: self)
     }
     
     var numberOfItems: Int!
@@ -91,18 +98,18 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
         let section = button.tag
         var indexPaths = [IndexPath]()
         if let tasks = goals[section].tasks?.allObjects {
-            for row in tasks.indices {
-                let indexPath = IndexPath(row: 0, section: section)
-                indexPaths.append(indexPath)
-            }
-             numberOfItems = tasks.count
+            
+            let indexPath = IndexPath(row: 0, section: section)
+            indexPaths.append(indexPath)
+            
+            numberOfItems = tasks.count
         }
         
       
         
         let isExpanded = goals[section].opened
         goals[section].opened = !isExpanded
-        button.setTitle(isExpanded ? "＋" :"－", for: .normal)
+        button.setTitle(isExpanded ? "\(goals[section].name!.capitalized) ▾" :"\(goals[section].name!.capitalized) ▴", for: .normal)
         if isExpanded {
             
             tableView.deleteRows(at: indexPaths, with: .fade)
@@ -165,7 +172,7 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
         let selectedGoal = goals[collectionView.tag]
         if let values = selectedGoal.tasks?.allObjects {
             let value = values[indexPath.row] as! Task
-            cell.imageView.image = UIImage(named: "dawn-3358468_1920")
+            cell.imageView.image = UIImage(named: "falcon")
             cell.name.text = value.name
             print(value.name!)
           
@@ -185,10 +192,11 @@ class GoalListTableViewController: UITableViewController, UICollectionViewDataSo
         if segue.identifier == "showTaskDetail" {
             let controller = segue.destination as! DetailedTaskViewController
             controller.task = valueToPass
-            
         } else if segue.identifier == "addTask" {
             let controller = segue.destination as! AddAnotherTaskViewController
             controller.goal = goals[goalToPassIndex]
+        } else if segue.identifier == "showGoalDetails" {
+            
         }
     }
  
