@@ -26,6 +26,7 @@
 		629AC68C22EBB295000C137C /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC68622EBB295000C137C /* User+CoreDataProperties.swift */; };
 		629D230022EAA856005CF92D /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629D22FF22EAA856005CF92D /* Today.storyboard */; };
 		629D230222EAAAA7005CF92D /* TodayTasksCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629D230122EAAAA7005CF92D /* TodayTasksCollectionViewController.swift */; };
+		9C6C83CB22EBD83300078DFF /* HiFi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6C83CA22EBD83300078DFF /* HiFi.storyboard */; };
 		9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC022E0007100210C0F /* AppDelegate.swift */; };
 		9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FC922E0007100210C0F /* Main.storyboard */; };
 		9CD53FCD22E0007200210C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FCC22E0007200210C0F /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		629AC68622EBB295000C137C /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		629D22FF22EAA856005CF92D /* Today.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Today.storyboard; sourceTree = "<group>"; };
 		629D230122EAAAA7005CF92D /* TodayTasksCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTasksCollectionViewController.swift; sourceTree = "<group>"; };
+		9C6C83CA22EBD83300078DFF /* HiFi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiFi.storyboard; sourceTree = "<group>"; };
 		9CD53FBD22E0007100210C0F /* Mastery_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mastery_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD53FC022E0007100210C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CD53FCA22E0007100210C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +134,13 @@
 			path = TodayFlow;
 			sourceTree = "<group>";
 		};
+		9C6C83CC22EBDD1800078DFF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		9CD53FB422E0007100210C0F = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +176,8 @@
 				06109A0122EA52D500A9DC7A /* DetailedTaskViewController.swift */,
 				06109A0322EA5CC900A9DC7A /* AddAnotherTaskViewController.swift */,
 				9CD53FC922E0007100210C0F /* Main.storyboard */,
+				9C6C83CA22EBD83300078DFF /* HiFi.storyboard */,
+				9C6C83CC22EBDD1800078DFF /* View Controllers */,
 				629D22FF22EAA856005CF92D /* Today.storyboard */,
 				629D230322EAAAAE005CF92D /* TodayFlow */,
 				9CD53FCC22E0007200210C0F /* Assets.xcassets */,
@@ -303,6 +314,7 @@
 				9CD53FD022E0007200210C0F /* LaunchScreen.storyboard in Resources */,
 				9CD53FCD22E0007200210C0F /* Assets.xcassets in Resources */,
 				9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */,
+				9C6C83CB22EBD83300078DFF /* HiFi.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
