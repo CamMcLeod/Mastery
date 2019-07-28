@@ -55,7 +55,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="100"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOq-qj-g9J">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOq-qj-g9J" customClass="TaskIconWithLabelView" customModule="Mastery_iOS" customModuleProvider="target">
                                                                         <rect key="frame" x="0.3333333333333357" y="0.0" width="83.333333333333314" height="100"/>
                                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -301,8 +301,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="168"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEf-zE-7gy">
-                                                    <rect key="frame" x="2.6666666666666714" y="0.0" width="140" height="168"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEf-zE-7gy" customClass="TaskIconWithLabelView" customModule="Mastery_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="168"/>
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="HEf-zE-7gy" secondAttribute="height" multiplier="5:6" id="q02-Cu-1wZ"/>
@@ -418,7 +418,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wk3-sT-vYW">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wk3-sT-vYW" customClass="TimerAnimationView" customModule="Mastery_iOS" customModuleProvider="target">
                                 <rect key="frame" x="132" y="104" width="150" height="150"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1123,7 +1123,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="RtN-pM-2BB">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="RtN-pM-2BB" customClass="TaskIconView" customModule="Mastery_iOS" customModuleProvider="target">
                                 <rect key="frame" x="147" y="88" width="120" height="120"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1165,6 +1165,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WS7-7e-ods"/>
-        <segue reference="L2M-bk-7Hy"/>
+        <segue reference="GS3-4c-Z7q"/>
     </inferredMetricsTieBreakers>
 </document>
