@@ -26,6 +26,12 @@
 		629AC68C22EBB295000C137C /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC68622EBB295000C137C /* User+CoreDataProperties.swift */; };
 		629D230022EAA856005CF92D /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629D22FF22EAA856005CF92D /* Today.storyboard */; };
 		629D230222EAAAA7005CF92D /* TodayTasksCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629D230122EAAAA7005CF92D /* TodayTasksCollectionViewController.swift */; };
+		9C2908AC22ED14CA0021017D /* TaskIconWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2908AB22ED14CA0021017D /* TaskIconWithLabel.xib */; };
+		9C2908AE22ED18A30021017D /* TaskIcon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2908AD22ED18A30021017D /* TaskIcon.xib */; };
+		9C2908B022ED1FD90021017D /* TaskIconWithLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2908AF22ED1FD90021017D /* TaskIconWithLabelView.swift */; };
+		9C2908B222ED20000021017D /* TaskIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2908B122ED20000021017D /* TaskIconView.swift */; };
+		9C2908B422ED21920021017D /* TimerAnimation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2908B322ED21920021017D /* TimerAnimation.xib */; };
+		9C2908B622ED223A0021017D /* TimerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2908B522ED223A0021017D /* TimerAnimationView.swift */; };
 		9C6C83CB22EBD83300078DFF /* HiFi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6C83CA22EBD83300078DFF /* HiFi.storyboard */; };
 		9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC022E0007100210C0F /* AppDelegate.swift */; };
 		9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FC922E0007100210C0F /* Main.storyboard */; };
@@ -72,6 +78,12 @@
 		629AC68622EBB295000C137C /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		629D22FF22EAA856005CF92D /* Today.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Today.storyboard; sourceTree = "<group>"; };
 		629D230122EAAAA7005CF92D /* TodayTasksCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTasksCollectionViewController.swift; sourceTree = "<group>"; };
+		9C2908AB22ED14CA0021017D /* TaskIconWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskIconWithLabel.xib; sourceTree = "<group>"; };
+		9C2908AD22ED18A30021017D /* TaskIcon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskIcon.xib; sourceTree = "<group>"; };
+		9C2908AF22ED1FD90021017D /* TaskIconWithLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskIconWithLabelView.swift; sourceTree = "<group>"; };
+		9C2908B122ED20000021017D /* TaskIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskIconView.swift; sourceTree = "<group>"; };
+		9C2908B322ED21920021017D /* TimerAnimation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerAnimation.xib; sourceTree = "<group>"; };
+		9C2908B522ED223A0021017D /* TimerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAnimationView.swift; sourceTree = "<group>"; };
 		9C6C83CA22EBD83300078DFF /* HiFi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiFi.storyboard; sourceTree = "<group>"; };
 		9CD53FBD22E0007100210C0F /* Mastery_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mastery_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD53FC022E0007100210C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,11 +146,17 @@
 			path = TodayFlow;
 			sourceTree = "<group>";
 		};
-		9C6C83CC22EBDD1800078DFF /* View Controllers */ = {
+		9C6C83CC22EBDD1800078DFF /* UI Views */ = {
 			isa = PBXGroup;
 			children = (
+				9C2908AB22ED14CA0021017D /* TaskIconWithLabel.xib */,
+				9C2908AF22ED1FD90021017D /* TaskIconWithLabelView.swift */,
+				9C2908AD22ED18A30021017D /* TaskIcon.xib */,
+				9C2908B122ED20000021017D /* TaskIconView.swift */,
+				9C2908B322ED21920021017D /* TimerAnimation.xib */,
+				9C2908B522ED223A0021017D /* TimerAnimationView.swift */,
 			);
-			path = "View Controllers";
+			path = "UI Views";
 			sourceTree = "<group>";
 		};
 		9CD53FB422E0007100210C0F = {
@@ -177,7 +195,7 @@
 				06109A0322EA5CC900A9DC7A /* AddAnotherTaskViewController.swift */,
 				9CD53FC922E0007100210C0F /* Main.storyboard */,
 				9C6C83CA22EBD83300078DFF /* HiFi.storyboard */,
-				9C6C83CC22EBDD1800078DFF /* View Controllers */,
+				9C6C83CC22EBDD1800078DFF /* UI Views */,
 				629D22FF22EAA856005CF92D /* Today.storyboard */,
 				629D230322EAAAAE005CF92D /* TodayFlow */,
 				9CD53FCC22E0007200210C0F /* Assets.xcassets */,
@@ -310,8 +328,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C2908AC22ED14CA0021017D /* TaskIconWithLabel.xib in Resources */,
+				9C2908AE22ED18A30021017D /* TaskIcon.xib in Resources */,
 				629D230022EAA856005CF92D /* Today.storyboard in Resources */,
 				9CD53FD022E0007200210C0F /* LaunchScreen.storyboard in Resources */,
+				9C2908B422ED21920021017D /* TimerAnimation.xib in Resources */,
 				9CD53FCD22E0007200210C0F /* Assets.xcassets in Resources */,
 				9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */,
 				9C6C83CB22EBD83300078DFF /* HiFi.storyboard in Resources */,
@@ -341,10 +362,12 @@
 			files = (
 				0652170A22E7D22400DC1C44 /* AddTaskViewController.swift in Sources */,
 				0652170022E7BBB700DC1C44 /* AddGoalViewController.swift in Sources */,
+				9C2908B222ED20000021017D /* TaskIconView.swift in Sources */,
 				06109A0422EA5CC900A9DC7A /* AddAnotherTaskViewController.swift in Sources */,
 				0652170222E7BBC700DC1C44 /* AddGoalDetailsViewController.swift in Sources */,
 				0652171E22E91FF000DC1C44 /* HomeTableViewCell.swift in Sources */,
 				629AC68822EBB295000C137C /* Goal+CoreDataProperties.swift in Sources */,
+				9C2908B622ED223A0021017D /* TimerAnimationView.swift in Sources */,
 				06109A0222EA52D500A9DC7A /* DetailedTaskViewController.swift in Sources */,
 				061099F422E94D3D00A9DC7A /* DynamicHeightCollectionView.swift in Sources */,
 				9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */,
@@ -356,6 +379,7 @@
 				629D230222EAAAA7005CF92D /* TodayTasksCollectionViewController.swift in Sources */,
 				629AC68B22EBB295000C137C /* User+CoreDataClass.swift in Sources */,
 				0652172022E9216A00DC1C44 /* IconCollectionViewCell.swift in Sources */,
+				9C2908B022ED1FD90021017D /* TaskIconWithLabelView.swift in Sources */,
 				065216EA22E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld in Sources */,
 				069B087622E7B21B000FD048 /* PersistenceService.swift in Sources */,
 			);
