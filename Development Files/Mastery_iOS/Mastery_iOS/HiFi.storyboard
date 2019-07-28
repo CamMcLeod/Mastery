@@ -92,7 +92,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vt2-Uf-aio">
-                                <rect key="frame" x="199" y="808" width="16" height="38"/>
+                                <rect key="frame" x="182" y="796" width="50" height="50"/>
                                 <state key="normal" image="NewGoal_Button"/>
                                 <connections>
                                     <segue destination="Nt9-ms-OJg" kind="show" animates="NO" id="WS7-7e-ods">
@@ -102,14 +102,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMk-dm-srI">
-                                <rect key="frame" x="20" y="816" width="16" height="22"/>
+                                <rect key="frame" x="20" y="804" width="34" height="34"/>
                                 <state key="normal" image="Settings_Icon"/>
                                 <connections>
                                     <segue destination="HY1-fb-eOF" kind="show" animates="NO" id="GS3-4c-Z7q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isl-xZ-tXE">
-                                <rect key="frame" x="378" y="816" width="16" height="22"/>
+                                <rect key="frame" x="351" y="804" width="43" height="34"/>
                                 <state key="normal" image="SwapScreen_Icon"/>
                                 <connections>
                                     <segue destination="Tlz-s4-CxU" kind="show" animates="NO" id="6pq-9Z-mSK"/>
@@ -309,11 +309,11 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMg-ly-o2F">
-                                <rect key="frame" x="378" y="816" width="16" height="22"/>
+                                <rect key="frame" x="351" y="804" width="43" height="34"/>
                                 <state key="normal" image="SwapScreen_Icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBQ-Rn-neU">
-                                <rect key="frame" x="20" y="816" width="16" height="22"/>
+                                <rect key="frame" x="20" y="804" width="34" height="34"/>
                                 <state key="normal" image="Settings_Icon"/>
                                 <connections>
                                     <segue destination="HY1-fb-eOF" kind="show" animates="NO" id="L2M-bk-7Hy"/>
@@ -1150,6 +1150,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WS7-7e-ods"/>
-        <segue reference="L2M-bk-7Hy"/>
+        <segue reference="GS3-4c-Z7q"/>
     </inferredMetricsTieBreakers>
 </document>
