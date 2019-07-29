@@ -82,7 +82,9 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         case "switchToGoals":
             _ = segue.destination as! GoalTestViewController
         case "focusOnTask":
-            _ = segue.destination as! FocusViewController
+            let selectedTaskCell = sender as! TaskCell
+            let focusVC = segue.destination as! FocusViewController
+            focusVC.taskID = selectedTaskCell.id
         case "todaySettings":
             _ = segue.destination as! SettingsTestViewController
         default:
@@ -159,7 +161,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
         
     }
-    
+
     // Mark: - Private Functions
     
     private func isTaskToday(task: Task) -> Bool {

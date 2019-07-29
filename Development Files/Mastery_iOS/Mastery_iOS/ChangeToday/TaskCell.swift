@@ -11,6 +11,7 @@ import UIKit
 class TaskCell: UICollectionViewCell {
     
     var isAnimate: Bool! = true
+    var id: UUID?
     
     @IBOutlet weak var taskView: UIView!
     @IBOutlet weak var testLabel: UILabel!
@@ -18,14 +19,12 @@ class TaskCell: UICollectionViewCell {
     public func configure(with task: Task) {
         
         testLabel.text = task.name
+        id = task.id
     }
     
     //Animation of image
     func startAnimate() {
         let shakeAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        shakeAnimation.duration = 0.05
-        shakeAnimation.repeatCount = 4
-        shakeAnimation.autoreverses = true
         shakeAnimation.duration = 0.1
         shakeAnimation.repeatCount = 99999
         
