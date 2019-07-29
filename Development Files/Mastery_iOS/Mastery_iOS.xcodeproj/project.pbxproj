@@ -19,7 +19,8 @@
 		0652172022E9216A00DC1C44 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */; };
 		069B087622E7B21B000FD048 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B087522E7B21B000FD048 /* PersistenceService.swift */; };
 		624F4F8322EE4E2000D15F96 /* PausePlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F4F8222EE4E2000D15F96 /* PausePlayButton.swift */; };
-		624F4F8722EF73C000D15F96 /* PreviousTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F4F8622EF73C000D15F96 /* PreviousTaskCell.swift */; };
+		624F4F8C22EF79F300D15F96 /* Int+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F4F8B22EF79F300D15F96 /* Int+Timer.swift */; };
+		624F4F8E22EF7A3D00D15F96 /* PreviousSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F4F8D22EF7A3D00D15F96 /* PreviousSessionCell.swift */; };
 		629AC68722EBB295000C137C /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC68122EBB295000C137C /* Goal+CoreDataClass.swift */; };
 		629AC68822EBB295000C137C /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC68222EBB295000C137C /* Goal+CoreDataProperties.swift */; };
 		629AC68922EBB295000C137C /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC68322EBB295000C137C /* Task+CoreDataClass.swift */; };
@@ -73,7 +74,8 @@
 		0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		069B087522E7B21B000FD048 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		624F4F8222EE4E2000D15F96 /* PausePlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PausePlayButton.swift; path = Mastery_iOS/ChangeFocus/PausePlayButton.swift; sourceTree = SOURCE_ROOT; };
-		624F4F8622EF73C000D15F96 /* PreviousTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviousTaskCell.swift; path = ../../PreviousTaskCell.swift; sourceTree = "<group>"; };
+		624F4F8B22EF79F300D15F96 /* Int+Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timer.swift"; sourceTree = "<group>"; };
+		624F4F8D22EF7A3D00D15F96 /* PreviousSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviousSessionCell.swift; path = "/Users/camsteezin/Desktop/Developer/Lighthouse/Final Project/Mastery/Development Files/Mastery_iOS/Mastery_iOS/ChangeFocus/PreviousSessionCell.swift"; sourceTree = "<absolute>"; };
 		629AC68122EBB295000C137C /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		629AC68222EBB295000C137C /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		629AC68322EBB295000C137C /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -142,10 +144,18 @@
 			path = CoreDataProperties;
 			sourceTree = "<group>";
 		};
+		624F4F8A22EF79B400D15F96 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				624F4F8B22EF79F300D15F96 /* Int+Timer.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		629AC69D22ED2DA5000C137C /* ChangeFocus */ = {
 			isa = PBXGroup;
 			children = (
-				624F4F8622EF73C000D15F96 /* PreviousTaskCell.swift */,
+				624F4F8D22EF7A3D00D15F96 /* PreviousSessionCell.swift */,
 				624F4F8222EE4E2000D15F96 /* PausePlayButton.swift */,
 				629AC69B22ED2D9F000C137C /* FocusViewController.swift */,
 			);
@@ -209,6 +219,7 @@
 				06109A0322EA5CC900A9DC7A /* AddAnotherTaskViewController.swift */,
 				9CD53FC922E0007100210C0F /* Main.storyboard */,
 				9C6C83CA22EBD83300078DFF /* HiFi.storyboard */,
+				624F4F8A22EF79B400D15F96 /* Extensions */,
 				9C6C83CC22EBDD1800078DFF /* View Controllers */,
 				629D230322EAAAAE005CF92D /* ChangeToday */,
 				629AC69D22ED2DA5000C137C /* ChangeFocus */,
@@ -380,6 +391,7 @@
 				0652170222E7BBC700DC1C44 /* AddGoalDetailsViewController.swift in Sources */,
 				0652171E22E91FF000DC1C44 /* HomeTableViewCell.swift in Sources */,
 				629AC68822EBB295000C137C /* Goal+CoreDataProperties.swift in Sources */,
+				624F4F8C22EF79F300D15F96 /* Int+Timer.swift in Sources */,
 				06109A0222EA52D500A9DC7A /* DetailedTaskViewController.swift in Sources */,
 				061099F422E94D3D00A9DC7A /* DynamicHeightCollectionView.swift in Sources */,
 				629AC69C22ED2D9F000C137C /* FocusViewController.swift in Sources */,
@@ -389,10 +401,10 @@
 				629AC68A22EBB295000C137C /* Task+CoreDataProperties.swift in Sources */,
 				629AC69822ED1FE1000C137C /* TodayViewController.swift in Sources */,
 				629AC68922EBB295000C137C /* Task+CoreDataClass.swift in Sources */,
-				624F4F8722EF73C000D15F96 /* PreviousTaskCell.swift in Sources */,
 				065216FE22E7BB6100DC1C44 /* GoalListTableViewController.swift in Sources */,
 				629D230222EAAAA7005CF92D /* TodayTasksCollectionViewController.swift in Sources */,
 				629AC6A722ED7D9F000C137C /* TodayFlowLayout.swift in Sources */,
+				624F4F8E22EF7A3D00D15F96 /* PreviousSessionCell.swift in Sources */,
 				629AC68B22EBB295000C137C /* User+CoreDataClass.swift in Sources */,
 				624F4F8322EE4E2000D15F96 /* PausePlayButton.swift in Sources */,
 				0652172022E9216A00DC1C44 /* IconCollectionViewCell.swift in Sources */,

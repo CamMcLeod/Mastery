@@ -87,8 +87,7 @@ class FocusViewController: UIViewController {
         self.taskNameLabel.text = self.task.name
         self.testImageLabel.text = self.task.name
         
-        let (m,s) = secondsToMinutesSeconds(seconds: FocusViewController.FOCUS_TIME)
-        timerLabel.text = String(format: "%02d:%02d", m,s)
+        timerLabel.text = FocusViewController.FOCUS_TIME.secondsToMinutesSeconds()
         sessionStartTime = Date()
         
     }
@@ -125,15 +124,10 @@ class FocusViewController: UIViewController {
     @objc private func updateTimer() {
         
         currentCounter = currentCounter - 1
-        let (m,s) = secondsToMinutesSeconds(seconds: currentCounter)
-        timerLabel.text = String(format: "%02d:%02d", m,s)
+        timerLabel.text = currentCounter.secondsToMinutesSeconds()
 
     }
     
-    private func secondsToMinutesSeconds (seconds : Int) -> (Int, Int) {
-        return (seconds / 60, seconds % 60)
-        
-    }
     
     /*
      // MARK: - Navigation
@@ -180,3 +174,4 @@ class FocusViewController: UIViewController {
     }
 
 }
+

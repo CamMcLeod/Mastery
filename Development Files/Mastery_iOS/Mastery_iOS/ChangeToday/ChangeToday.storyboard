@@ -297,6 +297,10 @@
                                                 <constraint firstItem="qK9-pr-PdM" firstAttribute="centerY" secondItem="fn2-cl-GOe" secondAttribute="centerY" id="pb6-hN-Fb0"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="sessionDateLabel" destination="fn2-cl-GOe" id="Lli-k9-9Dk"/>
+                                            <outlet property="sessionDurationLabel" destination="qK9-pr-PdM" id="5G1-lD-3fe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
