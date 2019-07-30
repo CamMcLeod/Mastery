@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../Int+Timer.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/camsteezin/Desktop/Developer/Lighthouse/Final Project/Mastery/Development Files/Mastery_iOS/Mastery_iOS/ChangeFocus/PreviousSessionCell.swift">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

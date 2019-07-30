@@ -25,18 +25,18 @@ class PreviousSessionCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func configure(with date: Date, duration: Float) {
+    public func configure(with date: Date, duration: Int) {
         
         self.sessionDateLabel.text = formatSessionDate(date: date)
-        self.sessionDurationLabel.text = Int(duration).secondsToMinutesSeconds()
-        
+        self.sessionDurationLabel.text = duration.secondsToHoursMinutesSeconds()
     }
     
     private func formatSessionDate(date: Date) -> String {
         
         let RFC3339DateFormatter = DateFormatter()
         RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        RFC3339DateFormatter.dateFormat = "yyyy-MM-dd"
+        RFC3339DateFormatter.dateFormat = "MMM d, h:mm a"
+//        RFC3339DateFormatter.dateFormat = "MMM-dd"
         RFC3339DateFormatter.timeZone = TimeZone.current
         let dateMatch = RFC3339DateFormatter.string(from: date)
        

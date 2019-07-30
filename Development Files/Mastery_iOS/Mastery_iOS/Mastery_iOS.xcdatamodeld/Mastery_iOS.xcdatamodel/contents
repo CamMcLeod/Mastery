@@ -29,7 +29,7 @@
         <attribute name="preRequisiteTasks" optional="YES" attributeType="Transformable" customClassName="[UUID]" syncable="YES"/>
         <attribute name="priority" optional="YES" attributeType="Integer 16" minValueString="1" maxValueString="10" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="tags" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
-        <attribute name="taskDatesAndDurations" optional="YES" attributeType="Transformable" customClassName="[Date : Float]" syncable="YES"/>
+        <attribute name="taskDatesAndDurations" optional="YES" attributeType="Transformable" customClassName="[Date:Int]" syncable="YES"/>
         <attribute name="taskDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeEstimate" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="tasks" inverseEntity="Goal" syncable="YES"/>

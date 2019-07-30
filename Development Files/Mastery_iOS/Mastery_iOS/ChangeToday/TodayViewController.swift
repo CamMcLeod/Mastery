@@ -103,7 +103,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskCell", for: indexPath) as! TaskCell
         
-        cell.backgroundColor = UIColor.gray
+        cell.backgroundColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
         
         cell.configure(with: todayTasks[indexPath.row])
         
@@ -197,7 +197,9 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         
     }
     
-    func batchUpdate(index: Int) {
+    // MARK: - Animations
+    
+    private func batchUpdate(index: Int) {
         
         if index*2 < todayTasks.count  {
             collectionView.performBatchUpdates(
@@ -222,7 +224,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         print(afterIndices)
         todayTasks = tempTasks.map{$0.element}
         
-        // perform animation with one block at a time
+        // perform animation with one row at a time
         batchUpdate(index: 0)
         
         //perform all at once - all sliding up together

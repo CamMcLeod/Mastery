@@ -18,15 +18,16 @@
 		0652171E22E91FF000DC1C44 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171D22E91FF000DC1C44 /* HomeTableViewCell.swift */; };
 		0652172022E9216A00DC1C44 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */; };
 		069B087622E7B21B000FD048 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B087522E7B21B000FD048 /* PersistenceService.swift */; };
+		62082B5022EF853700196FA8 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62082B4A22EF853700196FA8 /* User+CoreDataClass.swift */; };
+		62082B5122EF853700196FA8 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62082B4B22EF853700196FA8 /* User+CoreDataProperties.swift */; };
+		62082B5222EF853700196FA8 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62082B4C22EF853700196FA8 /* Goal+CoreDataClass.swift */; };
+		62082B5322EF853700196FA8 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62082B4D22EF853700196FA8 /* Goal+CoreDataProperties.swift */; };
+		62082B5422EF853700196FA8 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62082B4E22EF853700196FA8 /* Task+CoreDataClass.swift */; };
+		62082B5522EF853700196FA8 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62082B4F22EF853700196FA8 /* Task+CoreDataProperties.swift */; };
+		62082B5822EF892D00196FA8 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62082B5722EF892D00196FA8 /* OverviewViewController.swift */; };
 		624F4F8322EE4E2000D15F96 /* PausePlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F4F8222EE4E2000D15F96 /* PausePlayButton.swift */; };
 		624F4F8C22EF79F300D15F96 /* Int+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F4F8B22EF79F300D15F96 /* Int+Timer.swift */; };
 		624F4F8E22EF7A3D00D15F96 /* PreviousSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F4F8D22EF7A3D00D15F96 /* PreviousSessionCell.swift */; };
-		629AC68722EBB295000C137C /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC68122EBB295000C137C /* Goal+CoreDataClass.swift */; };
-		629AC68822EBB295000C137C /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC68222EBB295000C137C /* Goal+CoreDataProperties.swift */; };
-		629AC68922EBB295000C137C /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC68322EBB295000C137C /* Task+CoreDataClass.swift */; };
-		629AC68A22EBB295000C137C /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC68422EBB295000C137C /* Task+CoreDataProperties.swift */; };
-		629AC68B22EBB295000C137C /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC68522EBB295000C137C /* User+CoreDataClass.swift */; };
-		629AC68C22EBB295000C137C /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC68622EBB295000C137C /* User+CoreDataProperties.swift */; };
 		629AC69622ED1F85000C137C /* ChangeToday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629AC69522ED1F85000C137C /* ChangeToday.storyboard */; };
 		629AC69822ED1FE1000C137C /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC69722ED1FE1000C137C /* TodayViewController.swift */; };
 		629AC69A22ED20B0000C137C /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC69922ED20B0000C137C /* TaskCell.swift */; };
@@ -34,7 +35,6 @@
 		629AC69F22ED2E6B000C137C /* SettingsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC69E22ED2E6B000C137C /* SettingsTestViewController.swift */; };
 		629AC6A122ED2EDD000C137C /* GoalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC6A022ED2EDD000C137C /* GoalTestViewController.swift */; };
 		629AC6A722ED7D9F000C137C /* TodayFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC6A622ED7D9F000C137C /* TodayFlowLayout.swift */; };
-		629D230222EAAAA7005CF92D /* TodayTasksCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629D230122EAAAA7005CF92D /* TodayTasksCollectionViewController.swift */; };
 		9C6C83CB22EBD83300078DFF /* HiFi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6C83CA22EBD83300078DFF /* HiFi.storyboard */; };
 		9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC022E0007100210C0F /* AppDelegate.swift */; };
 		9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FC922E0007100210C0F /* Main.storyboard */; };
@@ -73,15 +73,16 @@
 		0652171D22E91FF000DC1C44 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTableViewCell.swift; path = ../HomeTableViewCell.swift; sourceTree = "<group>"; };
 		0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		069B087522E7B21B000FD048 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		62082B4A22EF853700196FA8 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		62082B4B22EF853700196FA8 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		62082B4C22EF853700196FA8 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		62082B4D22EF853700196FA8 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		62082B4E22EF853700196FA8 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		62082B4F22EF853700196FA8 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		62082B5722EF892D00196FA8 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		624F4F8222EE4E2000D15F96 /* PausePlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PausePlayButton.swift; path = Mastery_iOS/ChangeFocus/PausePlayButton.swift; sourceTree = SOURCE_ROOT; };
 		624F4F8B22EF79F300D15F96 /* Int+Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timer.swift"; sourceTree = "<group>"; };
 		624F4F8D22EF7A3D00D15F96 /* PreviousSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviousSessionCell.swift; path = "/Users/camsteezin/Desktop/Developer/Lighthouse/Final Project/Mastery/Development Files/Mastery_iOS/Mastery_iOS/ChangeFocus/PreviousSessionCell.swift"; sourceTree = "<absolute>"; };
-		629AC68122EBB295000C137C /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		629AC68222EBB295000C137C /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		629AC68322EBB295000C137C /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
-		629AC68422EBB295000C137C /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		629AC68522EBB295000C137C /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		629AC68622EBB295000C137C /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		629AC69522ED1F85000C137C /* ChangeToday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeToday.storyboard; sourceTree = "<group>"; };
 		629AC69722ED1FE1000C137C /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		629AC69922ED20B0000C137C /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
@@ -89,7 +90,6 @@
 		629AC69E22ED2E6B000C137C /* SettingsTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTestViewController.swift; sourceTree = "<group>"; };
 		629AC6A022ED2EDD000C137C /* GoalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTestViewController.swift; sourceTree = "<group>"; };
 		629AC6A622ED7D9F000C137C /* TodayFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayFlowLayout.swift; sourceTree = "<group>"; };
-		629D230122EAAAA7005CF92D /* TodayTasksCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTasksCollectionViewController.swift; sourceTree = "<group>"; };
 		9C6C83CA22EBD83300078DFF /* HiFi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiFi.storyboard; sourceTree = "<group>"; };
 		9CD53FBD22E0007100210C0F /* Mastery_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mastery_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD53FC022E0007100210C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,15 +133,23 @@
 		065216FC22E7BA8F00DC1C44 /* CoreDataProperties */ = {
 			isa = PBXGroup;
 			children = (
-				629AC68122EBB295000C137C /* Goal+CoreDataClass.swift */,
-				629AC68222EBB295000C137C /* Goal+CoreDataProperties.swift */,
-				629AC68322EBB295000C137C /* Task+CoreDataClass.swift */,
-				629AC68422EBB295000C137C /* Task+CoreDataProperties.swift */,
-				629AC68522EBB295000C137C /* User+CoreDataClass.swift */,
-				629AC68622EBB295000C137C /* User+CoreDataProperties.swift */,
+				62082B4A22EF853700196FA8 /* User+CoreDataClass.swift */,
+				62082B4B22EF853700196FA8 /* User+CoreDataProperties.swift */,
+				62082B4C22EF853700196FA8 /* Goal+CoreDataClass.swift */,
+				62082B4D22EF853700196FA8 /* Goal+CoreDataProperties.swift */,
+				62082B4E22EF853700196FA8 /* Task+CoreDataClass.swift */,
+				62082B4F22EF853700196FA8 /* Task+CoreDataProperties.swift */,
 				069B087522E7B21B000FD048 /* PersistenceService.swift */,
 			);
 			path = CoreDataProperties;
+			sourceTree = "<group>";
+		};
+		62082B5622EF890300196FA8 /* ChangeOverview */ = {
+			isa = PBXGroup;
+			children = (
+				62082B5722EF892D00196FA8 /* OverviewViewController.swift */,
+			);
+			path = ChangeOverview;
 			sourceTree = "<group>";
 		};
 		624F4F8A22EF79B400D15F96 /* Extensions */ = {
@@ -171,7 +179,6 @@
 				629AC69722ED1FE1000C137C /* TodayViewController.swift */,
 				629AC6A022ED2EDD000C137C /* GoalTestViewController.swift */,
 				629AC69E22ED2E6B000C137C /* SettingsTestViewController.swift */,
-				629D230122EAAAA7005CF92D /* TodayTasksCollectionViewController.swift */,
 			);
 			path = ChangeToday;
 			sourceTree = "<group>";
@@ -223,6 +230,7 @@
 				9C6C83CC22EBDD1800078DFF /* View Controllers */,
 				629D230322EAAAAE005CF92D /* ChangeToday */,
 				629AC69D22ED2DA5000C137C /* ChangeFocus */,
+				62082B5622EF890300196FA8 /* ChangeOverview */,
 				9CD53FCC22E0007200210C0F /* Assets.xcassets */,
 				9CD53FCE22E0007200210C0F /* LaunchScreen.storyboard */,
 				9CD53FD122E0007200210C0F /* Info.plist */,
@@ -384,28 +392,28 @@
 			files = (
 				0652170A22E7D22400DC1C44 /* AddTaskViewController.swift in Sources */,
 				629AC6A122ED2EDD000C137C /* GoalTestViewController.swift in Sources */,
+				62082B5122EF853700196FA8 /* User+CoreDataProperties.swift in Sources */,
 				629AC69F22ED2E6B000C137C /* SettingsTestViewController.swift in Sources */,
 				629AC69A22ED20B0000C137C /* TaskCell.swift in Sources */,
 				0652170022E7BBB700DC1C44 /* AddGoalViewController.swift in Sources */,
 				06109A0422EA5CC900A9DC7A /* AddAnotherTaskViewController.swift in Sources */,
+				62082B5022EF853700196FA8 /* User+CoreDataClass.swift in Sources */,
+				62082B5322EF853700196FA8 /* Goal+CoreDataProperties.swift in Sources */,
 				0652170222E7BBC700DC1C44 /* AddGoalDetailsViewController.swift in Sources */,
+				62082B5422EF853700196FA8 /* Task+CoreDataClass.swift in Sources */,
 				0652171E22E91FF000DC1C44 /* HomeTableViewCell.swift in Sources */,
-				629AC68822EBB295000C137C /* Goal+CoreDataProperties.swift in Sources */,
 				624F4F8C22EF79F300D15F96 /* Int+Timer.swift in Sources */,
 				06109A0222EA52D500A9DC7A /* DetailedTaskViewController.swift in Sources */,
 				061099F422E94D3D00A9DC7A /* DynamicHeightCollectionView.swift in Sources */,
 				629AC69C22ED2D9F000C137C /* FocusViewController.swift in Sources */,
 				9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */,
-				629AC68722EBB295000C137C /* Goal+CoreDataClass.swift in Sources */,
-				629AC68C22EBB295000C137C /* User+CoreDataProperties.swift in Sources */,
-				629AC68A22EBB295000C137C /* Task+CoreDataProperties.swift in Sources */,
+				62082B5222EF853700196FA8 /* Goal+CoreDataClass.swift in Sources */,
+				62082B5522EF853700196FA8 /* Task+CoreDataProperties.swift in Sources */,
 				629AC69822ED1FE1000C137C /* TodayViewController.swift in Sources */,
-				629AC68922EBB295000C137C /* Task+CoreDataClass.swift in Sources */,
+				62082B5822EF892D00196FA8 /* OverviewViewController.swift in Sources */,
 				065216FE22E7BB6100DC1C44 /* GoalListTableViewController.swift in Sources */,
-				629D230222EAAAA7005CF92D /* TodayTasksCollectionViewController.swift in Sources */,
 				629AC6A722ED7D9F000C137C /* TodayFlowLayout.swift in Sources */,
 				624F4F8E22EF7A3D00D15F96 /* PreviousSessionCell.swift in Sources */,
-				629AC68B22EBB295000C137C /* User+CoreDataClass.swift in Sources */,
 				624F4F8322EE4E2000D15F96 /* PausePlayButton.swift in Sources */,
 				0652172022E9216A00DC1C44 /* IconCollectionViewCell.swift in Sources */,
 				065216EA22E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld in Sources */,

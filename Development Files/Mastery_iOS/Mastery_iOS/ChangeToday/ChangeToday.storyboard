@@ -20,7 +20,8 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="acf-m5-Lav">
                                 <rect key="frame" x="20" y="88" width="374" height="708"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cC3-ed-atE" customClass="TodayFlowLayout" customModule="Mastery_iOS" customModuleProvider="target">
                                     <size key="itemSize" width="145" height="168"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -53,12 +54,13 @@
                                                 </view>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstItem="lyy-F5-bSg" firstAttribute="leading" secondItem="51a-Zz-rwz" secondAttribute="leadingMargin" id="8A3-fD-Rji"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="lyy-F5-bSg" secondAttribute="trailing" id="UB3-BH-NwY"/>
-                                            <constraint firstItem="lyy-F5-bSg" firstAttribute="top" secondItem="51a-Zz-rwz" secondAttribute="topMargin" id="q36-Da-izv"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="lyy-F5-bSg" secondAttribute="bottom" id="rKl-cp-2z8"/>
+                                            <constraint firstItem="lyy-F5-bSg" firstAttribute="leading" secondItem="51a-Zz-rwz" secondAttribute="leadingMargin" id="1ji-SF-by8"/>
+                                            <constraint firstItem="lyy-F5-bSg" firstAttribute="trailing" secondItem="51a-Zz-rwz" secondAttribute="trailingMargin" id="Nkw-3F-BHA"/>
+                                            <constraint firstItem="lyy-F5-bSg" firstAttribute="bottom" secondItem="51a-Zz-rwz" secondAttribute="bottomMargin" id="jAX-6q-i4M"/>
+                                            <constraint firstItem="lyy-F5-bSg" firstAttribute="top" secondItem="51a-Zz-rwz" secondAttribute="topMargin" id="pgA-NL-R6x"/>
                                         </constraints>
                                         <size key="customSize" width="145" height="168"/>
                                         <connections>
@@ -85,6 +87,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="cJT-yb-LGP" firstAttribute="bottom" secondItem="QGl-RC-0Ht" secondAttribute="bottom" constant="24" id="5hH-Gu-YVr"/>
@@ -110,6 +113,7 @@
                                     <segment title="Deadline"/>
                                     <segment title="Priority"/>
                                 </segments>
+                                <color key="tintColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="toggleSort:" destination="Zkg-2x-eAG" eventType="valueChanged" id="cpv-Op-0z2"/>
                                 </connections>
@@ -206,10 +210,10 @@
             </objects>
             <point key="canvasLocation" x="580" y="846"/>
         </scene>
-        <!--Focus View Controller-->
+        <!--Overview View Controller-->
         <scene sceneID="JZ2-6Y-7bi">
             <objects>
-                <viewController id="gNi-cD-XnM" customClass="FocusViewController" customModule="Mastery_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gNi-cD-XnM" customClass="OverviewViewController" customModule="Mastery_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wsw-Q7-Te2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,6 +235,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelPressed:" destination="gNi-cD-XnM" eventType="touchUpInside" id="Ekv-xw-wAZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -264,11 +271,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7v5-a8-BD1">
-                                <rect key="frame" x="20" y="381" width="374" height="346"/>
+                                <rect key="frame" x="20" y="380.5" width="374" height="346.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recorded Sessions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Xn-rc-LSu" userLabel="Previous Sessions">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="42"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                    <color key="textColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="previousSession" rowHeight="34" id="RZh-Pw-d6C" customClass="PreviousSessionCell" customModule="Mastery_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="70" width="374" height="34"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RZh-Pw-d6C" id="l58-gc-7wF">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="33.5"/>
@@ -322,7 +337,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnU-iJ-VCN">
-                                <rect key="frame" x="20" y="310" width="374" height="61"/>
+                                <rect key="frame" x="20" y="310" width="374" height="60.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="44"/>
                                 <color key="textColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -342,7 +357,7 @@
                                 </constraints>
                                 <state key="normal" image="Finish_Button_Unselected"/>
                                 <connections>
-                                    <action selector="finishPressed:" destination="bM1-kH-UY7" eventType="touchUpInside" id="Od7-Sb-AyA"/>
+                                    <segue destination="gNi-cD-XnM" kind="presentation" identifier="finishSession" id="tz4-Ra-zdf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e8-gT-cBG">
@@ -382,6 +397,7 @@
                         <viewLayoutGuide key="safeArea" id="230-BS-yQ6"/>
                     </view>
                     <connections>
+                        <outlet property="finishButton" destination="hXo-05-rBw" id="4te-hH-rh9"/>
                         <outlet property="pauseButton" destination="8uq-PF-HI9" id="NFe-Ja-V2d"/>
                         <outlet property="playButton" destination="Tok-Aj-dxw" id="Q6Q-eM-18S"/>
                         <outlet property="previousSessionsTable" destination="7v5-a8-BD1" id="rWL-2Z-E9H"/>
