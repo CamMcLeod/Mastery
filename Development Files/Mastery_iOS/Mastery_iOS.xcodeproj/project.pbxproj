@@ -144,12 +144,12 @@
 			path = CoreDataProperties;
 			sourceTree = "<group>";
 		};
-		62082B5622EF890300196FA8 /* ChangeOverview */ = {
+		62082B5622EF890300196FA8 /* Overview Views */ = {
 			isa = PBXGroup;
 			children = (
 				62082B5722EF892D00196FA8 /* OverviewViewController.swift */,
 			);
-			path = ChangeOverview;
+			path = "Overview Views";
 			sourceTree = "<group>";
 		};
 		624F4F8A22EF79B400D15F96 /* Extensions */ = {
@@ -160,17 +160,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		629AC69D22ED2DA5000C137C /* ChangeFocus */ = {
+		629AC69D22ED2DA5000C137C /* Focus Views */ = {
 			isa = PBXGroup;
 			children = (
 				624F4F8D22EF7A3D00D15F96 /* PreviousSessionCell.swift */,
 				624F4F8222EE4E2000D15F96 /* PausePlayButton.swift */,
 				629AC69B22ED2D9F000C137C /* FocusViewController.swift */,
 			);
-			path = ChangeFocus;
+			path = "Focus Views";
 			sourceTree = "<group>";
 		};
-		629D230322EAAAAE005CF92D /* ChangeToday */ = {
+		629D230322EAAAAE005CF92D /* Today Views */ = {
 			isa = PBXGroup;
 			children = (
 				629AC69522ED1F85000C137C /* ChangeToday.storyboard */,
@@ -180,7 +180,7 @@
 				629AC6A022ED2EDD000C137C /* GoalTestViewController.swift */,
 				629AC69E22ED2E6B000C137C /* SettingsTestViewController.swift */,
 			);
-			path = ChangeToday;
+			path = "Today Views";
 			sourceTree = "<group>";
 		};
 		9C6C83CC22EBDD1800078DFF /* View Controllers */ = {
@@ -228,9 +228,9 @@
 				9C6C83CA22EBD83300078DFF /* HiFi.storyboard */,
 				624F4F8A22EF79B400D15F96 /* Extensions */,
 				9C6C83CC22EBDD1800078DFF /* View Controllers */,
-				629D230322EAAAAE005CF92D /* ChangeToday */,
-				629AC69D22ED2DA5000C137C /* ChangeFocus */,
-				62082B5622EF890300196FA8 /* ChangeOverview */,
+				629D230322EAAAAE005CF92D /* Today Views */,
+				629AC69D22ED2DA5000C137C /* Focus Views */,
+				62082B5622EF890300196FA8 /* Overview Views */,
 				9CD53FCC22E0007200210C0F /* Assets.xcassets */,
 				9CD53FCE22E0007200210C0F /* LaunchScreen.storyboard */,
 				9CD53FD122E0007200210C0F /* Info.plist */,
