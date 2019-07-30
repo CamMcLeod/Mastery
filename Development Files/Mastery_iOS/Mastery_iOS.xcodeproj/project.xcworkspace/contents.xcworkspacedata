@@ -2,10 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/camsteezin/Desktop/Developer/Lighthouse/Final Project/Mastery/Development Files/Mastery_iOS/Mastery_iOS/Focus Views/PausePlayButton.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/camsteezin/Desktop/Developer/Lighthouse/Final Project/Mastery/Development Files/Mastery_iOS/Mastery_iOS/Focus Views/PreviousSessionCell.swift">
+      location = "group:/Users/camsteezin/Desktop/Developer/Lighthouse/Final Project/Mastery/Development Files/Mastery_iOS/Mastery_iOS/HomeTableViewCell.swift">
    </FileRef>
    <FileRef
       location = "self:">
