@@ -2,7 +2,7 @@
 //  Goal+CoreDataProperties.swift
 //  Mastery_iOS
 //
-//  Created by Cameron Mcleod on 2019-07-26.
+//  Created by Cameron Mcleod on 2019-07-29.
 //  Copyright © 2019 Marina Mona June McPeak. All rights reserved.
 //
 //
@@ -17,7 +17,7 @@ extension Goal {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Goal> {
         return NSFetchRequest<Goal>(entityName: "Goal")
     }
-
+ 
     @NSManaged public var color: UIColor?
     @NSManaged public var dateOfBirth: NSDate?
     @NSManaged public var deadline: [Date]?
