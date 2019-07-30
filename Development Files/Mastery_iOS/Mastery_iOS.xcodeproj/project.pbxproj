@@ -32,6 +32,7 @@
 		069C534322F0CD7B000ECBE0 /* TaskPriorityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533C22F0CD7B000ECBE0 /* TaskPriorityTableViewCell.swift */; };
 		069C534422F0CD7B000ECBE0 /* TaskDeadlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533D22F0CD7B000ECBE0 /* TaskDeadlineTableViewCell.swift */; };
 		069C534522F0CD7B000ECBE0 /* TaskAvailabilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533E22F0CD7B000ECBE0 /* TaskAvailabilityTableViewCell.swift */; };
+		069C534922F0D2AF000ECBE0 /* TestAddingGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069C534822F0D2AE000ECBE0 /* TestAddingGoals.storyboard */; };
 		62082B5822EF892D00196FA8 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62082B5722EF892D00196FA8 /* OverviewViewController.swift */; };
 		624F4F8C22EF79F300D15F96 /* Int+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F4F8B22EF79F300D15F96 /* Int+Timer.swift */; };
 		62586D1122EFE8D000E37F0A /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62586D0B22EFE8D000E37F0A /* Goal+CoreDataClass.swift */; };
@@ -107,6 +108,7 @@
 		069C533C22F0CD7B000ECBE0 /* TaskPriorityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskPriorityTableViewCell.swift; sourceTree = "<group>"; };
 		069C533D22F0CD7B000ECBE0 /* TaskDeadlineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDeadlineTableViewCell.swift; sourceTree = "<group>"; };
 		069C533E22F0CD7B000ECBE0 /* TaskAvailabilityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskAvailabilityTableViewCell.swift; sourceTree = "<group>"; };
+		069C534822F0D2AE000ECBE0 /* TestAddingGoals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TestAddingGoals.storyboard; sourceTree = "<group>"; };
 		62082B5722EF892D00196FA8 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		624F4F8B22EF79F300D15F96 /* Int+Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timer.swift"; sourceTree = "<group>"; };
 		62586D0B22EFE8D000E37F0A /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -115,8 +117,8 @@
 		62586D0E22EFE8D000E37F0A /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		62586D0F22EFE8D000E37F0A /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		62586D1022EFE8D000E37F0A /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		62828BF522EFE84C00E96E48 /* PausePlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PausePlayButton.swift; path = "/Users/camsteezin/Desktop/Developer/Lighthouse/Final Project/Mastery/Development Files/Mastery_iOS/Mastery_iOS/Focus Views/PausePlayButton.swift"; sourceTree = "<absolute>"; };
-		62828BF722EFE85000E96E48 /* PreviousSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviousSessionCell.swift; path = "/Users/camsteezin/Desktop/Developer/Lighthouse/Final Project/Mastery/Development Files/Mastery_iOS/Mastery_iOS/Focus Views/PreviousSessionCell.swift"; sourceTree = "<absolute>"; };
+		62828BF522EFE84C00E96E48 /* PausePlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PausePlayButton.swift; path = "/Users/EkamSingh/Desktop/LighthouseLabs/Mastery/Development Files/Mastery_iOS/Mastery_iOS/Focus Views/PausePlayButton.swift"; sourceTree = "<absolute>"; };
+		62828BF722EFE85000E96E48 /* PreviousSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviousSessionCell.swift; path = "/Users/EkamSingh/Desktop/LighthouseLabs/Mastery/Development Files/Mastery_iOS/Mastery_iOS/Focus Views/PreviousSessionCell.swift"; sourceTree = "<absolute>"; };
 		629AC69522ED1F85000C137C /* ChangeToday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeToday.storyboard; sourceTree = "<group>"; };
 		629AC69722ED1FE1000C137C /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		629AC69922ED20B0000C137C /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */,
 				0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */,
 				0652170922E7D22400DC1C44 /* AddTaskViewController.swift */,
+				069C534822F0D2AE000ECBE0 /* TestAddingGoals.storyboard */,
 				069C533722F0CD7B000ECBE0 /* AddTaskCells */,
 				069C532822F0CD75000ECBE0 /* AddGoalCells */,
 				06109A0122EA52D500A9DC7A /* DetailedTaskViewController.swift */,
@@ -442,6 +445,7 @@
 				629AC69622ED1F85000C137C /* ChangeToday.storyboard in Resources */,
 				9CD53FD022E0007200210C0F /* LaunchScreen.storyboard in Resources */,
 				9C2908B422ED21920021017D /* TimerAnimation.xib in Resources */,
+				069C534922F0D2AF000ECBE0 /* TestAddingGoals.storyboard in Resources */,
 				9CD53FCD22E0007200210C0F /* Assets.xcassets in Resources */,
 				9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */,
 				9C6C83CB22EBD83300078DFF /* HiFi.storyboard in Resources */,
