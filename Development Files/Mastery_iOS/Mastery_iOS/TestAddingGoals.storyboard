@@ -969,6 +969,7 @@
                                         <connections>
                                             <outlet property="cellTitle" destination="4od-2y-hs9" id="yTp-Yl-1jh"/>
                                             <outlet property="dateLabel" destination="RgP-GO-Ifv" id="vtJ-z1-A2I"/>
+                                            <outlet property="datePicker" destination="ozd-g7-ATN" id="lYZ-3o-s3B"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskPriorityCell" rowHeight="95" id="qkY-sZ-Uk2" customClass="TaskPriorityTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">

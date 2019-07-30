@@ -9,9 +9,7 @@
 import UIKit
 
 class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,  UITextFieldDelegate, DatePickerTableViewCellDelegate, GoalDescriptionCellDelegate, GoalHoursTableCellDelegate, GoalPriorityTableCellDelegate {
-    
-    
-    
+   
     // protocol methods to pass values from custom table cells decided by user to Goal object
     func getValueForDescription(theDescription: String) {
         tmpDescription = theDescription
@@ -32,6 +30,15 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
         tmpPriority = priority
     }
     
+   private var pickerisHidden: Bool = true
+    func showStatusPickerCell(datePicker: UIDatePicker) {
+        UIView.animate(withDuration: 0.3, animations: {
+            () -> Void in
+            datePicker.isHidden = !datePicker.isHidden
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        })
+    }
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -116,7 +123,21 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 1 {
+            let height: CGFloat = pickerisHidden ? 40.0 : 210
+            return height
+        }
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dateIndexPath = IndexPath(row: 1, section: 0)
+        if dateIndexPath == indexPath {
+            pickerisHidden = !pickerisHidden
+            
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -22,6 +22,7 @@ class CreateFirstTaskViewController: UIViewController, UITextFieldDelegate {
     private var deadline: Date!
     private var availability: [Bool]!
     
+    private var pickerisHidden: Bool = true
     var tagList: [String] = [String]()
     
     private var refreshCollectionView = 0 {
@@ -82,6 +83,7 @@ class CreateFirstTaskViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSource, GoalDescriptionCellDelegate, DatePickerTableViewCellDelegate, GoalPriorityTableCellDelegate, TaskAvailabilityCellDelegate {
+   
     
     func selectedDates(daysOfWeek: [Bool]) {
         availability = daysOfWeek
@@ -103,6 +105,15 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     
+    func showStatusPickerCell(datePicker: UIDatePicker) {
+        UIView.animate(withDuration: 0.3, animations: {
+            () -> Void in
+            datePicker.isHidden = !datePicker.isHidden
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        })
+
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -140,7 +151,21 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        if indexPath.row == 1 {
+            let height: CGFloat = pickerisHidden ? 40.0 : 210
+            return height
+        }
+        return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dateIndexPath = IndexPath(row: 1, section: 0)
+        if dateIndexPath == indexPath {
+            pickerisHidden = !pickerisHidden
+            
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

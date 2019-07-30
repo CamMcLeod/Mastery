@@ -10,6 +10,7 @@ import UIKit
 
 protocol DatePickerTableViewCellDelegate {
     func dateChanged(toDate date: Date)
+    func showStatusPickerCell(datePicker: UIDatePicker)
 }
 
 
@@ -27,12 +28,13 @@ class GoalDeadlineTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        datePicker.isHidden = true
         // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        self.delegate?.showStatusPickerCell(datePicker: datePicker)
     }
     
     
