@@ -33,6 +33,7 @@
 		069C534422F0CD7B000ECBE0 /* TaskDeadlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533D22F0CD7B000ECBE0 /* TaskDeadlineTableViewCell.swift */; };
 		069C534522F0CD7B000ECBE0 /* TaskAvailabilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533E22F0CD7B000ECBE0 /* TaskAvailabilityTableViewCell.swift */; };
 		069C534922F0D2AF000ECBE0 /* TestAddingGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069C534822F0D2AE000ECBE0 /* TestAddingGoals.storyboard */; };
+		069C534B22F0D418000ECBE0 /* AddTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C534A22F0D418000ECBE0 /* AddTaskCollectionViewCell.swift */; };
 		62082B5822EF892D00196FA8 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62082B5722EF892D00196FA8 /* OverviewViewController.swift */; };
 		624F4F8C22EF79F300D15F96 /* Int+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F4F8B22EF79F300D15F96 /* Int+Timer.swift */; };
 		62586D1122EFE8D000E37F0A /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62586D0B22EFE8D000E37F0A /* Goal+CoreDataClass.swift */; };
@@ -109,6 +110,7 @@
 		069C533D22F0CD7B000ECBE0 /* TaskDeadlineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDeadlineTableViewCell.swift; sourceTree = "<group>"; };
 		069C533E22F0CD7B000ECBE0 /* TaskAvailabilityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskAvailabilityTableViewCell.swift; sourceTree = "<group>"; };
 		069C534822F0D2AE000ECBE0 /* TestAddingGoals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TestAddingGoals.storyboard; sourceTree = "<group>"; };
+		069C534A22F0D418000ECBE0 /* AddTaskCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskCollectionViewCell.swift; sourceTree = "<group>"; };
 		62082B5722EF892D00196FA8 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		624F4F8B22EF79F300D15F96 /* Int+Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timer.swift"; sourceTree = "<group>"; };
 		62586D0B22EFE8D000E37F0A /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				9CD53FC022E0007100210C0F /* AppDelegate.swift */,
 				0652171D22E91FF000DC1C44 /* HomeTableViewCell.swift */,
 				061099F322E94D3D00A9DC7A /* DynamicHeightCollectionView.swift */,
+				069C534A22F0D418000ECBE0 /* AddTaskCollectionViewCell.swift */,
 				0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */,
 				065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */,
 				0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */,
@@ -478,6 +481,7 @@
 				069C533F22F0CD7B000ECBE0 /* TaskTagsCollectionViewCell.swift in Sources */,
 				069C534022F0CD7B000ECBE0 /* TaskTagsTableViewCell.swift in Sources */,
 				62828BF822EFE85000E96E48 /* PreviousSessionCell.swift in Sources */,
+				069C534B22F0D418000ECBE0 /* AddTaskCollectionViewCell.swift in Sources */,
 				629AC69F22ED2E6B000C137C /* SettingsTestViewController.swift in Sources */,
 				069C534122F0CD7B000ECBE0 /* EmptyTagCollectionViewCell.swift in Sources */,
 				629AC69A22ED20B0000C137C /* TaskCell.swift in Sources */,
