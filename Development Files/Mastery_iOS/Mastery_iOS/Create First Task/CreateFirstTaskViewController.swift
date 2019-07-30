@@ -166,13 +166,13 @@ extension CreateFirstTaskViewController : UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row < tagList.count {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskTagCreatedCell", for: indexPath) as! TagCreatedTaskCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalsCreatedTagCell", for: indexPath) as! TagCreatedTaskCollectionViewCell
             cell.tagName.text = tagList[indexPath.row]
             return cell
         } else {
             
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskTagEmptyCell", for: indexPath) as! TagEmptyTaskCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalsEmptyTagCell", for: indexPath) as! TagEmptyTaskCollectionViewCell
         cell.delegate = self
         return cell
     }
