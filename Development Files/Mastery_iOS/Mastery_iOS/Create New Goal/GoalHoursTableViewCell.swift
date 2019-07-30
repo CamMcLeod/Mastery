@@ -15,7 +15,7 @@ protocol GoalHoursTableCellDelegate {
 class GoalHoursTableViewCell: UITableViewCell {
 
     @IBOutlet weak var totalHoursTitle: UILabel!
-    @IBOutlet weak var hours: UILabel!
+    @IBOutlet weak var totalHoursLabel: UILabel!
     
     var delegate: GoalHoursTableCellDelegate?
     
@@ -30,10 +30,10 @@ class GoalHoursTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBAction func getDate(_ sender: UISlider) {
+    @IBAction func getHours(_ sender: UISlider) {
 //        let roundedValue = round(sender.value / 5) * 5
 //        sender.value = roundedValue
-        hours.text = "\(sender.value)"
+        totalHoursLabel.text = "\(sender.value)"
         self.delegate?.getHours(hours: sender.value)
     }
     

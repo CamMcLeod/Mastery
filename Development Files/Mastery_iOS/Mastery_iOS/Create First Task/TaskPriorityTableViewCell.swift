@@ -10,6 +10,8 @@ import UIKit
 
 class TaskPriorityTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var priorityLabel: UILabel!
+    
     var delegate: GoalPriorityTableCellDelegate?
 
     override func awakeFromNib() {

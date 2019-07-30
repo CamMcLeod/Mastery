@@ -8,10 +8,10 @@
 
 import UIKit
 
-class EmptyTagCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
+class TagEmptyTaskCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var createNewTag: UITextField!
-    var delegate: TagsEmptyCollectionCellDelegate?
+    var delegate: EmptyTagCollectionViewCellDelegate?
     
     
     override func awakeFromNib() {

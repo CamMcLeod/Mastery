@@ -8,12 +8,12 @@
 
 import UIKit
 
-class AddTaskViewController: UIViewController, UITextFieldDelegate {
+class CreateFirstTaskViewController: UIViewController, UITextFieldDelegate {
     
     var goal: Goal?
     
     @IBOutlet weak var imageIconView: UIView!
-    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var taskName: UITextField!
     
     @IBOutlet weak var tableView: UITableView!
     private var priority: Int16!
@@ -37,12 +37,12 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
         guard let goal = goal else {return}
         print(goal)
         
-        name.delegate = self
+        taskName.delegate = self
         // Do any additional setup after loading the view.
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let name = name.text,
+        guard let name = taskName.text,
             let rangeOfTextToReplace = Range(range, in: name) else {
                 return false
         }
@@ -54,7 +54,7 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
     
     func saveTask() {
         let task = Task(context: PersistenceService.context)
-        task.name = name.text
+        task.name = taskName.text
         task.taskDescription = taskDescription
         task.id = UUID()
         task.deadline = deadline as NSDate?
@@ -68,7 +68,7 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func goBackHome(_ sender: UIBarButtonItem) {
-        print(name.text!)
+        print(taskName.text!)
         print(deadline!)
         print(priority!)
         print(taskDescription!)
@@ -81,7 +81,7 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
     
 }
 
-extension AddTaskViewController: UITableViewDelegate, UITableViewDataSource, GoalDescriptionCellDelegate, DatePickerTableViewCellDelegate, GoalPriorityTableCellDelegate, TaskAvailabilityCellDelegate {
+extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSource, GoalDescriptionCellDelegate, DatePickerTableViewCellDelegate, GoalPriorityTableCellDelegate, TaskAvailabilityCellDelegate {
     
     func selectedDates(daysOfWeek: [Bool]) {
         availability = daysOfWeek
@@ -145,7 +145,7 @@ extension AddTaskViewController: UITableViewDelegate, UITableViewDataSource, Goa
     
 }
 
-extension AddTaskViewController : UICollectionViewDelegate, UICollectionViewDataSource, TagsEmptyCollectionCellDelegate {
+extension CreateFirstTaskViewController : UICollectionViewDelegate, UICollectionViewDataSource, EmptyTagCollectionViewCellDelegate {
     
     
     func addTagToList(tagName: String) {
@@ -166,13 +166,13 @@ extension AddTaskViewController : UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row < tagList.count {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalsCreatedTagCell", for: indexPath) as! TaskTagsCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskTagCreatedCell", for: indexPath) as! TagCreatedTaskCollectionViewCell
             cell.tagName.text = tagList[indexPath.row]
             return cell
         } else {
             
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalsEmptyTagCell", for: indexPath) as! EmptyTagCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskTagEmptyCell", for: indexPath) as! TagEmptyTaskCollectionViewCell
         cell.delegate = self
         return cell
     }

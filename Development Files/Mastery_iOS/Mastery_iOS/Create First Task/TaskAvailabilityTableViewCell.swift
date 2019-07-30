@@ -13,6 +13,8 @@ protocol TaskAvailabilityCellDelegate {
 }
 
 class TaskAvailabilityTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var availabilityLabel: UILabel!
 
     var dayAvailability: [Bool] = [false, false, false, false, false, false, false]
     @IBOutlet var daysAvailable: [UIButton]!

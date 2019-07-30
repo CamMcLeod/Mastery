@@ -9,25 +9,23 @@
 /* Begin PBXBuildFile section */
 		061099F422E94D3D00A9DC7A /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061099F322E94D3D00A9DC7A /* DynamicHeightCollectionView.swift */; };
 		06109A0222EA52D500A9DC7A /* DetailedTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06109A0122EA52D500A9DC7A /* DetailedTaskViewController.swift */; };
-		06109A0422EA5CC900A9DC7A /* AddAnotherTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06109A0322EA5CC900A9DC7A /* AddAnotherTaskViewController.swift */; };
 		065216EA22E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 065216E822E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld */; };
 		065216FE22E7BB6100DC1C44 /* GoalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */; };
-		0652170022E7BBB700DC1C44 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216FF22E7BBB700DC1C44 /* AddGoalViewController.swift */; };
-		0652170222E7BBC700DC1C44 /* AddGoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */; };
-		0652170A22E7D22400DC1C44 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170922E7D22400DC1C44 /* AddTaskViewController.swift */; };
+		0652170222E7BBC700DC1C44 /* CreateNewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170122E7BBC700DC1C44 /* CreateNewGoalViewController.swift */; };
+		0652170A22E7D22400DC1C44 /* CreateFirstTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170922E7D22400DC1C44 /* CreateFirstTaskViewController.swift */; };
 		0652171E22E91FF000DC1C44 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171D22E91FF000DC1C44 /* HomeTableViewCell.swift */; };
 		0652172022E9216A00DC1C44 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */; };
 		069B087622E7B21B000FD048 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B087522E7B21B000FD048 /* PersistenceService.swift */; };
-		069C533022F0CD75000ECBE0 /* TagsCreatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C532922F0CD75000ECBE0 /* TagsCreatedCollectionViewCell.swift */; };
+		069C533022F0CD75000ECBE0 /* TagCreatedGoalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C532922F0CD75000ECBE0 /* TagCreatedGoalCollectionViewCell.swift */; };
 		069C533122F0CD75000ECBE0 /* GoalTagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C532A22F0CD75000ECBE0 /* GoalTagsTableViewCell.swift */; };
 		069C533222F0CD75000ECBE0 /* GoalDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C532B22F0CD75000ECBE0 /* GoalDescriptionTableViewCell.swift */; };
 		069C533322F0CD75000ECBE0 /* GoalPriorityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C532C22F0CD75000ECBE0 /* GoalPriorityTableViewCell.swift */; };
-		069C533422F0CD75000ECBE0 /* TagsEmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C532D22F0CD75000ECBE0 /* TagsEmptyCollectionViewCell.swift */; };
+		069C533422F0CD75000ECBE0 /* TagEmptyGoalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C532D22F0CD75000ECBE0 /* TagEmptyGoalCollectionViewCell.swift */; };
 		069C533522F0CD75000ECBE0 /* GoalDeadlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C532E22F0CD75000ECBE0 /* GoalDeadlineTableViewCell.swift */; };
 		069C533622F0CD75000ECBE0 /* GoalHoursTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C532F22F0CD75000ECBE0 /* GoalHoursTableViewCell.swift */; };
-		069C533F22F0CD7B000ECBE0 /* TaskTagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533822F0CD7B000ECBE0 /* TaskTagsCollectionViewCell.swift */; };
+		069C533F22F0CD7B000ECBE0 /* TagCreatedTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533822F0CD7B000ECBE0 /* TagCreatedTaskCollectionViewCell.swift */; };
 		069C534022F0CD7B000ECBE0 /* TaskTagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533922F0CD7B000ECBE0 /* TaskTagsTableViewCell.swift */; };
-		069C534122F0CD7B000ECBE0 /* EmptyTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533A22F0CD7B000ECBE0 /* EmptyTagCollectionViewCell.swift */; };
+		069C534122F0CD7B000ECBE0 /* TagEmptyTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533A22F0CD7B000ECBE0 /* TagEmptyTaskCollectionViewCell.swift */; };
 		069C534222F0CD7B000ECBE0 /* TaskDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533B22F0CD7B000ECBE0 /* TaskDescriptionTableViewCell.swift */; };
 		069C534322F0CD7B000ECBE0 /* TaskPriorityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533C22F0CD7B000ECBE0 /* TaskPriorityTableViewCell.swift */; };
 		069C534422F0CD7B000ECBE0 /* TaskDeadlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C533D22F0CD7B000ECBE0 /* TaskDeadlineTableViewCell.swift */; };
@@ -86,25 +84,23 @@
 /* Begin PBXFileReference section */
 		061099F322E94D3D00A9DC7A /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
 		06109A0122EA52D500A9DC7A /* DetailedTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTaskViewController.swift; sourceTree = "<group>"; };
-		06109A0322EA5CC900A9DC7A /* AddAnotherTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnotherTaskViewController.swift; sourceTree = "<group>"; };
 		065216E922E7B66300DC1C44 /* Mastery_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mastery_iOS.xcdatamodel; sourceTree = "<group>"; };
 		065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListTableViewController.swift; sourceTree = "<group>"; };
-		065216FF22E7BBB700DC1C44 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
-		0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalDetailsViewController.swift; sourceTree = "<group>"; };
-		0652170922E7D22400DC1C44 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
-		0652171D22E91FF000DC1C44 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTableViewCell.swift; path = ../HomeTableViewCell.swift; sourceTree = "<group>"; };
+		0652170122E7BBC700DC1C44 /* CreateNewGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewGoalViewController.swift; sourceTree = "<group>"; };
+		0652170922E7D22400DC1C44 /* CreateFirstTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFirstTaskViewController.swift; sourceTree = "<group>"; };
+		0652171D22E91FF000DC1C44 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		069B087522E7B21B000FD048 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
-		069C532922F0CD75000ECBE0 /* TagsCreatedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCreatedCollectionViewCell.swift; sourceTree = "<group>"; };
+		069C532922F0CD75000ECBE0 /* TagCreatedGoalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCreatedGoalCollectionViewCell.swift; sourceTree = "<group>"; };
 		069C532A22F0CD75000ECBE0 /* GoalTagsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTagsTableViewCell.swift; sourceTree = "<group>"; };
 		069C532B22F0CD75000ECBE0 /* GoalDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		069C532C22F0CD75000ECBE0 /* GoalPriorityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalPriorityTableViewCell.swift; sourceTree = "<group>"; };
-		069C532D22F0CD75000ECBE0 /* TagsEmptyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsEmptyCollectionViewCell.swift; sourceTree = "<group>"; };
+		069C532D22F0CD75000ECBE0 /* TagEmptyGoalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagEmptyGoalCollectionViewCell.swift; sourceTree = "<group>"; };
 		069C532E22F0CD75000ECBE0 /* GoalDeadlineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDeadlineTableViewCell.swift; sourceTree = "<group>"; };
 		069C532F22F0CD75000ECBE0 /* GoalHoursTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalHoursTableViewCell.swift; sourceTree = "<group>"; };
-		069C533822F0CD7B000ECBE0 /* TaskTagsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTagsCollectionViewCell.swift; sourceTree = "<group>"; };
+		069C533822F0CD7B000ECBE0 /* TagCreatedTaskCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCreatedTaskCollectionViewCell.swift; sourceTree = "<group>"; };
 		069C533922F0CD7B000ECBE0 /* TaskTagsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTagsTableViewCell.swift; sourceTree = "<group>"; };
-		069C533A22F0CD7B000ECBE0 /* EmptyTagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		069C533A22F0CD7B000ECBE0 /* TagEmptyTaskCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagEmptyTaskCollectionViewCell.swift; sourceTree = "<group>"; };
 		069C533B22F0CD7B000ECBE0 /* TaskDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		069C533C22F0CD7B000ECBE0 /* TaskPriorityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskPriorityTableViewCell.swift; sourceTree = "<group>"; };
 		069C533D22F0CD7B000ECBE0 /* TaskDeadlineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDeadlineTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,8 +115,8 @@
 		62586D0E22EFE8D000E37F0A /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		62586D0F22EFE8D000E37F0A /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		62586D1022EFE8D000E37F0A /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		62828BF522EFE84C00E96E48 /* PausePlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PausePlayButton.swift; path = "/Users/EkamSingh/Desktop/LighthouseLabs/Mastery/Development Files/Mastery_iOS/Mastery_iOS/Focus Views/PausePlayButton.swift"; sourceTree = "<absolute>"; };
-		62828BF722EFE85000E96E48 /* PreviousSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviousSessionCell.swift; path = "/Users/EkamSingh/Desktop/LighthouseLabs/Mastery/Development Files/Mastery_iOS/Mastery_iOS/Focus Views/PreviousSessionCell.swift"; sourceTree = "<absolute>"; };
+		62828BF522EFE84C00E96E48 /* PausePlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PausePlayButton.swift; path = "/Users/marina/Documents/Software/Mastery/Development Files/Mastery_iOS/Mastery_iOS/Focus Views/PausePlayButton.swift"; sourceTree = "<absolute>"; };
+		62828BF722EFE85000E96E48 /* PreviousSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviousSessionCell.swift; path = "/Users/marina/Documents/Software/Mastery/Development Files/Mastery_iOS/Mastery_iOS/Focus Views/PreviousSessionCell.swift"; sourceTree = "<absolute>"; };
 		629AC69522ED1F85000C137C /* ChangeToday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeToday.storyboard; sourceTree = "<group>"; };
 		629AC69722ED1FE1000C137C /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		629AC69922ED20B0000C137C /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
@@ -188,32 +184,32 @@
 			path = CoreDataProperties;
 			sourceTree = "<group>";
 		};
-		069C532822F0CD75000ECBE0 /* AddGoalCells */ = {
+		069C532822F0CD75000ECBE0 /* Create New Goal */ = {
 			isa = PBXGroup;
 			children = (
-				069C532922F0CD75000ECBE0 /* TagsCreatedCollectionViewCell.swift */,
-				069C532A22F0CD75000ECBE0 /* GoalTagsTableViewCell.swift */,
+				0652170122E7BBC700DC1C44 /* CreateNewGoalViewController.swift */,
 				069C532B22F0CD75000ECBE0 /* GoalDescriptionTableViewCell.swift */,
-				069C532C22F0CD75000ECBE0 /* GoalPriorityTableViewCell.swift */,
-				069C532D22F0CD75000ECBE0 /* TagsEmptyCollectionViewCell.swift */,
 				069C532E22F0CD75000ECBE0 /* GoalDeadlineTableViewCell.swift */,
+				069C532C22F0CD75000ECBE0 /* GoalPriorityTableViewCell.swift */,
 				069C532F22F0CD75000ECBE0 /* GoalHoursTableViewCell.swift */,
+				069C532A22F0CD75000ECBE0 /* GoalTagsTableViewCell.swift */,
+				9C0A766A22F0E24F00B0B529 /* Tags Collection View */,
 			);
-			path = AddGoalCells;
+			path = "Create New Goal";
 			sourceTree = "<group>";
 		};
-		069C533722F0CD7B000ECBE0 /* AddTaskCells */ = {
+		069C533722F0CD7B000ECBE0 /* Create First Task */ = {
 			isa = PBXGroup;
 			children = (
-				069C533822F0CD7B000ECBE0 /* TaskTagsCollectionViewCell.swift */,
-				069C533922F0CD7B000ECBE0 /* TaskTagsTableViewCell.swift */,
-				069C533A22F0CD7B000ECBE0 /* EmptyTagCollectionViewCell.swift */,
+				0652170922E7D22400DC1C44 /* CreateFirstTaskViewController.swift */,
 				069C533B22F0CD7B000ECBE0 /* TaskDescriptionTableViewCell.swift */,
-				069C533C22F0CD7B000ECBE0 /* TaskPriorityTableViewCell.swift */,
 				069C533D22F0CD7B000ECBE0 /* TaskDeadlineTableViewCell.swift */,
+				069C533C22F0CD7B000ECBE0 /* TaskPriorityTableViewCell.swift */,
 				069C533E22F0CD7B000ECBE0 /* TaskAvailabilityTableViewCell.swift */,
+				069C533922F0CD7B000ECBE0 /* TaskTagsTableViewCell.swift */,
+				9C0A766B22F0E59800B0B529 /* Tags Collection View */,
 			);
-			path = AddTaskCells;
+			path = "Create First Task";
 			sourceTree = "<group>";
 		};
 		62082B5622EF890300196FA8 /* Overview Views */ = {
@@ -255,7 +251,25 @@
 			path = "Today Views";
 			sourceTree = "<group>";
 		};
-		9C6C83CC22EBDD1800078DFF /* UI Views */ = {
+		9C0A766A22F0E24F00B0B529 /* Tags Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				069C532922F0CD75000ECBE0 /* TagCreatedGoalCollectionViewCell.swift */,
+				069C532D22F0CD75000ECBE0 /* TagEmptyGoalCollectionViewCell.swift */,
+			);
+			path = "Tags Collection View";
+			sourceTree = "<group>";
+		};
+		9C0A766B22F0E59800B0B529 /* Tags Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				069C533822F0CD7B000ECBE0 /* TagCreatedTaskCollectionViewCell.swift */,
+				069C533A22F0CD7B000ECBE0 /* TagEmptyTaskCollectionViewCell.swift */,
+			);
+			path = "Tags Collection View";
+			sourceTree = "<group>";
+		};
+		9C6C83CC22EBDD1800078DFF /* Icon UI Views */ = {
 			isa = PBXGroup;
 			children = (
 				9C2908AB22ED14CA0021017D /* TaskIconWithLabel.xib */,
@@ -265,7 +279,7 @@
 				9C2908B322ED21920021017D /* TimerAnimation.xib */,
 				9C2908B522ED223A0021017D /* TimerAnimationView.swift */,
 			);
-			path = "UI Views";
+			path = "Icon UI Views";
 			sourceTree = "<group>";
 		};
 		9CD53FB422E0007100210C0F = {
@@ -298,18 +312,14 @@
 				069C534A22F0D418000ECBE0 /* AddTaskCollectionViewCell.swift */,
 				0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */,
 				065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */,
-				0652170122E7BBC700DC1C44 /* AddGoalDetailsViewController.swift */,
-				0652170922E7D22400DC1C44 /* AddTaskViewController.swift */,
-				069C534822F0D2AE000ECBE0 /* TestAddingGoals.storyboard */,
-				069C533722F0CD7B000ECBE0 /* AddTaskCells */,
-				069C532822F0CD75000ECBE0 /* AddGoalCells */,
-				06109A0122EA52D500A9DC7A /* DetailedTaskViewController.swift */,
-				065216FF22E7BBB700DC1C44 /* AddGoalViewController.swift */,
-				06109A0322EA5CC900A9DC7A /* AddAnotherTaskViewController.swift */,
-				9CD53FC922E0007100210C0F /* Main.storyboard */,
 				9C6C83CA22EBD83300078DFF /* HiFi.storyboard */,
+				069C534822F0D2AE000ECBE0 /* TestAddingGoals.storyboard */,
+				9CD53FC922E0007100210C0F /* Main.storyboard */,
+				069C533722F0CD7B000ECBE0 /* Create First Task */,
+				069C532822F0CD75000ECBE0 /* Create New Goal */,
+				06109A0122EA52D500A9DC7A /* DetailedTaskViewController.swift */,
 				624F4F8A22EF79B400D15F96 /* Extensions */,
-				9C6C83CC22EBDD1800078DFF /* UI Views */,
+				9C6C83CC22EBDD1800078DFF /* Icon UI Views */,
 				629D230322EAAAAE005CF92D /* Today Views */,
 				629AC69D22ED2DA5000C137C /* Focus Views */,
 				62082B5622EF890300196FA8 /* Overview Views */,
@@ -476,33 +486,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0652170A22E7D22400DC1C44 /* AddTaskViewController.swift in Sources */,
+				0652170A22E7D22400DC1C44 /* CreateFirstTaskViewController.swift in Sources */,
 				629AC6A122ED2EDD000C137C /* GoalTestViewController.swift in Sources */,
-				069C533F22F0CD7B000ECBE0 /* TaskTagsCollectionViewCell.swift in Sources */,
+				069C533F22F0CD7B000ECBE0 /* TagCreatedTaskCollectionViewCell.swift in Sources */,
 				069C534022F0CD7B000ECBE0 /* TaskTagsTableViewCell.swift in Sources */,
 				62828BF822EFE85000E96E48 /* PreviousSessionCell.swift in Sources */,
 				069C534B22F0D418000ECBE0 /* AddTaskCollectionViewCell.swift in Sources */,
 				629AC69F22ED2E6B000C137C /* SettingsTestViewController.swift in Sources */,
-				069C534122F0CD7B000ECBE0 /* EmptyTagCollectionViewCell.swift in Sources */,
+				069C534122F0CD7B000ECBE0 /* TagEmptyTaskCollectionViewCell.swift in Sources */,
 				629AC69A22ED20B0000C137C /* TaskCell.swift in Sources */,
-				0652170022E7BBB700DC1C44 /* AddGoalViewController.swift in Sources */,
 				069C534222F0CD7B000ECBE0 /* TaskDescriptionTableViewCell.swift in Sources */,
 				069C534422F0CD7B000ECBE0 /* TaskDeadlineTableViewCell.swift in Sources */,
 				069C533622F0CD75000ECBE0 /* GoalHoursTableViewCell.swift in Sources */,
 				62586D1322EFE8D000E37F0A /* User+CoreDataClass.swift in Sources */,
 				9C2908B222ED20000021017D /* TaskIconView.swift in Sources */,
 				069C533122F0CD75000ECBE0 /* GoalTagsTableViewCell.swift in Sources */,
-				06109A0422EA5CC900A9DC7A /* AddAnotherTaskViewController.swift in Sources */,
-				0652170222E7BBC700DC1C44 /* AddGoalDetailsViewController.swift in Sources */,
+				0652170222E7BBC700DC1C44 /* CreateNewGoalViewController.swift in Sources */,
 				0652171E22E91FF000DC1C44 /* HomeTableViewCell.swift in Sources */,
 				9C2908B622ED223A0021017D /* TimerAnimationView.swift in Sources */,
-				069C533022F0CD75000ECBE0 /* TagsCreatedCollectionViewCell.swift in Sources */,
+				069C533022F0CD75000ECBE0 /* TagCreatedGoalCollectionViewCell.swift in Sources */,
 				624F4F8C22EF79F300D15F96 /* Int+Timer.swift in Sources */,
 				069C533222F0CD75000ECBE0 /* GoalDescriptionTableViewCell.swift in Sources */,
 				06109A0222EA52D500A9DC7A /* DetailedTaskViewController.swift in Sources */,
 				62828BF622EFE84C00E96E48 /* PausePlayButton.swift in Sources */,
 				62586D1622EFE8D000E37F0A /* Task+CoreDataProperties.swift in Sources */,
-				069C533422F0CD75000ECBE0 /* TagsEmptyCollectionViewCell.swift in Sources */,
+				069C533422F0CD75000ECBE0 /* TagEmptyGoalCollectionViewCell.swift in Sources */,
 				62586D1222EFE8D000E37F0A /* Goal+CoreDataProperties.swift in Sources */,
 				62586D1522EFE8D000E37F0A /* Task+CoreDataClass.swift in Sources */,
 				069C534322F0CD7B000ECBE0 /* TaskPriorityTableViewCell.swift in Sources */,

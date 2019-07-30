@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddGoalDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,  UITextFieldDelegate, DatePickerTableViewCellDelegate, GoalDescriptionCellDelegate, GoalHoursTableCellDelegate, GoalPriorityTableCellDelegate {
+class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,  UITextFieldDelegate, DatePickerTableViewCellDelegate, GoalDescriptionCellDelegate, GoalHoursTableCellDelegate, GoalPriorityTableCellDelegate {
     
     
     
@@ -121,7 +121,7 @@ class AddGoalDetailsViewController: UIViewController, UITableViewDataSource, UIT
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addTask" {
-            if let detailViewController = segue.destination as? AddTaskViewController {
+            if let detailViewController = segue.destination as? CreateFirstTaskViewController {
                 detailViewController.goal = saveGoalData()
             }
         }
@@ -166,7 +166,7 @@ class AddGoalDetailsViewController: UIViewController, UITableViewDataSource, UIT
 }
 
 
-extension AddGoalDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource, TagsEmptyCollectionCellDelegate{
+extension CreateNewGoalViewController: UICollectionViewDelegate, UICollectionViewDataSource, EmptyTagCollectionViewCellDelegate{
     
     
     func addTagToList(tagName: String) {
@@ -189,13 +189,13 @@ extension AddGoalDetailsViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row < tagList.count {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalsCreatedTagCell", for: indexPath) as! TagsCreatedCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalsCreatedTagCell", for: indexPath) as! TagCreatedGoalCollectionViewCell
             cell.tagName.text = tagList[indexPath.row]
             return cell
         } else {
             
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalsEmptyTagCell", for: indexPath) as! TagsEmptyCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalsEmptyTagCell", for: indexPath) as! TagEmptyGoalCollectionViewCell
         cell.delegate = self
         return cell
     }

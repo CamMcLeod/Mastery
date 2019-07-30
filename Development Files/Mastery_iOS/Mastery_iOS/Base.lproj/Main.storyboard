@@ -219,10 +219,10 @@
             </objects>
             <point key="canvasLocation" x="1815.9420289855075" y="-299.33035714285711"/>
         </scene>
-        <!--Add Goal Details View Controller-->
+        <!--Create New Goal View Controller-->
         <scene sceneID="tI8-7p-YbC">
             <objects>
-                <viewController id="Bzd-Yp-Mbp" customClass="AddGoalDetailsViewController" customModule="Mastery_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bzd-Yp-Mbp" customClass="CreateNewGoalViewController" customModule="Mastery_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lSZ-Hk-baZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -519,10 +519,10 @@
             </objects>
             <point key="canvasLocation" x="118.84057971014494" y="-299.33035714285711"/>
         </scene>
-        <!--Add Task View Controller-->
+        <!--Create First Task View Controller-->
         <scene sceneID="eqZ-Fe-Shj">
             <objects>
-                <viewController id="XxO-lZ-SJR" customClass="AddTaskViewController" customModule="Mastery_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XxO-lZ-SJR" customClass="CreateFirstTaskViewController" customModule="Mastery_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Au1-SM-kH7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

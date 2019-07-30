@@ -17,7 +17,7 @@ class GoalDeadlineTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var goalDeadlineTitle: UILabel!
-    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
     
@@ -40,7 +40,7 @@ class GoalDeadlineTableViewCell: UITableViewCell {
     @IBAction func selectDate(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM dd, YYYY"
-        date.text = dateFormatter.string(from: sender.date)
+        dateLabel.text = dateFormatter.string(from: sender.date)
         self.delegate?.dateChanged(toDate: sender.date)
     }
 }
