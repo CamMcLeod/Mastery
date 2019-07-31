@@ -38,5 +38,12 @@ class TaskAvailabilityTableViewCell: UITableViewCell {
         guard let day = daysAvailable.firstIndex(of: sender) else {return}
         dayAvailability[day] = !dayAvailability[day]
         self.delegate?.selectedDates(daysOfWeek: dayAvailability)
+        
+        if sender.backgroundColor != #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1) {
+            sender.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        } else {
+           sender.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        }
+        print(dayAvailability[day])
     }
 }

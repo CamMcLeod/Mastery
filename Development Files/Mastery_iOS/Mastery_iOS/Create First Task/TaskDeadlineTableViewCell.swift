@@ -12,16 +12,18 @@ class TaskDeadlineTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellTitle: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet var datePicker: UIDatePicker!
     var delegate: DatePickerTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+         datePicker.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        self.delegate?.showStatusPickerCell(datePicker: datePicker)
         // Configure the view for the selected state
     }
 
