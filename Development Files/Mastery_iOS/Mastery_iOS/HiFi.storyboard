@@ -715,30 +715,30 @@
                                 <rect key="frame" x="10" y="88" width="394" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskNameCell" id="GEa-mr-fMf">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskIconCell" rowHeight="233" id="Rwd-Jy-wc2">
+                                        <rect key="frame" x="0.0" y="28" width="394" height="233"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GEa-mr-fMf" id="iSU-ht-hTK">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rwd-Jy-wc2" id="dXl-fU-isG">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="232.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Task Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11Y-Je-G10">
-                                                    <rect key="frame" x="0.0" y="-3" width="394" height="49.5"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="36"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOD-HV-KH8" customClass="TaskIconWithLabelView" customModule="Mastery_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="113.5" y="16.5" width="167" height="200"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="SOD-HV-KH8" secondAttribute="height" multiplier="5:6" id="f1z-Ps-ZyA"/>
+                                                        <constraint firstAttribute="height" constant="200" id="yyi-bk-3b1"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="11Y-Je-G10" firstAttribute="centerY" secondItem="iSU-ht-hTK" secondAttribute="centerY" id="HIn-hn-kB9"/>
-                                                <constraint firstAttribute="trailing" secondItem="11Y-Je-G10" secondAttribute="trailing" id="Mqa-I1-Ozp"/>
-                                                <constraint firstItem="11Y-Je-G10" firstAttribute="leading" secondItem="iSU-ht-hTK" secondAttribute="leading" id="PYC-BA-cRX"/>
-                                                <constraint firstItem="11Y-Je-G10" firstAttribute="centerX" secondItem="iSU-ht-hTK" secondAttribute="centerX" id="xrt-Bj-vUP"/>
+                                                <constraint firstItem="SOD-HV-KH8" firstAttribute="centerY" secondItem="dXl-fU-isG" secondAttribute="centerY" id="GAx-RA-Tmx"/>
+                                                <constraint firstItem="SOD-HV-KH8" firstAttribute="centerX" secondItem="dXl-fU-isG" secondAttribute="centerX" id="iXI-hm-Vds"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskDescriptionCell" id="vI1-hn-6zG">
-                                        <rect key="frame" x="0.0" y="72" width="394" height="44"/>
+                                        <rect key="frame" x="0.0" y="261" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vI1-hn-6zG" id="uSN-LR-Kts">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
@@ -761,7 +761,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskGoalCell" id="2og-AZ-hC2">
-                                        <rect key="frame" x="0.0" y="116" width="394" height="44"/>
+                                        <rect key="frame" x="0.0" y="305" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2og-AZ-hC2" id="yb3-97-70Z">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
@@ -770,7 +770,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="K49-oU-5OR">
                                                     <rect key="frame" x="0.0" y="6.5" width="394" height="30.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVq-pR-axG">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Parent:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVq-pR-axG">
                                                             <rect key="frame" x="0.0" y="0.0" width="208" height="30.5"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                                             <color key="textColor" red="0.43921568630000002" green="0.25882352939999997" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -797,7 +797,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskDeadlineCell" id="NFP-BM-XvV">
-                                        <rect key="frame" x="0.0" y="160" width="394" height="44"/>
+                                        <rect key="frame" x="0.0" y="349" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NFP-BM-XvV" id="bZr-6y-fNg">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
@@ -833,7 +833,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskPriorityCell" id="hzE-mz-bkm">
-                                        <rect key="frame" x="0.0" y="204" width="394" height="44"/>
+                                        <rect key="frame" x="0.0" y="393" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hzE-mz-bkm" id="QIr-YD-FSh">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
@@ -869,20 +869,19 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskAvailabilityCell" rowHeight="94" id="yhd-TI-ApD">
-                                        <rect key="frame" x="0.0" y="248" width="394" height="94"/>
+                                        <rect key="frame" x="0.0" y="437" width="394" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yhd-TI-ApD" id="naW-J8-zba">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="93.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="Availability:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DU-Qe-ivv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Availability:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DU-Qe-ivv">
                                                     <rect key="frame" x="0.0" y="0.0" width="118" height="30.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                                     <color key="textColor" red="0.43921568630000002" green="0.25882352939999997" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5x-u4-IsH">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5x-u4-IsH">
                                                     <rect key="frame" x="0.0" y="40.5" width="394" height="41.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaQ-Zd-HFx">
@@ -948,13 +947,16 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="2DU-Qe-ivv" firstAttribute="top" secondItem="naW-J8-zba" secondAttribute="top" id="ZW8-yA-svB"/>
+                                                <constraint firstItem="L5x-u4-IsH" firstAttribute="top" secondItem="2DU-Qe-ivv" secondAttribute="bottom" constant="10" id="aI3-3R-OKN"/>
+                                                <constraint firstItem="2DU-Qe-ivv" firstAttribute="leading" secondItem="naW-J8-zba" secondAttribute="leading" id="hh8-Td-ffU"/>
                                                 <constraint firstAttribute="trailing" secondItem="L5x-u4-IsH" secondAttribute="trailing" id="khc-J0-qB8"/>
                                                 <constraint firstItem="L5x-u4-IsH" firstAttribute="leading" secondItem="naW-J8-zba" secondAttribute="leading" id="yOs-cP-1yz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskTagsCell" rowHeight="135" id="JCH-CH-roA">
-                                        <rect key="frame" x="0.0" y="342" width="394" height="135"/>
+                                        <rect key="frame" x="0.0" y="531" width="394" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JCH-CH-roA" id="CA8-pA-Kb9">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="134.5"/>
@@ -1048,17 +1050,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskEditIconCell" rowHeight="135" id="Iqq-98-bcI">
+                                        <rect key="frame" x="0.0" y="28" width="394" height="135"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iqq-98-bcI" id="8MD-oH-onc">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="134.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLK-Jw-zme" customClass="TaskIconView" customModule="Mastery_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="137" y="7.5" width="120" height="120"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="91L-aa-svr"/>
+                                                        <constraint firstAttribute="width" secondItem="KLK-Jw-zme" secondAttribute="height" multiplier="1:1" id="eW3-gR-tkL"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KLK-Jw-zme" firstAttribute="centerY" secondItem="8MD-oH-onc" secondAttribute="centerY" id="qSp-fq-jRp"/>
+                                                <constraint firstItem="KLK-Jw-zme" firstAttribute="centerX" secondItem="8MD-oH-onc" secondAttribute="centerX" id="tQ4-SH-FEy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskEditNameCell" id="wY2-4n-Z7U">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="44"/>
+                                        <rect key="frame" x="0.0" y="163" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wY2-4n-Z7U" id="T9l-jP-num">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Task Name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1e-cg-eSP">
-                                                    <rect key="frame" x="0.0" y="-5.5" width="394" height="54.5"/>
+                                                    <rect key="frame" x="0.0" y="0.5" width="394" height="43"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="36"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="28"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
@@ -1070,7 +1094,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskEditDescriptionCell" id="4iD-qe-rFM">
-                                        <rect key="frame" x="0.0" y="72" width="394" height="44"/>
+                                        <rect key="frame" x="0.0" y="207" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4iD-qe-rFM" id="9Fl-r0-ra9">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
@@ -1092,11 +1116,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskEditDeadlineCell" rowHeight="260" id="mKm-fA-XxS">
-                                        <rect key="frame" x="0.0" y="116" width="394" height="260"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskEditDeadlineCell" rowHeight="46" id="mKm-fA-XxS">
+                                        <rect key="frame" x="0.0" y="251" width="394" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mKm-fA-XxS" id="RgS-RG-5MJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="259.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="45.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="U2U-0X-ycI">
@@ -1138,7 +1162,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskEditPriorityCell" rowHeight="82" id="bQs-Bc-nC1">
-                                        <rect key="frame" x="0.0" y="376" width="394" height="82"/>
+                                        <rect key="frame" x="0.0" y="297" width="394" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bQs-Bc-nC1" id="v0n-7v-AJX">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="81.5"/>
@@ -1177,7 +1201,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskEditAvailabilityCell" rowHeight="105" id="xpr-mx-wpM">
-                                        <rect key="frame" x="0.0" y="458" width="394" height="105"/>
+                                        <rect key="frame" x="0.0" y="379" width="394" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xpr-mx-wpM" id="1lg-cm-lUY">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="104.5"/>
@@ -1272,7 +1296,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskEditTagsCell" rowHeight="135" id="7Ps-EM-sMj">
-                                        <rect key="frame" x="0.0" y="563" width="394" height="135"/>
+                                        <rect key="frame" x="0.0" y="484" width="394" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Ps-EM-sMj" id="WUo-Na-JRF">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="134.5"/>
@@ -1607,7 +1631,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qby-kD-acG">
-                                <rect key="frame" x="10" y="144" width="394" height="718"/>
+                                <rect key="frame" x="10" y="147" width="394" height="715"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalDescriptionCell" rowHeight="175" id="MbL-kf-OBx" customClass="GoalDescriptionTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
@@ -1877,10 +1901,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Goal Name" textAlignment="center" minimumFontSize="36" translatesAutoresizingMaskIntoConstraints="NO" id="kOO-8I-eXj">
-                                <rect key="frame" x="20" y="88" width="374" height="36"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Goal" textAlignment="center" minimumFontSize="36" translatesAutoresizingMaskIntoConstraints="NO" id="kOO-8I-eXj">
+                                <rect key="frame" x="20" y="88" width="374" height="39"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="28"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -1924,14 +1948,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Task Name" textAlignment="center" minimumFontSize="36" translatesAutoresizingMaskIntoConstraints="NO" id="NEz-P9-xGH">
-                                <rect key="frame" x="10" y="228" width="394" height="36"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Task" textAlignment="center" minimumFontSize="36" translatesAutoresizingMaskIntoConstraints="NO" id="NEz-P9-xGH">
+                                <rect key="frame" x="10" y="228" width="394" height="39"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="28"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fKw-Zk-zGD">
-                                <rect key="frame" x="0.0" y="284" width="414" height="578"/>
+                                <rect key="frame" x="0.0" y="287" width="414" height="575"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskDescriptionCell" rowHeight="175" id="jOb-Kn-gUm" customClass="TaskDescriptionTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
