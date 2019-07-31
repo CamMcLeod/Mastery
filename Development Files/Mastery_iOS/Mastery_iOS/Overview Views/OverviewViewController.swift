@@ -108,7 +108,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         let row = indexPath.row
         if indexPath.section == 0 {
             let startEndCell = tableView.dequeueReusableCell(withIdentifier: "startEndCell") as! StartEndCell
-            startEndCell.configure(startDate: unsavedSessions.last!.0, endDate: self.endTime ?? Date() color: goalColor)
+            startEndCell.configure(startDate: unsavedSessions.last!.0, endDate: self.endTime ?? Date(), color: goalColor)
             return startEndCell
         }
         else {
@@ -141,6 +141,20 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         
         let addNote = UITableViewRowAction(style: .normal, title: "Add Note") { (action, indexPath) in
             // edit item at indexPath
+            let sessionCell = tableView.cellForRow(at: indexPath) as! PreviousSessionCell
+            
+            guard let date = self.newTaskSessions?[indexPath.row].0 else {
+                return
+            }
+            
+            let dateString = self.formatDateForNote(date: date)
+            
+            guard let duration = sessionCell.sessionDurationLabel.text else {
+                return
+            }
+            
+            self.insertNewNote(date: dateString, duration: duration)
+            
         }
         
         addNote.backgroundColor = goalColor
@@ -162,6 +176,8 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
             scrollView.contentOffset = CGPoint.zero;
         }
     }
+    
+    
     
     // MARK: - Collection View
     
@@ -218,6 +234,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         
         overviewTableLabel.layer.borderWidth = 2
         overviewTableLabel.layer.borderColor = goalColor.cgColor
+        overviewTableLabel.textColor = goalColor
         
         taskNameLabel.textColor = goalColor
         
@@ -225,6 +242,21 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         saveButton.setImage(tintedSave, for: .normal)
         saveButton.tintColor = goalColor
         
+    }
+    
+    private func formatDateForNote(date:Date) -> String {
+        
+        
+        let RFC3339DateFormatter = DateFormatter()
+        RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        let dateMatch : String
+        
+        RFC3339DateFormatter.dateFormat = "MMM d, h:mm a"
+        RFC3339DateFormatter.timeZone = TimeZone.current
+        dateMatch = RFC3339DateFormatter.string(from: date)
+        
+        return dateMatch
     }
     
     //MARK: - Actions
@@ -241,6 +273,34 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
     }
+    
+    func insertNewNote(date: String, duration: String) {
+        
+        let messageString = date + " (" + duration + ")"
+        // Get information from user and configure object
+        var inputDescriptionView : UITextField?
+        let alertController = UIAlertController(title: "New Note", message:  messageString, preferredStyle: .alert)
+        let save = UIAlertAction(title: "Save", style: .default, handler: { (action) -> Void in
+            // Do whatever you want with inputTextField?.text
+            let savedNote = messageString + inputDescriptionView!.text!
+            self.newNotes?.append(savedNote)
+            
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+        }
+        
+        alertController.addAction(save)
+        alertController.addAction(cancel)
+        alertController.addTextField { (textField) -> Void in
+            inputDescriptionView = textField
+            inputDescriptionView?.text = "note..."
+        }
+        
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
     
     
 

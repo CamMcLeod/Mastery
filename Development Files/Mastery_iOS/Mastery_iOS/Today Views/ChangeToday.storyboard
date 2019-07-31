@@ -284,6 +284,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="endLabel" destination="HO4-rv-FN7" id="OHx-xU-8Qg"/>
+                                            <outlet property="startEndLabel" destination="lOk-wr-oBM" id="Z8C-lu-zxf"/>
                                             <outlet property="startLabel" destination="Y4Q-aQ-zkI" id="XKS-FG-mWS"/>
                                         </connections>
                                     </tableViewCell>
@@ -327,7 +328,7 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wW-8B-kiB" customClass="TaskIcon" customModule="Mastery_iOS" customModuleProvider="target">
                                 <rect key="frame" x="132" y="114" width="150" height="150"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0wW-8B-kiB" secondAttribute="height" multiplier="1:1" id="WA2-Yy-c9j"/>
                                     <constraint firstAttribute="height" constant="150" id="i4G-8M-Fn2"/>

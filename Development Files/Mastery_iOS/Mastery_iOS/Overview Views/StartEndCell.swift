@@ -12,6 +12,7 @@ class StartEndCell: UITableViewCell {
     
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var endLabel: UILabel!
+    @IBOutlet weak var startEndLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -25,10 +26,10 @@ class StartEndCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func configure(startDate: Date, endDate: Date color: goalColor) {
+    public func configure(startDate: Date, endDate: Date, color: UIColor) {
         startLabel.text = formatDate(date: startDate)
         endLabel.text = formatDate(date: endDate)
-        
+        startEndLabel.textColor = color
     }
     
     private func formatDate(date: Date) -> String {
