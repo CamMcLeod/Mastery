@@ -16,9 +16,6 @@ class TagCreatedGoalCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        tagName.layer.borderColor = UIColor.darkGray.cgColor;
-        tagName.layer.borderWidth = 1.0;
-        
     }
     
 }

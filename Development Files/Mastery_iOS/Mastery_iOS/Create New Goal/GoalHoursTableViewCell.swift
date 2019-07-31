@@ -31,8 +31,7 @@ class GoalHoursTableViewCell: UITableViewCell {
     }
 
     @IBAction func getHours(_ sender: UISlider) {
-//        let roundedValue = round(sender.value / 5) * 5
-//        sender.value = roundedValue
+
         totalHoursLabel.text = "\(sender.value)"
         self.delegate?.getHours(hours: sender.value)
     }

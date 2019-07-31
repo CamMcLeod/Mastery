@@ -23,7 +23,12 @@ class GoalDeadlineTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+
         datePicker.isHidden = true
+        let today = Date()
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "MMMM dd, YYYY"
+        dateLabel.text = dateformatter.string(from: today)
         // Initialization code
     }
 
@@ -31,6 +36,7 @@ class GoalDeadlineTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         self.delegate?.showStatusPickerCell(datePicker: datePicker)
     }
+    
 
     @IBAction func selectDate(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()

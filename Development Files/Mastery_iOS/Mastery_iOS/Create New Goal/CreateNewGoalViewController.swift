@@ -70,8 +70,7 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        self.tableView.separatorStyle = .none
         goalName.delegate = self
         
         
@@ -210,15 +209,20 @@ extension CreateNewGoalViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row < tagList.count {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalsCreatedTagCell", for: indexPath) as! TagCreatedGoalCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalTagCreatedCell", for: indexPath) as! TagCreatedGoalCollectionViewCell
             cell.tagName.text = tagList[indexPath.row]
             return cell
         } else {
             
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalsEmptyTagCell", for: indexPath) as! TagEmptyGoalCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalTagEmptyCell", for: indexPath) as! TagEmptyGoalCollectionViewCell
         cell.delegate = self
         return cell
+    }
+    
+    @IBAction func cancelDownload(sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
+        
     }
     
 }
