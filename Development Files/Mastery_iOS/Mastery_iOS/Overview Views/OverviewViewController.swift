@@ -24,14 +24,14 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
     var endTime : Date?
     var bgColor : UIColor?
     var goalColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+    var taskImage : UIImage?
     var newNotes : [String]?
     var tagList : [String]?
     var reloadDelegate : reloadFocusDelegate?
 
     //MARK: IB Outlets
     @IBOutlet weak var taskNameLabel: UILabel!
-    @IBOutlet weak var taskIconView: UIView!
-    @IBOutlet weak var TaskTestLabel: UILabel!
+    @IBOutlet weak var taskIconView: TaskIcon!
     @IBOutlet weak var overviewTableLabel: UILabel!
     @IBOutlet weak var overviewTable: UITableView!
     @IBOutlet weak var saveButton: UIButton!
@@ -47,13 +47,6 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         self.overviewTable.dataSource = self
         
         self.view.backgroundColor = self.bgColor
-
-        overviewTable.layer.borderWidth = 5
-        overviewTable.layer.borderColor = goalColor.cgColor
-        overviewTable.layer.cornerRadius = 15.0
-        
-        overviewTableLabel.layer.borderWidth = 2
-        overviewTableLabel.layer.borderColor = goalColor.cgColor
         
         // make sure id is UUID
         guard let id = self.taskID else {
@@ -82,6 +75,10 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
 
         
         // set up buttons
+        setUpColors()
+        if let image = taskImage {
+            taskIconView.iconSetup(icon: image, iconColor: goalColor)
+        }
 
     }
     
@@ -111,7 +108,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         let row = indexPath.row
         if indexPath.section == 0 {
             let startEndCell = tableView.dequeueReusableCell(withIdentifier: "startEndCell") as! StartEndCell
-            startEndCell.configure(startDate: unsavedSessions.last!.0, endDate: self.endTime ?? Date())
+            startEndCell.configure(startDate: unsavedSessions.last!.0, endDate: self.endTime ?? Date() color: goalColor)
             return startEndCell
         }
         else {
@@ -185,7 +182,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
     
     //MARK: - Private Functions
     
-    func saveState() {
+    private func saveState() {
         
         task.tags = tagList
         
@@ -211,6 +208,23 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         PersistenceService.saveContext()
+    }
+    
+    private func setUpColors() {
+        
+        overviewTable.layer.borderWidth = 5
+        overviewTable.layer.borderColor = goalColor.cgColor
+        overviewTable.layer.cornerRadius = 15.0
+        
+        overviewTableLabel.layer.borderWidth = 2
+        overviewTableLabel.layer.borderColor = goalColor.cgColor
+        
+        taskNameLabel.textColor = goalColor
+        
+        let tintedSave = saveButton.imageView?.image!.withRenderingMode(.alwaysTemplate)
+        saveButton.setImage(tintedSave, for: .normal)
+        saveButton.tintColor = goalColor
+        
     }
     
     //MARK: - Actions

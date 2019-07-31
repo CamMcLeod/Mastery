@@ -25,9 +25,10 @@ class StartEndCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func configure(startDate: Date, endDate: Date) {
+    public func configure(startDate: Date, endDate: Date color: goalColor) {
         startLabel.text = formatDate(date: startDate)
         endLabel.text = formatDate(date: endDate)
+        
     }
     
     private func formatDate(date: Date) -> String {

@@ -39,7 +39,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     @IBOutlet weak var taskNameLabel: UILabel!
-    @IBOutlet weak var taskTimerView: UIView!
+    @IBOutlet weak var taskTimerView: TaskIcon!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var previousSessionsTable: UITableView!
     @IBOutlet weak var playButton: PausePlayButton!
@@ -47,7 +47,6 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var previousSessionsLabel: UILabel!
     
-    @IBOutlet weak var testImageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +55,12 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         NotificationCenter.default.addObserver(self, selector: #selector(returnToApp), name: UIApplication.willEnterForegroundNotification, object: nil)
 
         
+        
         // TEST TASK
+        
+        guard let bundleURL = Bundle.main.url(forResource: "TaskIcons", withExtension: "bundle") else { return }
+        guard let bundle = Bundle(url: bundleURL) else { return }
+        let testImage = UIImage(named: "blaster", in: bundle, compatibleWith: nil)
         let task1 = Task(context: PersistenceService.context)
         task1.name = "Be Cool"
         task1.taskDescription = "I just want to be everyone's friend and like have super cool parteeees."
@@ -66,6 +70,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         task1.priority = Int16(7)
         task1.id = UUID()
         task1.taskDatesAndDurations = [Date(timeIntervalSinceNow: -3600): 360, Date(timeIntervalSinceNow: -28800): 1500]
+        task1.image = testImage!.pngData() as NSData?
         PersistenceService.saveContext()
         self.taskID = task1.id
         
@@ -74,6 +79,9 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.previousSessionsTable.dataSource = self
         
         setUpColors()
+        if let imageData = task1.image {
+            taskTimerView.iconSetup(icon: UIImage(data: imageData as Data), iconColor: goalColor)
+        }
         
         // make sure id is UUID
         guard let id = self.taskID else {
@@ -125,9 +133,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         } else {
             cell.configure(with: newTaskSessions[row].0, duration: newTaskSessions[row].1, color: goalColor)
         }
-        
-        
-        
+        cell.tintColor = goalColor
         
         return cell
     }
@@ -180,6 +186,8 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             overviewVC.endTime = Date()
             overviewVC.bgColor = self.view.backgroundColor
             overviewVC.reloadDelegate = self
+            overviewVC.goalColor = goalColor
+            overviewVC.taskImage = taskTimerView.iconImage.image
             
             
         }
@@ -398,16 +406,15 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         taskNameLabel.textColor = goalColor
         timerLabel.textColor = goalColor
-
-        let tintedPlay = playButton.currentBackgroundImage!.withRenderingMode(.alwaysTemplate)
+        let tintedPlay = playButton.imageView?.image!.withRenderingMode(.alwaysTemplate)
         playButton.setImage(tintedPlay, for: .normal)
         playButton.tintColor = goalColor
         
-        let tintedPause = pauseButton.currentBackgroundImage!.withRenderingMode(.alwaysTemplate)
+        let tintedPause = pauseButton.imageView?.image!.withRenderingMode(.alwaysTemplate)
         pauseButton.setImage(tintedPause, for: .normal)
         pauseButton.tintColor = goalColor
         
-        let tintedFinish = finishButton.currentBackgroundImage!.withRenderingMode(.alwaysTemplate)
+        let tintedFinish = finishButton.imageView?.image!.withRenderingMode(.alwaysTemplate)
         finishButton.setImage(tintedFinish, for: .normal)
         finishButton.tintColor = goalColor
         
@@ -434,7 +441,6 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.pauseButton.isHidden = true
         
         self.taskNameLabel.text = self.task.name
-        self.testImageLabel.text = self.task.name
         
         self.timerLabel.text = FOCUS_TIME.secondsToHoursMinutesSeconds()
     

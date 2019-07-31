@@ -216,9 +216,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEF-nJ-gNC">
                                 <rect key="frame" x="135.5" y="812" width="143" height="40"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                <color key="tintColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Return to Focus">
-                                    <color key="titleColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelPressed:" destination="gNi-cD-XnM" eventType="touchUpInside" id="Ekv-xw-wAZ"/>
@@ -325,22 +325,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wW-8B-kiB">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wW-8B-kiB" customClass="TaskIcon" customModule="Mastery_iOS" customModuleProvider="target">
                                 <rect key="frame" x="132" y="114" width="150" height="150"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAN-En-3Az">
-                                        <rect key="frame" x="54" y="65" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0wW-8B-kiB" secondAttribute="height" multiplier="1:1" id="WA2-Yy-c9j"/>
-                                    <constraint firstItem="nAN-En-3Az" firstAttribute="centerX" secondItem="0wW-8B-kiB" secondAttribute="centerX" id="biS-No-YhW"/>
                                     <constraint firstAttribute="height" constant="150" id="i4G-8M-Fn2"/>
-                                    <constraint firstItem="nAN-En-3Az" firstAttribute="centerY" secondItem="0wW-8B-kiB" secondAttribute="centerY" id="mZt-mF-nD4"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -364,11 +354,10 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="TaskTestLabel" destination="nAN-En-3Az" id="bTg-iE-Yeh"/>
                         <outlet property="overviewTable" destination="tAn-3i-VOy" id="f4P-ZS-RxL"/>
                         <outlet property="overviewTableLabel" destination="uhq-B3-gGM" id="fbr-nl-cbh"/>
                         <outlet property="saveButton" destination="oaQ-K7-Ffj" id="Vee-Gk-VP0"/>
-                        <outlet property="taskIconView" destination="0wW-8B-kiB" id="Z6F-yn-Xf2"/>
+                        <outlet property="taskIconView" destination="0wW-8B-kiB" id="q25-iY-rht"/>
                         <outlet property="taskNameLabel" destination="ols-1o-ATn" id="rb5-1j-2dS"/>
                     </connections>
                 </viewController>
@@ -422,6 +411,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="fn2-cl-GOe" firstAttribute="leading" secondItem="l58-gc-7wF" secondAttribute="leading" constant="10" id="FsG-45-W4O"/>
                                                 <constraint firstAttribute="bottom" secondItem="fn2-cl-GOe" secondAttribute="bottom" id="VWN-97-bwl"/>
@@ -440,22 +430,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bk6-kD-2L6">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bk6-kD-2L6" customClass="TaskIcon" customModule="Mastery_iOS" customModuleProvider="target">
                                 <rect key="frame" x="132" y="114" width="150" height="150"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4L-mg-5Fe">
-                                        <rect key="frame" x="54" y="64.5" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="7XB-e3-E56"/>
                                     <constraint firstAttribute="width" secondItem="bk6-kD-2L6" secondAttribute="height" multiplier="1:1" id="Mz5-FF-75a"/>
-                                    <constraint firstItem="K4L-mg-5Fe" firstAttribute="centerX" secondItem="bk6-kD-2L6" secondAttribute="centerX" id="nMh-mm-Br4"/>
-                                    <constraint firstItem="K4L-mg-5Fe" firstAttribute="centerY" secondItem="bk6-kD-2L6" secondAttribute="centerY" id="ytd-LT-y7i"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnU-iJ-VCN">
@@ -485,9 +465,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e8-gT-cBG">
                                 <rect key="frame" x="184.5" y="812" width="45" height="40"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                <color key="tintColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Back">
-                                    <color key="titleColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelPressed:" destination="bM1-kH-UY7" eventType="touchUpInside" id="hJI-6F-r8z"/>
@@ -526,8 +506,7 @@
                         <outlet property="previousSessionsLabel" destination="1Xn-rc-LSu" id="VyO-fU-sfH"/>
                         <outlet property="previousSessionsTable" destination="7v5-a8-BD1" id="rWL-2Z-E9H"/>
                         <outlet property="taskNameLabel" destination="Xld-vp-Mz7" id="am5-Fu-1Oi"/>
-                        <outlet property="taskTimerView" destination="bk6-kD-2L6" id="qPN-84-NtE"/>
-                        <outlet property="testImageLabel" destination="K4L-mg-5Fe" id="W2o-R8-W7U"/>
+                        <outlet property="taskTimerView" destination="bk6-kD-2L6" id="mbX-js-xZN"/>
                         <outlet property="timerLabel" destination="AnU-iJ-VCN" id="MQe-yv-Ugh"/>
                     </connections>
                 </viewController>
