@@ -183,6 +183,7 @@
 		9C2908B222ED20000021017D /* TaskIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2908B122ED20000021017D /* TaskIconView.swift */; };
 		9C2908B422ED21920021017D /* TimerAnimation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2908B322ED21920021017D /* TimerAnimation.xib */; };
 		9C2908B622ED223A0021017D /* TimerAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2908B522ED223A0021017D /* TimerAnimationView.swift */; };
+		9C460CA422F14E0A00E94D6E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C460CA322F14E0A00E94D6E /* SettingsViewController.swift */; };
 		9C6C83CB22EBD83300078DFF /* HiFi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6C83CA22EBD83300078DFF /* HiFi.storyboard */; };
 		9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD53FC022E0007100210C0F /* AppDelegate.swift */; };
 		9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD53FC922E0007100210C0F /* Main.storyboard */; };
@@ -416,6 +417,7 @@
 		9C2908B122ED20000021017D /* TaskIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskIconView.swift; sourceTree = "<group>"; };
 		9C2908B322ED21920021017D /* TimerAnimation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerAnimation.xib; sourceTree = "<group>"; };
 		9C2908B522ED223A0021017D /* TimerAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAnimationView.swift; sourceTree = "<group>"; };
+		9C460CA322F14E0A00E94D6E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9C6C83CA22EBD83300078DFF /* HiFi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiFi.storyboard; sourceTree = "<group>"; };
 		9CD53FBD22E0007100210C0F /* Mastery_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mastery_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD53FC022E0007100210C0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -789,6 +791,7 @@
 				069C533722F0CD7B000ECBE0 /* Create First Task */,
 				069C532822F0CD75000ECBE0 /* Create New Goal */,
 				06109A0122EA52D500A9DC7A /* DetailedTaskViewController.swift */,
+				9C460CA322F14E0A00E94D6E /* SettingsViewController.swift */,
 				9C0A766F22F0EAD900B0B529 /* Goal Details */,
 				9C0A767222F0EB3A00B0B529 /* Task Details */,
 				624F4F8A22EF79B400D15F96 /* Extensions */,
@@ -1176,6 +1179,7 @@
 				069C534322F0CD7B000ECBE0 /* TaskPriorityTableViewCell.swift in Sources */,
 				9C0A766E22F0EACE00B0B529 /* GoalDetailViewController.swift in Sources */,
 				061099F422E94D3D00A9DC7A /* DynamicHeightCollectionView.swift in Sources */,
+				9C460CA422F14E0A00E94D6E /* SettingsViewController.swift in Sources */,
 				629AC69C22ED2D9F000C137C /* FocusViewController.swift in Sources */,
 				069C534522F0CD7B000ECBE0 /* TaskAvailabilityTableViewCell.swift in Sources */,
 				9CD53FC122E0007100210C0F /* AppDelegate.swift in Sources */,

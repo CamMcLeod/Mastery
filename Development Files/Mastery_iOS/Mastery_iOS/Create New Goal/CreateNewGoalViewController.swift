@@ -70,8 +70,7 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        self.tableView.separatorStyle = .none
         goalName.delegate = self
         
         
