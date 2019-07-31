@@ -10,6 +10,6 @@ import UIKit
 
 class TaskDetailIconTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var taskIconWithLabel: TaskIconWithLabelView!
+    @IBOutlet weak var taskIconWithLabel: TaskIconWithLabel!
     
 }

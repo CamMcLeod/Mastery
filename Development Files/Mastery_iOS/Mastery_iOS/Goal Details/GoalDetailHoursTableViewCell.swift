@@ -8,9 +8,20 @@
 
 import UIKit
 
+protocol GoalDetailHoursCellDelegate {
+    func getHours(hours: Float)
+}
+
 class GoalDetailHoursTableViewCell: UITableViewCell {
+    
+    var delegate: GoalDetailHoursCellDelegate?
 
     @IBOutlet weak var hoursTitle: UILabel!
     @IBOutlet weak var goalHours: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
     
 }
