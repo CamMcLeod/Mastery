@@ -157,7 +157,7 @@
                                 <rect key="frame" x="10" y="44" width="394" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalNameCell" id="Y7m-e8-8mX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalNameCell" id="Y7m-e8-8mX" customClass="GoalDetailNameTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y7m-e8-8mX" id="CkQ-oh-ERX">
@@ -178,8 +178,11 @@
                                                 <constraint firstItem="SsK-gD-xC0" firstAttribute="centerX" secondItem="CkQ-oh-ERX" secondAttribute="centerX" id="wZh-iA-lJ9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="goalName" destination="SsK-gD-xC0" id="Fve-tX-plG"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalDescriptionCell" id="iEV-nD-3TM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalDescriptionCell" id="iEV-nD-3TM" customClass="GoalDetailDescriptionTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iEV-nD-3TM" id="QGW-pu-dKc">
@@ -201,8 +204,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="WxK-nY-O4q" secondAttribute="trailing" id="Qj3-3R-ezQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="goalDescription" destination="WxK-nY-O4q" id="7Rd-Q8-G7d"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalDeadlineCell" id="Acm-fm-GPi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalDeadlineCell" id="Acm-fm-GPi" customClass="GoalDetailDeadlineTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="116" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Acm-fm-GPi" id="we5-dq-t3X">
@@ -237,8 +243,12 @@
                                                 <constraint firstItem="Hbq-Iu-Y3F" firstAttribute="leading" secondItem="we5-dq-t3X" secondAttribute="leading" id="whL-WT-Lif"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionTitle" destination="vyv-Et-KyI" id="gVO-gG-8nb"/>
+                                            <outlet property="goalDeadlineDate" destination="qRa-rs-9jd" id="V8A-Ek-fiT"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalPriorityCell" id="IH9-Kk-Npk">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalPriorityCell" id="IH9-Kk-Npk" customClass="GoalDetailPriorityTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IH9-Kk-Npk" id="wiB-8C-DxF">
@@ -273,8 +283,12 @@
                                                 <constraint firstItem="GO2-wi-KE1" firstAttribute="leading" secondItem="wiB-8C-DxF" secondAttribute="leading" id="lxk-Nc-1kJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="goalPriority" destination="GDO-ZG-OYg" id="aSt-KL-G7X"/>
+                                            <outlet property="priorityTitle" destination="7uC-2o-f1T" id="Aks-EL-F8C"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalHoursCell" id="k1S-Rp-0Ax">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalHoursCell" id="k1S-Rp-0Ax" customClass="GoalDetailHoursTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="204" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k1S-Rp-0Ax" id="6oL-1e-JKI">
@@ -309,8 +323,12 @@
                                                 <constraint firstItem="yvG-RS-4MQ" firstAttribute="centerY" secondItem="6oL-1e-JKI" secondAttribute="centerY" id="yUI-g9-1v0"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="goalHours" destination="9jN-nD-02F" id="hVm-4X-qPQ"/>
+                                            <outlet property="hoursTitle" destination="m0g-cl-V0O" id="Wdb-gH-AtD"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalTagsCell" rowHeight="135" id="Y55-cM-K9K">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalTagsCell" rowHeight="135" id="Y55-cM-K9K" customClass="GoalDetailTagsTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="248" width="394" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y55-cM-K9K" id="Eyq-w3-4BL">
@@ -333,7 +351,7 @@
                                                         <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bgv-d0-1jC">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bgv-d0-1jC" customClass="TagCreatedGoalDetailCollectionViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="0.0" width="132" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -353,6 +371,9 @@
                                                                 <constraint firstItem="XQw-NL-rVp" firstAttribute="centerY" secondItem="bgv-d0-1jC" secondAttribute="centerY" id="n1p-2m-ZNg"/>
                                                                 <constraint firstItem="XQw-NL-rVp" firstAttribute="centerX" secondItem="bgv-d0-1jC" secondAttribute="centerX" id="pt2-1i-Dqb"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="tagTitle" destination="XQw-NL-rVp" id="fXb-mF-UYu"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -366,6 +387,10 @@
                                                 <constraint firstItem="6XE-5B-la5" firstAttribute="top" secondItem="Iy3-ST-aMh" secondAttribute="bottom" constant="20" id="vK0-Ll-5ez"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="goalTagsCollection" destination="6XE-5B-la5" id="R1j-O2-9yv"/>
+                                            <outlet property="tagsTitle" destination="Iy3-ST-aMh" id="etp-0h-bzR"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -712,7 +737,7 @@
                                 <rect key="frame" x="10" y="44" width="394" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskIconCell" rowHeight="233" id="Rwd-Jy-wc2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskIconCell" rowHeight="233" id="Rwd-Jy-wc2" customClass="TaskDetailIconTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="233"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rwd-Jy-wc2" id="dXl-fU-isG">
@@ -733,8 +758,11 @@
                                                 <constraint firstItem="SOD-HV-KH8" firstAttribute="centerX" secondItem="dXl-fU-isG" secondAttribute="centerX" id="iXI-hm-Vds"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskIconWithLabel" destination="SOD-HV-KH8" id="Atp-ub-b1R"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskDescriptionCell" id="vI1-hn-6zG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskDescriptionCell" id="vI1-hn-6zG" customClass="TaskDetailDescriptionTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="261" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vI1-hn-6zG" id="uSN-LR-Kts">
@@ -756,8 +784,11 @@
                                                 <constraint firstItem="pE1-G7-Tzh" firstAttribute="top" secondItem="uSN-LR-Kts" secondAttribute="top" id="irm-H4-6fE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskDescription" destination="pE1-G7-Tzh" id="Fhb-zt-MZi"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskGoalCell" id="2og-AZ-hC2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskParentCell" id="2og-AZ-hC2" customClass="TaskDetailParentTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="305" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2og-AZ-hC2" id="yb3-97-70Z">
@@ -792,8 +823,12 @@
                                                 <constraint firstItem="K49-oU-5OR" firstAttribute="centerY" secondItem="yb3-97-70Z" secondAttribute="centerY" id="Qnx-pI-oJf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="goalName" destination="dJK-UY-dNL" id="keW-1V-g2D"/>
+                                            <outlet property="parentTitle" destination="lVq-pR-axG" id="PMA-xI-2dl"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskDeadlineCell" id="NFP-BM-XvV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskDeadlineCell" id="NFP-BM-XvV" customClass="TaskDetailDeadlineTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="349" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NFP-BM-XvV" id="bZr-6y-fNg">
@@ -828,8 +863,12 @@
                                                 <constraint firstItem="LNs-2r-atB" firstAttribute="leading" secondItem="bZr-6y-fNg" secondAttribute="leading" id="pyq-ZC-s1Z"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deadlineTitle" destination="HYE-jk-c2i" id="p8D-Gb-Xyd"/>
+                                            <outlet property="taskDeadline" destination="wSV-1N-GZ6" id="7ta-Up-6hU"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskPriorityCell" id="hzE-mz-bkm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskPriorityCell" id="hzE-mz-bkm" customClass="TaskDetailPriorityTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="393" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hzE-mz-bkm" id="QIr-YD-FSh">
@@ -864,8 +903,12 @@
                                                 <constraint firstItem="IzO-dU-JRU" firstAttribute="leading" secondItem="QIr-YD-FSh" secondAttribute="leading" id="Egh-Uf-O1L"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="priorityTitle" destination="6ay-Pz-5yh" id="2eU-00-uba"/>
+                                            <outlet property="taskPriority" destination="D6f-Ra-Ilg" id="CDd-F8-no5"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskAvailabilityCell" rowHeight="94" id="yhd-TI-ApD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskAvailabilityCell" rowHeight="94" id="yhd-TI-ApD" customClass="TaskDetailAvailabilityTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="437" width="394" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yhd-TI-ApD" id="naW-J8-zba">
@@ -951,8 +994,18 @@
                                                 <constraint firstItem="L5x-u4-IsH" firstAttribute="leading" secondItem="naW-J8-zba" secondAttribute="leading" id="yOs-cP-1yz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="availabilityTitle" destination="2DU-Qe-ivv" id="gUx-K0-5LA"/>
+                                            <outlet property="fridayIcon" destination="NoU-IM-tuB" id="Kst-7R-Kd0"/>
+                                            <outlet property="mondayIcon" destination="mBG-hk-nV1" id="EjR-7n-4uQ"/>
+                                            <outlet property="saturdayIcon" destination="8lU-xv-do2" id="dqj-fs-heZ"/>
+                                            <outlet property="sundayIcon" destination="VaQ-Zd-HFx" id="STC-Ak-xPM"/>
+                                            <outlet property="thursdayIcon" destination="ULM-MJ-lIM" id="cLI-eR-M9y"/>
+                                            <outlet property="tuesdayIcon" destination="Rej-XI-e7d" id="vgF-ez-vAm"/>
+                                            <outlet property="wednesdayIcon" destination="u2F-qr-wSX" id="f8h-kV-Gie"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskTagsCell" rowHeight="135" id="JCH-CH-roA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskTagsCell" rowHeight="135" id="JCH-CH-roA" customClass="TaskDetailTagsTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="531" width="394" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JCH-CH-roA" id="CA8-pA-Kb9">
@@ -975,7 +1028,7 @@
                                                         <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RyM-dD-6ux">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RyM-dD-6ux" customClass="TagCreatedTaskDetailCollectionViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="0.0" width="132" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -995,6 +1048,9 @@
                                                                 <constraint firstItem="Llq-bS-jdz" firstAttribute="centerX" secondItem="RyM-dD-6ux" secondAttribute="centerX" id="DNh-bU-jJK"/>
                                                                 <constraint firstItem="Llq-bS-jdz" firstAttribute="centerY" secondItem="RyM-dD-6ux" secondAttribute="centerY" id="Lme-9x-cci"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="tagName" destination="Llq-bS-jdz" id="MMu-xS-pWQ"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -1008,6 +1064,10 @@
                                                 <constraint firstItem="6f9-px-zT7" firstAttribute="leading" secondItem="CA8-pA-Kb9" secondAttribute="leading" id="iZ3-dL-Leq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tagsTitle" destination="6f9-px-zT7" id="jAM-GC-xE2"/>
+                                            <outlet property="taskTagsCollection" destination="B9Q-lc-LnM" id="vrP-Ak-A1w"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
