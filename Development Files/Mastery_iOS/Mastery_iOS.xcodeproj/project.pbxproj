@@ -401,7 +401,7 @@
 		62A6CA4522F12065004976ED /* bacteria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bacteria.png; path = "../../../Design Files/Icons/bacteria.png"; sourceTree = "<group>"; };
 		62A6CA4622F12065004976ED /* ice-cream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ice-cream.png"; path = "../../../Design Files/Icons/ice-cream.png"; sourceTree = "<group>"; };
 		62A6CA4722F12065004976ED /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle.png; path = "../../../Design Files/Icons/triangle.png"; sourceTree = "<group>"; };
-		62F57E5822EFEEF800AE96BB /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTableViewCell.swift; path = "/Users/camsteezin/Desktop/Developer/Lighthouse/Final Project/Mastery/Development Files/Mastery_iOS/Mastery_iOS/HomeTableViewCell.swift"; sourceTree = "<absolute>"; };
+		62F57E5822EFEEF800AE96BB /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		9C2908AB22ED14CA0021017D /* TaskIconWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskIconWithLabel.xib; sourceTree = "<group>"; };
 		9C2908AD22ED18A30021017D /* TaskIcon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskIcon.xib; sourceTree = "<group>"; };
 		9C2908AF22ED1FD90021017D /* TaskIconWithLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskIconWithLabelView.swift; sourceTree = "<group>"; };
