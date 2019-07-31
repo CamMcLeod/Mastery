@@ -61,11 +61,11 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBOutlet var goalName: UITextField!
     
-    private var tmpDescription: String!
+    private var tmpDescription: String?
     private var tmpDateAsString: String!
-    private var tmpDate: Date!
-    private var tmpHours: Float!
-    private var tmpPriority: Int16!
+    private var tmpDate: Date?
+    private var tmpHours: Float?
+    private var tmpPriority: Int16?
     
     
     override func viewDidLoad() {
@@ -155,11 +155,11 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
         goal.name = goalName.text
         goal.goalDescription = tmpDescription
         goal.isComplete = false
-        goal.hoursEstimate = tmpHours
+        goal.hoursEstimate = tmpHours ?? 0.0
         goal.hoursCompleted = 0.0
-        goal.priority = tmpPriority
+        goal.priority = tmpPriority ?? 1
         goal.dateOfBirth = Date() as NSDate
-        goal.deadline = [tmpDate]
+        goal.deadline = [tmpDate] as? [Date]
         goal.color = getColorFromUserDefaults(colorArray: colorArray)
         goal.tags = tagList
         PersistenceService.saveContext()
