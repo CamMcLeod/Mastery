@@ -141,8 +141,6 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskCell", for: indexPath) as! TaskCell
         
-        cell.backgroundColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
-        
         cell.configure(with: todayTasks[indexPath.row])
         
         return cell
@@ -181,7 +179,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
         case .ended:
             collectionView.endInteractiveMovement()
-            cell.stopAnimate()
+            cell.startAnimate()
         default:
             collectionView.cancelInteractiveMovement()
         }
@@ -251,6 +249,13 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
                     }
                     
             }, completion: { (finished:Bool) -> Void in
+                if self.collectionView.indexPathsForVisibleItems.contains(IndexPath(row: index*2, section: 0)) {
+                    let cell1 = self.collectionView.cellForItem(at: IndexPath(row: index*2, section: 0)) as! TaskCell
+                    let cell2 = self.collectionView.cellForItem(at: IndexPath(row: index*2+1, section: 0)) as! TaskCell
+                    cell1.startAnimate()
+                    cell2.startAnimate()
+                }
+                
                 self.batchUpdate(index: index + 1)
             })
         }

@@ -10,11 +10,13 @@ import UIKit
 
 class TaskIconWithLabel : UIView {
     
-    let kCONTENT_XIB_NAME = "TaskIcon"
+    let kCONTENT_XIB_NAME = "TaskIconWithLabel"
+    
+      @IBOutlet var contentView: UIView!
     
     @IBOutlet weak var taskIcon: TaskIcon!
     @IBOutlet weak var taskName: UILabel!
-    @IBOutlet var contentView: UIView!
+  
     
     override init(frame: CGRect) {
         super.init(frame: frame)
