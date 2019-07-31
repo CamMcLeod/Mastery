@@ -60,7 +60,7 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         
         let selectedCell = collectionView.cellForItem(at: indexPath) as! SelectIconCell
-        selectedIconView.image = selectedCell.iconImage.image
+//        selectedIconView.image = selectedCell.taskIcon.iconImage.image
         
         return true
     }

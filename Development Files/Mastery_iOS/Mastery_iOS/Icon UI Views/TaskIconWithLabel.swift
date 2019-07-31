@@ -1,5 +1,5 @@
 //
-//  taskIconView.swift
+//  taskIconWithLabelView.swift
 //  Mastery_iOS
 //
 //  Created by Marina Mona June McPeak on 2019-07-27.
@@ -8,6 +8,7 @@
 
 import UIKit
 
-class TaskIconView : UIView {
+class TaskIconWithLabel : UIView {
     
+
 }

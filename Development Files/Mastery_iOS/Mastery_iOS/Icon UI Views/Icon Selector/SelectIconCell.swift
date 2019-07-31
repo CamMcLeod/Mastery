@@ -10,23 +10,23 @@ import UIKit
 
 class SelectIconCell: UICollectionViewCell {
     
-    @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var taskIcon: TaskIcon!
     
     override var isSelected: Bool {
         didSet {
-            iconImage.layer.cornerRadius = 15.0
-            iconImage.layer.borderWidth = isSelected ? 5 : 0
+            taskIcon.layer.cornerRadius = 15.0
+            taskIcon.layer.borderWidth = isSelected ? 5 : 0
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        iconImage.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        taskIcon.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
         isSelected = false
     }
     
     public func configure(with icon: UIImage) {
-        iconImage.image = icon
+//        taskIcon.iconImage.image = icon
     }
     
 }

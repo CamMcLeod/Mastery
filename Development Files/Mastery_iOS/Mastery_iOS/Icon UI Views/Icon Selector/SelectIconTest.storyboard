@@ -10,15 +10,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Test Icon View Controller-->
         <scene sceneID="LY2-Q9-pc6">
             <objects>
-                <viewController id="a2V-8T-DVi" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="a2V-8T-DVi" customClass="TestIconViewController" customModule="Mastery_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M09-bd-Z72">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="X-512" translatesAutoresizingMaskIntoConstraints="NO" id="9R1-Ae-bm7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="9R1-Ae-bm7">
                                 <rect key="frame" x="157" y="398" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="COe-fW-5Vh"/>
@@ -31,11 +31,13 @@
                                     <constraint firstAttribute="height" constant="38" id="Ljs-wa-lH2"/>
                                     <constraint firstAttribute="width" constant="38" id="r0N-nH-NRr"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="120704-200"/>
-                                <connections>
-                                    <segue destination="Xqr-Bp-Rr8" kind="presentation" identifier="presentIcons" id="d5D-nr-mP5"/>
-                                </connections>
+                                <state key="normal" backgroundImage="NewGoal_Button"/>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oMU-Zp-2Jw" customClass="TaskIcon" customModule="Mastery_iOS" customModuleProvider="target">
+                                <rect key="frame" x="55" y="159" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -46,9 +48,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yZ2-Wa-SnL"/>
                     </view>
-                    <connections>
-                        <outlet property="setImage" destination="9R1-Ae-bm7" id="aFg-Uu-IHc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bda-La-RD2" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,29 +130,28 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="selectIconCell" id="Fqh-3q-yRs" customClass="IconCollectionViewCell" customModule="iconSelector" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="selectIconCell" id="Fqh-3q-yRs" customClass="SelectIconCell" customModule="Mastery_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="10" width="100" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sn6-2x-pI6">
-                                                            <rect key="frame" x="50" y="0.0" width="0.0" height="0.0"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="sn6-2x-pI6" secondAttribute="height" multiplier="1:1" id="hKa-f0-fb1"/>
-                                                            </constraints>
-                                                        </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luG-Ea-L2F">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="0.0"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
                                                     </subviews>
                                                 </view>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="sn6-2x-pI6" firstAttribute="height" secondItem="Fqh-3q-yRs" secondAttribute="height" id="3BZ-9e-V3S"/>
-                                                    <constraint firstItem="sn6-2x-pI6" firstAttribute="centerY" secondItem="Fqh-3q-yRs" secondAttribute="centerY" id="aEe-c2-2jg"/>
-                                                    <constraint firstItem="sn6-2x-pI6" firstAttribute="centerX" secondItem="Fqh-3q-yRs" secondAttribute="centerX" id="l5s-xj-ha5"/>
+                                                    <constraint firstItem="luG-Ea-L2F" firstAttribute="leading" secondItem="Fqh-3q-yRs" secondAttribute="leading" id="Dly-pt-Ttm"/>
+                                                    <constraint firstItem="luG-Ea-L2F" firstAttribute="top" secondItem="Fqh-3q-yRs" secondAttribute="top" id="M5C-T0-s6z"/>
+                                                    <constraint firstAttribute="trailing" secondItem="luG-Ea-L2F" secondAttribute="trailing" id="OTK-VF-Sff"/>
+                                                    <constraint firstAttribute="bottom" secondItem="luG-Ea-L2F" secondAttribute="bottom" id="U3M-AA-eBy"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="iconImage" destination="sn6-2x-pI6" id="yQY-7G-4x8"/>
+                                                    <outlet property="taskIcon" destination="luG-Ea-L2F" id="bXx-VK-3db"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -191,7 +189,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="120704-200" width="16" height="16"/>
+        <image name="NewGoal_Button" width="50" height="50"/>
+        <image name="Settings_Icon" width="34" height="34"/>
         <image name="X-512" width="16" height="16"/>
         <image name="correct" width="16" height="16"/>
     </resources>
