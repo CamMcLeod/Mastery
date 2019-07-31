@@ -168,7 +168,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Goal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SsK-gD-xC0">
-                                                    <rect key="frame" x="0.0" y="-3" width="374" height="49.5"/>
+                                                    <rect key="frame" x="0.0" y="-3" width="394" height="49.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="36"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1511,7 +1511,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4I-Qg-nkv">
-                                                    <rect key="frame" x="222.5" y="0.0" width="87.5" height="33.5"/>
+                                                    <rect key="frame" x="316.5" y="0.0" width="87.5" height="33.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1648,7 +1648,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="MJF-nA-vNs">
-                                                    <rect key="frame" x="0.0" y="35" width="414" height="139.5"/>
+                                                    <rect key="frame" x="0.0" y="35" width="394" height="139.5"/>
                                                     <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
@@ -1682,16 +1682,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="71" translatesAutoresizingMaskIntoConstraints="NO" id="eJb-H0-gw4">
-                                                    <rect key="frame" x="0.0" y="12.5" width="414" height="25"/>
+                                                    <rect key="frame" x="0.0" y="12.5" width="394" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Deadline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htM-rE-G4I">
-                                                            <rect key="frame" x="0.0" y="0.0" width="189.5" height="25"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="169.5" height="25"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday, 26-07-2019" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fv-Ez-oCP">
-                                                            <rect key="frame" x="260.5" y="0.0" width="153.5" height="25"/>
+                                                            <rect key="frame" x="240.5" y="0.0" width="153.5" height="25"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1749,6 +1749,9 @@
                                                         <segment title="9"/>
                                                         <segment title="10"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="getPriority:" destination="H4i-03-R61" eventType="valueChanged" id="Q3v-B6-eLX"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -1759,6 +1762,9 @@
                                                 <constraint firstItem="IZK-Bp-vJK" firstAttribute="leading" secondItem="woe-Oo-Id8" secondAttribute="leading" id="q7X-H7-yh5"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="priorityTitle" destination="IZK-Bp-vJK" id="wC3-w7-XRq"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalHoursCell" rowHeight="95" id="Sju-ym-6wu" customClass="GoalHoursTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="348" width="394" height="95"/>
@@ -1768,16 +1774,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="154" translatesAutoresizingMaskIntoConstraints="NO" id="GG7-WP-Boi">
-                                                    <rect key="frame" x="0.0" y="10" width="414" height="25"/>
+                                                    <rect key="frame" x="0.0" y="10" width="394" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7A-Ur-tMn">
-                                                            <rect key="frame" x="0.0" y="0.0" width="207.5" height="25"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="25"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOO-yi-iWK">
-                                                            <rect key="frame" x="361.5" y="0.0" width="52.5" height="25"/>
+                                                            <rect key="frame" x="341.5" y="0.0" width="52.5" height="25"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1789,7 +1795,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ldZ-Z3-HLt">
-                                                    <rect key="frame" x="-2" y="45" width="418" height="31"/>
+                                                    <rect key="frame" x="-2" y="45" width="398" height="31"/>
                                                     <color key="tintColor" red="0.43921568630000002" green="0.25882352939999997" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="getHours:" destination="Sju-ym-6wu" eventType="valueChanged" id="JZh-QR-oEf"/>
@@ -1806,6 +1812,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="totalHoursLabel" destination="GOO-yi-iWK" id="MjF-4P-DIc"/>
                                             <outlet property="totalHoursTitle" destination="m7A-Ur-tMn" id="CB2-hm-Ao6"/>
                                         </connections>
                                     </tableViewCell>
@@ -1823,7 +1830,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="M6M-CA-sCQ">
-                                                    <rect key="frame" x="0.0" y="35" width="414" height="81.5"/>
+                                                    <rect key="frame" x="0.0" y="35" width="394" height="81.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ysu-S7-zw0">
                                                         <size key="itemSize" width="50" height="50"/>
@@ -1972,7 +1979,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="KKx-Ll-2CY">
-                                                    <rect key="frame" x="10" y="35" width="300" height="129.5"/>
+                                                    <rect key="frame" x="10" y="35" width="394" height="129.5"/>
                                                     <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
@@ -2012,7 +2019,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday, 26-07-2019" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgP-GO-Ifv">
-                                                    <rect key="frame" x="156" y="10" width="154" height="25"/>
+                                                    <rect key="frame" x="250" y="10" width="154" height="25"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2054,7 +2061,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VcZ-Lc-PTu">
-                                                    <rect key="frame" x="10" y="45" width="300" height="40.5"/>
+                                                    <rect key="frame" x="10" y="45" width="394" height="40.5"/>
                                                     <segments>
                                                         <segment title="1"/>
                                                         <segment title="2"/>
@@ -2099,10 +2106,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0y4-H8-62c">
-                                                    <rect key="frame" x="10" y="45" width="300" height="39.5"/>
+                                                    <rect key="frame" x="10" y="45" width="394" height="39.5"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qro-Al-ErO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="36" height="39.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="49.5" height="39.5"/>
                                                             <color key="backgroundColor" red="0.48627450980392156" green="0.46666666666666667" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                             <state key="normal" title="S">
@@ -2115,7 +2122,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgf-Yi-WBa">
-                                                            <rect key="frame" x="44" y="0.0" width="36" height="39.5"/>
+                                                            <rect key="frame" x="57.5" y="0.0" width="49.5" height="39.5"/>
                                                             <color key="backgroundColor" red="0.48627450979999998" green="0.46666666670000001" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                             <state key="normal" title="M">
@@ -2128,7 +2135,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfW-pG-5Zx">
-                                                            <rect key="frame" x="88" y="0.0" width="36" height="39.5"/>
+                                                            <rect key="frame" x="115" y="0.0" width="49.5" height="39.5"/>
                                                             <color key="backgroundColor" red="0.48627450979999998" green="0.46666666670000001" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                             <state key="normal" title="T">
@@ -2141,7 +2148,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCB-Wk-pgS">
-                                                            <rect key="frame" x="132" y="0.0" width="36" height="39.5"/>
+                                                            <rect key="frame" x="172.5" y="0.0" width="49" height="39.5"/>
                                                             <color key="backgroundColor" red="0.48627450979999998" green="0.46666666670000001" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                             <state key="normal" title="W">
@@ -2157,7 +2164,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cR-Qj-ilt">
-                                                            <rect key="frame" x="176" y="0.0" width="36" height="39.5"/>
+                                                            <rect key="frame" x="229.5" y="0.0" width="49.5" height="39.5"/>
                                                             <color key="backgroundColor" red="0.48627450979999998" green="0.46666666670000001" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                             <state key="normal" title="T">
@@ -2170,7 +2177,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDM-L7-POM">
-                                                            <rect key="frame" x="220" y="0.0" width="36" height="39.5"/>
+                                                            <rect key="frame" x="287" y="0.0" width="49.5" height="39.5"/>
                                                             <color key="backgroundColor" red="0.48627450979999998" green="0.46666666670000001" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                             <state key="normal" title="F">
@@ -2183,7 +2190,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Mw-v0-E7N">
-                                                            <rect key="frame" x="264" y="0.0" width="36" height="39.5"/>
+                                                            <rect key="frame" x="344.5" y="0.0" width="49.5" height="39.5"/>
                                                             <color key="backgroundColor" red="0.48627450979999998" green="0.46666666670000001" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                             <state key="normal" title="S">
@@ -2234,7 +2241,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ebN-p1-mYz">
-                                                    <rect key="frame" x="0.0" y="45" width="320" height="71.5"/>
+                                                    <rect key="frame" x="0.0" y="45" width="414" height="71.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IFb-p7-PmL">
                                                         <size key="itemSize" width="50" height="50"/>
