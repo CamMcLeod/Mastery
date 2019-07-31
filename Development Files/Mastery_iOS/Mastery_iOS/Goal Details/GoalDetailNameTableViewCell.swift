@@ -8,8 +8,25 @@
 
 import UIKit
 
+protocol GoalDetailNameCellDelegate {
+    func getValueForName(name: String)
+}
+
 class GoalDetailNameTableViewCell: UITableViewCell {
 
     @IBOutlet weak var goalName: UILabel!
+    
+    var delegate: GoalDetailNameCellDelegate?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
+    func labelDidChange(_ label: UILabel) {
+        self.delegate?.getValueForName(name: goalName.text!)
+        
+        
+    }
     
 }

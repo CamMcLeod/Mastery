@@ -8,9 +8,20 @@
 
 import UIKit
 
+protocol GoalDetailDeadlineCellDelegate {
+    func getValueForDeadline(date: Date)
+}
+
 class GoalDetailDeadlineTableViewCell: UITableViewCell {
+    
+    var delegate: GoalDetailDeadlineCellDelegate?
     
     @IBOutlet weak var descriptionTitle: UILabel!
     @IBOutlet weak var goalDeadlineDate: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
     
 }
