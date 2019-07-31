@@ -9,7 +9,13 @@
 import UIKit
 import CoreData
 
-class OverviewViewController: UIViewController {
+protocol reloadFocusDelegate {
+    
+    func reloadFocusAfterSave()
+    
+}
+
+class OverviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
 
     //MARK: variables
     var taskID : UUID?
@@ -17,12 +23,37 @@ class OverviewViewController: UIViewController {
     var task = Task()
     var endTime : Date?
     var bgColor : UIColor?
+    var goalColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+    var newNotes : [String]?
+    var tagList : [String]?
+    var reloadDelegate : reloadFocusDelegate?
 
+    //MARK: IB Outlets
+    @IBOutlet weak var taskNameLabel: UILabel!
+    @IBOutlet weak var taskIconView: UIView!
+    @IBOutlet weak var TaskTestLabel: UILabel!
+    @IBOutlet weak var overviewTableLabel: UILabel!
+    @IBOutlet weak var overviewTable: UITableView!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    
+    //MARK: View Controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.overviewTable.delegate = self
+        self.overviewTable.dataSource = self
+        
+        self.view.backgroundColor = self.bgColor
+
+        overviewTable.layer.borderWidth = 5
+        overviewTable.layer.borderColor = goalColor.cgColor
+        overviewTable.layer.cornerRadius = 15.0
+        
+        overviewTableLabel.layer.borderWidth = 2
+        overviewTableLabel.layer.borderColor = goalColor.cgColor
         
         // make sure id is UUID
         guard let id = self.taskID else {
@@ -38,6 +69,8 @@ class OverviewViewController: UIViewController {
         do {
             let taskFromID =  try PersistenceService.context.fetch(fetchRequest)[0]
             self.task = taskFromID
+            self.tagList = taskFromID.tags
+            print(taskFromID.taskDatesAndDurations)
             
         } catch {
             
@@ -52,19 +85,150 @@ class OverviewViewController: UIViewController {
 
     }
     
+    // MARK: - Table View
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return newTaskSessions!.count
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let unsavedSessions = newTaskSessions else {
+            return tableView.dequeueReusableCell(withIdentifier: "unsavedSession") as! PreviousSessionCell
+        }
+        
+        let row = indexPath.row
+        if indexPath.section == 0 {
+            let startEndCell = tableView.dequeueReusableCell(withIdentifier: "startEndCell") as! StartEndCell
+            startEndCell.configure(startDate: unsavedSessions.last!.0, endDate: self.endTime ?? Date())
+            return startEndCell
+        }
+        else {
+            let unsavedCell = tableView.dequeueReusableCell(withIdentifier: "unsavedSession") as! PreviousSessionCell
+            unsavedCell.configure(with: unsavedSessions[row].0, duration: unsavedSessions[row].1, color: goalColor)
+            return unsavedCell
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        if section == 0 {
+            return 2.0
+        } else {
+            return 0
+        }
 
-    /*
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        
+        if section == 0 {
+            view.tintColor = goalColor
+        }
+
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let addNote = UITableViewRowAction(style: .normal, title: "Add Note") { (action, indexPath) in
+            // edit item at indexPath
+        }
+        
+        addNote.backgroundColor = goalColor
+        
+        return [addNote]
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.section == 0 {
+            return false
+        }
+        else{
+            return true
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y<=0) {
+            scrollView.contentOffset = CGPoint.zero;
+        }
+    }
+    
+    // MARK: - Collection View
+    
+    
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
     @IBAction func cancelPressed(_ sender: Any) {
-        self.dismiss(animated: true)
+        
+        if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }
+        else {
+             dismiss(animated: true, completion: nil)
+        }
     }
+
+    
+    //MARK: - Private Functions
+    
+    func saveState() {
+        
+        task.tags = tagList
+        
+        if let notes = newNotes {
+            if let taskNotes = task.notes {
+                task.notes = taskNotes + notes
+            }else {
+                task.notes = notes
+            }
+        }
+        
+        if var previousSessions = task.taskDatesAndDurations {
+            
+            for session in self.newTaskSessions! {
+                previousSessions[session.0] = session.1
+                print(session.1)
+            }
+            task.taskDatesAndDurations = previousSessions
+        } else {
+            for session in self.newTaskSessions! {
+                task.taskDatesAndDurations![session.0] = session.1
+            }
+        }
+        
+        PersistenceService.saveContext()
+    }
+    
+    //MARK: - Actions
+    
+    
+
+    @IBAction func savePressed(_ sender: Any) {
+        
+        saveState()
+        
+        if reloadDelegate != nil {
+            reloadDelegate?.reloadFocusAfterSave()
+            saveButton.isEnabled = false
+        }
+        
+    }
+    
+    
+
     
 }
