@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Int {
+public extension Int {
     
     func secondsToHoursMinutesSeconds() -> String {
         if self > 3599 {

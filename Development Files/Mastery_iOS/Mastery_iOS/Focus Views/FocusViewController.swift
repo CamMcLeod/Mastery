@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import UserNotifications
 
-class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, reloadFocusDelegate {
     
     //MARK: - Variables
     enum CurrentMode {
@@ -21,6 +21,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var taskID : UUID?
     var task = Task()
     var taskPredicate: NSPredicate?
+    var goalColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
     
     let FOCUS_TIME = 10
     let BREAK_TIME = 30
@@ -44,6 +45,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var playButton: PausePlayButton!
     @IBOutlet weak var pauseButton: PausePlayButton!
     @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var previousSessionsLabel: UILabel!
     
     @IBOutlet weak var testImageLabel: UILabel!
     
@@ -71,9 +73,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.previousSessionsTable.delegate = self
         self.previousSessionsTable.dataSource = self
         
-        previousSessionsTable.layer.borderWidth = 5
-        previousSessionsTable.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
-        previousSessionsTable.layer.cornerRadius = 15.0
+        setUpColors()
         
         // make sure id is UUID
         guard let id = self.taskID else {
@@ -81,41 +81,16 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return
         }
 
+        fetchDataAndSessions(id: id)
+        
         // fetch task from UUID
-            
-        let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", argumentArray: [id])
-        
-        do {
-            let taskFromID =  try PersistenceService.context.fetch(fetchRequest)[0]
-            self.task = taskFromID
-            
-        } catch {
-            
-            print("Oh no, there is no data to load")
-        }
-        
-        // set up previous sessions
-        if let sessions = task.taskDatesAndDurations {
-            self.taskSessions = sortSessionsByDate(sessions: sessions)
-        }
 
         currentCounter = FOCUS_TIME
         
         // set up buttons
-        self.playButton.isHidden = false
-        self.pauseButton.isHidden = true
-        
-        self.playButton.addTarget(self, action: #selector(popStartingAlert), for: .touchDown)
-        self.pauseButton.addTarget(self, action: #selector(popStartingAlert), for: .touchDown)
-        
-        self.taskNameLabel.text = self.task.name
-        self.testImageLabel.text = self.task.name
-        
-        self.timerLabel.text = FOCUS_TIME.secondsToHoursMinutesSeconds()
+        setUpButtons()
         
         self.previousSessionsTable.reloadData()
-        self.finishButton.isEnabled = false
         
         // set up notifications
         let breakOverNotifCategory = UNNotificationCategory(identifier: "breakOverNotification", actions: [], intentIdentifiers: [], options: [])
@@ -140,14 +115,15 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "previousSession") as! PreviousSessionCell
         let row = indexPath.row
         
         if indexPath.section == 1 {
-            cell.configure(with: taskSessions[row].0, duration: taskSessions[row].1)
+            cell.configure(with: taskSessions[row].0, duration: taskSessions[row].1, color: goalColor)
             cell.accessoryType = UITableViewCell.AccessoryType.checkmark
         } else {
-            cell.configure(with: newTaskSessions[row].0, duration: newTaskSessions[row].1)
+            cell.configure(with: newTaskSessions[row].0, duration: newTaskSessions[row].1, color: goalColor)
         }
         
         
@@ -197,12 +173,14 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Pass the selected object to the new view controller.
         UIApplication.shared.isIdleTimerDisabled = false
         if segue.identifier == "finishSession" {
-            
+        
             let overviewVC = segue.destination as! OverviewViewController
             overviewVC.newTaskSessions = newTaskSessions
             overviewVC.taskID = taskID
             overviewVC.endTime = Date()
             overviewVC.bgColor = self.view.backgroundColor
+            overviewVC.reloadDelegate = self
+            
             
         }
     }
@@ -241,6 +219,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             // remove local notification if user is returning before break is over
             let center = UNUserNotificationCenter.current()
             center.removeAllPendingNotificationRequests()
+            center.removeAllDeliveredNotifications()
             // decrement counter to reflect time away from app
             let dateResigned = UserDefaults.standard.object(forKey: "LastResignDate") as! Date
             let timeGone = Date().timeIntervalSince(dateResigned) - 1.0 //subtract 1 to account for app load and unload while counter is still firing
@@ -251,6 +230,26 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // MARK: - Private Functions
+    
+    private func fetchDataAndSessions(id: UUID) {
+        
+        let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", argumentArray: [id])
+        
+        do {
+            let taskFromID =  try PersistenceService.context.fetch(fetchRequest)[0]
+            self.task = taskFromID
+            
+        } catch {
+            
+            print("Oh no, there is no data to load")
+        }
+        
+        // set up previous sessions
+        if let sessions = task.taskDatesAndDurations {
+            self.taskSessions = sortSessionsByDate(sessions: sessions)
+        }
+    }
 
     
     private func startStopTimer () {
@@ -352,9 +351,9 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let alertController = UIAlertController(title: task.name, message: message, preferredStyle: .alert)
     
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+            
             self.pauseButton.isEnabled = false
             self.finishButton.isEnabled = true
-            
             self.previousSessionsTable.beginUpdates()
             self.newTaskSessions.insert((self.sessionStartTime,self.FOCUS_TIME), at: 0)
             self.previousSessionsTable.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
@@ -373,9 +372,9 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     
     func formatAlertController(alertController: UIAlertController) {
-        alertController.view.tintColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        alertController.view.tintColor = goalColor
         alertController.view.layer.borderWidth = 3
-        alertController.view.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        alertController.view.layer.borderColor = goalColor.cgColor
         alertController.view.layer.cornerRadius = 15.0
         alertController.view.clipsToBounds = true
     }
@@ -387,6 +386,73 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // MARK: - Private Functions
+    
+    private func setUpColors() {
+        
+        previousSessionsTable.layer.borderWidth = 5
+        previousSessionsTable.layer.borderColor = goalColor.cgColor
+        previousSessionsTable.layer.cornerRadius = 15.0
+        
+        previousSessionsLabel.layer.borderWidth = 2
+        previousSessionsLabel.layer.borderColor = goalColor.cgColor
+        
+        taskNameLabel.textColor = goalColor
+        timerLabel.textColor = goalColor
+
+        let tintedPlay = playButton.currentBackgroundImage!.withRenderingMode(.alwaysTemplate)
+        playButton.setImage(tintedPlay, for: .normal)
+        playButton.tintColor = goalColor
+        
+        let tintedPause = pauseButton.currentBackgroundImage!.withRenderingMode(.alwaysTemplate)
+        pauseButton.setImage(tintedPause, for: .normal)
+        pauseButton.tintColor = goalColor
+        
+        let tintedFinish = finishButton.currentBackgroundImage!.withRenderingMode(.alwaysTemplate)
+        finishButton.setImage(tintedFinish, for: .normal)
+        finishButton.tintColor = goalColor
+        
+        previousSessionsLabel.textColor = goalColor
+    
+    }
+
+    
+    private func setUpButtons () {
+        
+        
+        resetButtons()
+        
+        self.playButton.addTarget(self, action: #selector(popStartingAlert), for: .touchDown)
+        self.pauseButton.addTarget(self, action: #selector(popStartingAlert), for: .touchDown)
+        
+    }
+    
+    private func resetButtons () {
+        
+        
+        
+        self.playButton.isHidden = false
+        self.pauseButton.isHidden = true
+        
+        self.taskNameLabel.text = self.task.name
+        self.testImageLabel.text = self.task.name
+        
+        self.timerLabel.text = FOCUS_TIME.secondsToHoursMinutesSeconds()
+    
+        self.finishButton.isEnabled = false
+        
+    }
+    
+    private func resetToFocusMode() {
+        
+        currentMode = .focusMode
+        currentCounter = FOCUS_TIME
+        self.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        timer.invalidate()
+        isTimerRunning = false
+        hasStarted = false
+        fromBreak = false
+        
+    }
     
     private func sortSessionsByDate (sessions:[Date:Int]) ->[(Date,Int)] {
         
@@ -460,9 +526,22 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func animateBackgroundColor(toColor: UIColor) {
         
-        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: [.curveEaseOut], animations: {
+        UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: [.curveEaseOut], animations: {
             self.view.backgroundColor = toColor
         })
+        
+    }
+    //MARK: reload Delegate
+    
+    func reloadFocusAfterSave() {
+        
+        resetButtons()
+        resetToFocusMode()
+        newTaskSessions = []
+        taskSessions = []
+        fetchDataAndSessions(id: task.id!)
+        previousSessionsTable.reloadData()
+
         
     }
 
