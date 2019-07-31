@@ -11,11 +11,13 @@ import CoreData
 
 class OverviewViewController: UIViewController {
 
-    
+    //MARK: variables
     var taskID : UUID?
     var newTaskSessions : [(Date,Int)]?
     var task = Task()
-    
+    var endTime : Date?
+    var bgColor : UIColor?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
