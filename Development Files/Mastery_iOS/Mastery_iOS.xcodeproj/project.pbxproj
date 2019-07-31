@@ -13,7 +13,6 @@
 		065216FE22E7BB6100DC1C44 /* GoalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */; };
 		0652170222E7BBC700DC1C44 /* CreateNewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170122E7BBC700DC1C44 /* CreateNewGoalViewController.swift */; };
 		0652170A22E7D22400DC1C44 /* CreateFirstTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652170922E7D22400DC1C44 /* CreateFirstTaskViewController.swift */; };
-		0652171E22E91FF000DC1C44 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171D22E91FF000DC1C44 /* HomeTableViewCell.swift */; };
 		0652172022E9216A00DC1C44 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */; };
 		069B087622E7B21B000FD048 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B087522E7B21B000FD048 /* PersistenceService.swift */; };
 		069C533022F0CD75000ECBE0 /* TagCreatedGoalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C532922F0CD75000ECBE0 /* TagCreatedGoalCollectionViewCell.swift */; };
@@ -33,6 +32,16 @@
 		069C534922F0D2AF000ECBE0 /* TestAddingGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069C534822F0D2AE000ECBE0 /* TestAddingGoals.storyboard */; };
 		069C534B22F0D418000ECBE0 /* AddTaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C534A22F0D418000ECBE0 /* AddTaskCollectionViewCell.swift */; };
 		62082B5822EF892D00196FA8 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62082B5722EF892D00196FA8 /* OverviewViewController.swift */; };
+		6226936222EFF01900A0A642 /* TaskIcons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6226935C22EFEFE800A0A642 /* TaskIcons.bundle */; };
+		6226936D22EFF10200A0A642 /* SelectIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226936C22EFF10200A0A642 /* SelectIconCell.swift */; };
+		6226936F22EFF20600A0A642 /* SelectIconPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226936E22EFF20600A0A642 /* SelectIconPopoverViewController.swift */; };
+		6226937122EFF24100A0A642 /* SelectIconTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6226937022EFF24100A0A642 /* SelectIconTest.storyboard */; };
+		6226937922EFFF3900A0A642 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6226937822EFFF3900A0A642 /* UserNotifications.framework */; };
+		6226937B22EFFF3900A0A642 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6226937A22EFFF3900A0A642 /* UserNotificationsUI.framework */; };
+		6226937E22EFFF3900A0A642 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226937D22EFFF3900A0A642 /* NotificationViewController.swift */; };
+		6226938122EFFF3900A0A642 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6226937F22EFFF3900A0A642 /* MainInterface.storyboard */; };
+		6226938522EFFF3900A0A642 /* MasteryNotificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6226937622EFFF3900A0A642 /* MasteryNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6226938B22F0EA8300A0A642 /* StartEndCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226938A22F0EA8300A0A642 /* StartEndCell.swift */; };
 		624F4F8C22EF79F300D15F96 /* Int+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F4F8B22EF79F300D15F96 /* Int+Timer.swift */; };
 		62586D1122EFE8D000E37F0A /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62586D0B22EFE8D000E37F0A /* Goal+CoreDataClass.swift */; };
 		62586D1222EFE8D000E37F0A /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62586D0C22EFE8D000E37F0A /* Goal+CoreDataProperties.swift */; };
@@ -49,6 +58,135 @@
 		629AC69F22ED2E6B000C137C /* SettingsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC69E22ED2E6B000C137C /* SettingsTestViewController.swift */; };
 		629AC6A122ED2EDD000C137C /* GoalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC6A022ED2EDD000C137C /* GoalTestViewController.swift */; };
 		629AC6A722ED7D9F000C137C /* TodayFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC6A622ED7D9F000C137C /* TodayFlowLayout.swift */; };
+		62A6CA4822F12065004976ED /* breakfast.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9C822F12062004976ED /* breakfast.png */; };
+		62A6CA4922F12065004976ED /* trumpet.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9C922F12062004976ED /* trumpet.png */; };
+		62A6CA4A22F12065004976ED /* toilet-paper.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9CA22F12062004976ED /* toilet-paper.png */; };
+		62A6CA4B22F12065004976ED /* clothes.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9CB22F12063004976ED /* clothes.png */; };
+		62A6CA4C22F12065004976ED /* key.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9CC22F12063004976ED /* key.png */; };
+		62A6CA4D22F12065004976ED /* medicines.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9CD22F12063004976ED /* medicines.png */; };
+		62A6CA4E22F12065004976ED /* improvement.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9CE22F12063004976ED /* improvement.png */; };
+		62A6CA4F22F12065004976ED /* bass guitar.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9CF22F12063004976ED /* bass guitar.png */; };
+		62A6CA5022F12065004976ED /* airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9D022F12063004976ED /* airplane.png */; };
+		62A6CA5122F12065004976ED /* lyre.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9D122F12063004976ED /* lyre.png */; };
+		62A6CA5222F12065004976ED /* wallet.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9D222F12063004976ED /* wallet.png */; };
+		62A6CA5322F12065004976ED /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9D322F12063004976ED /* list.png */; };
+		62A6CA5422F12065004976ED /* solar-system.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9D422F12063004976ED /* solar-system.png */; };
+		62A6CA5522F12065004976ED /* accordion.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9D522F12063004976ED /* accordion.png */; };
+		62A6CA5622F12065004976ED /* buggy.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9D622F12063004976ED /* buggy.png */; };
+		62A6CA5722F12065004976ED /* organ.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9D722F12063004976ED /* organ.png */; };
+		62A6CA5822F12065004976ED /* bassoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9D822F12063004976ED /* bassoon.png */; };
+		62A6CA5922F12065004976ED /* karaoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9D922F12063004976ED /* karaoke.png */; };
+		62A6CA5A22F12065004976ED /* clipboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9DA22F12063004976ED /* clipboard.png */; };
+		62A6CA5B22F12065004976ED /* element.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9DB22F12063004976ED /* element.png */; };
+		62A6CA5C22F12065004976ED /* workplace.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9DC22F12063004976ED /* workplace.png */; };
+		62A6CA5D22F12065004976ED /* keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9DD22F12063004976ED /* keyboard.png */; };
+		62A6CA5E22F12065004976ED /* alarm-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9DE22F12063004976ED /* alarm-clock.png */; };
+		62A6CA5F22F12065004976ED /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9DF22F12063004976ED /* earth.png */; };
+		62A6CA6022F12065004976ED /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9E022F12063004976ED /* bus.png */; };
+		62A6CA6122F12065004976ED /* guitar.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9E122F12063004976ED /* guitar.png */; };
+		62A6CA6222F12065004976ED /* magnet.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9E222F12063004976ED /* magnet.png */; };
+		62A6CA6322F12065004976ED /* drum set.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9E322F12063004976ED /* drum set.png */; };
+		62A6CA6422F12065004976ED /* piano.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9E422F12063004976ED /* piano.png */; };
+		62A6CA6522F12065004976ED /* picnic.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9E522F12063004976ED /* picnic.png */; };
+		62A6CA6622F12065004976ED /* tambourine.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9E622F12063004976ED /* tambourine.png */; };
+		62A6CA6722F12065004976ED /* computer.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9E722F12063004976ED /* computer.png */; };
+		62A6CA6822F12065004976ED /* drum.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9E822F12063004976ED /* drum.png */; };
+		62A6CA6922F12065004976ED /* cello.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9E922F12063004976ED /* cello.png */; };
+		62A6CA6A22F12065004976ED /* ukelele.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9EA22F12063004976ED /* ukelele.png */; };
+		62A6CA6B22F12065004976ED /* xylophone.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9EB22F12063004976ED /* xylophone.png */; };
+		62A6CA6C22F12065004976ED /* stove.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9EC22F12063004976ED /* stove.png */; };
+		62A6CA6D22F12065004976ED /* french horn.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9ED22F12063004976ED /* french horn.png */; };
+		62A6CA6E22F12065004976ED /* gymnastics.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9EE22F12063004976ED /* gymnastics.png */; };
+		62A6CA6F22F12065004976ED /* saxophone.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9EF22F12063004976ED /* saxophone.png */; };
+		62A6CA7022F12065004976ED /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9F022F12063004976ED /* calendar.png */; };
+		62A6CA7122F12065004976ED /* clarinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9F122F12063004976ED /* clarinet.png */; };
+		62A6CA7222F12065004976ED /* cleaning.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9F222F12063004976ED /* cleaning.png */; };
+		62A6CA7322F12065004976ED /* bowling.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9F322F12063004976ED /* bowling.png */; };
+		62A6CA7422F12065004976ED /* test-tube.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9F422F12063004976ED /* test-tube.png */; };
+		62A6CA7522F12065004976ED /* marimba.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9F522F12063004976ED /* marimba.png */; };
+		62A6CA7622F12065004976ED /* bed.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9F622F12064004976ED /* bed.png */; };
+		62A6CA7722F12065004976ED /* observation.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9F722F12064004976ED /* observation.png */; };
+		62A6CA7822F12065004976ED /* dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9F822F12064004976ED /* dinner.png */; };
+		62A6CA7922F12065004976ED /* roller-skate.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9F922F12064004976ED /* roller-skate.png */; };
+		62A6CA7A22F12065004976ED /* holiday.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9FA22F12064004976ED /* holiday.png */; };
+		62A6CA7B22F12065004976ED /* earth-globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9FB22F12064004976ED /* earth-globe.png */; };
+		62A6CA7C22F12065004976ED /* backpack.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9FC22F12064004976ED /* backpack.png */; };
+		62A6CA7D22F12065004976ED /* cooking.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9FD22F12064004976ED /* cooking.png */; };
+		62A6CA7E22F12065004976ED /* bongos.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9FE22F12064004976ED /* bongos.png */; };
+		62A6CA7F22F12065004976ED /* birthday.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6C9FF22F12064004976ED /* birthday.png */; };
+		62A6CA8022F12065004976ED /* balalaika.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0022F12064004976ED /* balalaika.png */; };
+		62A6CA8122F12065004976ED /* axis.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0122F12064004976ED /* axis.png */; };
+		62A6CA8222F12065004976ED /* thermometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0222F12064004976ED /* thermometer.png */; };
+		62A6CA8322F12065004976ED /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0322F12064004976ED /* statistics.png */; };
+		62A6CA8422F12065004976ED /* chime.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0422F12064004976ED /* chime.png */; };
+		62A6CA8522F12065004976ED /* detergent.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0522F12064004976ED /* detergent.png */; };
+		62A6CA8622F12065004976ED /* mobile-phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0622F12064004976ED /* mobile-phone.png */; };
+		62A6CA8722F12065004976ED /* kite.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0722F12064004976ED /* kite.png */; };
+		62A6CA8822F12065004976ED /* flute.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0822F12064004976ED /* flute.png */; };
+		62A6CA8922F12065004976ED /* scientist.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0922F12064004976ED /* scientist.png */; };
+		62A6CA8A22F12065004976ED /* juice.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0A22F12064004976ED /* juice.png */; };
+		62A6CA8B22F12065004976ED /* flasks.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0B22F12064004976ED /* flasks.png */; };
+		62A6CA8C22F12065004976ED /* camping.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0C22F12064004976ED /* camping.png */; };
+		62A6CA8D22F12065004976ED /* santoor.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0D22F12064004976ED /* santoor.png */; };
+		62A6CA8E22F12065004976ED /* rebec.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0E22F12064004976ED /* rebec.png */; };
+		62A6CA8F22F12065004976ED /* timpani.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA0F22F12064004976ED /* timpani.png */; };
+		62A6CA9022F12065004976ED /* electric guitar.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1022F12064004976ED /* electric guitar.png */; };
+		62A6CA9122F12065004976ED /* television.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1122F12064004976ED /* television.png */; };
+		62A6CA9222F12065004976ED /* scooter.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1222F12064004976ED /* scooter.png */; };
+		62A6CA9322F12065004976ED /* umbrellas.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1322F12064004976ED /* umbrellas.png */; };
+		62A6CA9422F12065004976ED /* molecule.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1422F12064004976ED /* molecule.png */; };
+		62A6CA9522F12065004976ED /* petri-dish.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1522F12064004976ED /* petri-dish.png */; };
+		62A6CA9622F12065004976ED /* launchpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1622F12064004976ED /* launchpad.png */; };
+		62A6CA9722F12065004976ED /* viola.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1722F12064004976ED /* viola.png */; };
+		62A6CA9822F12065004976ED /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1822F12064004976ED /* apple.png */; };
+		62A6CA9922F12065004976ED /* tuba.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1922F12064004976ED /* tuba.png */; };
+		62A6CA9A22F12065004976ED /* harp.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1A22F12064004976ED /* harp.png */; };
+		62A6CA9B22F12065004976ED /* magnifying-glass.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1B22F12064004976ED /* magnifying-glass.png */; };
+		62A6CA9C22F12065004976ED /* djembe.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1C22F12064004976ED /* djembe.png */; };
+		62A6CA9D22F12065004976ED /* headphones.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1D22F12064004976ED /* headphones.png */; };
+		62A6CA9E22F12065004976ED /* microscope.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1E22F12065004976ED /* microscope.png */; };
+		62A6CA9F22F12065004976ED /* electric-guitar.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA1F22F12065004976ED /* electric-guitar.png */; };
+		62A6CAA022F12065004976ED /* molecular.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2022F12065004976ED /* molecular.png */; };
+		62A6CAA122F12065004976ED /* mandolin.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2122F12065004976ED /* mandolin.png */; };
+		62A6CAA222F12065004976ED /* suitcase.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2222F12065004976ED /* suitcase.png */; };
+		62A6CAA322F12066004976ED /* atom.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2322F12065004976ED /* atom.png */; };
+		62A6CAA422F12066004976ED /* teeth-cleaning.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2422F12065004976ED /* teeth-cleaning.png */; };
+		62A6CAA522F12066004976ED /* tablet.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2522F12065004976ED /* tablet.png */; };
+		62A6CAA622F12066004976ED /* cosmetics.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2622F12065004976ED /* cosmetics.png */; };
+		62A6CAA722F12066004976ED /* shirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2722F12065004976ED /* shirt.png */; };
+		62A6CAA822F12066004976ED /* violin.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2822F12065004976ED /* violin.png */; };
+		62A6CAA922F12066004976ED /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2922F12065004976ED /* book.png */; };
+		62A6CAAA22F12066004976ED /* photo-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2A22F12065004976ED /* photo-camera.png */; };
+		62A6CAAB22F12066004976ED /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2B22F12065004976ED /* cell.png */; };
+		62A6CAAC22F12066004976ED /* dna-structure.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2C22F12065004976ED /* dna-structure.png */; };
+		62A6CAAD22F12066004976ED /* gong.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2D22F12065004976ED /* gong.png */; };
+		62A6CAAE22F12066004976ED /* rat.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2E22F12065004976ED /* rat.png */; };
+		62A6CAAF22F12066004976ED /* maracas.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA2F22F12065004976ED /* maracas.png */; };
+		62A6CAB022F12066004976ED /* hurdy gurdy.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3022F12065004976ED /* hurdy gurdy.png */; };
+		62A6CAB122F12066004976ED /* trombone.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3122F12065004976ED /* trombone.png */; };
+		62A6CAB222F12066004976ED /* lute.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3222F12065004976ED /* lute.png */; };
+		62A6CAB322F12066004976ED /* harmonica.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3322F12065004976ED /* harmonica.png */; };
+		62A6CAB422F12066004976ED /* cabasa.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3422F12065004976ED /* cabasa.png */; };
+		62A6CAB522F12066004976ED /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3522F12065004976ED /* compass.png */; };
+		62A6CAB622F12066004976ED /* oboe.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3622F12065004976ED /* oboe.png */; };
+		62A6CAB722F12066004976ED /* sitar.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3722F12065004976ED /* sitar.png */; };
+		62A6CAB822F12066004976ED /* telescope.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3822F12065004976ED /* telescope.png */; };
+		62A6CAB922F12066004976ED /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3922F12065004976ED /* water.png */; };
+		62A6CABA22F12066004976ED /* garden.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3A22F12065004976ED /* garden.png */; };
+		62A6CABB22F12066004976ED /* pipa.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3B22F12065004976ED /* pipa.png */; };
+		62A6CABC22F12066004976ED /* conga.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3C22F12065004976ED /* conga.png */; };
+		62A6CABD22F12066004976ED /* bicycle.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3D22F12065004976ED /* bicycle.png */; };
+		62A6CABE22F12066004976ED /* calculator.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3E22F12065004976ED /* calculator.png */; };
+		62A6CABF22F12066004976ED /* cymbals.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA3F22F12065004976ED /* cymbals.png */; };
+		62A6CAC022F12066004976ED /* shower.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA4022F12065004976ED /* shower.png */; };
+		62A6CAC122F12066004976ED /* banjo.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA4122F12065004976ED /* banjo.png */; };
+		62A6CAC222F12066004976ED /* shopping-bag.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA4222F12065004976ED /* shopping-bag.png */; };
+		62A6CAC322F12066004976ED /* satellite.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA4322F12065004976ED /* satellite.png */; };
+		62A6CAC422F12066004976ED /* melodica.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA4422F12065004976ED /* melodica.png */; };
+		62A6CAC522F12066004976ED /* bacteria.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA4522F12065004976ED /* bacteria.png */; };
+		62A6CAC622F12066004976ED /* ice-cream.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA4622F12065004976ED /* ice-cream.png */; };
+		62A6CAC722F12066004976ED /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A6CA4722F12065004976ED /* triangle.png */; };
+		62F57E5922EFEEF800AE96BB /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F57E5822EFEEF800AE96BB /* HomeTableViewCell.swift */; };
 		9C0A766E22F0EACE00B0B529 /* GoalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A766D22F0EACE00B0B529 /* GoalDetailViewController.swift */; };
 		9C0A767122F0EB3200B0B529 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A767022F0EB3200B0B529 /* TaskDetailViewController.swift */; };
 		9C2908AC22ED14CA0021017D /* TaskIconWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2908AB22ED14CA0021017D /* TaskIconWithLabel.xib */; };
@@ -67,6 +205,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6226936322EFF02A00A0A642 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CD53FB522E0007100210C0F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6226935B22EFEFE800A0A642;
+			remoteInfo = TaskIcons;
+		};
+		6226938322EFFF3900A0A642 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CD53FB522E0007100210C0F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6226937522EFFF3900A0A642;
+			remoteInfo = MasteryNotificationExtension;
+		};
 		9CD53FD722E0007200210C0F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9CD53FB522E0007100210C0F /* Project object */;
@@ -83,6 +235,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6226938922EFFF3900A0A642 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6226938522EFFF3900A0A642 /* MasteryNotificationExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		061099F322E94D3D00A9DC7A /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
 		06109A0122EA52D500A9DC7A /* DetailedTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTaskViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +256,6 @@
 		065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListTableViewController.swift; sourceTree = "<group>"; };
 		0652170122E7BBC700DC1C44 /* CreateNewGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewGoalViewController.swift; sourceTree = "<group>"; };
 		0652170922E7D22400DC1C44 /* CreateFirstTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFirstTaskViewController.swift; sourceTree = "<group>"; };
-		0652171D22E91FF000DC1C44 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		069B087522E7B21B000FD048 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		069C532922F0CD75000ECBE0 /* TagCreatedGoalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCreatedGoalCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -110,6 +275,18 @@
 		069C534822F0D2AE000ECBE0 /* TestAddingGoals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TestAddingGoals.storyboard; sourceTree = "<group>"; };
 		069C534A22F0D418000ECBE0 /* AddTaskCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskCollectionViewCell.swift; sourceTree = "<group>"; };
 		62082B5722EF892D00196FA8 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		6226935C22EFEFE800A0A642 /* TaskIcons.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskIcons.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6226935E22EFEFE800A0A642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6226936C22EFF10200A0A642 /* SelectIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIconCell.swift; sourceTree = "<group>"; };
+		6226936E22EFF20600A0A642 /* SelectIconPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIconPopoverViewController.swift; sourceTree = "<group>"; };
+		6226937022EFF24100A0A642 /* SelectIconTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectIconTest.storyboard; sourceTree = "<group>"; };
+		6226937622EFFF3900A0A642 /* MasteryNotificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MasteryNotificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6226937822EFFF3900A0A642 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		6226937A22EFFF3900A0A642 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		6226937D22EFFF3900A0A642 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		6226938022EFFF3900A0A642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		6226938222EFFF3900A0A642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6226938A22F0EA8300A0A642 /* StartEndCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartEndCell.swift; path = "Mastery_iOS/Overview Views/StartEndCell.swift"; sourceTree = SOURCE_ROOT; };
 		624F4F8B22EF79F300D15F96 /* Int+Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timer.swift"; sourceTree = "<group>"; };
 		62586D0B22EFE8D000E37F0A /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		62586D0C22EFE8D000E37F0A /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -126,6 +303,135 @@
 		629AC69E22ED2E6B000C137C /* SettingsTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTestViewController.swift; sourceTree = "<group>"; };
 		629AC6A022ED2EDD000C137C /* GoalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTestViewController.swift; sourceTree = "<group>"; };
 		629AC6A622ED7D9F000C137C /* TodayFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayFlowLayout.swift; sourceTree = "<group>"; };
+		62A6C9C822F12062004976ED /* breakfast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = breakfast.png; path = "../../../Design Files/Icons/breakfast.png"; sourceTree = "<group>"; };
+		62A6C9C922F12062004976ED /* trumpet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trumpet.png; path = "../../../Design Files/Icons/trumpet.png"; sourceTree = "<group>"; };
+		62A6C9CA22F12062004976ED /* toilet-paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "toilet-paper.png"; path = "../../../Design Files/Icons/toilet-paper.png"; sourceTree = "<group>"; };
+		62A6C9CB22F12063004976ED /* clothes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clothes.png; path = "../../../Design Files/Icons/clothes.png"; sourceTree = "<group>"; };
+		62A6C9CC22F12063004976ED /* key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = key.png; path = "../../../Design Files/Icons/key.png"; sourceTree = "<group>"; };
+		62A6C9CD22F12063004976ED /* medicines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = medicines.png; path = "../../../Design Files/Icons/medicines.png"; sourceTree = "<group>"; };
+		62A6C9CE22F12063004976ED /* improvement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = improvement.png; path = "../../../Design Files/Icons/improvement.png"; sourceTree = "<group>"; };
+		62A6C9CF22F12063004976ED /* bass guitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bass guitar.png"; path = "../../../Design Files/Icons/bass guitar.png"; sourceTree = "<group>"; };
+		62A6C9D022F12063004976ED /* airplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = airplane.png; path = "../../../Design Files/Icons/airplane.png"; sourceTree = "<group>"; };
+		62A6C9D122F12063004976ED /* lyre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lyre.png; path = "../../../Design Files/Icons/lyre.png"; sourceTree = "<group>"; };
+		62A6C9D222F12063004976ED /* wallet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wallet.png; path = "../../../Design Files/Icons/wallet.png"; sourceTree = "<group>"; };
+		62A6C9D322F12063004976ED /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = "../../../Design Files/Icons/list.png"; sourceTree = "<group>"; };
+		62A6C9D422F12063004976ED /* solar-system.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "solar-system.png"; path = "../../../Design Files/Icons/solar-system.png"; sourceTree = "<group>"; };
+		62A6C9D522F12063004976ED /* accordion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = accordion.png; path = "../../../Design Files/Icons/accordion.png"; sourceTree = "<group>"; };
+		62A6C9D622F12063004976ED /* buggy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buggy.png; path = "../../../Design Files/Icons/buggy.png"; sourceTree = "<group>"; };
+		62A6C9D722F12063004976ED /* organ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = organ.png; path = "../../../Design Files/Icons/organ.png"; sourceTree = "<group>"; };
+		62A6C9D822F12063004976ED /* bassoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bassoon.png; path = "../../../Design Files/Icons/bassoon.png"; sourceTree = "<group>"; };
+		62A6C9D922F12063004976ED /* karaoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = karaoke.png; path = "../../../Design Files/Icons/karaoke.png"; sourceTree = "<group>"; };
+		62A6C9DA22F12063004976ED /* clipboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clipboard.png; path = "../../../Design Files/Icons/clipboard.png"; sourceTree = "<group>"; };
+		62A6C9DB22F12063004976ED /* element.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = element.png; path = "../../../Design Files/Icons/element.png"; sourceTree = "<group>"; };
+		62A6C9DC22F12063004976ED /* workplace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = workplace.png; path = "../../../Design Files/Icons/workplace.png"; sourceTree = "<group>"; };
+		62A6C9DD22F12063004976ED /* keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyboard.png; path = "../../../Design Files/Icons/keyboard.png"; sourceTree = "<group>"; };
+		62A6C9DE22F12063004976ED /* alarm-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alarm-clock.png"; path = "../../../Design Files/Icons/alarm-clock.png"; sourceTree = "<group>"; };
+		62A6C9DF22F12063004976ED /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = earth.png; path = "../../../Design Files/Icons/earth.png"; sourceTree = "<group>"; };
+		62A6C9E022F12063004976ED /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bus.png; path = "../../../Design Files/Icons/bus.png"; sourceTree = "<group>"; };
+		62A6C9E122F12063004976ED /* guitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = guitar.png; path = "../../../Design Files/Icons/guitar.png"; sourceTree = "<group>"; };
+		62A6C9E222F12063004976ED /* magnet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = magnet.png; path = "../../../Design Files/Icons/magnet.png"; sourceTree = "<group>"; };
+		62A6C9E322F12063004976ED /* drum set.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "drum set.png"; path = "../../../Design Files/Icons/drum set.png"; sourceTree = "<group>"; };
+		62A6C9E422F12063004976ED /* piano.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = piano.png; path = "../../../Design Files/Icons/piano.png"; sourceTree = "<group>"; };
+		62A6C9E522F12063004976ED /* picnic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = picnic.png; path = "../../../Design Files/Icons/picnic.png"; sourceTree = "<group>"; };
+		62A6C9E622F12063004976ED /* tambourine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tambourine.png; path = "../../../Design Files/Icons/tambourine.png"; sourceTree = "<group>"; };
+		62A6C9E722F12063004976ED /* computer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = computer.png; path = "../../../Design Files/Icons/computer.png"; sourceTree = "<group>"; };
+		62A6C9E822F12063004976ED /* drum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drum.png; path = "../../../Design Files/Icons/drum.png"; sourceTree = "<group>"; };
+		62A6C9E922F12063004976ED /* cello.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cello.png; path = "../../../Design Files/Icons/cello.png"; sourceTree = "<group>"; };
+		62A6C9EA22F12063004976ED /* ukelele.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ukelele.png; path = "../../../Design Files/Icons/ukelele.png"; sourceTree = "<group>"; };
+		62A6C9EB22F12063004976ED /* xylophone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = xylophone.png; path = "../../../Design Files/Icons/xylophone.png"; sourceTree = "<group>"; };
+		62A6C9EC22F12063004976ED /* stove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stove.png; path = "../../../Design Files/Icons/stove.png"; sourceTree = "<group>"; };
+		62A6C9ED22F12063004976ED /* french horn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "french horn.png"; path = "../../../Design Files/Icons/french horn.png"; sourceTree = "<group>"; };
+		62A6C9EE22F12063004976ED /* gymnastics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gymnastics.png; path = "../../../Design Files/Icons/gymnastics.png"; sourceTree = "<group>"; };
+		62A6C9EF22F12063004976ED /* saxophone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = saxophone.png; path = "../../../Design Files/Icons/saxophone.png"; sourceTree = "<group>"; };
+		62A6C9F022F12063004976ED /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = "../../../Design Files/Icons/calendar.png"; sourceTree = "<group>"; };
+		62A6C9F122F12063004976ED /* clarinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clarinet.png; path = "../../../Design Files/Icons/clarinet.png"; sourceTree = "<group>"; };
+		62A6C9F222F12063004976ED /* cleaning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cleaning.png; path = "../../../Design Files/Icons/cleaning.png"; sourceTree = "<group>"; };
+		62A6C9F322F12063004976ED /* bowling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bowling.png; path = "../../../Design Files/Icons/bowling.png"; sourceTree = "<group>"; };
+		62A6C9F422F12063004976ED /* test-tube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test-tube.png"; path = "../../../Design Files/Icons/test-tube.png"; sourceTree = "<group>"; };
+		62A6C9F522F12063004976ED /* marimba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = marimba.png; path = "../../../Design Files/Icons/marimba.png"; sourceTree = "<group>"; };
+		62A6C9F622F12064004976ED /* bed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bed.png; path = "../../../Design Files/Icons/bed.png"; sourceTree = "<group>"; };
+		62A6C9F722F12064004976ED /* observation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = observation.png; path = "../../../Design Files/Icons/observation.png"; sourceTree = "<group>"; };
+		62A6C9F822F12064004976ED /* dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dinner.png; path = "../../../Design Files/Icons/dinner.png"; sourceTree = "<group>"; };
+		62A6C9F922F12064004976ED /* roller-skate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "roller-skate.png"; path = "../../../Design Files/Icons/roller-skate.png"; sourceTree = "<group>"; };
+		62A6C9FA22F12064004976ED /* holiday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = holiday.png; path = "../../../Design Files/Icons/holiday.png"; sourceTree = "<group>"; };
+		62A6C9FB22F12064004976ED /* earth-globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "earth-globe.png"; path = "../../../Design Files/Icons/earth-globe.png"; sourceTree = "<group>"; };
+		62A6C9FC22F12064004976ED /* backpack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backpack.png; path = "../../../Design Files/Icons/backpack.png"; sourceTree = "<group>"; };
+		62A6C9FD22F12064004976ED /* cooking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cooking.png; path = "../../../Design Files/Icons/cooking.png"; sourceTree = "<group>"; };
+		62A6C9FE22F12064004976ED /* bongos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bongos.png; path = "../../../Design Files/Icons/bongos.png"; sourceTree = "<group>"; };
+		62A6C9FF22F12064004976ED /* birthday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = birthday.png; path = "../../../Design Files/Icons/birthday.png"; sourceTree = "<group>"; };
+		62A6CA0022F12064004976ED /* balalaika.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = balalaika.png; path = "../../../Design Files/Icons/balalaika.png"; sourceTree = "<group>"; };
+		62A6CA0122F12064004976ED /* axis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = axis.png; path = "../../../Design Files/Icons/axis.png"; sourceTree = "<group>"; };
+		62A6CA0222F12064004976ED /* thermometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thermometer.png; path = "../../../Design Files/Icons/thermometer.png"; sourceTree = "<group>"; };
+		62A6CA0322F12064004976ED /* statistics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statistics.png; path = "../../../Design Files/Icons/statistics.png"; sourceTree = "<group>"; };
+		62A6CA0422F12064004976ED /* chime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chime.png; path = "../../../Design Files/Icons/chime.png"; sourceTree = "<group>"; };
+		62A6CA0522F12064004976ED /* detergent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = detergent.png; path = "../../../Design Files/Icons/detergent.png"; sourceTree = "<group>"; };
+		62A6CA0622F12064004976ED /* mobile-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mobile-phone.png"; path = "../../../Design Files/Icons/mobile-phone.png"; sourceTree = "<group>"; };
+		62A6CA0722F12064004976ED /* kite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kite.png; path = "../../../Design Files/Icons/kite.png"; sourceTree = "<group>"; };
+		62A6CA0822F12064004976ED /* flute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flute.png; path = "../../../Design Files/Icons/flute.png"; sourceTree = "<group>"; };
+		62A6CA0922F12064004976ED /* scientist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scientist.png; path = "../../../Design Files/Icons/scientist.png"; sourceTree = "<group>"; };
+		62A6CA0A22F12064004976ED /* juice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = juice.png; path = "../../../Design Files/Icons/juice.png"; sourceTree = "<group>"; };
+		62A6CA0B22F12064004976ED /* flasks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flasks.png; path = "../../../Design Files/Icons/flasks.png"; sourceTree = "<group>"; };
+		62A6CA0C22F12064004976ED /* camping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camping.png; path = "../../../Design Files/Icons/camping.png"; sourceTree = "<group>"; };
+		62A6CA0D22F12064004976ED /* santoor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = santoor.png; path = "../../../Design Files/Icons/santoor.png"; sourceTree = "<group>"; };
+		62A6CA0E22F12064004976ED /* rebec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rebec.png; path = "../../../Design Files/Icons/rebec.png"; sourceTree = "<group>"; };
+		62A6CA0F22F12064004976ED /* timpani.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timpani.png; path = "../../../Design Files/Icons/timpani.png"; sourceTree = "<group>"; };
+		62A6CA1022F12064004976ED /* electric guitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "electric guitar.png"; path = "../../../Design Files/Icons/electric guitar.png"; sourceTree = "<group>"; };
+		62A6CA1122F12064004976ED /* television.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = television.png; path = "../../../Design Files/Icons/television.png"; sourceTree = "<group>"; };
+		62A6CA1222F12064004976ED /* scooter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scooter.png; path = "../../../Design Files/Icons/scooter.png"; sourceTree = "<group>"; };
+		62A6CA1322F12064004976ED /* umbrellas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = umbrellas.png; path = "../../../Design Files/Icons/umbrellas.png"; sourceTree = "<group>"; };
+		62A6CA1422F12064004976ED /* molecule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = molecule.png; path = "../../../Design Files/Icons/molecule.png"; sourceTree = "<group>"; };
+		62A6CA1522F12064004976ED /* petri-dish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "petri-dish.png"; path = "../../../Design Files/Icons/petri-dish.png"; sourceTree = "<group>"; };
+		62A6CA1622F12064004976ED /* launchpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launchpad.png; path = "../../../Design Files/Icons/launchpad.png"; sourceTree = "<group>"; };
+		62A6CA1722F12064004976ED /* viola.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = viola.png; path = "../../../Design Files/Icons/viola.png"; sourceTree = "<group>"; };
+		62A6CA1822F12064004976ED /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apple.png; path = "../../../Design Files/Icons/apple.png"; sourceTree = "<group>"; };
+		62A6CA1922F12064004976ED /* tuba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tuba.png; path = "../../../Design Files/Icons/tuba.png"; sourceTree = "<group>"; };
+		62A6CA1A22F12064004976ED /* harp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = harp.png; path = "../../../Design Files/Icons/harp.png"; sourceTree = "<group>"; };
+		62A6CA1B22F12064004976ED /* magnifying-glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "magnifying-glass.png"; path = "../../../Design Files/Icons/magnifying-glass.png"; sourceTree = "<group>"; };
+		62A6CA1C22F12064004976ED /* djembe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = djembe.png; path = "../../../Design Files/Icons/djembe.png"; sourceTree = "<group>"; };
+		62A6CA1D22F12064004976ED /* headphones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = headphones.png; path = "../../../Design Files/Icons/headphones.png"; sourceTree = "<group>"; };
+		62A6CA1E22F12065004976ED /* microscope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = microscope.png; path = "../../../Design Files/Icons/microscope.png"; sourceTree = "<group>"; };
+		62A6CA1F22F12065004976ED /* electric-guitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "electric-guitar.png"; path = "../../../Design Files/Icons/electric-guitar.png"; sourceTree = "<group>"; };
+		62A6CA2022F12065004976ED /* molecular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = molecular.png; path = "../../../Design Files/Icons/molecular.png"; sourceTree = "<group>"; };
+		62A6CA2122F12065004976ED /* mandolin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mandolin.png; path = "../../../Design Files/Icons/mandolin.png"; sourceTree = "<group>"; };
+		62A6CA2222F12065004976ED /* suitcase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = suitcase.png; path = "../../../Design Files/Icons/suitcase.png"; sourceTree = "<group>"; };
+		62A6CA2322F12065004976ED /* atom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = atom.png; path = "../../../Design Files/Icons/atom.png"; sourceTree = "<group>"; };
+		62A6CA2422F12065004976ED /* teeth-cleaning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "teeth-cleaning.png"; path = "../../../Design Files/Icons/teeth-cleaning.png"; sourceTree = "<group>"; };
+		62A6CA2522F12065004976ED /* tablet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tablet.png; path = "../../../Design Files/Icons/tablet.png"; sourceTree = "<group>"; };
+		62A6CA2622F12065004976ED /* cosmetics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cosmetics.png; path = "../../../Design Files/Icons/cosmetics.png"; sourceTree = "<group>"; };
+		62A6CA2722F12065004976ED /* shirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shirt.png; path = "../../../Design Files/Icons/shirt.png"; sourceTree = "<group>"; };
+		62A6CA2822F12065004976ED /* violin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = violin.png; path = "../../../Design Files/Icons/violin.png"; sourceTree = "<group>"; };
+		62A6CA2922F12065004976ED /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = book.png; path = "../../../Design Files/Icons/book.png"; sourceTree = "<group>"; };
+		62A6CA2A22F12065004976ED /* photo-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photo-camera.png"; path = "../../../Design Files/Icons/photo-camera.png"; sourceTree = "<group>"; };
+		62A6CA2B22F12065004976ED /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cell.png; path = "../../../Design Files/Icons/cell.png"; sourceTree = "<group>"; };
+		62A6CA2C22F12065004976ED /* dna-structure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dna-structure.png"; path = "../../../Design Files/Icons/dna-structure.png"; sourceTree = "<group>"; };
+		62A6CA2D22F12065004976ED /* gong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gong.png; path = "../../../Design Files/Icons/gong.png"; sourceTree = "<group>"; };
+		62A6CA2E22F12065004976ED /* rat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rat.png; path = "../../../Design Files/Icons/rat.png"; sourceTree = "<group>"; };
+		62A6CA2F22F12065004976ED /* maracas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maracas.png; path = "../../../Design Files/Icons/maracas.png"; sourceTree = "<group>"; };
+		62A6CA3022F12065004976ED /* hurdy gurdy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hurdy gurdy.png"; path = "../../../Design Files/Icons/hurdy gurdy.png"; sourceTree = "<group>"; };
+		62A6CA3122F12065004976ED /* trombone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trombone.png; path = "../../../Design Files/Icons/trombone.png"; sourceTree = "<group>"; };
+		62A6CA3222F12065004976ED /* lute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lute.png; path = "../../../Design Files/Icons/lute.png"; sourceTree = "<group>"; };
+		62A6CA3322F12065004976ED /* harmonica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = harmonica.png; path = "../../../Design Files/Icons/harmonica.png"; sourceTree = "<group>"; };
+		62A6CA3422F12065004976ED /* cabasa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cabasa.png; path = "../../../Design Files/Icons/cabasa.png"; sourceTree = "<group>"; };
+		62A6CA3522F12065004976ED /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compass.png; path = "../../../Design Files/Icons/compass.png"; sourceTree = "<group>"; };
+		62A6CA3622F12065004976ED /* oboe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = oboe.png; path = "../../../Design Files/Icons/oboe.png"; sourceTree = "<group>"; };
+		62A6CA3722F12065004976ED /* sitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sitar.png; path = "../../../Design Files/Icons/sitar.png"; sourceTree = "<group>"; };
+		62A6CA3822F12065004976ED /* telescope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = telescope.png; path = "../../../Design Files/Icons/telescope.png"; sourceTree = "<group>"; };
+		62A6CA3922F12065004976ED /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = water.png; path = "../../../Design Files/Icons/water.png"; sourceTree = "<group>"; };
+		62A6CA3A22F12065004976ED /* garden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = garden.png; path = "../../../Design Files/Icons/garden.png"; sourceTree = "<group>"; };
+		62A6CA3B22F12065004976ED /* pipa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pipa.png; path = "../../../Design Files/Icons/pipa.png"; sourceTree = "<group>"; };
+		62A6CA3C22F12065004976ED /* conga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = conga.png; path = "../../../Design Files/Icons/conga.png"; sourceTree = "<group>"; };
+		62A6CA3D22F12065004976ED /* bicycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bicycle.png; path = "../../../Design Files/Icons/bicycle.png"; sourceTree = "<group>"; };
+		62A6CA3E22F12065004976ED /* calculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calculator.png; path = "../../../Design Files/Icons/calculator.png"; sourceTree = "<group>"; };
+		62A6CA3F22F12065004976ED /* cymbals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cymbals.png; path = "../../../Design Files/Icons/cymbals.png"; sourceTree = "<group>"; };
+		62A6CA4022F12065004976ED /* shower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shower.png; path = "../../../Design Files/Icons/shower.png"; sourceTree = "<group>"; };
+		62A6CA4122F12065004976ED /* banjo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banjo.png; path = "../../../Design Files/Icons/banjo.png"; sourceTree = "<group>"; };
+		62A6CA4222F12065004976ED /* shopping-bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shopping-bag.png"; path = "../../../Design Files/Icons/shopping-bag.png"; sourceTree = "<group>"; };
+		62A6CA4322F12065004976ED /* satellite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = satellite.png; path = "../../../Design Files/Icons/satellite.png"; sourceTree = "<group>"; };
+		62A6CA4422F12065004976ED /* melodica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = melodica.png; path = "../../../Design Files/Icons/melodica.png"; sourceTree = "<group>"; };
+		62A6CA4522F12065004976ED /* bacteria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bacteria.png; path = "../../../Design Files/Icons/bacteria.png"; sourceTree = "<group>"; };
+		62A6CA4622F12065004976ED /* ice-cream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ice-cream.png"; path = "../../../Design Files/Icons/ice-cream.png"; sourceTree = "<group>"; };
+		62A6CA4722F12065004976ED /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle.png; path = "../../../Design Files/Icons/triangle.png"; sourceTree = "<group>"; };
+		62F57E5822EFEEF800AE96BB /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		9C0A766D22F0EACE00B0B529 /* GoalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewController.swift; sourceTree = "<group>"; };
 		9C0A767022F0EB3200B0B529 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		9C2908AB22ED14CA0021017D /* TaskIconWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskIconWithLabel.xib; sourceTree = "<group>"; };
@@ -150,6 +456,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6226937322EFFF3900A0A642 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6226937B22EFFF3900A0A642 /* UserNotificationsUI.framework in Frameworks */,
+				6226937922EFFF3900A0A642 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CD53FBA22E0007100210C0F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,9 +534,175 @@
 		62082B5622EF890300196FA8 /* Overview Views */ = {
 			isa = PBXGroup;
 			children = (
+				6226938A22F0EA8300A0A642 /* StartEndCell.swift */,
 				62082B5722EF892D00196FA8 /* OverviewViewController.swift */,
 			);
 			path = "Overview Views";
+			sourceTree = "<group>";
+		};
+		6226935D22EFEFE800A0A642 /* TaskIcons */ = {
+			isa = PBXGroup;
+			children = (
+				62A6C9D522F12063004976ED /* accordion.png */,
+				62A6C9D022F12063004976ED /* airplane.png */,
+				62A6C9DE22F12063004976ED /* alarm-clock.png */,
+				62A6CA1822F12064004976ED /* apple.png */,
+				62A6CA2322F12065004976ED /* atom.png */,
+				62A6CA0122F12064004976ED /* axis.png */,
+				62A6C9FC22F12064004976ED /* backpack.png */,
+				62A6CA4522F12065004976ED /* bacteria.png */,
+				62A6CA0022F12064004976ED /* balalaika.png */,
+				62A6CA4122F12065004976ED /* banjo.png */,
+				62A6C9CF22F12063004976ED /* bass guitar.png */,
+				62A6C9D822F12063004976ED /* bassoon.png */,
+				62A6C9F622F12064004976ED /* bed.png */,
+				62A6CA3D22F12065004976ED /* bicycle.png */,
+				62A6C9FF22F12064004976ED /* birthday.png */,
+				62A6C9FE22F12064004976ED /* bongos.png */,
+				62A6CA2922F12065004976ED /* book.png */,
+				62A6C9F322F12063004976ED /* bowling.png */,
+				62A6C9C822F12062004976ED /* breakfast.png */,
+				62A6C9D622F12063004976ED /* buggy.png */,
+				62A6C9E022F12063004976ED /* bus.png */,
+				62A6CA3422F12065004976ED /* cabasa.png */,
+				62A6CA3E22F12065004976ED /* calculator.png */,
+				62A6C9F022F12063004976ED /* calendar.png */,
+				62A6CA0C22F12064004976ED /* camping.png */,
+				62A6CA2B22F12065004976ED /* cell.png */,
+				62A6C9E922F12063004976ED /* cello.png */,
+				62A6CA0422F12064004976ED /* chime.png */,
+				62A6C9F122F12063004976ED /* clarinet.png */,
+				62A6C9F222F12063004976ED /* cleaning.png */,
+				62A6C9DA22F12063004976ED /* clipboard.png */,
+				62A6C9CB22F12063004976ED /* clothes.png */,
+				62A6CA3522F12065004976ED /* compass.png */,
+				62A6C9E722F12063004976ED /* computer.png */,
+				62A6CA3C22F12065004976ED /* conga.png */,
+				62A6C9FD22F12064004976ED /* cooking.png */,
+				62A6CA2622F12065004976ED /* cosmetics.png */,
+				62A6CA3F22F12065004976ED /* cymbals.png */,
+				62A6CA0522F12064004976ED /* detergent.png */,
+				62A6C9F822F12064004976ED /* dinner.png */,
+				62A6CA1C22F12064004976ED /* djembe.png */,
+				62A6CA2C22F12065004976ED /* dna-structure.png */,
+				62A6C9E322F12063004976ED /* drum set.png */,
+				62A6C9E822F12063004976ED /* drum.png */,
+				62A6C9FB22F12064004976ED /* earth-globe.png */,
+				62A6C9DF22F12063004976ED /* earth.png */,
+				62A6CA1022F12064004976ED /* electric guitar.png */,
+				62A6CA1F22F12065004976ED /* electric-guitar.png */,
+				62A6C9DB22F12063004976ED /* element.png */,
+				62A6CA0B22F12064004976ED /* flasks.png */,
+				62A6CA0822F12064004976ED /* flute.png */,
+				62A6C9ED22F12063004976ED /* french horn.png */,
+				62A6CA3A22F12065004976ED /* garden.png */,
+				62A6CA2D22F12065004976ED /* gong.png */,
+				62A6C9E122F12063004976ED /* guitar.png */,
+				62A6C9EE22F12063004976ED /* gymnastics.png */,
+				62A6CA3322F12065004976ED /* harmonica.png */,
+				62A6CA1A22F12064004976ED /* harp.png */,
+				62A6CA1D22F12064004976ED /* headphones.png */,
+				62A6C9FA22F12064004976ED /* holiday.png */,
+				62A6CA3022F12065004976ED /* hurdy gurdy.png */,
+				62A6CA4622F12065004976ED /* ice-cream.png */,
+				62A6C9CE22F12063004976ED /* improvement.png */,
+				62A6CA0A22F12064004976ED /* juice.png */,
+				62A6C9D922F12063004976ED /* karaoke.png */,
+				62A6C9CC22F12063004976ED /* key.png */,
+				62A6C9DD22F12063004976ED /* keyboard.png */,
+				62A6CA0722F12064004976ED /* kite.png */,
+				62A6CA1622F12064004976ED /* launchpad.png */,
+				62A6C9D322F12063004976ED /* list.png */,
+				62A6CA3222F12065004976ED /* lute.png */,
+				62A6C9D122F12063004976ED /* lyre.png */,
+				62A6C9E222F12063004976ED /* magnet.png */,
+				62A6CA1B22F12064004976ED /* magnifying-glass.png */,
+				62A6CA2122F12065004976ED /* mandolin.png */,
+				62A6CA2F22F12065004976ED /* maracas.png */,
+				62A6C9F522F12063004976ED /* marimba.png */,
+				62A6C9CD22F12063004976ED /* medicines.png */,
+				62A6CA4422F12065004976ED /* melodica.png */,
+				62A6CA1E22F12065004976ED /* microscope.png */,
+				62A6CA0622F12064004976ED /* mobile-phone.png */,
+				62A6CA2022F12065004976ED /* molecular.png */,
+				62A6CA1422F12064004976ED /* molecule.png */,
+				62A6CA3622F12065004976ED /* oboe.png */,
+				62A6C9F722F12064004976ED /* observation.png */,
+				62A6C9D722F12063004976ED /* organ.png */,
+				62A6CA1522F12064004976ED /* petri-dish.png */,
+				62A6CA2A22F12065004976ED /* photo-camera.png */,
+				62A6C9E422F12063004976ED /* piano.png */,
+				62A6C9E522F12063004976ED /* picnic.png */,
+				62A6CA3B22F12065004976ED /* pipa.png */,
+				62A6CA2E22F12065004976ED /* rat.png */,
+				62A6CA0E22F12064004976ED /* rebec.png */,
+				62A6C9F922F12064004976ED /* roller-skate.png */,
+				62A6CA0D22F12064004976ED /* santoor.png */,
+				62A6CA4322F12065004976ED /* satellite.png */,
+				62A6C9EF22F12063004976ED /* saxophone.png */,
+				62A6CA0922F12064004976ED /* scientist.png */,
+				62A6CA1222F12064004976ED /* scooter.png */,
+				62A6CA2722F12065004976ED /* shirt.png */,
+				62A6CA4222F12065004976ED /* shopping-bag.png */,
+				62A6CA4022F12065004976ED /* shower.png */,
+				62A6CA3722F12065004976ED /* sitar.png */,
+				62A6C9D422F12063004976ED /* solar-system.png */,
+				62A6CA0322F12064004976ED /* statistics.png */,
+				62A6C9EC22F12063004976ED /* stove.png */,
+				62A6CA2222F12065004976ED /* suitcase.png */,
+				62A6CA2522F12065004976ED /* tablet.png */,
+				62A6C9E622F12063004976ED /* tambourine.png */,
+				62A6CA2422F12065004976ED /* teeth-cleaning.png */,
+				62A6CA3822F12065004976ED /* telescope.png */,
+				62A6CA1122F12064004976ED /* television.png */,
+				62A6C9F422F12063004976ED /* test-tube.png */,
+				62A6CA0222F12064004976ED /* thermometer.png */,
+				62A6CA0F22F12064004976ED /* timpani.png */,
+				62A6C9CA22F12062004976ED /* toilet-paper.png */,
+				62A6CA4722F12065004976ED /* triangle.png */,
+				62A6CA3122F12065004976ED /* trombone.png */,
+				62A6C9C922F12062004976ED /* trumpet.png */,
+				62A6CA1922F12064004976ED /* tuba.png */,
+				62A6C9EA22F12063004976ED /* ukelele.png */,
+				62A6CA1322F12064004976ED /* umbrellas.png */,
+				62A6CA1722F12064004976ED /* viola.png */,
+				62A6CA2822F12065004976ED /* violin.png */,
+				62A6C9D222F12063004976ED /* wallet.png */,
+				62A6CA3922F12065004976ED /* water.png */,
+				62A6C9DC22F12063004976ED /* workplace.png */,
+				62A6C9EB22F12063004976ED /* xylophone.png */,
+				6226935E22EFEFE800A0A642 /* Info.plist */,
+			);
+			path = TaskIcons;
+			sourceTree = "<group>";
+		};
+		6226936522EFF04C00A0A642 /* Icon Selector */ = {
+			isa = PBXGroup;
+			children = (
+				6226936C22EFF10200A0A642 /* SelectIconCell.swift */,
+				6226936E22EFF20600A0A642 /* SelectIconPopoverViewController.swift */,
+				6226937022EFF24100A0A642 /* SelectIconTest.storyboard */,
+			);
+			path = "Icon Selector";
+			sourceTree = "<group>";
+		};
+		6226937722EFFF3900A0A642 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6226937822EFFF3900A0A642 /* UserNotifications.framework */,
+				6226937A22EFFF3900A0A642 /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6226937C22EFFF3900A0A642 /* MasteryNotificationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				6226937D22EFFF3900A0A642 /* NotificationViewController.swift */,
+				6226937F22EFFF3900A0A642 /* MainInterface.storyboard */,
+				6226938222EFFF3900A0A642 /* Info.plist */,
+			);
+			path = MasteryNotificationExtension;
 			sourceTree = "<group>";
 		};
 		624F4F8A22EF79B400D15F96 /* Extensions */ = {
@@ -292,6 +773,7 @@
 		9C6C83CC22EBDD1800078DFF /* Icon UI Views */ = {
 			isa = PBXGroup;
 			children = (
+				6226936522EFF04C00A0A642 /* Icon Selector */,
 				9C2908AB22ED14CA0021017D /* TaskIconWithLabel.xib */,
 				9C2908AF22ED1FD90021017D /* TaskIconWithLabelView.swift */,
 				9C2908AD22ED18A30021017D /* TaskIcon.xib */,
@@ -308,6 +790,9 @@
 				9CD53FBF22E0007100210C0F /* Mastery_iOS */,
 				9CD53FD922E0007200210C0F /* Mastery_iOSTests */,
 				9CD53FE422E0007200210C0F /* Mastery_iOSUITests */,
+				6226935D22EFEFE800A0A642 /* TaskIcons */,
+				6226937C22EFFF3900A0A642 /* MasteryNotificationExtension */,
+				6226937722EFFF3900A0A642 /* Frameworks */,
 				9CD53FBE22E0007100210C0F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -318,6 +803,8 @@
 				9CD53FBD22E0007100210C0F /* Mastery_iOS.app */,
 				9CD53FD622E0007200210C0F /* Mastery_iOSTests.xctest */,
 				9CD53FE122E0007200210C0F /* Mastery_iOSUITests.xctest */,
+				6226935C22EFEFE800A0A642 /* TaskIcons.bundle */,
+				6226937622EFFF3900A0A642 /* MasteryNotificationExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -327,9 +814,9 @@
 			children = (
 				065216FC22E7BA8F00DC1C44 /* CoreDataProperties */,
 				9CD53FC022E0007100210C0F /* AppDelegate.swift */,
-				0652171D22E91FF000DC1C44 /* HomeTableViewCell.swift */,
 				061099F322E94D3D00A9DC7A /* DynamicHeightCollectionView.swift */,
 				069C534A22F0D418000ECBE0 /* AddTaskCollectionViewCell.swift */,
+				62F57E5822EFEEF800AE96BB /* HomeTableViewCell.swift */,
 				0652171F22E9216A00DC1C44 /* IconCollectionViewCell.swift */,
 				065216FD22E7BB6100DC1C44 /* GoalListTableViewController.swift */,
 				9C6C83CA22EBD83300078DFF /* HiFi.storyboard */,
@@ -374,6 +861,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6226935B22EFEFE800A0A642 /* TaskIcons */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6226936122EFEFE800A0A642 /* Build configuration list for PBXNativeTarget "TaskIcons" */;
+			buildPhases = (
+				6226935A22EFEFE800A0A642 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskIcons;
+			productName = TaskIcons;
+			productReference = 6226935C22EFEFE800A0A642 /* TaskIcons.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		6226937522EFFF3900A0A642 /* MasteryNotificationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6226938622EFFF3900A0A642 /* Build configuration list for PBXNativeTarget "MasteryNotificationExtension" */;
+			buildPhases = (
+				6226937222EFFF3900A0A642 /* Sources */,
+				6226937322EFFF3900A0A642 /* Frameworks */,
+				6226937422EFFF3900A0A642 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MasteryNotificationExtension;
+			productName = MasteryNotificationExtension;
+			productReference = 6226937622EFFF3900A0A642 /* MasteryNotificationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		9CD53FBC22E0007100210C0F /* Mastery_iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CD53FEA22E0007200210C0F /* Build configuration list for PBXNativeTarget "Mastery_iOS" */;
@@ -381,10 +900,13 @@
 				9CD53FB922E0007100210C0F /* Sources */,
 				9CD53FBA22E0007100210C0F /* Frameworks */,
 				9CD53FBB22E0007100210C0F /* Resources */,
+				6226938922EFFF3900A0A642 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6226936422EFF02A00A0A642 /* PBXTargetDependency */,
+				6226938422EFFF3900A0A642 /* PBXTargetDependency */,
 			);
 			name = Mastery_iOS;
 			productName = Mastery_iOS;
@@ -437,6 +959,12 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Marina Mona June McPeak";
 				TargetAttributes = {
+					6226935B22EFEFE800A0A642 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					6226937522EFFF3900A0A642 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					9CD53FBC22E0007100210C0F = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -466,11 +994,156 @@
 				9CD53FBC22E0007100210C0F /* Mastery_iOS */,
 				9CD53FD522E0007200210C0F /* Mastery_iOSTests */,
 				9CD53FE022E0007200210C0F /* Mastery_iOSUITests */,
+				6226935B22EFEFE800A0A642 /* TaskIcons */,
+				6226937522EFFF3900A0A642 /* MasteryNotificationExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6226935A22EFEFE800A0A642 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62A6CA8522F12065004976ED /* detergent.png in Resources */,
+				62A6CA9122F12065004976ED /* television.png in Resources */,
+				62A6CABA22F12066004976ED /* garden.png in Resources */,
+				62A6CA4C22F12065004976ED /* key.png in Resources */,
+				62A6CA9322F12065004976ED /* umbrellas.png in Resources */,
+				62A6CA6922F12065004976ED /* cello.png in Resources */,
+				62A6CA9622F12065004976ED /* launchpad.png in Resources */,
+				62A6CAA922F12066004976ED /* book.png in Resources */,
+				62A6CA6122F12065004976ED /* guitar.png in Resources */,
+				62A6CA7A22F12065004976ED /* holiday.png in Resources */,
+				62A6CA6A22F12065004976ED /* ukelele.png in Resources */,
+				62A6CA5122F12065004976ED /* lyre.png in Resources */,
+				62A6CAC522F12066004976ED /* bacteria.png in Resources */,
+				62A6CA6E22F12065004976ED /* gymnastics.png in Resources */,
+				62A6CA6322F12065004976ED /* drum set.png in Resources */,
+				62A6CAAC22F12066004976ED /* dna-structure.png in Resources */,
+				62A6CA7022F12065004976ED /* calendar.png in Resources */,
+				62A6CAB122F12066004976ED /* trombone.png in Resources */,
+				62A6CA4D22F12065004976ED /* medicines.png in Resources */,
+				62A6CAA422F12066004976ED /* teeth-cleaning.png in Resources */,
+				62A6CA8022F12065004976ED /* balalaika.png in Resources */,
+				62A6CA8422F12065004976ED /* chime.png in Resources */,
+				62A6CA8B22F12065004976ED /* flasks.png in Resources */,
+				62A6CA7122F12065004976ED /* clarinet.png in Resources */,
+				62A6CAA822F12066004976ED /* violin.png in Resources */,
+				62A6CA8C22F12065004976ED /* camping.png in Resources */,
+				62A6CABF22F12066004976ED /* cymbals.png in Resources */,
+				62A6CA6422F12065004976ED /* piano.png in Resources */,
+				62A6CA9422F12065004976ED /* molecule.png in Resources */,
+				62A6CA9E22F12065004976ED /* microscope.png in Resources */,
+				62A6CA7B22F12065004976ED /* earth-globe.png in Resources */,
+				62A6CA5722F12065004976ED /* organ.png in Resources */,
+				62A6CA5922F12065004976ED /* karaoke.png in Resources */,
+				62A6CA7222F12065004976ED /* cleaning.png in Resources */,
+				62A6CA4E22F12065004976ED /* improvement.png in Resources */,
+				62A6CABB22F12066004976ED /* pipa.png in Resources */,
+				62A6CA7C22F12065004976ED /* backpack.png in Resources */,
+				62A6CAA622F12066004976ED /* cosmetics.png in Resources */,
+				62A6CAC222F12066004976ED /* shopping-bag.png in Resources */,
+				62A6CA9C22F12065004976ED /* djembe.png in Resources */,
+				62A6CAA122F12065004976ED /* mandolin.png in Resources */,
+				62A6CAB222F12066004976ED /* lute.png in Resources */,
+				62A6CA5022F12065004976ED /* airplane.png in Resources */,
+				62A6CA9A22F12065004976ED /* harp.png in Resources */,
+				62A6CA5422F12065004976ED /* solar-system.png in Resources */,
+				62A6CA5F22F12065004976ED /* earth.png in Resources */,
+				62A6CABE22F12066004976ED /* calculator.png in Resources */,
+				62A6CABD22F12066004976ED /* bicycle.png in Resources */,
+				62A6CA8822F12065004976ED /* flute.png in Resources */,
+				62A6CAB022F12066004976ED /* hurdy gurdy.png in Resources */,
+				62A6CA5B22F12065004976ED /* element.png in Resources */,
+				62A6CA8E22F12065004976ED /* rebec.png in Resources */,
+				62A6CA8622F12065004976ED /* mobile-phone.png in Resources */,
+				62A6CA6D22F12065004976ED /* french horn.png in Resources */,
+				62A6CA4B22F12065004976ED /* clothes.png in Resources */,
+				62A6CA8F22F12065004976ED /* timpani.png in Resources */,
+				62A6CA7522F12065004976ED /* marimba.png in Resources */,
+				62A6CA6822F12065004976ED /* drum.png in Resources */,
+				62A6CA7D22F12065004976ED /* cooking.png in Resources */,
+				62A6CA7422F12065004976ED /* test-tube.png in Resources */,
+				62A6CA9522F12065004976ED /* petri-dish.png in Resources */,
+				62A6CA8222F12065004976ED /* thermometer.png in Resources */,
+				62A6CA6722F12065004976ED /* computer.png in Resources */,
+				62A6CAA522F12066004976ED /* tablet.png in Resources */,
+				62A6CAAF22F12066004976ED /* maracas.png in Resources */,
+				62A6CA8A22F12065004976ED /* juice.png in Resources */,
+				62A6CAC122F12066004976ED /* banjo.png in Resources */,
+				62A6CA6B22F12065004976ED /* xylophone.png in Resources */,
+				62A6CAAD22F12066004976ED /* gong.png in Resources */,
+				62A6CA8922F12065004976ED /* scientist.png in Resources */,
+				62A6CAB322F12066004976ED /* harmonica.png in Resources */,
+				62A6CA9F22F12065004976ED /* electric-guitar.png in Resources */,
+				62A6CAA022F12065004976ED /* molecular.png in Resources */,
+				62A6CA7F22F12065004976ED /* birthday.png in Resources */,
+				62A6CA6622F12065004976ED /* tambourine.png in Resources */,
+				62A6CAAE22F12066004976ED /* rat.png in Resources */,
+				62A6CAC022F12066004976ED /* shower.png in Resources */,
+				62A6CAC422F12066004976ED /* melodica.png in Resources */,
+				62A6CA4822F12065004976ED /* breakfast.png in Resources */,
+				62A6CAAA22F12066004976ED /* photo-camera.png in Resources */,
+				62A6CABC22F12066004976ED /* conga.png in Resources */,
+				62A6CA5A22F12065004976ED /* clipboard.png in Resources */,
+				62A6CA5222F12065004976ED /* wallet.png in Resources */,
+				62A6CA8722F12065004976ED /* kite.png in Resources */,
+				62A6CA8122F12065004976ED /* axis.png in Resources */,
+				62A6CAC722F12066004976ED /* triangle.png in Resources */,
+				62A6CAC622F12066004976ED /* ice-cream.png in Resources */,
+				62A6CA9022F12065004976ED /* electric guitar.png in Resources */,
+				62A6CA7922F12065004976ED /* roller-skate.png in Resources */,
+				62A6CA7722F12065004976ED /* observation.png in Resources */,
+				62A6CA9222F12065004976ED /* scooter.png in Resources */,
+				62A6CAA322F12066004976ED /* atom.png in Resources */,
+				62A6CA5822F12065004976ED /* bassoon.png in Resources */,
+				62A6CA4A22F12065004976ED /* toilet-paper.png in Resources */,
+				62A6CAA722F12066004976ED /* shirt.png in Resources */,
+				62A6CA4922F12065004976ED /* trumpet.png in Resources */,
+				62A6CAA222F12065004976ED /* suitcase.png in Resources */,
+				62A6CAB822F12066004976ED /* telescope.png in Resources */,
+				62A6CAB522F12066004976ED /* compass.png in Resources */,
+				62A6CA9922F12065004976ED /* tuba.png in Resources */,
+				62A6CA6222F12065004976ED /* magnet.png in Resources */,
+				62A6CA8322F12065004976ED /* statistics.png in Resources */,
+				62A6CAB922F12066004976ED /* water.png in Resources */,
+				62A6CA7E22F12065004976ED /* bongos.png in Resources */,
+				62A6CA7322F12065004976ED /* bowling.png in Resources */,
+				62A6CA9B22F12065004976ED /* magnifying-glass.png in Resources */,
+				62A6CA6F22F12065004976ED /* saxophone.png in Resources */,
+				62A6CAB622F12066004976ED /* oboe.png in Resources */,
+				62A6CA5622F12065004976ED /* buggy.png in Resources */,
+				62A6CA8D22F12065004976ED /* santoor.png in Resources */,
+				62A6CAB722F12066004976ED /* sitar.png in Resources */,
+				62A6CA4F22F12065004976ED /* bass guitar.png in Resources */,
+				62A6CAB422F12066004976ED /* cabasa.png in Resources */,
+				62A6CA5D22F12065004976ED /* keyboard.png in Resources */,
+				62A6CA9D22F12065004976ED /* headphones.png in Resources */,
+				62A6CA6022F12065004976ED /* bus.png in Resources */,
+				62A6CA9722F12065004976ED /* viola.png in Resources */,
+				62A6CA7622F12065004976ED /* bed.png in Resources */,
+				62A6CAAB22F12066004976ED /* cell.png in Resources */,
+				62A6CAC322F12066004976ED /* satellite.png in Resources */,
+				62A6CA6522F12065004976ED /* picnic.png in Resources */,
+				62A6CA5C22F12065004976ED /* workplace.png in Resources */,
+				62A6CA5E22F12065004976ED /* alarm-clock.png in Resources */,
+				62A6CA9822F12065004976ED /* apple.png in Resources */,
+				62A6CA5522F12065004976ED /* accordion.png in Resources */,
+				62A6CA7822F12065004976ED /* dinner.png in Resources */,
+				62A6CA5322F12065004976ED /* list.png in Resources */,
+				62A6CA6C22F12065004976ED /* stove.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6226937422EFFF3900A0A642 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6226938122EFFF3900A0A642 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CD53FBB22E0007100210C0F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,7 +1154,9 @@
 				9CD53FD022E0007200210C0F /* LaunchScreen.storyboard in Resources */,
 				9C2908B422ED21920021017D /* TimerAnimation.xib in Resources */,
 				069C534922F0D2AF000ECBE0 /* TestAddingGoals.storyboard in Resources */,
+				6226937122EFF24100A0A642 /* SelectIconTest.storyboard in Resources */,
 				9CD53FCD22E0007200210C0F /* Assets.xcassets in Resources */,
+				6226936222EFF01900A0A642 /* TaskIcons.bundle in Resources */,
 				9CD53FCB22E0007100210C0F /* Main.storyboard in Resources */,
 				9C6C83CB22EBD83300078DFF /* HiFi.storyboard in Resources */,
 			);
@@ -504,6 +1179,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6226937222EFFF3900A0A642 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6226937E22EFFF3900A0A642 /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CD53FB922E0007100210C0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -514,6 +1197,7 @@
 				069C534022F0CD7B000ECBE0 /* TaskTagsTableViewCell.swift in Sources */,
 				62828BF822EFE85000E96E48 /* PreviousSessionCell.swift in Sources */,
 				069C534B22F0D418000ECBE0 /* AddTaskCollectionViewCell.swift in Sources */,
+				6226936D22EFF10200A0A642 /* SelectIconCell.swift in Sources */,
 				629AC69F22ED2E6B000C137C /* SettingsTestViewController.swift in Sources */,
 				069C534122F0CD7B000ECBE0 /* TagEmptyTaskCollectionViewCell.swift in Sources */,
 				629AC69A22ED20B0000C137C /* TaskCell.swift in Sources */,
@@ -521,15 +1205,17 @@
 				069C534422F0CD7B000ECBE0 /* TaskDeadlineTableViewCell.swift in Sources */,
 				069C533622F0CD75000ECBE0 /* GoalHoursTableViewCell.swift in Sources */,
 				62586D1322EFE8D000E37F0A /* User+CoreDataClass.swift in Sources */,
+				62F57E5922EFEEF800AE96BB /* HomeTableViewCell.swift in Sources */,
 				9C2908B222ED20000021017D /* TaskIconView.swift in Sources */,
 				069C533122F0CD75000ECBE0 /* GoalTagsTableViewCell.swift in Sources */,
 				0652170222E7BBC700DC1C44 /* CreateNewGoalViewController.swift in Sources */,
-				0652171E22E91FF000DC1C44 /* HomeTableViewCell.swift in Sources */,
+				6226938B22F0EA8300A0A642 /* StartEndCell.swift in Sources */,
 				9C2908B622ED223A0021017D /* TimerAnimationView.swift in Sources */,
 				069C533022F0CD75000ECBE0 /* TagCreatedGoalCollectionViewCell.swift in Sources */,
 				624F4F8C22EF79F300D15F96 /* Int+Timer.swift in Sources */,
 				069C533222F0CD75000ECBE0 /* GoalDescriptionTableViewCell.swift in Sources */,
 				06109A0222EA52D500A9DC7A /* DetailedTaskViewController.swift in Sources */,
+				6226936F22EFF20600A0A642 /* SelectIconPopoverViewController.swift in Sources */,
 				62828BF622EFE84C00E96E48 /* PausePlayButton.swift in Sources */,
 				62586D1622EFE8D000E37F0A /* Task+CoreDataProperties.swift in Sources */,
 				069C533422F0CD75000ECBE0 /* TagEmptyGoalCollectionViewCell.swift in Sources */,
@@ -576,6 +1262,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6226936422EFF02A00A0A642 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6226935B22EFEFE800A0A642 /* TaskIcons */;
+			targetProxy = 6226936322EFF02A00A0A642 /* PBXContainerItemProxy */;
+		};
+		6226938422EFFF3900A0A642 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6226937522EFFF3900A0A642 /* MasteryNotificationExtension */;
+			targetProxy = 6226938322EFFF3900A0A642 /* PBXContainerItemProxy */;
+		};
 		9CD53FD822E0007200210C0F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9CD53FBC22E0007100210C0F /* Mastery_iOS */;
@@ -589,6 +1285,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6226937F22EFFF3900A0A642 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6226938022EFFF3900A0A642 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		9CD53FC922E0007100210C0F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -608,6 +1312,76 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6226935F22EFEFE800A0A642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 79VHH58USY;
+				INFOPLIST_FILE = TaskIcons/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = Lighthouse.TaskIcons;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		6226936022EFEFE800A0A642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 79VHH58USY;
+				INFOPLIST_FILE = TaskIcons/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = Lighthouse.TaskIcons;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		6226938722EFFF3900A0A642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79VHH58USY;
+				INFOPLIST_FILE = MasteryNotificationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarinaMcPeak.Mastery-iOS.MasteryNotificationExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6226938822EFFF3900A0A642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79VHH58USY;
+				INFOPLIST_FILE = MasteryNotificationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarinaMcPeak.Mastery-iOS.MasteryNotificationExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		9CD53FE822E0007200210C0F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -727,6 +1501,7 @@
 		9CD53FEB22E0007200210C0F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79VHH58USY;
@@ -745,6 +1520,7 @@
 		9CD53FEC22E0007200210C0F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79VHH58USY;
@@ -845,6 +1621,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6226936122EFEFE800A0A642 /* Build configuration list for PBXNativeTarget "TaskIcons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6226935F22EFEFE800A0A642 /* Debug */,
+				6226936022EFEFE800A0A642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6226938622EFFF3900A0A642 /* Build configuration list for PBXNativeTarget "MasteryNotificationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6226938722EFFF3900A0A642 /* Debug */,
+				6226938822EFFF3900A0A642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9CD53FB822E0007100210C0F /* Build configuration list for PBXProject "Mastery_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
