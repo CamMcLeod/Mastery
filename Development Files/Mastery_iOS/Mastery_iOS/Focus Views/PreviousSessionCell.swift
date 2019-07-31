@@ -35,10 +35,21 @@ class PreviousSessionCell: UITableViewCell {
         
         let RFC3339DateFormatter = DateFormatter()
         RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        RFC3339DateFormatter.dateFormat = "MMM d, h:mm a"
-//        RFC3339DateFormatter.dateFormat = "MMM-dd"
-        RFC3339DateFormatter.timeZone = TimeZone.current
-        let dateMatch = RFC3339DateFormatter.string(from: date)
+        
+        let dateMatch : String
+        
+        if Calendar.current.isDateInToday(date) {
+            
+            RFC3339DateFormatter.dateFormat = "h:mm a"
+            RFC3339DateFormatter.timeZone = TimeZone.current
+            dateMatch = "Today - " + RFC3339DateFormatter.string(from: date)
+        
+        } else {
+            RFC3339DateFormatter.dateFormat = "MMM d, h:mm a"
+            RFC3339DateFormatter.timeZone = TimeZone.current
+            dateMatch = RFC3339DateFormatter.string(from: date)
+        }
+
        
         return dateMatch
         

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class OverviewViewController: UIViewController {
+class OverviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
 
     //MARK: variables
     var taskID : UUID?
@@ -19,10 +19,29 @@ class OverviewViewController: UIViewController {
     var bgColor : UIColor?
 
     
+    //MARK: IB Outlets
+    @IBOutlet weak var taskNameLabel: UILabel!
+    @IBOutlet weak var taskIconView: UIView!
+    @IBOutlet weak var TaskTestLabel: UILabel!
+    @IBOutlet weak var overviewTableLabel: UILabel!
+    @IBOutlet weak var overviewTable: UITableView!
+    
+    
+    //MARK: View Controller
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.overviewTable.delegate = self
+        self.overviewTable.dataSource = self
+
+        overviewTable.layer.borderWidth = 5
+        overviewTable.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        overviewTable.layer.cornerRadius = 15.0
+        
+        overviewTableLabel.layer.borderWidth = 2
+        overviewTableLabel.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
         
         // make sure id is UUID
         guard let id = self.taskID else {
@@ -52,7 +71,60 @@ class OverviewViewController: UIViewController {
 
     }
     
-
+    // MARK: - Table View
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return newTaskSessions!.count
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let unsavedSessions = newTaskSessions else {
+            return tableView.dequeueReusableCell(withIdentifier: "unsavedSession") as! PreviousSessionCell
+        }
+        
+        let row = indexPath.row
+        if indexPath.section == 0 {
+            let startEndCell = tableView.dequeueReusableCell(withIdentifier: "startEndCell") as! StartEndCell
+            startEndCell.configure(startDate: unsavedSessions.last!.0, endDate: self.endTime ?? Date())
+            return startEndCell
+        }
+        else {
+            let unsavedCell = tableView.dequeueReusableCell(withIdentifier: "unsavedSession") as! PreviousSessionCell
+            unsavedCell.configure(with: unsavedSessions[row].0, duration: unsavedSessions[row].1)
+            return unsavedCell
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 2.0
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.backgroundColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y<=0) {
+            scrollView.contentOffset = CGPoint.zero;
+        }
+    }
+    
+    // MARK: - Collection View
+    
+    
     /*
     // MARK: - Navigation
 
@@ -62,9 +134,15 @@ class OverviewViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: - Actions
 
+    @IBAction func savePressed(_ sender: Any) {
+        self.dismiss(animated: false)
+    }
+    
     @IBAction func cancelPressed(_ sender: Any) {
-        self.dismiss(animated: true)
+        self.dismiss(animated: false)
     }
     
 }

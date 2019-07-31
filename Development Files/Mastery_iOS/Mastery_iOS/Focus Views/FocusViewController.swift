@@ -81,24 +81,9 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return
         }
 
+        fetchDataAndSessions(id: id)
+        
         // fetch task from UUID
-            
-        let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", argumentArray: [id])
-        
-        do {
-            let taskFromID =  try PersistenceService.context.fetch(fetchRequest)[0]
-            self.task = taskFromID
-            
-        } catch {
-            
-            print("Oh no, there is no data to load")
-        }
-        
-        // set up previous sessions
-        if let sessions = task.taskDatesAndDurations {
-            self.taskSessions = sortSessionsByDate(sessions: sessions)
-        }
 
         currentCounter = FOCUS_TIME
         
@@ -122,6 +107,11 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // #1.2 - Register the notification type.
         UNUserNotificationCenter.current().setNotificationCategories([breakOverNotifCategory])
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        fetchDataAndSessions(id: self.taskID)
+        previousSessionsTable.reloadData()
     }
     
     // MARK: - TableView
@@ -197,12 +187,13 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Pass the selected object to the new view controller.
         UIApplication.shared.isIdleTimerDisabled = false
         if segue.identifier == "finishSession" {
-            
+        
             let overviewVC = segue.destination as! OverviewViewController
             overviewVC.newTaskSessions = newTaskSessions
             overviewVC.taskID = taskID
             overviewVC.endTime = Date()
             overviewVC.bgColor = self.view.backgroundColor
+            
             
         }
     }
@@ -241,6 +232,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             // remove local notification if user is returning before break is over
             let center = UNUserNotificationCenter.current()
             center.removeAllPendingNotificationRequests()
+            center.removeAllDeliveredNotifications()
             // decrement counter to reflect time away from app
             let dateResigned = UserDefaults.standard.object(forKey: "LastResignDate") as! Date
             let timeGone = Date().timeIntervalSince(dateResigned) - 1.0 //subtract 1 to account for app load and unload while counter is still firing
@@ -251,6 +243,26 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // MARK: - Private Functions
+    
+    private func fetchDataAndSessions(id: UUID) {
+        
+        let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", argumentArray: [id])
+        
+        do {
+            let taskFromID =  try PersistenceService.context.fetch(fetchRequest)[0]
+            self.task = taskFromID
+            
+        } catch {
+            
+            print("Oh no, there is no data to load")
+        }
+        
+        // set up previous sessions
+        if let sessions = task.taskDatesAndDurations {
+            self.taskSessions = sortSessionsByDate(sessions: sessions)
+        }
+    }
 
     
     private func startStopTimer () {
@@ -460,7 +472,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func animateBackgroundColor(toColor: UIColor) {
         
-        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: [.curveEaseOut], animations: {
+        UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: [.curveEaseOut], animations: {
             self.view.backgroundColor = toColor
         })
         
