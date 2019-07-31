@@ -21,6 +21,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var taskID : UUID?
     var task = Task()
     var taskPredicate: NSPredicate?
+    var goalColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
     
     let FOCUS_TIME = 10
     let BREAK_TIME = 30
@@ -72,12 +73,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.previousSessionsTable.delegate = self
         self.previousSessionsTable.dataSource = self
         
-        previousSessionsTable.layer.borderWidth = 5
-        previousSessionsTable.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
-        previousSessionsTable.layer.cornerRadius = 15.0
-        
-        previousSessionsLabel.layer.borderWidth = 2
-        previousSessionsLabel.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        setUpColors()
         
         // make sure id is UUID
         guard let id = self.taskID else {
@@ -119,14 +115,15 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "previousSession") as! PreviousSessionCell
         let row = indexPath.row
         
         if indexPath.section == 1 {
-            cell.configure(with: taskSessions[row].0, duration: taskSessions[row].1)
+            cell.configure(with: taskSessions[row].0, duration: taskSessions[row].1, color: goalColor)
             cell.accessoryType = UITableViewCell.AccessoryType.checkmark
         } else {
-            cell.configure(with: newTaskSessions[row].0, duration: newTaskSessions[row].1)
+            cell.configure(with: newTaskSessions[row].0, duration: newTaskSessions[row].1, color: goalColor)
         }
         
         
@@ -375,9 +372,9 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     
     func formatAlertController(alertController: UIAlertController) {
-        alertController.view.tintColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        alertController.view.tintColor = goalColor
         alertController.view.layer.borderWidth = 3
-        alertController.view.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        alertController.view.layer.borderColor = goalColor.cgColor
         alertController.view.layer.cornerRadius = 15.0
         alertController.view.clipsToBounds = true
     }
@@ -389,6 +386,35 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // MARK: - Private Functions
+    
+    private func setUpColors() {
+        
+        previousSessionsTable.layer.borderWidth = 5
+        previousSessionsTable.layer.borderColor = goalColor.cgColor
+        previousSessionsTable.layer.cornerRadius = 15.0
+        
+        previousSessionsLabel.layer.borderWidth = 2
+        previousSessionsLabel.layer.borderColor = goalColor.cgColor
+        
+        taskNameLabel.textColor = goalColor
+        timerLabel.textColor = goalColor
+
+        let tintedPlay = playButton.currentBackgroundImage!.withRenderingMode(.alwaysTemplate)
+        playButton.setImage(tintedPlay, for: .normal)
+        playButton.tintColor = goalColor
+        
+        let tintedPause = pauseButton.currentBackgroundImage!.withRenderingMode(.alwaysTemplate)
+        pauseButton.setImage(tintedPause, for: .normal)
+        pauseButton.tintColor = goalColor
+        
+        let tintedFinish = finishButton.currentBackgroundImage!.withRenderingMode(.alwaysTemplate)
+        finishButton.setImage(tintedFinish, for: .normal)
+        finishButton.tintColor = goalColor
+        
+        previousSessionsLabel.textColor = goalColor
+    
+    }
+
     
     private func setUpButtons () {
         

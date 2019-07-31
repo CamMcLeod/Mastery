@@ -23,6 +23,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
     var task = Task()
     var endTime : Date?
     var bgColor : UIColor?
+    var goalColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
     var newNotes : [String]?
     var tagList : [String]?
     var reloadDelegate : reloadFocusDelegate?
@@ -48,11 +49,11 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         self.view.backgroundColor = self.bgColor
 
         overviewTable.layer.borderWidth = 5
-        overviewTable.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        overviewTable.layer.borderColor = goalColor.cgColor
         overviewTable.layer.cornerRadius = 15.0
         
         overviewTableLabel.layer.borderWidth = 2
-        overviewTableLabel.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        overviewTableLabel.layer.borderColor = goalColor.cgColor
         
         // make sure id is UUID
         guard let id = self.taskID else {
@@ -115,7 +116,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         }
         else {
             let unsavedCell = tableView.dequeueReusableCell(withIdentifier: "unsavedSession") as! PreviousSessionCell
-            unsavedCell.configure(with: unsavedSessions[row].0, duration: unsavedSessions[row].1)
+            unsavedCell.configure(with: unsavedSessions[row].0, duration: unsavedSessions[row].1, color: goalColor)
             return unsavedCell
         }
         
@@ -134,7 +135,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         
         if section == 0 {
-            view.tintColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+            view.tintColor = goalColor
         }
 
     }
@@ -145,7 +146,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
             // edit item at indexPath
         }
         
-        addNote.backgroundColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        addNote.backgroundColor = goalColor
         
         return [addNote]
     }

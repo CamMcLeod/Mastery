@@ -53,19 +53,19 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             allIcons.append(image)
         }
         
-        let goal = Goal(context: PersistenceService.context)
-        goal.id = UUID()
-        goal.name = "dfefef"
-        goal.goalDescription = "Dfefefe"
-        goal.isComplete = false
-        goal.hoursEstimate = 1000
-        goal.hoursCompleted = 0.0
-        goal.priority = 2
-        goal.dateOfBirth = Date() as NSDate
-        goal.deadline = [Date()]
-        goal.color = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
-        goal.tags = ["stinky", "woof"]
-        PersistenceService.saveContext()
+//        let goal = Goal(context: PersistenceService.context)
+//        goal.id = UUID()
+//        goal.name = "dfefef"
+//        goal.goalDescription = "Dfefefe"
+//        goal.isComplete = false
+//        goal.hoursEstimate = 1000
+//        goal.hoursCompleted = 0.0
+//        goal.priority = 2
+//        goal.dateOfBirth = Date() as NSDate
+//        goal.deadline = [Date()]
+//        goal.color = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
+//        goal.tags = ["stinky", "woof"]
+//        PersistenceService.saveContext()
         
         for i in 1...20 {
             
@@ -77,7 +77,38 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             task1.priority = Int16((i % 10) + 1)
             task1.daysAvailable![i % 7] = false
             task1.id = UUID()
-            task1.goal = goal
+            if i % 3 == 0 {
+                let goal = Goal(context: PersistenceService.context)
+                goal.id = UUID()
+                goal.name = "dfefef"
+                goal.goalDescription = "Dfefefe"
+                goal.isComplete = false
+                goal.hoursEstimate = 1000
+                goal.hoursCompleted = 0.0
+                goal.priority = 2
+                goal.dateOfBirth = Date() as NSDate
+                goal.deadline = [Date()]
+                goal.color = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
+                goal.tags = ["stinky", "woof"]
+                PersistenceService.saveContext()
+                task1.goal = goal
+            } else {
+                let goal = Goal(context: PersistenceService.context)
+                goal.id = UUID()
+                goal.name = "dfefef"
+                goal.goalDescription = "Dfefefe"
+                goal.isComplete = false
+                goal.hoursEstimate = 1000
+                goal.hoursCompleted = 0.0
+                goal.priority = 2
+                goal.dateOfBirth = Date() as NSDate
+                goal.deadline = [Date()]
+                goal.color = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+                goal.tags = ["stinky", "woof"]
+                PersistenceService.saveContext()
+                task1.goal = goal
+            }
+            
             task1.image = allIcons[i].pngData() as NSData?
             tasks.append(task1)
         }
@@ -123,6 +154,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             let selectedTaskCell = sender as! TaskCell
             let focusVC = segue.destination as! FocusViewController
             focusVC.taskID = selectedTaskCell.id
+            focusVC.goalColor = selectedTaskCell.taskView.taskIcon.tintColor
         case "todaySettings":
             _ = segue.destination as! SettingsTestViewController
         default:

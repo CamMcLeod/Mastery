@@ -21,29 +21,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qkP-jI-aD4" customClass="TaskIcon" customModule="Mastery_iOS" customModuleProvider="target">
                                 <rect key="frame" x="147" y="388" width="120" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="FbB-0F-1Yk"/>
                                     <constraint firstAttribute="height" constant="120" id="NpI-9p-kvA"/>
                                 </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Reo-eD-kLj">
-                                <rect key="frame" x="267" y="429" width="38" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="Ljs-wa-lH2"/>
-                                    <constraint firstAttribute="width" constant="38" id="r0N-nH-NRr"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="NewGoal_Button"/>
                                 <connections>
-                                    <segue destination="Xqr-Bp-Rr8" kind="presentation" identifier="presentIcons" id="g0E-bL-HK3"/>
+                                    <outletCollection property="gestureRecognizers" destination="naq-Np-vy1" appends="YES" id="DGJ-G7-gcO"/>
                                 </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Reo-eD-kLj" firstAttribute="leading" secondItem="qkP-jI-aD4" secondAttribute="trailing" id="4uA-al-T4h"/>
                             <constraint firstItem="qkP-jI-aD4" firstAttribute="centerY" secondItem="M09-bd-Z72" secondAttribute="centerY" id="G04-D7-pKV"/>
                             <constraint firstItem="qkP-jI-aD4" firstAttribute="centerX" secondItem="M09-bd-Z72" secondAttribute="centerX" id="GRF-A4-iYc"/>
-                            <constraint firstItem="Reo-eD-kLj" firstAttribute="centerY" secondItem="qkP-jI-aD4" secondAttribute="centerY" id="dd6-hc-uSW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yZ2-Wa-SnL"/>
                     </view>
@@ -52,6 +43,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bda-La-RD2" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="naq-Np-vy1">
+                    <connections>
+                        <segue destination="Xqr-Bp-Rr8" kind="presentation" identifier="presentIcons" id="6W9-OD-AS6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
@@ -168,6 +164,8 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="collectionView" destination="X5F-H5-zLr" id="3GZ-cI-XY0"/>
+                        <outlet property="saveLabelButton" destination="eO6-Bw-dXf" id="58D-A4-zrF"/>
+                        <outlet property="selectIconLabel" destination="MIc-ib-5LW" id="oKt-I9-Y49"/>
                         <outlet property="selectedTaskIcon" destination="iMq-jE-1eC" id="w2U-ou-lBZ"/>
                         <outlet property="stackView" destination="gEq-Sf-oqa" id="Z5O-fa-VhH"/>
                     </connections>

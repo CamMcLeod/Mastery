@@ -25,10 +25,11 @@ class PreviousSessionCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func configure(with date: Date, duration: Int) {
+    public func configure(with date: Date, duration: Int, color: UIColor) {
         
         self.sessionDateLabel.text = formatSessionDate(date: date)
         self.sessionDurationLabel.text = duration.secondsToHoursMinutesSeconds()
+        self.sessionDateLabel.textColor = color
     }
     
     private func formatSessionDate(date: Date) -> String {

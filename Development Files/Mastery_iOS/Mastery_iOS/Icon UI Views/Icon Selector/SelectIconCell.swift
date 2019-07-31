@@ -12,6 +12,7 @@ class SelectIconCell: UICollectionViewCell {
     
     
     @IBOutlet weak var taskIcon: TaskIcon!
+    var goalColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
     
     override var isSelected: Bool {
         didSet {
@@ -22,12 +23,13 @@ class SelectIconCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        taskIcon.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        taskIcon.layer.borderColor = goalColor.cgColor
         isSelected = false
     }
     
-    public func configure(with icon: UIImage) {
-        taskIcon.iconSetup(icon: icon, iconColor: #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1))
+    public func configure(with icon: UIImage, color: UIColor) {
+        taskIcon.iconSetup(icon: icon, iconColor: color)
+        goalColor = color
     }
     
 }

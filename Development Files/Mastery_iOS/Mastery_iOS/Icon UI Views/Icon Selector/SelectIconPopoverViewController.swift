@@ -17,9 +17,12 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var selectedTaskIcon: TaskIcon!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var selectIconLabel: UILabel!
+    @IBOutlet weak var saveLabelButton: UIButton!
     
     var iconDelegate: IconSaveDelegate?
     var incomingIcon: UIImage?
+    var goalColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
     
     var allIcons: [UIImage] = []
     
@@ -30,10 +33,12 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
         collectionView.dataSource = self
         
         collectionView.layer.borderWidth = 5
-        collectionView.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        collectionView.layer.borderColor = goalColor.cgColor
         collectionView.layer.cornerRadius = 15.0
         
         // Do any additional setup after loading the view.
+        
+        saveLabelButton.isEnabled = false
         
         guard let bundleURL = Bundle.main.url(forResource: "TaskIcons", withExtension: "bundle") else { return }
         guard let bundle = Bundle(url: bundleURL) else { return }
@@ -44,8 +49,8 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
             allIcons.append(image)
             print(image)
         }
-        
-        selectedTaskIcon.iconSetup(icon: incomingIcon, iconColor: #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1))
+        selectIconLabel.textColor = goalColor
+        selectedTaskIcon.iconSetup(icon: incomingIcon, iconColor: goalColor)
         
     }
     
@@ -58,7 +63,7 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
         
         let iconCell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectIconCell", for: indexPath) as! SelectIconCell
         
-        iconCell.configure(with: allIcons[indexPath.row])
+        iconCell.configure(with: allIcons[indexPath.row], color: #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1))
         
         return iconCell
     }
@@ -69,8 +74,8 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! SelectIconCell
-        selectedTaskIcon.iconSetup(icon: selectedCell.taskIcon!.iconImage.image, iconColor: #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1))
-        
+        selectedTaskIcon.iconSetup(icon: selectedCell.taskIcon!.iconImage.image, iconColor: goalColor)
+        saveLabelButton.isEnabled = true
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

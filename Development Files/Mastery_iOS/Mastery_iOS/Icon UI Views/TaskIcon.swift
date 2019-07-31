@@ -43,6 +43,7 @@ class TaskIcon : UIView, UIGestureRecognizerDelegate{
         let tintedImage = icon?.withRenderingMode(.alwaysTemplate)
         iconImage.image = tintedImage
         iconImage.tintColor = iconColor
+        self.tintColor = iconColor
     }
     
     @objc func animate() {
