@@ -223,14 +223,14 @@
                                 <rect key="frame" x="57" y="737" width="300" height="65"/>
                                 <state key="normal" image="Save_Button"/>
                                 <connections>
-                                    <action selector="savePressed:" destination="gNi-cD-XnM" eventType="touchUpInside" id="CT0-Lx-Hw8"/>
+                                    <action selector="savePressed:" destination="gNi-cD-XnM" eventType="touchUpInside" id="QMu-ep-4dZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEF-nJ-gNC">
-                                <rect key="frame" x="175.5" y="812" width="63" height="40"/>
+                                <rect key="frame" x="135.5" y="812" width="143" height="40"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <color key="tintColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" title="Return to Focus">
                                     <color key="titleColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -300,11 +300,11 @@
                                             <outlet property="startLabel" destination="Y4Q-aQ-zkI" id="XKS-FG-mWS"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="unsavedSession" rowHeight="34" id="Sa9-BC-5BM" customClass="PreviousSessionCell" customModule="Mastery_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="unsavedSession" rowHeight="34" id="Sa9-BC-5BM" customClass="PreviousSessionCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="114" width="374" height="34"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sa9-BC-5BM" id="3yU-eZ-3E5">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="33.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="33.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNr-WQ-xNI">
@@ -314,7 +314,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czx-yh-7Wl">
-                                                    <rect key="frame" x="276.5" y="0.0" width="87.5" height="33.5"/>
+                                                    <rect key="frame" x="238.5" y="0.0" width="87.5" height="33.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -375,17 +375,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Oj-PG-QeP"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="TaskTestLabel" destination="nAN-En-3Az" id="bTg-iE-Yeh"/>
                         <outlet property="overviewTable" destination="tAn-3i-VOy" id="f4P-ZS-RxL"/>
                         <outlet property="overviewTableLabel" destination="uhq-B3-gGM" id="fbr-nl-cbh"/>
+                        <outlet property="saveButton" destination="oaQ-K7-Ffj" id="Vee-Gk-VP0"/>
                         <outlet property="taskIconView" destination="0wW-8B-kiB" id="Z6F-yn-Xf2"/>
                         <outlet property="taskNameLabel" destination="ols-1o-ATn" id="rb5-1j-2dS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaG-Tp-T8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3424.6376811594205" y="39.508928571428569"/>
+            <point key="canvasLocation" x="3351" y="40"/>
         </scene>
         <!--Focus View Controller-->
         <scene sceneID="3Bq-H5-2eb">
@@ -490,14 +492,14 @@
                                 </constraints>
                                 <state key="normal" image="Finish_Button_Unselected"/>
                                 <connections>
-                                    <segue destination="gNi-cD-XnM" kind="presentation" identifier="finishSession" animates="NO" id="tz4-Ra-zdf"/>
+                                    <segue destination="gNi-cD-XnM" kind="show" identifier="finishSession" id="tz4-Ra-zdf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e8-gT-cBG">
-                                <rect key="frame" x="175.5" y="812" width="63" height="40"/>
+                                <rect key="frame" x="184.5" y="812" width="45" height="40"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <color key="tintColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" title="Back">
                                     <color key="titleColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -529,10 +531,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="230-BS-yQ6"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="finishButton" destination="hXo-05-rBw" id="4te-hH-rh9"/>
                         <outlet property="pauseButton" destination="8uq-PF-HI9" id="NFe-Ja-V2d"/>
                         <outlet property="playButton" destination="Tok-Aj-dxw" id="Q6Q-eM-18S"/>
+                        <outlet property="previousSessionsLabel" destination="1Xn-rc-LSu" id="VyO-fU-sfH"/>
                         <outlet property="previousSessionsTable" destination="7v5-a8-BD1" id="rWL-2Z-E9H"/>
                         <outlet property="taskNameLabel" destination="Xld-vp-Mz7" id="am5-Fu-1Oi"/>
                         <outlet property="taskTimerView" destination="bk6-kD-2L6" id="qPN-84-NtE"/>

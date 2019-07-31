@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import UserNotifications
 
-class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, reloadFocusDelegate {
     
     //MARK: - Variables
     enum CurrentMode {
@@ -44,6 +44,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var playButton: PausePlayButton!
     @IBOutlet weak var pauseButton: PausePlayButton!
     @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var previousSessionsLabel: UILabel!
     
     @IBOutlet weak var testImageLabel: UILabel!
     
@@ -75,6 +76,9 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         previousSessionsTable.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
         previousSessionsTable.layer.cornerRadius = 15.0
         
+        previousSessionsLabel.layer.borderWidth = 2
+        previousSessionsLabel.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
+        
         // make sure id is UUID
         guard let id = self.taskID else {
             print("id not UIID")
@@ -88,30 +92,15 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         currentCounter = FOCUS_TIME
         
         // set up buttons
-        self.playButton.isHidden = false
-        self.pauseButton.isHidden = true
-        
-        self.playButton.addTarget(self, action: #selector(popStartingAlert), for: .touchDown)
-        self.pauseButton.addTarget(self, action: #selector(popStartingAlert), for: .touchDown)
-        
-        self.taskNameLabel.text = self.task.name
-        self.testImageLabel.text = self.task.name
-        
-        self.timerLabel.text = FOCUS_TIME.secondsToHoursMinutesSeconds()
+        setUpButtons()
         
         self.previousSessionsTable.reloadData()
-        self.finishButton.isEnabled = false
         
         // set up notifications
         let breakOverNotifCategory = UNNotificationCategory(identifier: "breakOverNotification", actions: [], intentIdentifiers: [], options: [])
         // #1.2 - Register the notification type.
         UNUserNotificationCenter.current().setNotificationCategories([breakOverNotifCategory])
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        fetchDataAndSessions(id: self.taskID)
-        previousSessionsTable.reloadData()
     }
     
     // MARK: - TableView
@@ -193,6 +182,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             overviewVC.taskID = taskID
             overviewVC.endTime = Date()
             overviewVC.bgColor = self.view.backgroundColor
+            overviewVC.reloadDelegate = self
             
             
         }
@@ -364,9 +354,9 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let alertController = UIAlertController(title: task.name, message: message, preferredStyle: .alert)
     
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+            
             self.pauseButton.isEnabled = false
             self.finishButton.isEnabled = true
-            
             self.previousSessionsTable.beginUpdates()
             self.newTaskSessions.insert((self.sessionStartTime,self.FOCUS_TIME), at: 0)
             self.previousSessionsTable.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
@@ -399,6 +389,44 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // MARK: - Private Functions
+    
+    private func setUpButtons () {
+        
+        
+        resetButtons()
+        
+        self.playButton.addTarget(self, action: #selector(popStartingAlert), for: .touchDown)
+        self.pauseButton.addTarget(self, action: #selector(popStartingAlert), for: .touchDown)
+        
+    }
+    
+    private func resetButtons () {
+        
+        
+        
+        self.playButton.isHidden = false
+        self.pauseButton.isHidden = true
+        
+        self.taskNameLabel.text = self.task.name
+        self.testImageLabel.text = self.task.name
+        
+        self.timerLabel.text = FOCUS_TIME.secondsToHoursMinutesSeconds()
+    
+        self.finishButton.isEnabled = false
+        
+    }
+    
+    private func resetToFocusMode() {
+        
+        currentMode = .focusMode
+        currentCounter = FOCUS_TIME
+        self.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        timer.invalidate()
+        isTimerRunning = false
+        hasStarted = false
+        fromBreak = false
+        
+    }
     
     private func sortSessionsByDate (sessions:[Date:Int]) ->[(Date,Int)] {
         
@@ -475,6 +503,19 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: [.curveEaseOut], animations: {
             self.view.backgroundColor = toColor
         })
+        
+    }
+    //MARK: reload Delegate
+    
+    func reloadFocusAfterSave() {
+        
+        resetButtons()
+        resetToFocusMode()
+        newTaskSessions = []
+        taskSessions = []
+        fetchDataAndSessions(id: task.id!)
+        previousSessionsTable.reloadData()
+
         
     }
 
