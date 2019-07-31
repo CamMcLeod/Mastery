@@ -32,8 +32,8 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewWillAppear(_ animated: Bool) {
         let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
-        //        let sortDescriptor = NSSortDescriptor(key: "deadline", ascending: false)
-        //        fetchRequest.sortDescriptors = [sortDescriptor]
+//                let sortDescriptor = NSSortDescriptor(key: "dateOfBirth", ascending: false)
+//                fetchRequest.sortDescriptors = [sortDescriptor]
         do {
             let goals =  try PersistenceService.context.fetch(fetchRequest)
             self.goals = goals

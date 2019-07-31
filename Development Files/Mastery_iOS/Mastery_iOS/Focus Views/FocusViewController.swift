@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
-class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     //MARK: - Variables
     enum CurrentMode {
@@ -22,7 +23,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var taskPredicate: NSPredicate?
     
     let FOCUS_TIME = 10
-    let BREAK_TIME = 5
+    let BREAK_TIME = 30
     var currentCounter = 10
     var timer = Timer()
     var isTimerRunning = false
@@ -50,7 +51,9 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(pauseByResign), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(returnToApp), name: UIApplication.willEnterForegroundNotification, object: nil)
 
+        
         // TEST TASK
         let task1 = Task(context: PersistenceService.context)
         task1.name = "Be Cool"
@@ -60,7 +63,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         task1.deadline = NSDate(timeIntervalSinceNow: 10000)
         task1.priority = Int16(7)
         task1.id = UUID()
-        task1.taskDatesAndDurations = [Date(timeIntervalSinceNow: -3600): 360, Date(timeIntervalSinceNow: -14400): 1500]
+        task1.taskDatesAndDurations = [Date(timeIntervalSinceNow: -3600): 360, Date(timeIntervalSinceNow: -28800): 1500]
         PersistenceService.saveContext()
         self.taskID = task1.id
         
@@ -114,6 +117,11 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.previousSessionsTable.reloadData()
         self.finishButton.isEnabled = false
         
+        // set up notifications
+        let breakOverNotifCategory = UNNotificationCategory(identifier: "breakOverNotification", actions: [], intentIdentifiers: [], options: [])
+        // #1.2 - Register the notification type.
+        UNUserNotificationCenter.current().setNotificationCategories([breakOverNotifCategory])
+        
     }
     
     // MARK: - TableView
@@ -146,6 +154,12 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y<=0) {
+            scrollView.contentOffset = CGPoint.zero;
+        }
     }
     
     // MARK: - Actions
@@ -187,6 +201,8 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let overviewVC = segue.destination as! OverviewViewController
             overviewVC.newTaskSessions = newTaskSessions
             overviewVC.taskID = taskID
+            overviewVC.endTime = Date()
+            overviewVC.bgColor = self.view.backgroundColor
             
         }
     }
@@ -202,14 +218,40 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             
         case .breakMode:
-            // add local notification in case user does not return in time after break
+            
+            // add local notification in case user does not return in time after break and store time to decrement counter
+            UserDefaults.standard.set(Date(), forKey:"LastResignDate")
+            sendNotification(triggerTime: currentCounter)
             
             return
             
         }
     }
     
+    @objc func returnToApp() {
+        
+        switch currentMode {
+            
+        case .focusMode:
+            
+            return
+            
+        case .breakMode:
+            
+            // remove local notification if user is returning before break is over
+            let center = UNUserNotificationCenter.current()
+            center.removeAllPendingNotificationRequests()
+            // decrement counter to reflect time away from app
+            let dateResigned = UserDefaults.standard.object(forKey: "LastResignDate") as! Date
+            let timeGone = Date().timeIntervalSince(dateResigned) - 1.0 //subtract 1 to account for app load and unload while counter is still firing
+            currentCounter = currentCounter > Int(timeGone) ? currentCounter - Int(timeGone) : 1
+            
+        }
+        
+    }
+    
     // MARK: - Private Functions
+
     
     private func startStopTimer () {
         
@@ -250,10 +292,12 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.currentCounter = BREAK_TIME
                 self.timerLabel.text = self.currentCounter.secondsToHoursMinutesSeconds()
                 currentMode = .breakMode
+                animateBackgroundColor(toColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
                 popFocusDoneAlert()
                 
             case .breakMode:
                 currentCounter = FOCUS_TIME
+                animateBackgroundColor(toColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
                 timerLabel.text = self.currentCounter.secondsToHoursMinutesSeconds()
                 hasStarted = false
                 fromBreak = true
@@ -290,7 +334,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }))
             
             formatAlertController(alertController: alertController)
-            formatAlertText(alertController: alertController, text: self.taskNameLabel.text!, size: 22, font: "AvenirNext-Bold", forKey: "attributedTitle")
+            formatAlertText(alertController: alertController, text: alertTitle!, size: 22, font: "AvenirNext-Bold", forKey: "attributedTitle")
             formatAlertText(alertController: alertController, text: message, size: 18, font: "AvenirNext-Regular", forKey: "attributedMessage")
 
             self.present(alertController, animated: true, completion: nil)
@@ -351,8 +395,33 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let (key2, _) = arg1
             let (key1, _) = arg0
             
-            return key1.timeIntervalSince(key2) < 0
+            return key1.timeIntervalSince(key2) > 0
         }
+    }
+    
+    private func sendNotification(triggerTime: Int) {
+        
+        // find out what are the user's notification preferences
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            
+            guard settings.authorizationStatus == .authorized else { return }
+            
+            let content = UNMutableNotificationContent()
+            
+            content.categoryIdentifier = "breakOverNotification"
+            
+            content.title = "\(self.task.name!) break is over!"
+            content.body = "Would you like to return to the app to start a new session?"
+            content.sound = UNNotificationSound.default
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(triggerTime), repeats: false)
+            
+            let uuidString = UUID().uuidString
+            let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            
+        }
+        
     }
     
     // MARK: - Animations
@@ -389,6 +458,13 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         layer.add(pulseAnimation, forKey:"pulseLabel")
     }
     
+    func animateBackgroundColor(toColor: UIColor) {
+        
+        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: [.curveEaseOut], animations: {
+            self.view.backgroundColor = toColor
+        })
+        
+    }
 
 }
 

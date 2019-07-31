@@ -16,11 +16,11 @@ class CreateFirstTaskViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var taskName: UITextField!
     
     @IBOutlet weak var tableView: UITableView!
-    private var priority: Int16!
-    private var taskDescription: String!
+    private var priority: Int16?
+    private var taskDescription: String?
     private var timeEstimate: UISegmentedControl!
-    private var deadline: Date!
-    private var availability: [Bool]!
+    private var deadline: Date?
+    private var availability: [Bool]?
     
     private var pickerisHidden: Bool = true
     var tagList: [String] = [String]()
@@ -35,8 +35,8 @@ class CreateFirstTaskViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let goal = goal else {return}
-        print(goal)
+        guard let goalTags = goal?.tags else {return}
+        tagList.append(contentsOf: goalTags)
         
         taskName.delegate = self
         // Do any additional setup after loading the view.
@@ -56,12 +56,12 @@ class CreateFirstTaskViewController: UIViewController, UITextFieldDelegate {
     func saveTask() {
         let task = Task(context: PersistenceService.context)
         task.name = taskName.text
-        task.taskDescription = taskDescription
+        task.taskDescription = taskDescription ?? "Add description here"
         task.id = UUID()
         task.deadline = deadline as NSDate?
         task.isComplete = false
         task.dateOfBirth = Date() as NSDate
-        task.priority = priority
+        task.priority = priority ?? 1
         task.tags = tagList
         task.daysAvailable = availability
         goal?.addToTasks(task)
@@ -69,12 +69,6 @@ class CreateFirstTaskViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func goBackHome(_ sender: UIBarButtonItem) {
-        print(taskName.text!)
-        print(deadline!)
-        print(priority!)
-        print(taskDescription!)
-        print(availability!)
-        print(tagList)
         saveTask()
         navigationController?.popToRootViewController(animated: true)
     }

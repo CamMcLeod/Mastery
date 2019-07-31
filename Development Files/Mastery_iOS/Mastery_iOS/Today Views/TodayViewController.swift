@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 private let cellAspect = 1.2 as CGFloat
 
@@ -67,6 +68,15 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
         
         collectionView.addGestureRecognizer(longPressGesture)
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) {
+            (granted, error) in
+            if granted {
+                print("yes")
+            } else {
+                print("No")
+            }
+        }
         
     }
     
