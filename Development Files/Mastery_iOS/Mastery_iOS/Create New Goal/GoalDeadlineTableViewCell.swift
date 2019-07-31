@@ -12,18 +12,13 @@ protocol DatePickerTableViewCellDelegate {
     func dateChanged(toDate date: Date)
 }
 
-
 class GoalDeadlineTableViewCell: UITableViewCell {
-    
     
     @IBOutlet weak var goalDeadlineTitle: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    
-    
     var delegate: DatePickerTableViewCellDelegate?
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,8 +29,6 @@ class GoalDeadlineTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-    
-    
 
     @IBAction func selectDate(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
