@@ -37,25 +37,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="145" height="168"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyy-F5-bSg">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyy-F5-bSg" customClass="TaskIconWithLabel" customModule="Mastery_iOS" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="52" width="129" height="108"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzh-M1-Kxz">
-                                                            <rect key="frame" x="43.5" y="43.5" width="42" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstItem="fzh-M1-Kxz" firstAttribute="centerY" secondItem="lyy-F5-bSg" secondAttribute="centerY" id="M5N-l2-mLT"/>
-                                                        <constraint firstItem="fzh-M1-Kxz" firstAttribute="centerX" secondItem="lyy-F5-bSg" secondAttribute="centerX" id="rdh-u7-SmS"/>
-                                                    </constraints>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="lyy-F5-bSg" firstAttribute="leading" secondItem="51a-Zz-rwz" secondAttribute="leadingMargin" id="1ji-SF-by8"/>
@@ -65,8 +53,7 @@
                                         </constraints>
                                         <size key="customSize" width="145" height="168"/>
                                         <connections>
-                                            <outlet property="taskView" destination="lyy-F5-bSg" id="U4i-dt-0NL"/>
-                                            <outlet property="testLabel" destination="fzh-M1-Kxz" id="vCy-am-i3j"/>
+                                            <outlet property="taskView" destination="lyy-F5-bSg" id="GWf-ZF-yfd"/>
                                             <segue destination="bM1-kH-UY7" kind="presentation" identifier="focusOnTask" id="mb0-7z-Cgm"/>
                                         </connections>
                                     </collectionViewCell>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TestIconViewController: UIViewController {
+class TestIconViewController: UIViewController, IconSaveDelegate  {
 
     @IBOutlet weak var taskIconTest: TaskIcon!
     
@@ -29,5 +29,20 @@ class TestIconViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "presentIcons":
+            let nextVC = segue.destination as! SelectIconPopoverViewController
+            nextVC.incomingIcon = taskIconTest.iconImage.image
+            nextVC.iconDelegate = self
+        default:
+            fatalError()
+        }
+    }
+    
+    func setNewImage(image: UIImage) {
+        taskIconTest.iconSetup(icon: image, iconColor: #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1))
+    }
 
 }

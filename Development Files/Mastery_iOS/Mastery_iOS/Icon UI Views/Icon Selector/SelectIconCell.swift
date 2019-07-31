@@ -10,12 +10,13 @@ import UIKit
 
 class SelectIconCell: UICollectionViewCell {
     
+    
     @IBOutlet weak var taskIcon: TaskIcon!
     
     override var isSelected: Bool {
         didSet {
             taskIcon.layer.cornerRadius = 15.0
-            taskIcon.layer.borderWidth = isSelected ? 5 : 0
+            taskIcon.layer.borderWidth = isSelected ? 2 : 0
         }
     }
     
@@ -26,7 +27,7 @@ class SelectIconCell: UICollectionViewCell {
     }
     
     public func configure(with icon: UIImage) {
-//        taskIcon.iconImage.image = icon
+        taskIcon.iconSetup(icon: icon, iconColor: #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1))
     }
     
 }

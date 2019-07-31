@@ -16,6 +16,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     var tasks = [Task]()
     var todayTasks = [Task]()
+    var allIcons: [UIImage] = []
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var switchToGoalsButton: UIButton!
@@ -26,6 +27,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
         // Do any additional setup after loading the view.
         
         // UNCOMMENT TO UNLEASH FURY
@@ -41,6 +43,30 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
 
         // TEST WITH NO DATA - COMMENT OUT WITH ACTIVE DATABASE
         //.............
+        
+        guard let bundleURL = Bundle.main.url(forResource: "TaskIcons", withExtension: "bundle") else { return }
+        guard let bundle = Bundle(url: bundleURL) else { return }
+        guard let imageURLs = bundle.urls(forResourcesWithExtension: ".png", subdirectory: nil) else { return }
+        
+        for imageURL in imageURLs {
+            guard let image = UIImage(contentsOfFile: imageURL.path) else { continue }
+            allIcons.append(image)
+        }
+        
+        let goal = Goal(context: PersistenceService.context)
+        goal.id = UUID()
+        goal.name = "dfefef"
+        goal.goalDescription = "Dfefefe"
+        goal.isComplete = false
+        goal.hoursEstimate = 1000
+        goal.hoursCompleted = 0.0
+        goal.priority = 2
+        goal.dateOfBirth = Date() as NSDate
+        goal.deadline = [Date()]
+        goal.color = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
+        goal.tags = ["stinky", "woof"]
+        PersistenceService.saveContext()
+        
         for i in 1...20 {
             
             let task1 = Task(context: PersistenceService.context)
@@ -51,6 +77,8 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             task1.priority = Int16((i % 10) + 1)
             task1.daysAvailable![i % 7] = false
             task1.id = UUID()
+            task1.goal = goal
+            task1.image = allIcons[i].pngData() as NSData?
             tasks.append(task1)
         }
         //.............

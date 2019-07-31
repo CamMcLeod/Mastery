@@ -13,13 +13,13 @@ class TaskCell: UICollectionViewCell {
     var isAnimate: Bool! = true
     var id: UUID?
     
-    @IBOutlet weak var taskView: UIView!
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var taskView: TaskIconWithLabel!
+    
     
     public func configure(with task: Task) {
         
-        testLabel.text = task.name
-        id = task.id
+        
+        taskView.setupWithRaw(name: task.name!, newImage: UIImage(data: task.image! as Data)!, goalColor: task.goal!.color!)
     }
     
     //Animation of image
