@@ -8,9 +8,13 @@
 
 import UIKit
 
-class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,  UITextFieldDelegate, DatePickerTableViewCellDelegate, GoalDescriptionCellDelegate, GoalHoursTableCellDelegate, GoalPriorityTableCellDelegate {
+class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DatePickerTableViewCellDelegate, GoalNameCellDelegate, GoalDescriptionCellDelegate, GoalHoursTableCellDelegate, GoalPriorityTableCellDelegate {
    
     // protocol methods to pass values from custom table cells decided by user to Goal object
+    func getValueForName(theName: String) {
+        tmpName = theName
+    }
+    
     func getValueForDescription(theDescription: String) {
         tmpDescription = theDescription
     }
@@ -58,9 +62,7 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
                                  UIColor(red:0.55, green:0.70, blue:0.41, alpha:1.0),
                                  UIColor(red:0.96, green:0.74, blue:0.38, alpha:1.0)]
     
-    
-    @IBOutlet var goalName: UITextField!
-    
+    private var tmpName: String?
     private var tmpDescription: String?
     private var tmpDateAsString: String!
     private var tmpDate: Date?
@@ -71,45 +73,38 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = .none
-        goalName.delegate = self
         
         
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let goalName = goalName.text,
-            let rangeOfTextToReplace = Range(range, in: goalName) else {
-                return false
-        }
-        let substringToReplace = goalName[rangeOfTextToReplace]
-        let count = goalName.count - substringToReplace.count + string.count
-        return count <= 30
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "goalDescriptionCell", for: indexPath) as! GoalDescriptionTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "goalNameCell", for: indexPath) as! GoalNameTableViewCell
             cell.delegate = self
             return cell
         case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "goalDescriptionCell", for: indexPath) as! GoalDescriptionTableViewCell
+            cell.delegate = self
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "goalPriorityCell", for: indexPath) as! GoalPriorityTableViewCell
+            cell.delegate = self
+            return cell
+        case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalDeadlineCell", for: indexPath) as! GoalDeadlineTableViewCell
             cell.delegate = self
             
             return cell
-        case 2:
+        case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalHoursCell", for: indexPath) as! GoalHoursTableViewCell
             cell.delegate = self
             return cell
-        case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "goalPriorityCell", for: indexPath) as! GoalPriorityTableViewCell
-            cell.delegate = self
-            return cell
-        case 4:
+        case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalTagsCell", for: indexPath) as! GoalTagsTableViewCell
             cell.collectionView.reloadData()
             return cell
@@ -151,7 +146,7 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
     func saveGoalData() -> Goal {
         let goal = Goal(context: PersistenceService.context)
         goal.id = UUID()
-        goal.name = goalName.text
+        goal.name = tmpName
         goal.goalDescription = tmpDescription
         goal.isComplete = false
         goal.hoursEstimate = tmpHours ?? 0.0

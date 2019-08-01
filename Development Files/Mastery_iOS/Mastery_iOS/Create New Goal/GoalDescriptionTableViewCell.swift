@@ -17,12 +17,8 @@ class GoalDescriptionTableViewCell: UITableViewCell, UITextViewDelegate {
     
     var delegate: GoalDescriptionCellDelegate?
     
-    @IBOutlet weak var descriptionTitle: UILabel!
     @IBOutlet weak var goalDescription: UITextView!
 
-    
-   
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
