@@ -59,88 +59,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gEq-Sf-oqa">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCg-zJ-qKP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="49.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="36"/>
+                                <color key="textColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgY-ek-Dem">
+                                <rect key="frame" x="0.0" y="113.5" width="414" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIc-ib-5LW">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="49.5"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="36"/>
-                                        <color key="textColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRx-JK-IYS">
-                                        <rect key="frame" x="0.0" y="64.5" width="374" height="100"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMq-jE-1eC" customClass="TaskIcon" customModule="Mastery_iOS" customModuleProvider="target">
-                                                <rect key="frame" x="127" y="-10" width="120" height="120"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="120" id="A8S-Nh-Ceh"/>
-                                                    <constraint firstAttribute="width" constant="120" id="nsy-nZ-nKL"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WA3-7F-GCh" customClass="TaskIcon" customModule="Mastery_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="147" y="-10" width="120" height="120"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="iMq-jE-1eC" firstAttribute="centerY" secondItem="IRx-JK-IYS" secondAttribute="centerY" id="5JV-Ns-1G6"/>
-                                            <constraint firstAttribute="height" constant="100" id="CYy-H9-POt"/>
-                                            <constraint firstItem="iMq-jE-1eC" firstAttribute="centerX" secondItem="IRx-JK-IYS" secondAttribute="centerX" id="giJ-kO-A4B"/>
+                                            <constraint firstAttribute="width" constant="120" id="Ujc-lh-fpi"/>
+                                            <constraint firstAttribute="height" constant="120" id="biv-tu-Gn7"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X5F-H5-zLr">
-                                        <rect key="frame" x="0.0" y="179.5" width="374" height="638.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eJC-Kv-ZDE">
-                                            <size key="itemSize" width="100" height="100"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="selectIconCell" id="Fqh-3q-yRs" customClass="SelectIconCell" customModule="Mastery_iOS" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="20" width="100" height="100"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luG-Ea-L2F" customClass="TaskIcon" customModule="Mastery_iOS" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="0.0"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </view>
-                                                    </subviews>
-                                                </view>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="luG-Ea-L2F" firstAttribute="leading" secondItem="Fqh-3q-yRs" secondAttribute="leading" id="Dly-pt-Ttm"/>
-                                                    <constraint firstItem="luG-Ea-L2F" firstAttribute="top" secondItem="Fqh-3q-yRs" secondAttribute="top" id="M5C-T0-s6z"/>
-                                                    <constraint firstAttribute="trailing" secondItem="luG-Ea-L2F" secondAttribute="trailing" id="OTK-VF-Sff"/>
-                                                    <constraint firstAttribute="bottom" secondItem="luG-Ea-L2F" secondAttribute="bottom" id="U3M-AA-eBy"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="taskIcon" destination="luG-Ea-L2F" id="ozj-em-94R"/>
-                                                </connections>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="bvr-Kz-F1l"/>
+                                    <constraint firstItem="WA3-7F-GCh" firstAttribute="centerX" secondItem="jgY-ek-Dem" secondAttribute="centerX" id="faB-yk-zUF"/>
+                                    <constraint firstItem="WA3-7F-GCh" firstAttribute="centerY" secondItem="jgY-ek-Dem" secondAttribute="centerY" id="swX-kZ-ufO"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xbW-Kt-f0u">
+                                <rect key="frame" x="20" y="233.5" width="374" height="662.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g8e-Wa-RMm">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="selectIconCell" id="UNf-ze-yLS" customClass="SelectIconCell" customModule="Mastery_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGb-9c-7PH" customClass="TaskIcon" customModule="Mastery_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="dGb-9c-7PH" secondAttribute="bottom" id="0QC-Oa-GyG"/>
+                                            <constraint firstAttribute="trailing" secondItem="dGb-9c-7PH" secondAttribute="trailing" id="PlV-lq-wVf"/>
+                                            <constraint firstItem="dGb-9c-7PH" firstAttribute="top" secondItem="UNf-ze-yLS" secondAttribute="top" id="Udk-cj-D14"/>
+                                            <constraint firstItem="dGb-9c-7PH" firstAttribute="leading" secondItem="UNf-ze-yLS" secondAttribute="leading" id="YCY-TR-86d"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="taskIcon" destination="dGb-9c-7PH" id="Ua5-GL-b9Y"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gEq-Sf-oqa" firstAttribute="top" secondItem="5oT-aZ-DWv" secondAttribute="top" id="3nS-mQ-tlT"/>
-                            <constraint firstItem="gEq-Sf-oqa" firstAttribute="leading" secondItem="5oT-aZ-DWv" secondAttribute="leading" constant="20" id="6BC-zo-iuz"/>
-                            <constraint firstItem="5oT-aZ-DWv" firstAttribute="bottom" secondItem="gEq-Sf-oqa" secondAttribute="bottom" id="OlX-Rm-ziE"/>
-                            <constraint firstAttribute="trailing" secondItem="gEq-Sf-oqa" secondAttribute="trailing" constant="20" id="xnk-TJ-oIH"/>
+                            <constraint firstItem="YCg-zJ-qKP" firstAttribute="leading" secondItem="5oT-aZ-DWv" secondAttribute="leading" id="0qn-7D-hlh"/>
+                            <constraint firstItem="xbW-Kt-f0u" firstAttribute="top" secondItem="jgY-ek-Dem" secondAttribute="bottom" constant="20" id="6ia-YY-crV"/>
+                            <constraint firstItem="xbW-Kt-f0u" firstAttribute="leading" secondItem="5oT-aZ-DWv" secondAttribute="leading" constant="20" id="7ch-VN-m8Q"/>
+                            <constraint firstItem="jgY-ek-Dem" firstAttribute="leading" secondItem="5oT-aZ-DWv" secondAttribute="leading" id="B0L-XS-FYP"/>
+                            <constraint firstItem="5oT-aZ-DWv" firstAttribute="trailing" secondItem="YCg-zJ-qKP" secondAttribute="trailing" id="BWd-zT-Vkp"/>
+                            <constraint firstItem="5oT-aZ-DWv" firstAttribute="trailing" secondItem="jgY-ek-Dem" secondAttribute="trailing" id="GWf-a2-8fF"/>
+                            <constraint firstAttribute="bottom" secondItem="xbW-Kt-f0u" secondAttribute="bottom" id="NEX-IF-pb5"/>
+                            <constraint firstItem="jgY-ek-Dem" firstAttribute="top" secondItem="YCg-zJ-qKP" secondAttribute="bottom" constant="20" id="O1W-n4-1M8"/>
+                            <constraint firstItem="5oT-aZ-DWv" firstAttribute="trailing" secondItem="xbW-Kt-f0u" secondAttribute="trailing" constant="20" id="aIg-Cn-bpd"/>
+                            <constraint firstItem="YCg-zJ-qKP" firstAttribute="top" secondItem="5oT-aZ-DWv" secondAttribute="top" id="w0T-0e-ffb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5oT-aZ-DWv"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
-                        <outlet property="collectionView" destination="X5F-H5-zLr" id="3GZ-cI-XY0"/>
-                        <outlet property="selectIconLabel" destination="MIc-ib-5LW" id="oKt-I9-Y49"/>
-                        <outlet property="selectedTaskIcon" destination="iMq-jE-1eC" id="w2U-ou-lBZ"/>
-                        <outlet property="stackView" destination="gEq-Sf-oqa" id="Z5O-fa-VhH"/>
+                        <outlet property="collectionView" destination="xbW-Kt-f0u" id="Nv1-4Z-6Al"/>
+                        <outlet property="selectIconLabel" destination="YCg-zJ-qKP" id="NEd-tM-4CQ"/>
+                        <outlet property="selectedTaskIcon" destination="WA3-7F-GCh" id="V76-af-tqV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Kt-Ov-QsD" userLabel="First Responder" sceneMemberID="firstResponder"/>

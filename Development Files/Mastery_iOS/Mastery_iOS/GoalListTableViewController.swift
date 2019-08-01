@@ -84,7 +84,7 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let selectedGoal = goals[indexPath.section]
+        let selectedGoal = goals[indexPath.row]
         goalToPass = selectedGoal
         performSegue(withIdentifier: "goalDetailSegue", sender: self)
         

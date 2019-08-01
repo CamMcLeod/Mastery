@@ -31,7 +31,8 @@ class TagEmptyGoalCollectionViewCell: UICollectionViewCell, UITextFieldDelegate 
         }
         self.delegate?.addTagToList(tagName: text)
         textField.resignFirstResponder()
-        textField.placeholder = ""
+        textField.placeholder = "+ New Tag"
+        textField.text = nil
         return true
     }
     

@@ -36,6 +36,12 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7s-0e-CBF">
+                                                    <rect key="frame" x="10" y="18" width="0.0" height="0.0"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jmc-MU-ial" customClass="DynamicHeightCollectionView" customModule="Mastery_iOS" customModuleProvider="target">
                                                     <rect key="frame" x="5" y="36" width="404" height="138.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,7 +83,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrT-Bs-cVS">
-                                                                        <rect key="frame" x="5" y="13" width="75" height="75"/>
+                                                                        <rect key="frame" x="4.5" y="12.5" width="75" height="75"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="75" id="lW6-kL-mL9"/>
                                                                             <constraint firstAttribute="height" constant="75" id="reS-BN-1UO"/>
@@ -97,32 +103,29 @@
                                                         <outlet property="delegate" destination="ngp-nu-zfc" id="JXZ-Ks-G2p"/>
                                                     </connections>
                                                 </collectionView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQa-hm-YEb">
-                                                    <rect key="frame" x="347" y="0.0" width="47" height="36"/>
-                                                    <state key="normal" title="Details">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="DZH-BT-qRa" kind="show" identifier="goalDetailSegue" id="5Ty-pd-Ki3"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qg-ro-von">
+                                                    <rect key="frame" x="386.5" y="0.0" width="17.5" height="36"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="26"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Jmc-MU-ial" secondAttribute="trailing" constant="5" id="0Z5-GR-qJ9"/>
-                                                <constraint firstItem="eQa-hm-YEb" firstAttribute="top" secondItem="rtF-9M-jHX" secondAttribute="top" id="8Cm-2s-1zv"/>
+                                                <constraint firstItem="4Qg-ro-von" firstAttribute="trailing" secondItem="nMs-eo-Gr7" secondAttribute="trailing" constant="-10" id="8aC-vA-iGQ"/>
+                                                <constraint firstItem="k7s-0e-CBF" firstAttribute="leading" secondItem="nMs-eo-Gr7" secondAttribute="leading" constant="10" id="ID4-PW-UNn"/>
                                                 <constraint firstAttribute="bottom" secondItem="Jmc-MU-ial" secondAttribute="bottom" id="J5G-yf-MYl"/>
-                                                <constraint firstAttribute="trailing" secondItem="eQa-hm-YEb" secondAttribute="trailing" constant="20" id="J7q-NU-23o"/>
                                                 <constraint firstItem="nMs-eo-Gr7" firstAttribute="top" secondItem="rtF-9M-jHX" secondAttribute="top" id="OGh-Lj-4PQ"/>
                                                 <constraint firstItem="Jmc-MU-ial" firstAttribute="leading" secondItem="rtF-9M-jHX" secondAttribute="leading" constant="5" id="Ohh-aQ-94g"/>
+                                                <constraint firstItem="4Qg-ro-von" firstAttribute="centerY" secondItem="nMs-eo-Gr7" secondAttribute="centerY" id="fGs-30-caL"/>
                                                 <constraint firstItem="nMs-eo-Gr7" firstAttribute="leading" secondItem="rtF-9M-jHX" secondAttribute="leading" id="fbG-cv-1of"/>
-                                                <constraint firstItem="Jmc-MU-ial" firstAttribute="top" secondItem="eQa-hm-YEb" secondAttribute="bottom" id="fp5-Je-L7b"/>
                                                 <constraint firstAttribute="trailing" secondItem="nMs-eo-Gr7" secondAttribute="trailing" id="gV4-Fb-U4Y"/>
+                                                <constraint firstItem="k7s-0e-CBF" firstAttribute="centerY" secondItem="nMs-eo-Gr7" secondAttribute="centerY" id="hHK-Mp-QQE"/>
                                                 <constraint firstItem="Jmc-MU-ial" firstAttribute="top" secondItem="nMs-eo-Gr7" secondAttribute="bottom" id="pSn-N6-shc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="collectionView" destination="Jmc-MU-ial" id="c64-0q-eHw"/>
-                                            <outlet property="details" destination="eQa-hm-YEb" id="nFB-T1-r0e"/>
                                             <outlet property="name" destination="nMs-eo-Gr7" id="RSq-9j-OWe"/>
                                         </connections>
                                     </tableViewCell>
@@ -180,6 +183,7 @@
                     <connections>
                         <outlet property="tableView" destination="kjt-Wc-KWi" id="iMp-Xn-CNO"/>
                         <segue destination="9vo-bg-Mhh" kind="show" identifier="taskDetailSegue" id="E6f-nR-gyY"/>
+                        <segue destination="DZH-BT-qRa" kind="show" identifier="goalDetailSegue" id="1hL-7F-eTx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXy-eT-wZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -203,7 +207,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r8V-Qu-EpR">
-                                <rect key="frame" x="10" y="88" width="394" height="774"/>
+                                <rect key="frame" x="10" y="88" width="394" height="764"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalNameCell" id="Y7m-e8-8mX" customClass="GoalDetailNameTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
@@ -455,7 +459,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="r8V-Qu-EpR" firstAttribute="top" secondItem="rBG-Tn-LKV" secondAttribute="top" id="VUC-ID-gbO"/>
-                            <constraint firstItem="rBG-Tn-LKV" firstAttribute="bottom" secondItem="r8V-Qu-EpR" secondAttribute="bottom" id="Yvw-YL-bKa"/>
+                            <constraint firstItem="rBG-Tn-LKV" firstAttribute="bottom" secondItem="r8V-Qu-EpR" secondAttribute="bottom" constant="10" id="Yvw-YL-bKa"/>
                             <constraint firstItem="rBG-Tn-LKV" firstAttribute="trailing" secondItem="r8V-Qu-EpR" secondAttribute="trailing" constant="10" id="chF-eP-sty"/>
                             <constraint firstItem="r8V-Qu-EpR" firstAttribute="leading" secondItem="rBG-Tn-LKV" secondAttribute="leading" constant="10" id="jsB-3j-hl4"/>
                         </constraints>
@@ -480,7 +484,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v7u-6s-kXF">
-                                <rect key="frame" x="10" y="88" width="394" height="774"/>
+                                <rect key="frame" x="10" y="88" width="394" height="764"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="goalNameCell" rowHeight="44" id="YhM-Vo-Jhi" customClass="GoalNameTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
@@ -633,6 +637,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="586221826.11433101">
                                                         <!--2019-07-30 23:23:46 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="selectDate:" destination="k09-ON-hbP" eventType="valueChanged" id="wT6-pr-X9Y"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -697,6 +704,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="slider" destination="waz-yx-0dm" id="zVA-Qf-jbT"/>
                                             <outlet property="totalHoursLabel" destination="cp0-F4-QJ4" id="yom-nl-18x"/>
                                             <outlet property="totalHoursTitle" destination="Ww3-3D-Mpx" id="pFP-rr-gxc"/>
                                         </connections>
@@ -755,7 +763,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="132" height="50"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+ New Task" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vUx-xH-CR4">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+ New Tag" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vUx-xH-CR4">
                                                                         <rect key="frame" x="0.0" y="10" width="132" height="30"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
@@ -805,7 +813,7 @@
                             <constraint firstItem="v7u-6s-kXF" firstAttribute="leading" secondItem="pcj-eY-CSm" secondAttribute="leading" constant="10" id="5t6-CI-j4f"/>
                             <constraint firstItem="v7u-6s-kXF" firstAttribute="top" secondItem="pcj-eY-CSm" secondAttribute="top" id="6XX-yT-OHZ"/>
                             <constraint firstItem="pcj-eY-CSm" firstAttribute="trailing" secondItem="v7u-6s-kXF" secondAttribute="trailing" constant="10" id="Hpb-al-7F7"/>
-                            <constraint firstItem="pcj-eY-CSm" firstAttribute="bottom" secondItem="v7u-6s-kXF" secondAttribute="bottom" id="cS0-KN-4CF"/>
+                            <constraint firstItem="pcj-eY-CSm" firstAttribute="bottom" secondItem="v7u-6s-kXF" secondAttribute="bottom" constant="10" id="cS0-KN-4CF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pcj-eY-CSm"/>
                     </view>
@@ -865,7 +873,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2tM-aH-wip">
-                                <rect key="frame" x="10" y="88" width="394" height="774"/>
+                                <rect key="frame" x="10" y="88" width="394" height="764"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskIconCell" rowHeight="233" id="Rwd-Jy-wc2" customClass="TaskDetailIconTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
@@ -1159,7 +1167,7 @@
                                                         <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RyM-dD-6ux" customClass="TagCreatedTaskDetailCollectionViewCell" customModule="Mastery_iOS" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="displayTaskTags" id="RyM-dD-6ux" customClass="TagCreatedTaskDetailCollectionViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="0.0" width="132" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1216,7 +1224,7 @@
                             <constraint firstItem="2tM-aH-wip" firstAttribute="leading" secondItem="MW4-NV-U4a" secondAttribute="leading" constant="10" id="BTM-cg-0sx"/>
                             <constraint firstItem="2tM-aH-wip" firstAttribute="top" secondItem="MW4-NV-U4a" secondAttribute="top" id="LaA-UO-FGe"/>
                             <constraint firstItem="MW4-NV-U4a" firstAttribute="trailing" secondItem="2tM-aH-wip" secondAttribute="trailing" constant="10" id="Uc0-oG-LHp"/>
-                            <constraint firstItem="MW4-NV-U4a" firstAttribute="bottom" secondItem="2tM-aH-wip" secondAttribute="bottom" id="a6l-xk-0bR"/>
+                            <constraint firstItem="MW4-NV-U4a" firstAttribute="bottom" secondItem="2tM-aH-wip" secondAttribute="bottom" constant="10" id="a6l-xk-0bR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MW4-NV-U4a"/>
                     </view>
@@ -1241,9 +1249,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-sS-gA0">
-                                <rect key="frame" x="10" y="88" width="394" height="774"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hXL-sS-gA0">
+                                <rect key="frame" x="10" y="88" width="394" height="784"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="taskIconCell" rowHeight="135" id="Iqq-98-bcI" customClass="TaskIconTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
@@ -1427,7 +1434,7 @@
                                                         <segment title="9"/>
                                                         <segment title="10"/>
                                                     </segments>
-                                                    <color key="tintColor" red="0.43921568630000002" green="0.25882352939999997" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="selectPriority:" destination="bQs-Bc-nC1" eventType="valueChanged" id="hoz-Pg-pf8"/>
                                                     </connections>
@@ -1471,6 +1478,9 @@
                                                             <state key="normal" title="S">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="selectDates:" destination="xpr-mx-wpM" eventType="touchUpInside" id="H2d-S7-IAi"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGS-BL-itT">
                                                             <rect key="frame" x="56.5" y="0.0" width="56" height="56.5"/>
@@ -1478,6 +1488,9 @@
                                                             <state key="normal" title="M">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="selectDates:" destination="xpr-mx-wpM" eventType="touchUpInside" id="Tb5-pJ-5g3"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfd-sm-XzA">
                                                             <rect key="frame" x="112.5" y="0.0" width="56.5" height="56.5"/>
@@ -1486,16 +1499,18 @@
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="selectDates:" destination="xpr-mx-wpM" eventType="touchUpInside" id="5Ks-nI-xTv"/>
+                                                                <action selector="selectDates:" destination="xpr-mx-wpM" eventType="touchUpInside" id="hTi-l2-YdX"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHp-mL-rY1">
                                                             <rect key="frame" x="169" y="0.0" width="56" height="56.5"/>
-                                                            <color key="backgroundColor" red="0.43921568630000002" green="0.25882352939999997" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
                                                             <state key="normal" title="W">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="selectDates:" destination="xpr-mx-wpM" eventType="touchUpInside" id="JeW-0b-fEY"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQk-Jg-K5Z">
                                                             <rect key="frame" x="225" y="0.0" width="56.5" height="56.5"/>
@@ -1503,6 +1518,9 @@
                                                             <state key="normal" title="T">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="selectDates:" destination="xpr-mx-wpM" eventType="touchUpInside" id="3T0-jl-pAs"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cf9-BS-P1w">
                                                             <rect key="frame" x="281.5" y="0.0" width="56" height="56.5"/>
@@ -1510,6 +1528,9 @@
                                                             <state key="normal" title="F">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="selectDates:" destination="xpr-mx-wpM" eventType="touchUpInside" id="k3H-6N-01s"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cV-Bw-JrG">
                                                             <rect key="frame" x="337.5" y="0.0" width="56.5" height="56.5"/>
@@ -1517,6 +1538,9 @@
                                                             <state key="normal" title="S">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="selectDates:" destination="xpr-mx-wpM" eventType="touchUpInside" id="xvB-pC-f8q"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -1546,7 +1570,13 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="availabilityLabel" destination="9cO-QI-i62" id="aq9-ZF-Qa1"/>
-                                            <outletCollection property="daysAvailable" destination="DHp-mL-rY1" collectionClass="NSMutableArray" id="Ddn-Fi-UAa"/>
+                                            <outletCollection property="daysAvailable" destination="sRf-Qb-OfA" collectionClass="NSMutableArray" id="0aQ-qX-52b"/>
+                                            <outletCollection property="daysAvailable" destination="WGS-BL-itT" collectionClass="NSMutableArray" id="Az7-ez-htE"/>
+                                            <outletCollection property="daysAvailable" destination="Gfd-sm-XzA" collectionClass="NSMutableArray" id="GSp-1k-eL7"/>
+                                            <outletCollection property="daysAvailable" destination="DHp-mL-rY1" collectionClass="NSMutableArray" id="eNS-yf-KrD"/>
+                                            <outletCollection property="daysAvailable" destination="LQk-Jg-K5Z" collectionClass="NSMutableArray" id="8LU-ys-Pnu"/>
+                                            <outletCollection property="daysAvailable" destination="cf9-BS-P1w" collectionClass="NSMutableArray" id="We0-jh-3FB"/>
+                                            <outletCollection property="daysAvailable" destination="2cV-Bw-JrG" collectionClass="NSMutableArray" id="uyh-Mq-442"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="taskTagsCell" rowHeight="135" id="7Ps-EM-sMj" customClass="TaskTagsTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
@@ -1596,7 +1626,7 @@
                                                                 <outlet property="tagName" destination="Lga-3o-Hbw" id="bnY-kL-9Lz"/>
                                                             </connections>
                                                         </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zD3-HS-XsU" customClass="TagEmptyTaskCollectionViewCell" customModule="Mastery_iOS" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskEmptyTagCell" id="zD3-HS-XsU" customClass="TagEmptyTaskCollectionViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                                             <rect key="frame" x="252" y="0.0" width="132" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1648,6 +1678,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WTb-9U-T24" firstAttribute="trailing" secondItem="hXL-sS-gA0" secondAttribute="trailing" constant="10" id="Uxb-aX-eNa"/>
+                            <constraint firstItem="hXL-sS-gA0" firstAttribute="leading" secondItem="WTb-9U-T24" secondAttribute="leading" constant="10" id="h3E-yt-HWA"/>
+                            <constraint firstItem="hXL-sS-gA0" firstAttribute="bottom" secondItem="WTb-9U-T24" secondAttribute="bottom" constant="10" id="kBy-XU-W5y"/>
+                            <constraint firstItem="hXL-sS-gA0" firstAttribute="top" secondItem="WTb-9U-T24" secondAttribute="top" id="n1U-JS-XBW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WTb-9U-T24"/>
                     </view>
                     <navigationItem key="navigationItem" id="TU4-Zi-tkt">
@@ -2192,6 +2228,9 @@
                                                                     <integer key="value" value="100"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="selectDates:" destination="mY7-tf-wlB" eventType="touchUpInside" id="PQ9-QM-Koj"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgf-Yi-WBa">
                                                             <rect key="frame" x="57.5" y="0.0" width="49.5" height="39.5"/>
@@ -2205,6 +2244,9 @@
                                                                     <integer key="value" value="100"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="selectDates:" destination="mY7-tf-wlB" eventType="touchUpInside" id="1L2-fx-kds"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfW-pG-5Zx">
                                                             <rect key="frame" x="115" y="0.0" width="49.5" height="39.5"/>
@@ -2221,16 +2263,18 @@
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCB-Wk-pgS">
                                                             <rect key="frame" x="172.5" y="0.0" width="49" height="39.5"/>
-                                                            <color key="backgroundColor" red="0.48627450979999998" green="0.46666666670000001" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                             <state key="normal" title="W">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                     <integer key="value" value="100"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="selectDates:" destination="mY7-tf-wlB" eventType="touchUpInside" id="gMF-XS-OyV"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cR-Qj-ilt">
                                                             <rect key="frame" x="229.5" y="0.0" width="49.5" height="39.5"/>
@@ -2244,6 +2288,9 @@
                                                                     <integer key="value" value="100"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="selectDates:" destination="mY7-tf-wlB" eventType="touchUpInside" id="YLa-bF-JXI"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDM-L7-POM">
                                                             <rect key="frame" x="287" y="0.0" width="49.5" height="39.5"/>
@@ -2257,6 +2304,9 @@
                                                                     <integer key="value" value="100"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="selectDates:" destination="mY7-tf-wlB" eventType="touchUpInside" id="kDw-l5-E8s"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Mw-v0-E7N">
                                                             <rect key="frame" x="344.5" y="0.0" width="49.5" height="39.5"/>
@@ -2270,6 +2320,9 @@
                                                                     <integer key="value" value="100"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="selectDates:" destination="mY7-tf-wlB" eventType="touchUpInside" id="l8F-wR-L0d"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -2291,6 +2344,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="0y4-H8-62c" secondAttribute="trailing" constant="10" id="q1E-nL-Wpe"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outletCollection property="daysAvailable" destination="NCB-Wk-pgS" collectionClass="NSMutableArray" id="htP-0c-jUx"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskTagsCell" rowHeight="127" id="ZQU-p2-4JT" customClass="TaskTagsTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="443" width="414" height="127"/>

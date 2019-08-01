@@ -11,16 +11,27 @@ import UIKit
 class GoalDetailViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var goal: Goal?
+    var tintColor = UIColor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tintColor = goal!.color!
+        self.navigationItem.rightBarButtonItem?.tintColor = tintColor
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
     }
     
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 1 {
+            return 200
+        }
+        return 50
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let goal = goal else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -30,6 +41,7 @@ class GoalDetailViewController : UIViewController, UITableViewDataSource, UITabl
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalNameCell", for: indexPath) as! GoalDetailNameTableViewCell
            cell.goalName.text = goal.name
+            cell.goalName.textColor = tintColor
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalDescriptionCell", for: indexPath) as! GoalDetailDescriptionTableViewCell
@@ -39,18 +51,22 @@ class GoalDetailViewController : UIViewController, UITableViewDataSource, UITabl
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalDeadlineCell", for: indexPath) as! GoalDetailDeadlineTableViewCell
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMMM dd, YYYY"
-            cell.goalDeadlineDate.text = dateFormatter.string(for: goal.deadline)
+            cell.goalDeadlineDate.text = dateFormatter.string(for: goal.deadline?.last)
+            cell.descriptionTitle.textColor = tintColor
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalPriorityCell", for: indexPath) as! GoalDetailPriorityTableViewCell
             cell.goalPriority.text = "\(goal.priority)"
+            cell.priorityTitle.textColor = tintColor
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalHoursCell", for: indexPath) as! GoalDetailHoursTableViewCell
             cell.goalHours.text = "\(goal.hoursEstimate)"
+            cell.hoursTitle.textColor = tintColor
             return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalTagsCell", for: indexPath) as! GoalDetailTagsTableViewCell
+            cell.tagsTitle.textColor = tintColor
             return cell
         default:
             return tableView.dequeueReusableCell(withIdentifier: "cell")!

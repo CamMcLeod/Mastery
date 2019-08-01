@@ -38,15 +38,11 @@ class GoalNameTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-    }
-
 
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.delegate?.getValueForName(theName: goalName.text!)
+        textField.resignFirstResponder()
         return true
     }
     

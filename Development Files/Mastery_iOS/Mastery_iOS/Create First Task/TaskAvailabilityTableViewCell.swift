@@ -17,6 +17,7 @@ class TaskAvailabilityTableViewCell: UITableViewCell {
     @IBOutlet weak var availabilityLabel: UILabel!
 
     var dayAvailability: [Bool] = [false, false, false, false, false, false, false]
+    
     @IBOutlet var daysAvailable: [UIButton]!
     var delegate: TaskAvailabilityCellDelegate?
     override func awakeFromNib() {
@@ -39,11 +40,13 @@ class TaskAvailabilityTableViewCell: UITableViewCell {
         dayAvailability[day] = !dayAvailability[day]
         self.delegate?.selectedDates(daysOfWeek: dayAvailability)
         
-        if sender.backgroundColor != #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1) {
-            sender.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        if sender.backgroundColor != #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) {
+            sender.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            
         } else {
-           sender.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+           sender.backgroundColor = UIColor.clear
         }
+        sender.layer.cornerRadius = 15.0
         print(dayAvailability[day])
     }
 }

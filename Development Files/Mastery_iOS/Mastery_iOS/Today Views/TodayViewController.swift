@@ -287,7 +287,13 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         for imageURL in imageURLs {
             guard let image = UIImage(contentsOfFile: imageURL.path) else { continue }
             allIcons.append(image)
-            allNames.append(imageURL.lastPathComponent)
+            var componentString = imageURL.lastPathComponent
+            componentString.remove(at: componentString.index(before: componentString.endIndex))
+            componentString.remove(at: componentString.index(before: componentString.endIndex))
+            componentString.remove(at: componentString.index(before: componentString.endIndex))
+            componentString.remove(at: componentString.index(before: componentString.endIndex))
+            allNames.append(componentString)
+            
         }
         
         var testGoals = [Goal]()

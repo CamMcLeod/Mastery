@@ -29,6 +29,12 @@ class GoalDescriptionTableViewCell: UITableViewCell, UITextViewDelegate {
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+
         guard let goalName = goalDescription.text,
             let rangeOfTextToReplace = Range(range, in: goalName) else {
                 return false

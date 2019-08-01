@@ -16,6 +16,7 @@ class GoalHoursTableViewCell: UITableViewCell {
 
     @IBOutlet weak var totalHoursTitle: UILabel!
     @IBOutlet weak var totalHoursLabel: UILabel!
+    @IBOutlet weak var slider: UISlider!
     
     var delegate: GoalHoursTableCellDelegate?
     
@@ -31,8 +32,9 @@ class GoalHoursTableViewCell: UITableViewCell {
     }
 
     @IBAction func getHours(_ sender: UISlider) {
-
-        totalHoursLabel.text = "\(sender.value)"
+        slider.value = Float(Int(slider.value / 50) * 50)
+        let value = sender.value
+        totalHoursLabel.text = String(format: "%.f", arguments: [value])
         self.delegate?.getHours(hours: sender.value)
     }
     

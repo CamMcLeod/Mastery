@@ -16,7 +16,6 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var selectedTaskIcon: TaskIcon!
-    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var selectIconLabel: UILabel!
     
     var iconDelegate: IconSaveDelegate?
@@ -34,6 +33,11 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
         collectionView.layer.borderWidth = 5
         collectionView.layer.borderColor = goalColor.cgColor
         collectionView.layer.cornerRadius = 15.0
+        
+        selectIconLabel.layer.borderWidth = 5
+        selectIconLabel.layer.borderColor = goalColor.cgColor
+        selectIconLabel.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        selectIconLabel.layer.cornerRadius = 15.0
         
         // Do any additional setup after loading the view.
         selectedTaskIcon.isUserInteractionEnabled = false

@@ -55,7 +55,7 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
     
     private var refreshCollectionView = 0 {
         didSet {
-            let indexPath = IndexPath(item: 4, section: 0)
+            let indexPath = IndexPath(item: 5, section: 0)
             tableView.reloadRows(at: [indexPath], with: .top)
         }
     }
@@ -77,7 +77,6 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = .none
-        
         
     }
     
@@ -187,7 +186,6 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
 
 
 extension CreateNewGoalViewController: UICollectionViewDelegate, UICollectionViewDataSource, EmptyTagCollectionViewCellDelegate{
-    
     
     func addTagToList(tagName: String) {
         tagList.append(tagName)

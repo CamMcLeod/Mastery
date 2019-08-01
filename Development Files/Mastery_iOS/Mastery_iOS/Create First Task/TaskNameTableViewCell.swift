@@ -37,8 +37,11 @@ class TaskNameTableViewCell : UITableViewCell, UITextFieldDelegate {
         
     }
     
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.delegate?.getValueForName(theName: taskName.text!)
+        textField.resignFirstResponder()
         return true
     }
 }
