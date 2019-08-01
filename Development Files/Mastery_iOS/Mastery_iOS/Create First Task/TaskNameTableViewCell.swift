@@ -33,7 +33,12 @@ class TaskNameTableViewCell : UITableViewCell, UITextFieldDelegate {
     }
     
     func textFieldDidChange(_ textField: UITextField) {
-        self.delegate?.getValueForName(theName: taskName.text!)
         
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.delegate?.getValueForName(theName: taskName.text!)
+        return true
     }
 }
