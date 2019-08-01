@@ -32,7 +32,6 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
         collectionView.dataSource = self
         
         collectionView.layer.borderWidth = 5
-        print(goalColor)
         collectionView.layer.borderColor = goalColor.cgColor
         collectionView.layer.cornerRadius = 15.0
         
@@ -46,7 +45,6 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
         for imageURL in imageURLs {
             guard let image = UIImage(contentsOfFile: imageURL.path) else { continue }
             allIcons.append(image)
-            print(image)
         }
         selectIconLabel.textColor = goalColor
         selectedTaskIcon.iconSetup(icon: incomingIcon, iconColor: goalColor)

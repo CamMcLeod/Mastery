@@ -39,9 +39,9 @@ class TaskIconWithLabel : UIView {
         self.tintColor = taskIcon.tintColor
     }
     
-    func setupWithRaw(name: String, newImage: UIImage, goalColor: UIColor) {
+    func setupWithRaw(name: String?, newImage: UIImage?, goalColor: UIColor?) {
         taskName.text = name
-        taskIcon.iconSetup(icon: newImage, iconColor: goalColor)
+        taskIcon.iconSetup(icon: newImage, iconColor: goalColor ?? #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1))
         self.tintColor = taskIcon.tintColor
     }
 

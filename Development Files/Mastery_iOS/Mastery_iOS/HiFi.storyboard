@@ -1234,7 +1234,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="taskIcon" destination="KLK-Jw-zme" id="Ck6-cl-pX8"/>
-                                            <segue destination="1zJ-eP-C69" kind="presentation" id="72v-br-Dvl"/>
+                                            <segue destination="1zJ-eP-C69" kind="presentation" identifier="selectIcon" id="72v-br-Dvl"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="taskNameCell" rowHeight="44" id="wY2-4n-Z7U" customClass="TaskNameTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
@@ -1633,7 +1633,7 @@
         <!--SelectIconPopoverViewController-->
         <scene sceneID="S31-qo-WZr">
             <objects>
-                <viewControllerPlaceholder storyboardName="SelectIconTest" referencedIdentifier="SelectIconPopoverViewController" id="1zJ-eP-C69" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="SelectIconPopoverViewController" storyboardName="SelectIconTest" referencedIdentifier="SelectIconPopoverViewController" id="1zJ-eP-C69" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6oH-OS-Kg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4608" y="2386"/>

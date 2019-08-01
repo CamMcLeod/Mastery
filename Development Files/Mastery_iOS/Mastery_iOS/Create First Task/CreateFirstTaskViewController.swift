@@ -126,11 +126,6 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
             cell.goalColor = goal?.color
             cell.delegate = self
             
-            guard let _ = cell.taskIcon.iconImage.image else {
-                cell.taskIcon.iconSetup(icon: UIImage(named: "NewGoal_Button"), iconColor: goal!.color ?? #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1))
-                return cell
-            }
-            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskNameCell", for: indexPath) as! TaskNameTableViewCell
@@ -218,7 +213,6 @@ extension CreateFirstTaskViewController : UICollectionViewDelegate, UICollection
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         switch segue.identifier {
         case "selectIcon":
             let taskIconCell = sender as! TaskIconTableViewCell

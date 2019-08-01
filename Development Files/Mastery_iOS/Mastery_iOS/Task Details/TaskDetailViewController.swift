@@ -32,8 +32,12 @@ class TaskDetailViewController : UIViewController {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskIconCell", for: indexPath) as! TaskDetailIconTableViewCell
-            cell.taskIconWithLabel.taskIcon.iconImage.image = UIImage(data: task.image! as Data)
-            cell.taskIconWithLabel.taskName.text = task.name
+            if let taskImage = task.image {
+                let newImage = UIImage(data: taskImage as Data)
+                let goalColor = task.goal!.color
+                cell.taskIconWithLabel.setupWithRaw(name: task.name, newImage: newImage, goalColor: goalColor)
+            }
+
             return cell
         case 1:
              let cell = tableView.dequeueReusableCell(withIdentifier: "taskDescriptionCell", for: indexPath) as! TaskDetailDescriptionTableViewCell
