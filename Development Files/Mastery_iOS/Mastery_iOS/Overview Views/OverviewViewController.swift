@@ -79,6 +79,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         if let image = taskImage {
             taskIconView.iconSetup(icon: image, iconColor: goalColor)
         }
+        taskNameLabel.text = task.name
 
     }
     
@@ -227,7 +228,8 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
             task.taskDatesAndDurations = previousSessions
         } else {
             for session in self.newTaskSessions! {
-                task.taskDatesAndDurations![session.0] = session.1
+                task.taskDatesAndDurations = [:]
+                task.taskDatesAndDurations?[session.0] = session.1
             }
         }
         
@@ -273,6 +275,8 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         alertController.view.layer.borderColor = goalColor.cgColor
         alertController.view.layer.cornerRadius = 15.0
         alertController.view.clipsToBounds = true
+        let subview = (alertController.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+        subview.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     
     private func formatAlertText(alertController: UIAlertController, text: String, size: CGFloat, font: String, forKey: String) {

@@ -17,6 +17,15 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     var tasks = [Task]()
     var todayTasks = [Task]()
     var allIcons: [UIImage] = []
+    var allNames: [String] = []
+    
+    
+    var colorArray: [UIColor] = [UIColor(red:0.49, green:0.47, blue:0.73, alpha:1.0),
+                                 UIColor(red:0.91, green:0.44, blue:0.32, alpha:1.0),
+                                 UIColor(red:0.35, green:0.76, blue:0.76, alpha:1.0),
+                                 UIColor(red:0.55, green:0.70, blue:0.41, alpha:1.0),
+                                 UIColor(red:0.96, green:0.74, blue:0.38, alpha:1.0)]
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var switchToGoalsButton: UIButton!
@@ -28,92 +37,23 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        
         // Do any additional setup after loading the view.
         
+        loadDummyData()
+    
+        
         // UNCOMMENT TO UNLEASH FURY
-//        let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
+        let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
         
-//        do {
-//            let tasks =  try PersistenceService.context.fetch(fetchRequest)
-//            self.tasks = tasks
-//            print(tasks.count)
-//        } catch {
-//            print("Oh no, there is no data to load")
-//        }
+        do {
+            let tasks =  try PersistenceService.context.fetch(fetchRequest)
+            self.tasks = tasks
+            print(tasks.count)
+        } catch {
+            print("Oh no, there is no data to load")
+        }
 
-        // TEST WITH NO DATA - COMMENT OUT WITH ACTIVE DATABASE
-        //.............
-        
-        guard let bundleURL = Bundle.main.url(forResource: "TaskIcons", withExtension: "bundle") else { return }
-        guard let bundle = Bundle(url: bundleURL) else { return }
-        guard let imageURLs = bundle.urls(forResourcesWithExtension: ".png", subdirectory: nil) else { return }
-        
-        for imageURL in imageURLs {
-            guard let image = UIImage(contentsOfFile: imageURL.path) else { continue }
-            allIcons.append(image)
-        }
-        
-//        let goal = Goal(context: PersistenceService.context)
-//        goal.id = UUID()
-//        goal.name = "dfefef"
-//        goal.goalDescription = "Dfefefe"
-//        goal.isComplete = false
-//        goal.hoursEstimate = 1000
-//        goal.hoursCompleted = 0.0
-//        goal.priority = 2
-//        goal.dateOfBirth = Date() as NSDate
-//        goal.deadline = [Date()]
-//        goal.color = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
-//        goal.tags = ["stinky", "woof"]
-//        PersistenceService.saveContext()
-        
-        for i in 1...20 {
-            
-            let task1 = Task(context: PersistenceService.context)
-            task1.name = "Be Cool = " + String(i)
-            task1.isComplete = i % 2 == 0 ? true : false
-            task1.daysAvailable = Array.init(repeating: true, count: 7)
-            task1.deadline = NSDate(timeIntervalSinceNow: -10000 * Double(i))
-            task1.priority = Int16((i % 10) + 1)
-            task1.daysAvailable![i % 7] = false
-            task1.id = UUID()
-            if i % 3 == 0 {
-                let goal = Goal(context: PersistenceService.context)
-                goal.id = UUID()
-                goal.name = "dfefef"
-                goal.goalDescription = "Dfefefe"
-                goal.isComplete = false
-                goal.hoursEstimate = 1000
-                goal.hoursCompleted = 0.0
-                goal.priority = 2
-                goal.dateOfBirth = Date() as NSDate
-                goal.deadline = [Date()]
-                goal.color = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
-                goal.tags = ["stinky", "woof"]
-                PersistenceService.saveContext()
-                task1.goal = goal
-            } else {
-                let goal = Goal(context: PersistenceService.context)
-                goal.id = UUID()
-                goal.name = "dfefef"
-                goal.goalDescription = "Dfefefe"
-                goal.isComplete = false
-                goal.hoursEstimate = 1000
-                goal.hoursCompleted = 0.0
-                goal.priority = 2
-                goal.dateOfBirth = Date() as NSDate
-                goal.deadline = [Date()]
-                goal.color = #colorLiteral(red: 0.9058823529, green: 0.4352941176, blue: 0.3176470588, alpha: 1)
-                goal.tags = ["stinky", "woof"]
-                PersistenceService.saveContext()
-                task1.goal = goal
-            }
-            
-            task1.image = allIcons[i].pngData() as NSData?
-            tasks.append(task1)
-        }
-        //.............
-        // END COMMENT OUT TEST
         
         
         for task in tasks {
@@ -313,6 +253,77 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
 //        })
         
     }
+    
+    func loadDummyData() {
+        
+        guard let bundleURL = Bundle.main.url(forResource: "TaskIcons", withExtension: "bundle") else { return }
+        guard let bundle = Bundle(url: bundleURL) else { return }
+        guard let imageURLs = bundle.urls(forResourcesWithExtension: ".png", subdirectory: nil) else { return }
+        
+        for imageURL in imageURLs {
+            guard let image = UIImage(contentsOfFile: imageURL.path) else { continue }
+            allIcons.append(image)
+            allNames.append(imageURL.lastPathComponent)
+        }
+        
+        var testGoals = [Goal]()
+        for i in 1...5 {
+            let goal = getgoal(i: i)
+            testGoals.append(goal)
+        }
+
+        
+        
+        for i in 1...50 {
+            
+            let task1 = Task(context: PersistenceService.context)
+            task1.name = allNames[i]
+            task1.isComplete = i % 2 == 0 ? true : false
+            task1.daysAvailable = Array.init(repeating: true, count: 7)
+            task1.deadline = NSDate(timeIntervalSinceNow: 10000 * Double(i))
+            task1.priority = Int16((i % 10) + 1)
+            task1.daysAvailable![i % 7] = false
+            task1.id = UUID()
+            let val = i % 5
+            switch val {
+            case 0:
+                task1.goal = testGoals[val]
+            case 1:
+                task1.goal = testGoals[val]
+            case 2:
+                task1.goal = testGoals[val]
+            case 3:
+                task1.goal = testGoals[val]
+            case 4:
+                task1.goal = testGoals[val]
+            default:
+                return
+            }
+            
+            task1.image = allIcons[i].pngData() as NSData?
+            PersistenceService.saveContext()
+        }
+    }
+    
+    func getgoal (i: Int) -> Goal {
+        
+        let goal = Goal(context: PersistenceService.context)
+        goal.id = UUID()
+        goal.name = "Win by \(i)"
+        goal.goalDescription = "xoxoxoxoxoxoxooxoxoxoxoxoxo"
+        goal.isComplete = false
+        goal.hoursEstimate = 500 * Float(i)
+        goal.hoursCompleted = 0.0
+        goal.priority = 2
+        goal.dateOfBirth = Date() as NSDate
+        goal.deadline = [Date(timeIntervalSinceNow: 50000 * Double(i))]
+        goal.color = colorArray[i-1]
+        goal.tags = ["stinky", "woof"]
+        PersistenceService.saveContext()
+        
+        return goal
+    }
+    
     
 }
 

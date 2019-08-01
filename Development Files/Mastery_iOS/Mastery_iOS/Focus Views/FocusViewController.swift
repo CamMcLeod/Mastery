@@ -50,58 +50,31 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(pauseByResign), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(returnToApp), name: UIApplication.willEnterForegroundNotification, object: nil)
-
-        guard let bundleURL = Bundle.main.url(forResource: "TaskIcons", withExtension: "bundle") else { return }
-         guard let bundle = Bundle(url: bundleURL) else { return }
-        sneakyWizard.imageView!.image = UIImage(named: "wizard", in: bundle, compatibleWith: nil)
-        // TEST TASK
-        
-        
-       
-        let testImage = UIImage(named: "blaster", in: bundle, compatibleWith: nil)
-        
-        
-        
-        let task1 = Task(context: PersistenceService.context)
-        task1.name = "Be Cool"
-        task1.taskDescription = "I just want to be everyone's friend and like have super cool parteeees."
-        task1.isComplete = false
-        task1.daysAvailable = Array.init(repeating: true, count: 7)
-        task1.deadline = NSDate(timeIntervalSinceNow: 10000)
-        task1.priority = Int16(7)
-        task1.id = UUID()
-        task1.taskDatesAndDurations = [Date(timeIntervalSinceNow: -3600): 360, Date(timeIntervalSinceNow: -28800): 1500]
-        task1.image = testImage!.pngData() as NSData?
-        PersistenceService.saveContext()
-        self.taskID = task1.id
         
         // Do any additional setup after loading the view.
         self.previousSessionsTable.delegate = self
         self.previousSessionsTable.dataSource = self
         
-        setUpColors()
-        if let imageData = task1.image {
-            taskTimerView.iconSetup(icon: UIImage(data: imageData as Data), iconColor: goalColor)
-        }
+        currentCounter = FOCUS_TIME
         
         // make sure id is UUID
         guard let id = self.taskID else {
             print("id not UIID")
             return
         }
-
-        fetchDataAndSessions(id: id)
         
         // fetch task from UUID
-
-        currentCounter = FOCUS_TIME
+        fetchDataAndSessions(id: id)
         
         // set up buttons
         setUpButtons()
+        
+        setUpColors()
         
         self.previousSessionsTable.reloadData()
         
@@ -262,6 +235,14 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let sessions = task.taskDatesAndDurations {
             self.taskSessions = sortSessionsByDate(sessions: sessions)
         }
+        
+        // set up image and color scheme
+        goalColor = task.goal!.color!
+        
+        if let imageData = task.image {
+            taskTimerView.iconSetup(icon: UIImage(data: imageData as Data), iconColor: goalColor)
+        }
+        
     }
 
     
@@ -452,6 +433,8 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         alertController.view.layer.borderColor = goalColor.cgColor
         alertController.view.layer.cornerRadius = 15.0
         alertController.view.clipsToBounds = true
+        let subview = (alertController.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+        subview.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     
     func formatAlertText(alertController: UIAlertController, text: String, size: CGFloat, font: String, forKey: String) {
@@ -460,7 +443,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         alertController.setValue(myMutableString, forKey: forKey)
     }
     
-    // MARK: - Private Functions
+    // MARK: - Setup and Ops
     
     private func setUpColors() {
         
@@ -550,7 +533,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             content.categoryIdentifier = "breakOverNotification"
             
             content.title = "\(self.task.name!) break is over!"
-            content.body = "Would you like to return to the app to start a new session?"
+            content.body = "Swipe left to return to Mastery."
             content.sound = UNNotificationSound.default
             
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(triggerTime), repeats: false)
