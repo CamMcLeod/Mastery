@@ -308,6 +308,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             task1.deadline = NSDate(timeIntervalSinceNow: 10000 * Double(i))
             task1.priority = Int16(arc4random_uniform(10)+1)
             task1.daysAvailable![i % 7] = false
+            task1.timeEstimate = 1000
             task1.id = UUID()
             let val = i % 5
             switch val {
@@ -332,6 +333,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             task1.image = allIcons[i].pngData() as NSData?
             PersistenceService.saveContext()
+        
         }
     }
     

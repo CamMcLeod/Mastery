@@ -68,6 +68,7 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
         cell.collectionView.tag = indexPath.row
         cell.collectionView.reloadData()
@@ -133,11 +134,14 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
-            performSegue(withIdentifier: "addNewTask", sender: self)
-            
+        if indexPath.section == 0 {
+            let selectedGoal = goals[collectionView.tag]
+            if let values = selectedGoal.tasks?.allObjects {
+                let value = values[indexPath.row] as! Task
+                taskToPass = value
+                performSegue(withIdentifier: "taskDetailSegue", sender: self)
+            }
         }
     }
     

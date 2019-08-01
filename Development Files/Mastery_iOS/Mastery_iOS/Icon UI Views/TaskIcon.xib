@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TaskRing" translatesAutoresizingMaskIntoConstraints="NO" id="SwK-zD-rrp">
-                    <rect key="frame" x="39" y="44" width="422" height="422"/>
+                    <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -31,7 +30,7 @@
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewGoal_Button" translatesAutoresizingMaskIntoConstraints="NO" id="ZC3-10-HXx">
-                    <rect key="frame" x="123.5" y="128.5" width="253" height="253"/>
+                    <rect key="frame" x="100" y="100" width="300" height="300"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ZC3-10-HXx" secondAttribute="height" multiplier="1:1" id="w5e-rF-i04"/>
                     </constraints>
@@ -39,17 +38,16 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="SwK-zD-rrp" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="S6Y-WR-5DX"/>
+                <constraint firstItem="SwK-zD-rrp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="S6Y-WR-5DX"/>
                 <constraint firstItem="ZC3-10-HXx" firstAttribute="centerY" secondItem="SwK-zD-rrp" secondAttribute="centerY" id="ZEy-Yr-V2o"/>
                 <constraint firstItem="ZC3-10-HXx" firstAttribute="height" secondItem="SwK-zD-rrp" secondAttribute="height" multiplier="0.6" id="cmR-vl-Nv0"/>
-                <constraint firstItem="SwK-zD-rrp" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" id="ny9-Sb-VmB"/>
+                <constraint firstItem="SwK-zD-rrp" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="ny9-Sb-VmB"/>
                 <constraint firstItem="ZC3-10-HXx" firstAttribute="centerX" secondItem="SwK-zD-rrp" secondAttribute="centerX" id="qaw-2Z-3zd"/>
-                <constraint firstItem="SwK-zD-rrp" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="w26-8O-UyW"/>
+                <constraint firstItem="SwK-zD-rrp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="w26-8O-UyW"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>
     <resources>

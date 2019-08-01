@@ -67,7 +67,6 @@
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="iconWithLabel" destination="UOq-qj-g9J" id="aO0-ej-Fa3"/>
-                                                                <segue destination="9vo-bg-Mhh" kind="show" identifier="taskDetailSegue" id="0hp-Eq-oTf"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskCell" id="pCL-jE-qao" customClass="AddTaskCollectionViewCell" customModule="Mastery_iOS" customModuleProvider="target">
@@ -180,6 +179,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="kjt-Wc-KWi" id="iMp-Xn-CNO"/>
+                        <segue destination="9vo-bg-Mhh" kind="show" identifier="taskDetailSegue" id="E6f-nR-gyY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXy-eT-wZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -400,7 +400,7 @@
                                                         <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bgv-d0-1jC" customClass="TagCreatedGoalDetailCollectionViewCell" customModule="Mastery_iOS" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="diplayGoalTags" id="bgv-d0-1jC" customClass="TagCreatedGoalDetailCollectionViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="0.0" width="132" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -425,6 +425,10 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="DZH-BT-qRa" id="F7x-3d-THF"/>
+                                                        <outlet property="delegate" destination="DZH-BT-qRa" id="vuh-Y2-098"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
@@ -442,6 +446,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DZH-BT-qRa" id="qTa-qd-TUF"/>
+                                    <outlet property="delegate" destination="DZH-BT-qRa" id="6EG-WJ-dOp"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -670,7 +678,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="cp0-F4-QJ4" secondAttribute="trailing" id="g1u-m8-Wdg"/>
                                                     </constraints>
                                                 </stackView>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="waz-yx-0dm">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="50" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="waz-yx-0dm">
                                                     <rect key="frame" x="-2" y="48" width="398" height="43.5"/>
                                                     <color key="tintColor" red="0.43921568630000002" green="0.25882352939999997" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
@@ -869,7 +877,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOD-HV-KH8" customClass="TaskIconWithLabel" customModule="Mastery_iOS" customModuleProvider="target">
                                                     <rect key="frame" x="113.5" y="16.5" width="167" height="200"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="SOD-HV-KH8" secondAttribute="height" multiplier="5:6" id="f1z-Ps-ZyA"/>
                                                         <constraint firstAttribute="height" constant="200" id="yyi-bk-3b1"/>
@@ -1176,6 +1184,10 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="9vo-bg-Mhh" id="NLY-X0-OC7"/>
+                                                        <outlet property="delegate" destination="9vo-bg-Mhh" id="bXd-qn-4Rh"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
@@ -1193,6 +1205,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9vo-bg-Mhh" id="L3d-95-TOl"/>
+                                    <outlet property="delegate" destination="9vo-bg-Mhh" id="CY2-r3-NOm"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1209,6 +1225,9 @@
                             <color key="tintColor" red="0.43921568630000002" green="0.25882352939999997" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="taskTableView" destination="2tM-aH-wip" id="Mxf-oj-W2g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8W-Iu-OFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
