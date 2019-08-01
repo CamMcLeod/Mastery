@@ -17,7 +17,7 @@ class TaskDetailViewController : UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
         tintColor = task!.goal!.color!
         self.navigationItem.rightBarButtonItem?.tintColor = tintColor
         
@@ -33,7 +33,10 @@ class TaskDetailViewController : UIViewController, UITableViewDelegate, UITableV
         
         if indexPath.row == 0 {
                     return 250
+        } else if indexPath.row == 6 {
+            return 250
         }
+        
         return 80
         
     }

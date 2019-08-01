@@ -30,8 +30,6 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +40,9 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
             let goals =  try PersistenceService.context.fetch(fetchRequest)
             self.goals = goals
             print(goals.count)
+            if goals.count == 0 {
+                performSegue(withIdentifier: "showTheGoal", sender: self)
+            }
             self.tableView.reloadData()
         } catch {
             print("Oh no, there is no data to load")
@@ -142,8 +143,13 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
                 taskToPass = value
                 performSegue(withIdentifier: "taskDetailSegue", sender: self)
             }
+        } else {
+            let selectedGoal = goals[collectionView.tag]
+            goalToPass = selectedGoal
+            performSegue(withIdentifier: "addNewTask", sender: self)
         }
     }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -151,8 +157,8 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
             let controller = segue.destination as! DetailedTaskViewController
             controller.task = valueToPass
         } else if segue.identifier == "addNewTask" {
-            //            let controller = segue.destination as! AddAnotherTaskViewController
-            //            controller.goal = goals[goalToPassIndex]
+                        let controller = segue.destination as! CreateFirstTaskViewController
+                        controller.goal = goalToPass
         } else if segue.identifier == "showTheGoal" {
             
         }  else if segue.identifier == "goalDetailSegue" {
