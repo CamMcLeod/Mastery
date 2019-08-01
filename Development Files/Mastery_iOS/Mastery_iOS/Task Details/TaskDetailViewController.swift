@@ -61,12 +61,17 @@ class TaskDetailViewController : UIViewController, UITableViewDelegate, UITableV
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "taskDescriptionCell", for: indexPath) as! TaskDetailDescriptionTableViewCell
-                
-                if let notes = task.notes {
-                    for note in notes {
-                        let tempString = task.description + "\n" + note
-                        cell.detailTextLabel?.text = tempString
+                print(task.notes)
+                if let taskD = task.taskDescription {
+                    var tempString = ""
+                    if let notes = task.notes {
+                        for note in notes {
+                            tempString = tempString + "\n" + note
+                        }
+                        cell.taskDescription.text = taskD + "\n" + tempString
+                        return cell
                     }
+                    cell.taskDescription.text = taskD
                 }
                 
                 return cell

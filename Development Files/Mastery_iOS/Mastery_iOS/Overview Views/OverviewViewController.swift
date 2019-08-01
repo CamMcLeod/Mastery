@@ -210,7 +210,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
     private func saveState() {
         
         task.tags = tagList
-        
+        print(newNotes)
         if let notes = newNotes {
             if let taskNotes = task.notes {
                 task.notes = taskNotes + notes
@@ -232,7 +232,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
                 task.taskDatesAndDurations?[session.0] = session.1
             }
         }
-        
+        print(task.notes)
         PersistenceService.saveContext()
     }
     
@@ -310,8 +310,14 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n", message:  messageString, preferredStyle: .alert)
         let save = UIAlertAction(title: "Save", style: .default, handler: { (action) -> Void in
             // Do whatever you want with inputTextField?.text
-            let savedNote = messageString + self.textView.text
-            self.newNotes?.append(savedNote)
+            let savedNote = date + " (" + duration + ")" + " - " + self.textView.text
+            if let notes = self.newNotes {
+                let allNotes = notes + [savedNote]
+                self.newNotes = allNotes
+            } else {
+                self.newNotes = [savedNote]
+            }
+            
             self.saveButton.isEnabled = true
             alertController.view.removeObserver(self, forKeyPath: "bounds")
         })
