@@ -9,8 +9,9 @@
 import UIKit
 import CoreData
 
-class GoalListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate {
+class GoalListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    private let cellAspect = 1.25 as CGFloat
     
     @IBOutlet weak var tableView: UITableView!
     var goals = [Goal]()
@@ -50,52 +51,6 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func addNewGoal(_ sender: UIButton) {
         performSegue(withIdentifier: "showTheGoal", sender: self)
     }
-    //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    //        return 50
-    //    }
-    
-    //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //
-    //        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
-    //        view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-    //        view.layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-    //        view.layer.shadowOpacity = 1
-    //        view.layer.shadowRadius = 1
-    //        let labelWidth = tableView.frame.size.width
-    //        let label = UILabel(frame: CGRect(x: tableView.center.x , y: tableView.sectionHeaderHeight / 2 , width: labelWidth, height: 25))
-    //        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-    //        label.center.x = tableView.center.x
-    //        label.textAlignment = .center
-    ////        label.center.x =
-    ////        label.text = goals[section].name?.capitalized
-    //
-    //        button = UIButton(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width / 2 , height: 50))
-    ////        button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-    //        button.setTitle("\(goals[section].name!.capitalized) ▴", for: .normal)
-    //        button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
-    ////        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-    //        button.center.x = tableView.center.x
-    //        button.tag = section
-    //        button.contentHorizontalAlignment = .center
-    //        view.addSubview(button)
-    ////        button.addSubview(label)
-    //
-    //
-    //        button2 = UIButton(frame: CGRect(x: (tableView.frame.size.width) - (tableView.frame.size.width / 4 ) , y: 0, width: tableView.frame.size.width / 4, height: 50))
-    ////        button2.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-    //        button2.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
-    //        button2.setTitle("▻", for: .normal)
-    //        button2.tag = section
-    //        button2.addTarget(self, action: #selector(showGoalDetails), for: .touchUpInside)
-    //        view.addSubview(button2)
-    //        return view
-    //    }
-    
-    //    @objc func showGoalDetails(button: UIButton) {
-    //        print("I have been touched")
-    //        goalToPassIndex = button2.tag
-    //        performSegue(withIdentifier: "showGoalDetails", sender: self)
-    //    }
     
     var numberOfItems: Int!
     
@@ -127,12 +82,11 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        let selectedGoal = goals[indexPath.section]
-        //        if let values = selectedGoal.plans?.allObjects {
-        //            let value = values[indexPath.row] as! Plan
-        //            valueToPass = value
-        //            performSegue(withIdentifier: "showPlan", sender: self)
-        //        }
+        
+        let selectedGoal = goals[indexPath.section]
+        goalToPass = selectedGoal
+        performSegue(withIdentifier: "goalDetailSegue", sender: self)
+        
     }
     
     
@@ -160,12 +114,15 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
             let selectedGoal = goals[collectionView.tag]
             if let values = selectedGoal.tasks?.allObjects {
                 let value = values[indexPath.row] as! Task
-                cell.iconWithLabel.taskName.text = value.name
-                cell.iconWithLabel.taskIcon.iconImage.image = UIImage(data: value.image! as Data)
-                cell.iconWithLabel.taskIcon.iconImage = UIImageView(image: UIImage(named: "falcon"))
+                if let newImageData = value.image {
+                    
+                    cell.iconWithLabel.setupWithRaw(name: value.name, newImage: UIImage(data: newImageData as Data), goalColor: selectedGoal.color)
+                }
+                
                 
                 return cell
             }
+            
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskCell", for: indexPath) as! AddTaskCollectionViewCell
 
@@ -201,6 +158,14 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
                         let controller = segue.destination as! TaskDetailViewController
                             controller.task = taskToPass
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let layout = collectionViewLayout as! UICollectionViewFlowLayout
+        let sideSpacing = layout.minimumInteritemSpacing * 2 + layout.sectionInset.left + layout.sectionInset.right
+        let size = (self.view.frame.width - sideSpacing - 40) / 3
+        return CGSize(width: size, height: size * cellAspect)
     }
 }
 

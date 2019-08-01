@@ -19,12 +19,6 @@ class HomeTableViewCell: UITableViewCell {
 
         super.awakeFromNib()
         // Initialization code
-        let numberOfCellsPerRow: CGFloat = 4
-        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            let horizontalSpacing = flowLayout.scrollDirection == .vertical ? flowLayout.minimumInteritemSpacing : flowLayout.minimumLineSpacing
-            let cellWidth = (collectionView.frame.width - max(0, numberOfCellsPerRow - 1)*horizontalSpacing)/numberOfCellsPerRow
-            flowLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
-        }
         collectionView.layoutIfNeeded()
         
 //        print("What the hell is going on")

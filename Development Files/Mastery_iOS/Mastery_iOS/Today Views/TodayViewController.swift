@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import UserNotifications
 
-private let cellAspect = 1.2 as CGFloat
+private let cellAspect = 1.25 as CGFloat
 
 class TodayViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate{
     
