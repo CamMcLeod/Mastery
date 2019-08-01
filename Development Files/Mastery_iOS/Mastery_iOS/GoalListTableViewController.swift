@@ -19,6 +19,9 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
     var button: UIButton!
     var button2: UIButton!
     
+    var goalToPass: Goal?
+    var taskToPass: Task?
+    
     var sectionForCell: Int!
     
     override func viewDidLoad() {
@@ -186,6 +189,12 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
             //            controller.goal = goals[goalToPassIndex]
         } else if segue.identifier == "showGoalDetails" {
             
+        }  else if segue.identifier == "goalDetailSegue" {
+                        let controller = segue.destination as! GoalDetailViewController
+                        controller.goal = goalToPass
+        } else if segue.identifier == "taskDetailSegue" {
+                        let controller = segue.destination as! TaskDetailViewController
+                            controller.task = taskToPass
         }
     }
 }

@@ -8,34 +8,9 @@
 
 import UIKit
 
-class GoalDetailViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, GoalDetailNameCellDelegate, GoalDetailDescriptionCellDelegate, GoalDetailDeadlineCellDelegate, GoalDetailPriorityCellDelegate, GoalDetailHoursCellDelegate {
+class GoalDetailViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    func getValueForName(name: String) {
-        tmpName = name
-    }
-    
-    func getValueForDescription(description: String) {
-        tmpDescription = description
-    }
-    
-    func getValueForDeadline(date: Date) {
-        tmpDate = date
-    }
-    
-    func getPriority(priority: Int16) {
-        tmpPriority = priority
-    }
-    
-    func getHours(hours: Float) {
-        tmpHours = hours
-    }
-    
-    private var tmpName: String?
-    private var tmpDescription: String?
-    private var tmpDate: Date?
-    private var tmpDateAsString: String!
-    private var tmpPriority: Int16?
-    private var tmpHours: Float?
+    var goal: Goal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,27 +22,32 @@ class GoalDetailViewController : UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        guard let goal = goal else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            cell.detailTextLabel?.text = "Nothing to see here"
+            return cell         }
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalNameCell", for: indexPath) as! GoalDetailNameTableViewCell
-            cell.delegate = self
+           cell.goalName.text = goal.name
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalDescriptionCell", for: indexPath) as! GoalDetailDescriptionTableViewCell
-            cell.delegate = self
+            cell.goalDescription.text = goal.goalDescription
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalDeadlineCell", for: indexPath) as! GoalDetailDeadlineTableViewCell
-            cell.delegate = self
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMMM dd, YYYY"
+            cell.goalDeadlineDate.text = dateFormatter.string(for: goal.deadline)
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalPriorityCell", for: indexPath) as! GoalDetailPriorityTableViewCell
-            cell.delegate = self
+            cell.goalPriority.text = "\(goal.priority)"
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalHoursCell", for: indexPath) as! GoalDetailHoursTableViewCell
-            cell.delegate = self
+            cell.goalHours.text = "\(goal.hoursEstimate)"
             return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalTagsCell", for: indexPath) as! GoalDetailTagsTableViewCell
@@ -79,3 +59,18 @@ class GoalDetailViewController : UIViewController, UITableViewDataSource, UITabl
     
 }
 
+extension GoalDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let count = goal?.tags?.count else {return 0}
+        return count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "displayGoalTags", for: indexPath) as! TagCreatedGoalDetailCollectionViewCell
+        guard let goalName = goal?.tags?[indexPath.row] else {return cell}
+        cell.tagTitle.text = goalName
+        return cell
+    }
+    
+    
+}
