@@ -27,10 +27,6 @@ class SettingsTestViewController: UIViewController {
         let duration = Int(sender.countDownDuration)
         if duration == 0 {
             sender.countDownDuration = TimeInterval.init(60)
-            UserDefaults.standard.set(duration, forKey: "focusTime")
-        } else {
-    
-        UserDefaults.standard.set(duration, forKey: "focusTime")
         }
     }
     
@@ -40,11 +36,15 @@ class SettingsTestViewController: UIViewController {
         let duration = Int(sender.countDownDuration)
         if duration == 0 {
             sender.countDownDuration = TimeInterval.init(60)
-            UserDefaults.standard.set(duration, forKey: "breakTime")
-        } else {
-            
-            UserDefaults.standard.set(duration, forKey: "breakTime")
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let focusTime = Int(focusTimePicker.countDownDuration)
+        let breakTime = Int(breakTimePicker.countDownDuration)
+        UserDefaults.standard.set(breakTime, forKey: "breakTime")
+        UserDefaults.standard.set(focusTime, forKey: "focusTime")
+        
     }
     
    

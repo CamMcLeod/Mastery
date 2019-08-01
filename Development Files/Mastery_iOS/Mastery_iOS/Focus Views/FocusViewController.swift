@@ -23,8 +23,8 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var taskPredicate: NSPredicate?
     var goalColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
     
-    let FOCUS_TIME = 10
-    let BREAK_TIME = 30
+    let FOCUS_TIME = UserDefaults.standard.integer(forKey: "focusTime")
+    let BREAK_TIME = UserDefaults.standard.integer(forKey: "breakTime")
     var currentCounter = 10
     var timer = Timer()
     var isTimerRunning = false
@@ -46,6 +46,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var pauseButton: PausePlayButton!
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var previousSessionsLabel: UILabel!
+    @IBOutlet weak var sneakyWizard: UIButton!
     
     
     override func viewDidLoad() {
@@ -54,13 +55,17 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         NotificationCenter.default.addObserver(self, selector: #selector(pauseByResign), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(returnToApp), name: UIApplication.willEnterForegroundNotification, object: nil)
 
-        
-        
+        guard let bundleURL = Bundle.main.url(forResource: "TaskIcons", withExtension: "bundle") else { return }
+         guard let bundle = Bundle(url: bundleURL) else { return }
+        sneakyWizard.imageView!.image = UIImage(named: "wizard", in: bundle, compatibleWith: nil)
         // TEST TASK
         
-        guard let bundleURL = Bundle.main.url(forResource: "TaskIcons", withExtension: "bundle") else { return }
-        guard let bundle = Bundle(url: bundleURL) else { return }
+        
+       
         let testImage = UIImage(named: "blaster", in: bundle, compatibleWith: nil)
+        
+        
+        
         let task1 = Task(context: PersistenceService.context)
         task1.name = "Be Cool"
         task1.taskDescription = "I just want to be everyone's friend and like have super cool parteeees."
@@ -287,14 +292,18 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case .breakMode:
             if currentCounter == BREAK_TIME {
                 
-                UIView.animate(withDuration: 1.0, animations: {
+                UIView.animate(withDuration: 0.5, animations: {
                     self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-                    self.taskTimerView.taskRing.alpha = 0.0
-                    self.taskTimerView.iconImage.alpha = 0.30
+                    self.taskTimerView.taskRing.alpha = 0
+                    self.taskTimerView.iconImage.alpha = 0.65
                 }) { (Bool) in
-                    self.taskTimerView.taskRing.alpha = 1.0
-                    self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                    }
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                        self.taskTimerView.taskRing.alpha = 1.0
+                        self.taskTimerView.iconImage.alpha = 0.30
+                    })
+                    
+                }
                 
             } else {
                 taskTimerView.animate()
@@ -302,13 +311,17 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case .focusMode:
             if currentCounter == FOCUS_TIME {
                 
-                UIView.animate(withDuration: 1.0, animations: {
+                UIView.animate(withDuration: 0.5, animations: {
                     self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-                    self.taskTimerView.taskRing.alpha = 0.0
-                    self.taskTimerView.iconImage.alpha = 0.30
+                    self.taskTimerView.taskRing.alpha = 0
+                    self.taskTimerView.iconImage.alpha = 0.65
                 }) { (Bool) in
-                    self.taskTimerView.taskRing.alpha = 1.0
-                    self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                        self.taskTimerView.taskRing.alpha = 1.0
+                        self.taskTimerView.iconImage.alpha = 0.30
+                    })
+                    
                 }
                 
             } else {
@@ -341,6 +354,11 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             startStopTimer()
             taskTimerView.iconImage.alpha = 1
+            
+            UIView.animate(withDuration: 1.0) {
+                    self.taskTimerView.taskRing.alpha = 1
+            }
+            taskTimerView.taskRing.layer.mask = nil
             taskTimerView.animate()
             switch currentMode {
                 
@@ -593,7 +611,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         resetButtons()
         resetToFocusMode()
         taskTimerView.iconImage.alpha = 1.0
-        taskTimerView.redrawRing(completion: 1.0)
+        taskTimerView.taskRing.layer.mask = nil
         newTaskSessions = []
         taskSessions = []
         fetchDataAndSessions(id: task.id!)
@@ -601,6 +619,11 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         
     }
+    
+    @IBAction func sneakyWizardButton(_ sender: UIButton) {
+        currentCounter = 5
+    }
+    
 
 }
 
