@@ -8,14 +8,14 @@
 
 import UIKit
 
-class CreateFirstTaskViewController: UIViewController, UITextFieldDelegate {
+class CreateFirstTaskViewController: UIViewController {
     
     var goal: Goal?
     
-    @IBOutlet weak var imageIconView: UIView!
-    @IBOutlet weak var taskName: UITextField!
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    private var tmpIcon: UIView!
+    private var taskName: String?
     private var priority: Int16?
     private var taskDescription: String?
     private var timeEstimate: UISegmentedControl!
@@ -37,25 +37,13 @@ class CreateFirstTaskViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         guard let goalTags = goal?.tags else {return}
         tagList.append(contentsOf: goalTags)
-        
-        taskName.delegate = self
         // Do any additional setup after loading the view.
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let name = taskName.text,
-            let rangeOfTextToReplace = Range(range, in: name) else {
-                return false
-        }
-        let substringToReplace = name[rangeOfTextToReplace]
-        let count = name.count - substringToReplace.count + string.count
-        return count <= 30
     }
     
     
     func saveTask() {
         let task = Task(context: PersistenceService.context)
-        task.name = taskName.text
+        task.name = taskName ?? "Add name here"
         task.taskDescription = taskDescription ?? "Add description here"
         task.id = UUID()
         task.deadline = deadline as NSDate?
@@ -66,18 +54,30 @@ class CreateFirstTaskViewController: UIViewController, UITextFieldDelegate {
         task.daysAvailable = availability
         goal?.addToTasks(task)
         PersistenceService.saveContext()
+        print(task)
     }
     
     @IBAction func goBackHome(_ sender: UIBarButtonItem) {
         saveTask()
-        navigationController?.popToRootViewController(animated: true)
+//        let vc = GoalListTableViewController()
+//        self.present(vc, animated: true, completion: nil)
+//        navigationController?.popToRootViewController(animated: true)
+       dismiss(animated: true, completion: nil)
+        
     }
     
     
 }
 
-extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSource, GoalDescriptionCellDelegate, DatePickerTableViewCellDelegate, GoalPriorityTableCellDelegate, TaskAvailabilityCellDelegate {
-   
+extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSource, TaskIconCellDelegate, GoalNameCellDelegate, GoalDescriptionCellDelegate, DatePickerTableViewCellDelegate, GoalPriorityTableCellDelegate, TaskAvailabilityCellDelegate {
+    
+    func getIcon(icon: TaskIcon) {
+        tmpIcon = icon
+    }
+
+    func getValueForName(theName: String) {
+        taskName = theName
+    }
     
     func selectedDates(daysOfWeek: [Bool]) {
         availability = daysOfWeek
@@ -116,29 +116,37 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "taskDescriptionCell", for: indexPath) as! TaskDescriptionTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "taskIconCell", for: indexPath) as! TaskIconTableViewCell
             cell.delegate = self
             return cell
         case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "taskNameCell", for: indexPath) as! TaskNameTableViewCell
+            cell.delegate = self
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "taskDescriptionCell", for: indexPath) as! TaskDescriptionTableViewCell
+            cell.delegate = self
+            return cell
+        case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskDeadlineCell", for: indexPath) as! TaskDeadlineTableViewCell
             cell.delegate = self
             
             return cell
-        case 2:
+        case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskPriorityCell", for: indexPath) as! TaskPriorityTableViewCell
             cell.delegate = self
             return cell
-        case 3:
+        case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskAvailabilityCell", for: indexPath) as! TaskAvailabilityTableViewCell
             cell.delegate = self
             return cell
-        case 4:
+        case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskTagsCell", for: indexPath) as! TaskTagsTableViewCell
             cell.collectionView.reloadData()
             return cell
             
         default:
-            return tableView.dequeueReusableCell(withIdentifier: "Cell")!
+            return tableView.dequeueReusableCell(withIdentifier: "cell")!
         }
         
     }
@@ -185,13 +193,13 @@ extension CreateFirstTaskViewController : UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row < tagList.count {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalsCreatedTagCell", for: indexPath) as! TagCreatedTaskCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskCreatedTagCell", for: indexPath) as! TagCreatedTaskCollectionViewCell
             cell.tagName.text = tagList[indexPath.row]
             return cell
         } else {
             
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goalsEmptyTagCell", for: indexPath) as! TagEmptyTaskCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskEmptyTagCell", for: indexPath) as! TagEmptyTaskCollectionViewCell
         cell.delegate = self
         return cell
     }
