@@ -27,7 +27,7 @@ class CreateFirstTaskViewController: UIViewController {
     
     private var refreshCollectionView = 0 {
         didSet {
-            let indexPath = IndexPath(item: 4, section: 0)
+            let indexPath = IndexPath(item: 6, section: 0)
             tableView.reloadRows(at: [indexPath], with: .top)
         }
     }
@@ -153,7 +153,7 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 1 {
+        if indexPath.row == 3 {
             let height: CGFloat = pickerisHidden ? 40.0 : 210
             return height
         }
@@ -161,7 +161,7 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let dateIndexPath = IndexPath(row: 1, section: 0)
+        let dateIndexPath = IndexPath(row: 3, section: 0)
         if dateIndexPath == indexPath {
             pickerisHidden = !pickerisHidden
             

@@ -10,6 +10,7 @@ import UIKit
 
 class TaskDescriptionTableViewCell: UITableViewCell, UITextViewDelegate {
 
+    @IBOutlet weak var descriptionTitle: UILabel!
     @IBOutlet weak var taskDescription: UITextView!
     
     var delegate: GoalDescriptionCellDelegate?

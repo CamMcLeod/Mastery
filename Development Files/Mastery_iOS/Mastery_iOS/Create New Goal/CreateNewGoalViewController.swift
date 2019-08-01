@@ -121,7 +121,7 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 1 {
+        if indexPath.row == 3 {
             let height: CGFloat = pickerisHidden ? 40.0 : 210
             return height
         }
@@ -129,7 +129,7 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let dateIndexPath = IndexPath(row: 1, section: 0)
+        let dateIndexPath = IndexPath(row: 3, section: 0)
         if dateIndexPath == indexPath {
             pickerisHidden = !pickerisHidden
             
