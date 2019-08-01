@@ -143,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deB-lV-0Gz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2294.202898550725" y="845.75892857142856"/>
+            <point key="canvasLocation" x="1419" y="1756"/>
         </scene>
         <!--Settings Test View Controller-->
         <scene sceneID="3Dh-fi-Gd5">
@@ -153,24 +153,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttn-7L-yYi">
-                                <rect key="frame" x="175.5" y="437.5" width="63.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gOa-gS-7Lx">
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Focus Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnO-k9-iWO">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="68.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="36"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="1500" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bOT-Un-Z3f">
+                                        <rect key="frame" x="0.0" y="68.5" width="374" height="298.5"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="586317873.13402998">
+                                            <!--2019-08-01 02:04:33 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="focusTimeChanged:" destination="MIG-QY-Bgl" eventType="valueChanged" id="SSj-pI-hhC"/>
+                                        </connections>
+                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3a-oL-3KX">
+                                        <rect key="frame" x="0.0" y="367" width="374" height="68.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="36"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="300" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="AND-Dw-6ge">
+                                        <rect key="frame" x="0.0" y="435.5" width="374" height="298.5"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="586317905.37686098">
+                                            <!--2019-08-01 02:05:05 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="breakTimeChanged:" destination="MIG-QY-Bgl" eventType="valueChanged" id="9uM-RK-nnt"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ttn-7L-yYi" firstAttribute="centerX" secondItem="2lR-hs-FcK" secondAttribute="centerX" id="cFn-sB-nkv"/>
-                            <constraint firstItem="Ttn-7L-yYi" firstAttribute="centerY" secondItem="2lR-hs-FcK" secondAttribute="centerY" id="qgI-cw-emk"/>
+                            <constraint firstItem="J4K-IA-Erf" firstAttribute="trailing" secondItem="gOa-gS-7Lx" secondAttribute="trailing" constant="20" id="sto-Xf-bxH"/>
+                            <constraint firstItem="gOa-gS-7Lx" firstAttribute="leading" secondItem="2lR-hs-FcK" secondAttribute="leading" constant="20" id="vUM-tb-Ymb"/>
+                            <constraint firstItem="gOa-gS-7Lx" firstAttribute="top" secondItem="J4K-IA-Erf" secondAttribute="top" constant="20" id="wBW-Nr-9t6"/>
+                            <constraint firstItem="J4K-IA-Erf" firstAttribute="bottom" secondItem="gOa-gS-7Lx" secondAttribute="bottom" constant="20" id="wEm-rW-gsr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J4K-IA-Erf"/>
                     </view>
+                    <connections>
+                        <outlet property="breakTimePicker" destination="AND-Dw-6ge" id="3Fb-v8-7fg"/>
+                        <outlet property="focusTimePicker" destination="bOT-Un-Z3f" id="cel-q7-npB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgE-GP-YF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1419" y="1700"/>
+            <point key="canvasLocation" x="2289.8550724637685" y="-11.383928571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EnA-BS-XAC">
@@ -364,7 +401,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaG-Tp-T8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3351" y="40"/>
+            <point key="canvasLocation" x="3555" y="860"/>
         </scene>
         <!--Focus View Controller-->
         <scene sceneID="3Bq-H5-2eb">
@@ -424,6 +461,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="sessionDateLabel" destination="fn2-cl-GOe" id="Lli-k9-9Dk"/>
                                             <outlet property="sessionDurationLabel" destination="qK9-pr-PdM" id="5G1-lD-3fe"/>
@@ -464,10 +502,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e8-gT-cBG">
-                                <rect key="frame" x="184.5" y="812" width="45" height="40"/>
+                                <rect key="frame" x="134.5" y="812" width="145" height="40"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Return to Today">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -513,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdO-CH-lfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292.753623188406" y="39.508928571428569"/>
+            <point key="canvasLocation" x="2484" y="846"/>
         </scene>
     </scenes>
     <resources>

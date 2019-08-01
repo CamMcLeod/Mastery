@@ -263,7 +263,6 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func startStopTimer () {
         
         animatePausePlay(isRunning: isTimerRunning)
-        animateTimer()
         
         if !hasStarted {
             hasStarted = true
@@ -276,11 +275,45 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case false:
             isTimerRunning = true
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-            
         case true:
             isTimerRunning = false
             timer.invalidate()
 
+        }
+        
+        animateTimer()
+        
+        switch currentMode {
+        case .breakMode:
+            if currentCounter == BREAK_TIME {
+                
+                UIView.animate(withDuration: 1.0, animations: {
+                    self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                    self.taskTimerView.taskRing.alpha = 0.0
+                    self.taskTimerView.iconImage.alpha = 0.30
+                }) { (Bool) in
+                    self.taskTimerView.taskRing.alpha = 1.0
+                    self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                    }
+                
+            } else {
+                taskTimerView.animate()
+            }
+        case .focusMode:
+            if currentCounter == FOCUS_TIME {
+                
+                UIView.animate(withDuration: 1.0, animations: {
+                    self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                    self.taskTimerView.taskRing.alpha = 0.0
+                    self.taskTimerView.iconImage.alpha = 0.30
+                }) { (Bool) in
+                    self.taskTimerView.taskRing.alpha = 1.0
+                    self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                }
+                
+            } else {
+                taskTimerView.animate()
+            }
         }
     }
     
@@ -289,10 +322,26 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if currentCounter > 0 {
             currentCounter = currentCounter - 1
             timerLabel.text = currentCounter.secondsToHoursMinutesSeconds()
+            switch currentMode {
+            case .focusMode:
+
+                let amtComplete = CGFloat(FOCUS_TIME-currentCounter) / CGFloat(FOCUS_TIME)
+                taskTimerView.iconImage.alpha = amtComplete * 0.7 + 0.3
+                taskTimerView.redrawRing(completion: amtComplete)
+                
+            case .breakMode:
+                
+                let amtComplete = CGFloat(BREAK_TIME-currentCounter) / CGFloat(BREAK_TIME)
+                taskTimerView.iconImage.alpha = amtComplete * 0.7 + 0.3
+                taskTimerView.redrawRing(completion: amtComplete)
+                
+            }
+            
         } else {
             
             startStopTimer()
-            
+            taskTimerView.iconImage.alpha = 1
+            taskTimerView.animate()
             switch currentMode {
                 
             case .focusMode:
@@ -389,7 +438,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func formatAlertText(alertController: UIAlertController, text: String, size: CGFloat, font: String, forKey: String) {
         var myMutableString = NSMutableAttributedString()
-        myMutableString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font:UIFont(name: font, size: size)!])
+        myMutableString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font:UIFont(name: font, size: size)!, NSAttributedString.Key.foregroundColor : goalColor])
         alertController.setValue(myMutableString, forKey: forKey)
     }
     
@@ -543,6 +592,8 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         resetButtons()
         resetToFocusMode()
+        taskTimerView.iconImage.alpha = 1.0
+        taskTimerView.redrawRing(completion: 1.0)
         newTaskSessions = []
         taskSessions = []
         fetchDataAndSessions(id: task.id!)

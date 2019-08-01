@@ -109,11 +109,13 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         if indexPath.section == 0 {
             let startEndCell = tableView.dequeueReusableCell(withIdentifier: "startEndCell") as! StartEndCell
             startEndCell.configure(startDate: unsavedSessions.last!.0, endDate: self.endTime ?? Date(), color: goalColor)
+            startEndCell.tintColor = goalColor
             return startEndCell
         }
         else {
             let unsavedCell = tableView.dequeueReusableCell(withIdentifier: "unsavedSession") as! PreviousSessionCell
             unsavedCell.configure(with: unsavedSessions[row].0, duration: unsavedSessions[row].1, color: goalColor)
+            unsavedCell.tintColor = goalColor
             return unsavedCell
         }
         
@@ -137,6 +139,10 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
 
     }
     
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let addNote = UITableViewRowAction(style: .normal, title: "Add Note") { (action, indexPath) in
@@ -154,7 +160,9 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
             }
             
             self.insertNewNote(date: dateString, duration: duration)
-            
+            if self.saveButton.isEnabled {
+                sessionCell.accessoryType = .checkmark
+            }
         }
         
         addNote.backgroundColor = goalColor
@@ -259,6 +267,20 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         return dateMatch
     }
     
+    private func formatAlertController(alertController: UIAlertController) {
+        alertController.view.tintColor = goalColor
+        alertController.view.layer.borderWidth = 3
+        alertController.view.layer.borderColor = goalColor.cgColor
+        alertController.view.layer.cornerRadius = 15.0
+        alertController.view.clipsToBounds = true
+    }
+    
+    private func formatAlertText(alertController: UIAlertController, text: String, size: CGFloat, font: String, forKey: String) {
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font:UIFont(name: font, size: size)!, NSAttributedString.Key.foregroundColor : goalColor])
+        alertController.setValue(myMutableString, forKey: forKey)
+    }
+    
     //MARK: - Actions
     
     
@@ -274,34 +296,72 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    let textView = UITextView(frame: CGRect.zero)
+    
     func insertNewNote(date: String, duration: String) {
         
-        let messageString = date + " (" + duration + ")"
+        let messageString = "Note for: \n" + date + " (" + duration + ")"
         // Get information from user and configure object
-        var inputDescriptionView : UITextField?
-        let alertController = UIAlertController(title: "New Note", message:  messageString, preferredStyle: .alert)
+        
+        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n", message:  messageString, preferredStyle: .alert)
         let save = UIAlertAction(title: "Save", style: .default, handler: { (action) -> Void in
             // Do whatever you want with inputTextField?.text
-            let savedNote = messageString + inputDescriptionView!.text!
+            let savedNote = messageString + self.textView.text
             self.newNotes?.append(savedNote)
-            
+            self.saveButton.isEnabled = true
+            alertController.view.removeObserver(self, forKeyPath: "bounds")
         })
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+        save.isEnabled = false
+
+        
+        alertController.view.addObserver(self, forKeyPath: "bounds", options: NSKeyValueObservingOptions.new, context: nil)
+        
+        NotificationCenter.default.addObserver(forName: UITextView.textDidChangeNotification, object: textView, queue: OperationQueue.main) { (notification) in
+            save.isEnabled = self.textView.text != ""
         }
         
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            alertController.view.removeObserver(self, forKeyPath: "bounds")
+        }
+        
+        alertController.addTextField { field in
+            field.translatesAutoresizingMaskIntoConstraints = false
+            field.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        }
+        
+        let inCntrlr =  alertController.children[0].view!
+        inCntrlr.removeFromSuperview()
+        
+        formatAlertController(alertController: alertController)
+        formatAlertText(alertController: alertController, text: messageString, size: 16, font: "AvenirNext-Bold", forKey: "attributedMessage")
+        
+        self.textView.font = UIFont.init(name: "AvenirNext-Regular", size: 16)
+        self.textView.backgroundColor = self.bgColor
+        self.textView.textColor = goalColor
+        self.textView.layer.borderWidth = 3
+        self.textView.layer.borderColor = goalColor.cgColor
+        self.textView.layer.cornerRadius = 15.0
+        
+        alertController.view.addSubview(self.textView)
         alertController.addAction(save)
         alertController.addAction(cancel)
-        alertController.addTextField { (textField) -> Void in
-            inputDescriptionView = textField
-            inputDescriptionView?.text = "note..."
-        }
+
+        textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         
-        present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true)
         
     }
     
-    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "bounds"{
+            if let rect = (change?[NSKeyValueChangeKey.newKey] as? NSValue)?.cgRectValue {
+                let margin:CGFloat = 10.0
+                textView.frame = CGRect.init(x: rect.origin.x + margin, y: rect.origin.y + margin, width: rect.width - 2*margin, height: rect.height / 2)
+                textView.bounds = CGRect.init(x: rect.origin.x + margin, y: rect.origin.y + margin, width: rect.width - 2*margin, height: rect.height / 2)
+            }
+        }
+    }
     
 
     
