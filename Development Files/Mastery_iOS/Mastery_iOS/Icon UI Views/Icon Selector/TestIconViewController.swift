@@ -11,13 +11,15 @@ import UIKit
 class TestIconViewController: UIViewController, IconSaveDelegate  {
 
     @IBOutlet weak var taskIconTest: TaskIcon!
-    var goalColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+    var goalColor = UIColor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         taskIconTest.iconSetup(icon: UIImage(named: "NewGoal_Button"), iconColor: #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1))
+        goalColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+        print(goalColor)
     }
     
     

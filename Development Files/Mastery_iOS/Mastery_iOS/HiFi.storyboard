@@ -176,7 +176,7 @@
                 <viewControllerPlaceholder storyboardName="ChangeToday" referencedIdentifier="TodayBegin" id="sxD-Mp-Jga" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzg-9n-oFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3135" y="1102"/>
+            <point key="canvasLocation" x="3273" y="820"/>
         </scene>
         <!--Goal Detail View Controller-->
         <scene sceneID="niY-Yw-YDm">
@@ -1234,6 +1234,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="taskIcon" destination="KLK-Jw-zme" id="Ck6-cl-pX8"/>
+                                            <segue destination="1zJ-eP-C69" kind="presentation" id="72v-br-Dvl"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="taskNameCell" rowHeight="44" id="wY2-4n-Z7U" customClass="TaskNameTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
@@ -1628,6 +1629,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiR-aF-0cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3921.739130434783" y="2564.7321428571427"/>
+        </scene>
+        <!--SelectIconPopoverViewController-->
+        <scene sceneID="S31-qo-WZr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectIconTest" referencedIdentifier="SelectIconPopoverViewController" id="1zJ-eP-C69" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6oH-OS-Kg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4608" y="2386"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Sfa-H6-ZUa">

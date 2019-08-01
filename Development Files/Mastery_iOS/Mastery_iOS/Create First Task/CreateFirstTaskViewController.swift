@@ -14,7 +14,7 @@ class CreateFirstTaskViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var tmpIcon: UIView!
+    private var image: NSData?
     private var taskName: String?
     private var priority: Int16?
     private var taskDescription: String?
@@ -51,6 +51,7 @@ class CreateFirstTaskViewController: UIViewController {
         task.dateOfBirth = Date() as NSDate
         task.priority = priority ?? 1
         task.tags = tagList
+        task.image = image
         task.daysAvailable = availability
         goal?.addToTasks(task)
         PersistenceService.saveContext()
@@ -72,7 +73,12 @@ class CreateFirstTaskViewController: UIViewController {
 extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSource, TaskIconCellDelegate, GoalNameCellDelegate, GoalDescriptionCellDelegate, DatePickerTableViewCellDelegate, GoalPriorityTableCellDelegate, TaskAvailabilityCellDelegate {
     
     func getIcon(icon: TaskIcon) {
-        tmpIcon = icon
+        
+        if let iconPNG = icon.iconImage.image {
+            image = iconPNG.pngData() as NSData?
+        } else {
+            image = UIImage(named: "NewGoal_Button")?.pngData() as NSData?
+        }
     }
 
     func getValueForName(theName: String) {
@@ -117,7 +123,14 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskIconCell", for: indexPath) as! TaskIconTableViewCell
+            cell.goalColor = goal?.color
             cell.delegate = self
+            
+            guard let _ = cell.taskIcon.iconImage.image else {
+                cell.taskIcon.iconSetup(icon: UIImage(named: "NewGoal_Button"), iconColor: goal!.color ?? #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1))
+                return cell
+            }
+            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskNameCell", for: indexPath) as! TaskNameTableViewCell
@@ -203,6 +216,23 @@ extension CreateFirstTaskViewController : UICollectionViewDelegate, UICollection
         cell.delegate = self
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+        case "selectIcon":
+            let taskIconCell = sender as! TaskIconTableViewCell
+            let selectIconPopover = segue.destination as! SelectIconPopoverViewController
+            selectIconPopover.iconDelegate = taskIconCell
+            selectIconPopover.incomingIcon = taskIconCell.taskIcon.iconImage.image
+            selectIconPopover.goalColor = goal!.color ?? #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            
+        default:
+            break
+        }
+
+    }
+    
 }
 
 

@@ -54,7 +54,7 @@
         <!--Select Icon Popover View Controller-->
         <scene sceneID="wO5-M3-yTB">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="Xqr-Bp-Rr8" customClass="SelectIconPopoverViewController" customModule="Mastery_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectIconPopoverViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xqr-Bp-Rr8" customClass="SelectIconPopoverViewController" customModule="Mastery_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zmM-UJ-9ac">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,28 +71,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRx-JK-IYS">
                                         <rect key="frame" x="0.0" y="64.5" width="374" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bh0-tV-f9m">
-                                                <rect key="frame" x="89" y="31" width="38" height="38"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="38" id="gVU-9s-ob5"/>
-                                                    <constraint firstAttribute="height" constant="38" id="oJ3-M5-Zi9"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="Settings_Icon"/>
-                                                <connections>
-                                                    <action selector="cancelButton:" destination="Xqr-Bp-Rr8" eventType="touchUpInside" id="UbM-tc-p21"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eO6-Bw-dXf">
-                                                <rect key="frame" x="247" y="31" width="38" height="38"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="38" id="MwS-ub-CAo"/>
-                                                    <constraint firstAttribute="width" constant="38" id="s7r-OM-6y5"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="NewGoal_Button"/>
-                                                <connections>
-                                                    <action selector="saveButton:" destination="Xqr-Bp-Rr8" eventType="touchUpInside" id="dmF-bO-Xkp"/>
-                                                </connections>
-                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMq-jE-1eC" customClass="TaskIcon" customModule="Mastery_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="127" y="-10" width="120" height="120"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,17 +83,13 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="iMq-jE-1eC" firstAttribute="centerY" secondItem="IRx-JK-IYS" secondAttribute="centerY" id="5JV-Ns-1G6"/>
-                                            <constraint firstItem="eO6-Bw-dXf" firstAttribute="centerY" secondItem="IRx-JK-IYS" secondAttribute="centerY" id="9wX-cm-mDn"/>
                                             <constraint firstAttribute="height" constant="100" id="CYy-H9-POt"/>
-                                            <constraint firstItem="iMq-jE-1eC" firstAttribute="leading" secondItem="bh0-tV-f9m" secondAttribute="trailing" id="Xxa-U6-DSy"/>
                                             <constraint firstItem="iMq-jE-1eC" firstAttribute="centerX" secondItem="IRx-JK-IYS" secondAttribute="centerX" id="giJ-kO-A4B"/>
-                                            <constraint firstItem="bh0-tV-f9m" firstAttribute="centerY" secondItem="IRx-JK-IYS" secondAttribute="centerY" id="hnn-L4-7mX"/>
-                                            <constraint firstItem="eO6-Bw-dXf" firstAttribute="leading" secondItem="iMq-jE-1eC" secondAttribute="trailing" id="zwA-xY-ghf"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X5F-H5-zLr">
                                         <rect key="frame" x="0.0" y="179.5" width="374" height="638.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eJC-Kv-ZDE">
                                             <size key="itemSize" width="100" height="100"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -152,7 +126,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gEq-Sf-oqa" firstAttribute="top" secondItem="5oT-aZ-DWv" secondAttribute="top" id="3nS-mQ-tlT"/>
                             <constraint firstItem="gEq-Sf-oqa" firstAttribute="leading" secondItem="5oT-aZ-DWv" secondAttribute="leading" constant="20" id="6BC-zo-iuz"/>
@@ -164,7 +138,6 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="collectionView" destination="X5F-H5-zLr" id="3GZ-cI-XY0"/>
-                        <outlet property="saveLabelButton" destination="eO6-Bw-dXf" id="58D-A4-zrF"/>
                         <outlet property="selectIconLabel" destination="MIc-ib-5LW" id="oKt-I9-Y49"/>
                         <outlet property="selectedTaskIcon" destination="iMq-jE-1eC" id="w2U-ou-lBZ"/>
                         <outlet property="stackView" destination="gEq-Sf-oqa" id="Z5O-fa-VhH"/>
@@ -175,8 +148,4 @@
             <point key="canvasLocation" x="1066.6666666666667" y="123.88392857142857"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="NewGoal_Button" width="50" height="50"/>
-        <image name="Settings_Icon" width="34" height="34"/>
-    </resources>
 </document>

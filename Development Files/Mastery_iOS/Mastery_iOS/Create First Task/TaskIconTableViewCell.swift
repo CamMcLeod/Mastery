@@ -12,20 +12,26 @@ protocol TaskIconCellDelegate {
     func getIcon(icon: TaskIcon)
 }
 
-class TaskIconTableViewCell : UITableViewCell {
+class TaskIconTableViewCell : UITableViewCell, IconSaveDelegate {
+
+    
     
     @IBOutlet weak var taskIcon: TaskIcon!
     
-     var delegate: TaskIconCellDelegate?
+    var delegate: TaskIconCellDelegate?
+    var goalColor: UIColor?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
-    func taskIconDidChange(_ UIView: UIView) {
-        self.delegate?.getIcon(icon: taskIcon)
-        
+    
+    func setNewImage(image: UIImage) {
+        if let color = goalColor {
+            taskIcon.iconSetup(icon: image, iconColor: color)
+        }
+         self.delegate?.getIcon(icon: taskIcon)
     }
     
 }

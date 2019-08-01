@@ -18,11 +18,10 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
     @IBOutlet weak var selectedTaskIcon: TaskIcon!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var selectIconLabel: UILabel!
-    @IBOutlet weak var saveLabelButton: UIButton!
     
     var iconDelegate: IconSaveDelegate?
     var incomingIcon: UIImage?
-    var goalColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+    var goalColor = UIColor()
     
     var allIcons: [UIImage] = []
     
@@ -33,12 +32,12 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
         collectionView.dataSource = self
         
         collectionView.layer.borderWidth = 5
+        print(goalColor)
         collectionView.layer.borderColor = goalColor.cgColor
         collectionView.layer.cornerRadius = 15.0
         
         // Do any additional setup after loading the view.
-        
-        saveLabelButton.isEnabled = false
+        selectedTaskIcon.isUserInteractionEnabled = false
         
         guard let bundleURL = Bundle.main.url(forResource: "TaskIcons", withExtension: "bundle") else { return }
         guard let bundle = Bundle(url: bundleURL) else { return }
@@ -52,6 +51,10 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
         selectIconLabel.textColor = goalColor
         selectedTaskIcon.iconSetup(icon: incomingIcon, iconColor: goalColor)
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissToTaskEdit))
+        selectedTaskIcon.addGestureRecognizer(tapGesture)
+        
+        
     }
     
     
@@ -64,8 +67,14 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
         let iconCell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectIconCell", for: indexPath) as! SelectIconCell
         
         iconCell.configure(with: allIcons[indexPath.row], color: #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1))
-        
+        iconCell.layer.borderColor = goalColor.cgColor
         return iconCell
+    }
+    
+    @objc func dismissToTaskEdit() {
+        
+        dismiss(animated: true)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
@@ -75,7 +84,15 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! SelectIconCell
         selectedTaskIcon.iconSetup(icon: selectedCell.taskIcon!.iconImage.image, iconColor: goalColor)
-        saveLabelButton.isEnabled = true
+        selectedTaskIcon.animate()
+        
+        if let newImage = selectedTaskIcon.iconImage.image {
+            
+            self.iconDelegate?.setNewImage(image: newImage)
+        }
+        
+        selectedTaskIcon.isUserInteractionEnabled = true
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -102,19 +119,6 @@ class SelectIconPopoverViewController: UIViewController, UICollectionViewDelegat
      // Pass the selected object to the new view controller.
      }
      */
-    @IBAction func cancelButton(_ sender: Any) {
-        
-        self.dismiss(animated: true, completion: nil)
-    }
     
-    @IBAction func saveButton(_ sender: Any) {
-        
-        if let newImage = selectedTaskIcon.iconImage.image {
-            
-            self.iconDelegate?.setNewImage(image: newImage)
-            self.dismiss(animated: true, completion: nil)
-        }
-        
-    }
 
 }

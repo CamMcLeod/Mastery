@@ -63,7 +63,7 @@
                                 <rect key="frame" x="351" y="804" width="43" height="34"/>
                                 <state key="normal" image="SwapScreen_Icon"/>
                                 <connections>
-                                    <segue destination="xzT-Iu-zgw" kind="show" identifier="switchToGoals" id="i1Y-LZ-iuF"/>
+                                    <segue destination="xzT-Iu-zgw" kind="showDetail" identifier="switchToGoals" id="i1Y-LZ-iuF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGl-RC-0Ht">
@@ -400,7 +400,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7v5-a8-BD1">
-                                <rect key="frame" x="20" y="345" width="374" height="425"/>
+                                <rect key="frame" x="20" y="345" width="374" height="382"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recorded Sessions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Xn-rc-LSu" userLabel="Previous Sessions">
@@ -466,15 +466,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tok-Aj-dxw" userLabel="Play Button" customClass="PausePlayButton" customModule="Mastery_iOS" customModuleProvider="target">
-                                <rect key="frame" x="378" y="293.5" width="16" height="22"/>
+                                <rect key="frame" x="344" y="279.5" width="50" height="50"/>
                                 <state key="normal" image="Play_Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uq-PF-HI9" userLabel="Pause Button" customClass="PausePlayButton" customModule="Mastery_iOS" customModuleProvider="target">
-                                <rect key="frame" x="378" y="293.5" width="16" height="22"/>
+                                <rect key="frame" x="344" y="279.5" width="50" height="50"/>
                                 <state key="normal" image="Pause_Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXo-05-rBw" userLabel="Finish">
-                                <rect key="frame" x="156" y="780" width="102" height="22"/>
+                                <rect key="frame" x="57" y="737" width="300" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hXo-05-rBw" secondAttribute="height" multiplier="60:13" id="fFH-Z9-qOa"/>
                                 </constraints>

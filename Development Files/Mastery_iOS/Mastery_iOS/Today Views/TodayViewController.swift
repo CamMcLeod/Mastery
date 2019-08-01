@@ -130,22 +130,17 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
                 let thisTask = self.todayTasks[indexPath.row]
                 let totalTime = (thisTask.deadline?.timeIntervalSince(thisTask.dateOfBirth! as Date))!
                 let timePassed = Date().timeIntervalSince(thisTask.dateOfBirth! as Date)
-                print(timePassed)
-                print(totalTime)
+                cell.taskView.taskIcon.redrawRingCollection(completion: CGFloat(timePassed/totalTime))
                 print(timePassed/totalTime)
-                cell.taskView.taskIcon.redrawRing(completion: CGFloat(timePassed/totalTime))
-                
                 case 1:
                     
                 let thisTask = self.todayTasks[indexPath.row]
                 let priorityRatio = CGFloat(CGFloat(thisTask.priority) / 10)
-                print(priorityRatio)
-                cell.taskView.taskIcon.drawRingFill(completion: priorityRatio)
+                cell.taskView.taskIcon.drawRingFillCollection(completion: priorityRatio)
                 
                 default:
                 fatalError()
             }
-        
         return cell
     }
     
@@ -308,7 +303,6 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             let task1 = Task(context: PersistenceService.context)
             task1.name = allNames[i]
             task1.dateOfBirth = NSDate(timeIntervalSinceNow: -500000)
-            print(task1.dateOfBirth)
             task1.isComplete = i % 2 == 0 ? true : false
             task1.daysAvailable = Array.init(repeating: true, count: 7)
             task1.deadline = NSDate(timeIntervalSinceNow: 10000 * Double(i))
@@ -319,14 +313,19 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             switch val {
             case 0:
                 task1.goal = testGoals[val]
+                testGoals[val].addToTasks(task1)
             case 1:
                 task1.goal = testGoals[val]
+                testGoals[val].addToTasks(task1)
             case 2:
                 task1.goal = testGoals[val]
+                testGoals[val].addToTasks(task1)
             case 3:
                 task1.goal = testGoals[val]
+                testGoals[val].addToTasks(task1)
             case 4:
                 task1.goal = testGoals[val]
+                testGoals[val].addToTasks(task1)
             default:
                 return
             }
