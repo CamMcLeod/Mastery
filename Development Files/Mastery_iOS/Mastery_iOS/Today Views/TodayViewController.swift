@@ -30,6 +30,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var switchToGoalsButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var sortByControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,6 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         // Do any additional setup after loading the view.
         
-        loadDummyData()
     
         
         // UNCOMMENT TO UNLEASH FURY
@@ -50,10 +50,20 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             let tasks =  try PersistenceService.context.fetch(fetchRequest)
             self.tasks = tasks
             print(tasks.count)
+            if tasks.count == 0 {
+                loadDummyData()
+                let fetchRequest2 = NSFetchRequest<Task>(entityName: "Task")
+                let tasks =  try PersistenceService.context.fetch(fetchRequest2)
+                self.tasks = tasks
+                print(tasks.count)
+            }
         } catch {
             print("Oh no, there is no data to load")
         }
-
+        
+        collectionView.layer.borderWidth = 5
+        collectionView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        collectionView.layer.cornerRadius = 15.0
         
         
         for task in tasks {
@@ -89,7 +99,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         // Pass the selected object to the new view controller.
         switch segue.identifier {
         case "switchToGoals":
-            _ = segue.destination as! GoalTestViewController
+            break
         case "focusOnTask":
             let selectedTaskCell = sender as! TaskCell
             let focusVC = segue.destination as! FocusViewController
@@ -114,6 +124,27 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskCell", for: indexPath) as! TaskCell
         
         cell.configure(with: todayTasks[indexPath.row])
+            switch self.sortByControl.selectedSegmentIndex {
+                case 0:
+                    
+                let thisTask = self.todayTasks[indexPath.row]
+                let totalTime = (thisTask.deadline?.timeIntervalSince(thisTask.dateOfBirth! as Date))!
+                let timePassed = Date().timeIntervalSince(thisTask.dateOfBirth! as Date)
+                print(timePassed)
+                print(totalTime)
+                print(timePassed/totalTime)
+                cell.taskView.taskIcon.redrawRing(completion: CGFloat(timePassed/totalTime))
+                
+                case 1:
+                    
+                let thisTask = self.todayTasks[indexPath.row]
+                let priorityRatio = CGFloat(CGFloat(thisTask.priority) / 10)
+                print(priorityRatio)
+                cell.taskView.taskIcon.drawRingFill(completion: priorityRatio)
+                
+                default:
+                fatalError()
+            }
         
         return cell
     }
@@ -186,7 +217,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
     private func sortTasksByDeadline () {
         
         let tempTasks = todayTasks.enumerated().sorted { (task1, task2) -> Bool in
-            task1.element.deadline!.timeIntervalSince(task2.element.deadline! as Date) > 0
+            task1.element.deadline!.timeIntervalSince(task2.element.deadline! as Date) < 0
         }
 
         batchSort(tempTasks: tempTasks)
@@ -221,11 +252,19 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
                     }
                     
             }, completion: { (finished:Bool) -> Void in
-                if self.collectionView.indexPathsForVisibleItems.contains(IndexPath(row: index*2, section: 0)) {
-                    let cell1 = self.collectionView.cellForItem(at: IndexPath(row: index*2, section: 0)) as! TaskCell
-                    let cell2 = self.collectionView.cellForItem(at: IndexPath(row: index*2+1, section: 0)) as! TaskCell
-                    cell1.startAnimate()
-                    cell2.startAnimate()
+                if self.collectionView.indexPathsForVisibleItems.contains(IndexPath(row: index*2, section: 0))  {
+                    let rowIndex = index*2
+                    let indexPath = IndexPath(row: rowIndex, section: 0)
+                    let cell = self.collectionView.cellForItem(at: indexPath) as! TaskCell
+                    cell.startAnimate()
+                    
+                }
+                if self.collectionView.indexPathsForVisibleItems.contains(IndexPath(row: index*2+1, section: 0))  {
+                    let rowIndex = index*2+1
+                    let indexPath = IndexPath(row: rowIndex, section: 0)
+                    let cell = self.collectionView.cellForItem(at: indexPath) as! TaskCell
+                    cell.startAnimate()
+                    
                 }
                 
                 self.batchUpdate(index: index + 1)
@@ -241,16 +280,6 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         // perform animation with one row at a time
         batchUpdate(index: 0)
-        
-        //perform all at once - all sliding up together
-//        collectionView.performBatchUpdates(
-//        {
-//            for i in 0..<todayTasks.count {
-//                collectionView.deleteItems(at: [IndexPath(row: i, section: 0)])
-//                collectionView.insertItems(at: [IndexPath(row: i, section: 0)])
-//            }
-//        }, completion: { (finished:Bool) -> Void in
-//        })
         
     }
     
@@ -278,10 +307,12 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             let task1 = Task(context: PersistenceService.context)
             task1.name = allNames[i]
+            task1.dateOfBirth = NSDate(timeIntervalSinceNow: -500000)
+            print(task1.dateOfBirth)
             task1.isComplete = i % 2 == 0 ? true : false
             task1.daysAvailable = Array.init(repeating: true, count: 7)
             task1.deadline = NSDate(timeIntervalSinceNow: 10000 * Double(i))
-            task1.priority = Int16((i % 10) + 1)
+            task1.priority = Int16(arc4random_uniform(10)+1)
             task1.daysAvailable![i % 7] = false
             task1.id = UUID()
             let val = i % 5
@@ -324,6 +355,18 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         return goal
     }
     
-    
+//    switch self.sortByControl.selectedSegmentIndex {
+//    case 0:
+//    let thisTask = self.todayTasks[indexPath.row]
+//    let totalTime = (thisTask.deadline?.timeIntervalSince(thisTask.dateOfBirth! as Date))!
+//    let timePassed = Date().timeIntervalSince(thisTask.dateOfBirth! as Date)
+//    cell.taskView.taskIcon.redrawRing(completion: CGFloat(timePassed/totalTime))
+//    case 1:
+//    let thisTask = self.todayTasks[indexPath.row]
+//    let priorityRatio = CGFloat(thisTask.priority / 10)
+//    cell.taskView.taskIcon.drawRingFill(completion: priorityRatio)
+//    default:
+//    fatalError()
+//    }
 }
 

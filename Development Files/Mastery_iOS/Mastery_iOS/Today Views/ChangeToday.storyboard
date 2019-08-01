@@ -63,7 +63,7 @@
                                 <rect key="frame" x="351" y="804" width="43" height="34"/>
                                 <state key="normal" image="SwapScreen_Icon"/>
                                 <connections>
-                                    <segue destination="ruv-fm-tab" kind="show" identifier="switchToGoals" id="orE-pZ-1VH"/>
+                                    <segue destination="xzT-Iu-zgw" kind="show" identifier="switchToGoals" id="i1Y-LZ-iuF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGl-RC-0Ht">
@@ -111,6 +111,7 @@
                     <connections>
                         <outlet property="collectionView" destination="acf-m5-Lav" id="zQQ-FT-lCD"/>
                         <outlet property="settingsButton" destination="QGl-RC-0Ht" id="FJ2-lS-epr"/>
+                        <outlet property="sortByControl" destination="AHZ-Bj-QOF" id="Hv1-TF-fB4"/>
                         <outlet property="switchToGoalsButton" destination="sTP-f7-TFO" id="AJk-7o-3jh"/>
                     </connections>
                 </viewController>
@@ -118,32 +119,13 @@
             </objects>
             <point key="canvasLocation" x="1420" y="846"/>
         </scene>
-        <!--Goal Test View Controller-->
-        <scene sceneID="Dge-qx-HGu">
+        <!--HiFiBegin-->
+        <scene sceneID="2Fx-KF-T4G">
             <objects>
-                <viewController id="ruv-fm-tab" customClass="GoalTestViewController" customModule="Mastery_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mCs-vR-1s1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIr-7Y-6Ye">
-                                <rect key="frame" x="185.5" y="437.5" width="43.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="VIr-7Y-6Ye" firstAttribute="centerX" secondItem="mCs-vR-1s1" secondAttribute="centerX" id="Be5-Za-29n"/>
-                            <constraint firstItem="VIr-7Y-6Ye" firstAttribute="centerY" secondItem="mCs-vR-1s1" secondAttribute="centerY" id="teW-rk-xNz"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="xPe-Zz-wBh"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="deB-lV-0Gz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="HiFiBegin" storyboardName="HiFi" referencedIdentifier="HiFiBegin" id="xzT-Iu-zgw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdV-rF-5O4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1419" y="1756"/>
+            <point key="canvasLocation" x="1411" y="1375"/>
         </scene>
         <!--Settings Test View Controller-->
         <scene sceneID="3Dh-fi-Gd5">
@@ -212,7 +194,7 @@
         <!--Navigation Controller-->
         <scene sceneID="EnA-BS-XAC">
             <objects>
-                <navigationController id="8sD-0Y-cG4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TodayBegin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8sD-0Y-cG4" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="oTM-Tz-sS6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -418,7 +400,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7v5-a8-BD1">
-                                <rect key="frame" x="20" y="345" width="374" height="382"/>
+                                <rect key="frame" x="20" y="345" width="374" height="425"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.90588235289999997" green="0.43529411759999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recorded Sessions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Xn-rc-LSu" userLabel="Previous Sessions">
@@ -484,15 +466,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tok-Aj-dxw" userLabel="Play Button" customClass="PausePlayButton" customModule="Mastery_iOS" customModuleProvider="target">
-                                <rect key="frame" x="344" y="279.5" width="50" height="50"/>
+                                <rect key="frame" x="378" y="293.5" width="16" height="22"/>
                                 <state key="normal" image="Play_Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uq-PF-HI9" userLabel="Pause Button" customClass="PausePlayButton" customModule="Mastery_iOS" customModuleProvider="target">
-                                <rect key="frame" x="344" y="279.5" width="50" height="50"/>
+                                <rect key="frame" x="378" y="293.5" width="16" height="22"/>
                                 <state key="normal" image="Pause_Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXo-05-rBw" userLabel="Finish">
-                                <rect key="frame" x="57" y="737" width="300" height="65"/>
+                                <rect key="frame" x="156" y="780" width="102" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hXo-05-rBw" secondAttribute="height" multiplier="60:13" id="fFH-Z9-qOa"/>
                                 </constraints>

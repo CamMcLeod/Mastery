@@ -28,4 +28,5 @@ class TaskCell: UICollectionViewCell {
     func startAnimate() {
         taskView.taskIcon.animate()
     }
+    
 }

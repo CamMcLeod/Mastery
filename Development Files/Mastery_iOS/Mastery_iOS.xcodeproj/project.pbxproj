@@ -172,7 +172,6 @@
 		629AC69A22ED20B0000C137C /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC69922ED20B0000C137C /* TaskCell.swift */; };
 		629AC69C22ED2D9F000C137C /* FocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC69B22ED2D9F000C137C /* FocusViewController.swift */; };
 		629AC69F22ED2E6B000C137C /* SettingsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC69E22ED2E6B000C137C /* SettingsTestViewController.swift */; };
-		629AC6A122ED2EDD000C137C /* GoalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC6A022ED2EDD000C137C /* GoalTestViewController.swift */; };
 		629AC6A722ED7D9F000C137C /* TodayFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AC6A622ED7D9F000C137C /* TodayFlowLayout.swift */; };
 		62A3E5EE22F1864400834751 /* UIView+FixInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3E5ED22F1864400834751 /* UIView+FixInView.swift */; };
 		62A3E5F022F1880200834751 /* TestIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3E5EF22F1880200834751 /* TestIconViewController.swift */; };
@@ -424,7 +423,6 @@
 		629AC69922ED20B0000C137C /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		629AC69B22ED2D9F000C137C /* FocusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusViewController.swift; sourceTree = "<group>"; };
 		629AC69E22ED2E6B000C137C /* SettingsTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTestViewController.swift; sourceTree = "<group>"; };
-		629AC6A022ED2EDD000C137C /* GoalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTestViewController.swift; sourceTree = "<group>"; };
 		629AC6A622ED7D9F000C137C /* TodayFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayFlowLayout.swift; sourceTree = "<group>"; };
 		62A3E5ED22F1864400834751 /* UIView+FixInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FixInView.swift"; sourceTree = "<group>"; };
 		62A3E5EF22F1880200834751 /* TestIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIconViewController.swift; sourceTree = "<group>"; };
@@ -737,7 +735,6 @@
 				629AC6A622ED7D9F000C137C /* TodayFlowLayout.swift */,
 				629AC69922ED20B0000C137C /* TaskCell.swift */,
 				629AC69722ED1FE1000C137C /* TodayViewController.swift */,
-				629AC6A022ED2EDD000C137C /* GoalTestViewController.swift */,
 				629AC69E22ED2E6B000C137C /* SettingsTestViewController.swift */,
 			);
 			path = "Today Views";
@@ -1200,7 +1197,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0652170A22E7D22400DC1C44 /* CreateFirstTaskViewController.swift in Sources */,
-				629AC6A122ED2EDD000C137C /* GoalTestViewController.swift in Sources */,
 				9C460CC422F2359300E94D6E /* TaskDetailAvailabilityTableViewCell.swift in Sources */,
 				069C533F22F0CD7B000ECBE0 /* TagCreatedTaskCollectionViewCell.swift in Sources */,
 				069C534022F0CD7B000ECBE0 /* TaskTagsTableViewCell.swift in Sources */,

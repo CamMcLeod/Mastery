@@ -533,7 +533,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             content.categoryIdentifier = "breakOverNotification"
             
             content.title = "\(self.task.name!) break is over!"
-            content.body = "Swipe left to return to Mastery."
+            content.body = "Swipe right to return to Mastery."
             content.sound = UNNotificationSound.default
             
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(triggerTime), repeats: false)
