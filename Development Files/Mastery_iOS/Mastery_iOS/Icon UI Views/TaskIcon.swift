@@ -74,6 +74,23 @@ class TaskIcon : UIView, UIGestureRecognizerDelegate{
         
     }
     
+    func redrawRing(completion: CGFloat) {
+        
+//         define your new path to animate the mask layer to
+
+        let mask = CAShapeLayer()
+        mask.fillColor = UIColor.black.cgColor
+        taskRing.layer.mask = mask
+        let completionAngle = completion * 2 * CGFloat.pi - .pi / 2
+        let piePath = UIBezierPath.init(arcCenter: CGPoint(x: 75,y: 75), radius: taskRing.bounds.width/2, startAngle: completionAngle, endAngle: -1 * .pi / 2, clockwise: true)
+
+        piePath.addLine(to: CGPoint(x: 75,y: 75))
+        piePath.addLine(to: CGPoint(x: 75*cos(completionAngle)+75, y: 75*sin(completionAngle)+75))
+        mask.path = piePath.cgPath
+
+    }
+    
+    
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }

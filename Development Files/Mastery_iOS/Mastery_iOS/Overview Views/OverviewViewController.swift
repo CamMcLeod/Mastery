@@ -24,14 +24,14 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
     var endTime : Date?
     var bgColor : UIColor?
     var goalColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+    var taskImage : UIImage?
     var newNotes : [String]?
     var tagList : [String]?
     var reloadDelegate : reloadFocusDelegate?
 
     //MARK: IB Outlets
     @IBOutlet weak var taskNameLabel: UILabel!
-    @IBOutlet weak var taskIconView: UIView!
-    @IBOutlet weak var TaskTestLabel: UILabel!
+    @IBOutlet weak var taskIconView: TaskIcon!
     @IBOutlet weak var overviewTableLabel: UILabel!
     @IBOutlet weak var overviewTable: UITableView!
     @IBOutlet weak var saveButton: UIButton!
@@ -47,13 +47,6 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         self.overviewTable.dataSource = self
         
         self.view.backgroundColor = self.bgColor
-
-        overviewTable.layer.borderWidth = 5
-        overviewTable.layer.borderColor = goalColor.cgColor
-        overviewTable.layer.cornerRadius = 15.0
-        
-        overviewTableLabel.layer.borderWidth = 2
-        overviewTableLabel.layer.borderColor = goalColor.cgColor
         
         // make sure id is UUID
         guard let id = self.taskID else {
@@ -82,6 +75,11 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
 
         
         // set up buttons
+        setUpColors()
+        if let image = taskImage {
+            taskIconView.iconSetup(icon: image, iconColor: goalColor)
+        }
+        taskNameLabel.text = task.name
 
     }
     
@@ -111,12 +109,14 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         let row = indexPath.row
         if indexPath.section == 0 {
             let startEndCell = tableView.dequeueReusableCell(withIdentifier: "startEndCell") as! StartEndCell
-            startEndCell.configure(startDate: unsavedSessions.last!.0, endDate: self.endTime ?? Date())
+            startEndCell.configure(startDate: unsavedSessions.last!.0, endDate: self.endTime ?? Date(), color: goalColor)
+            startEndCell.tintColor = goalColor
             return startEndCell
         }
         else {
             let unsavedCell = tableView.dequeueReusableCell(withIdentifier: "unsavedSession") as! PreviousSessionCell
             unsavedCell.configure(with: unsavedSessions[row].0, duration: unsavedSessions[row].1, color: goalColor)
+            unsavedCell.tintColor = goalColor
             return unsavedCell
         }
         
@@ -140,10 +140,30 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
 
     }
     
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let addNote = UITableViewRowAction(style: .normal, title: "Add Note") { (action, indexPath) in
             // edit item at indexPath
+            let sessionCell = tableView.cellForRow(at: indexPath) as! PreviousSessionCell
+            
+            guard let date = self.newTaskSessions?[indexPath.row].0 else {
+                return
+            }
+            
+            let dateString = self.formatDateForNote(date: date)
+            
+            guard let duration = sessionCell.sessionDurationLabel.text else {
+                return
+            }
+            
+            self.insertNewNote(date: dateString, duration: duration)
+            if self.saveButton.isEnabled {
+                sessionCell.accessoryType = .checkmark
+            }
         }
         
         addNote.backgroundColor = goalColor
@@ -166,6 +186,8 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    
+    
     // MARK: - Collection View
     
     
@@ -185,7 +207,7 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
     
     //MARK: - Private Functions
     
-    func saveState() {
+    private func saveState() {
         
         task.tags = tagList
         
@@ -206,11 +228,61 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
             task.taskDatesAndDurations = previousSessions
         } else {
             for session in self.newTaskSessions! {
-                task.taskDatesAndDurations![session.0] = session.1
+                task.taskDatesAndDurations = [:]
+                task.taskDatesAndDurations?[session.0] = session.1
             }
         }
         
         PersistenceService.saveContext()
+    }
+    
+    private func setUpColors() {
+        
+        overviewTable.layer.borderWidth = 5
+        overviewTable.layer.borderColor = goalColor.cgColor
+        overviewTable.layer.cornerRadius = 15.0
+        
+        overviewTableLabel.layer.borderWidth = 2
+        overviewTableLabel.layer.borderColor = goalColor.cgColor
+        overviewTableLabel.textColor = goalColor
+        
+        taskNameLabel.textColor = goalColor
+        
+        let tintedSave = saveButton.imageView?.image!.withRenderingMode(.alwaysTemplate)
+        saveButton.setImage(tintedSave, for: .normal)
+        saveButton.tintColor = goalColor
+        
+    }
+    
+    private func formatDateForNote(date:Date) -> String {
+        
+        
+        let RFC3339DateFormatter = DateFormatter()
+        RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        let dateMatch : String
+        
+        RFC3339DateFormatter.dateFormat = "MMM d, h:mm a"
+        RFC3339DateFormatter.timeZone = TimeZone.current
+        dateMatch = RFC3339DateFormatter.string(from: date)
+        
+        return dateMatch
+    }
+    
+    private func formatAlertController(alertController: UIAlertController) {
+        alertController.view.tintColor = goalColor
+        alertController.view.layer.borderWidth = 3
+        alertController.view.layer.borderColor = goalColor.cgColor
+        alertController.view.layer.cornerRadius = 15.0
+        alertController.view.clipsToBounds = true
+        let subview = (alertController.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+        subview.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    }
+    
+    private func formatAlertText(alertController: UIAlertController, text: String, size: CGFloat, font: String, forKey: String) {
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font:UIFont(name: font, size: size)!, NSAttributedString.Key.foregroundColor : goalColor])
+        alertController.setValue(myMutableString, forKey: forKey)
     }
     
     //MARK: - Actions
@@ -228,6 +300,72 @@ class OverviewViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    let textView = UITextView(frame: CGRect.zero)
+    
+    func insertNewNote(date: String, duration: String) {
+        
+        let messageString = "Note for: \n" + date + " (" + duration + ")"
+        // Get information from user and configure object
+        
+        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n", message:  messageString, preferredStyle: .alert)
+        let save = UIAlertAction(title: "Save", style: .default, handler: { (action) -> Void in
+            // Do whatever you want with inputTextField?.text
+            let savedNote = messageString + self.textView.text
+            self.newNotes?.append(savedNote)
+            self.saveButton.isEnabled = true
+            alertController.view.removeObserver(self, forKeyPath: "bounds")
+        })
+        
+        save.isEnabled = false
+
+        
+        alertController.view.addObserver(self, forKeyPath: "bounds", options: NSKeyValueObservingOptions.new, context: nil)
+        
+        NotificationCenter.default.addObserver(forName: UITextView.textDidChangeNotification, object: textView, queue: OperationQueue.main) { (notification) in
+            save.isEnabled = self.textView.text != ""
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            alertController.view.removeObserver(self, forKeyPath: "bounds")
+        }
+        
+        alertController.addTextField { field in
+            field.translatesAutoresizingMaskIntoConstraints = false
+            field.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        }
+        
+        let inCntrlr =  alertController.children[0].view!
+        inCntrlr.removeFromSuperview()
+        
+        formatAlertController(alertController: alertController)
+        formatAlertText(alertController: alertController, text: messageString, size: 16, font: "AvenirNext-Bold", forKey: "attributedMessage")
+        
+        self.textView.font = UIFont.init(name: "AvenirNext-Regular", size: 16)
+        self.textView.backgroundColor = self.bgColor
+        self.textView.textColor = goalColor
+        self.textView.layer.borderWidth = 3
+        self.textView.layer.borderColor = goalColor.cgColor
+        self.textView.layer.cornerRadius = 15.0
+        
+        alertController.view.addSubview(self.textView)
+        alertController.addAction(save)
+        alertController.addAction(cancel)
+
+        textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+        
+        present(alertController, animated: true)
+        
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "bounds"{
+            if let rect = (change?[NSKeyValueChangeKey.newKey] as? NSValue)?.cgRectValue {
+                let margin:CGFloat = 10.0
+                textView.frame = CGRect.init(x: rect.origin.x + margin, y: rect.origin.y + margin, width: rect.width - 2*margin, height: rect.height / 2)
+                textView.bounds = CGRect.init(x: rect.origin.x + margin, y: rect.origin.y + margin, width: rect.width - 2*margin, height: rect.height / 2)
+            }
+        }
+    }
     
 
     

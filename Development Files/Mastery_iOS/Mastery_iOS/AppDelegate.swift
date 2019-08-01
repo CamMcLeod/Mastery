@@ -17,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if TimeInterval(UserDefaults.standard.integer(forKey: "focusTime")) == 0 || TimeInterval(UserDefaults.standard.integer(forKey: "breakTime")) == 0 {
+            UserDefaults.standard.set(1500, forKey: "focusTime")
+            UserDefaults.standard.set(300, forKey: "breakTime")
+        }
+        
         return true
     }
     

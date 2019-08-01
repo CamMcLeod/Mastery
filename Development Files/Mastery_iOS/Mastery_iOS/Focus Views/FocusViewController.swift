@@ -23,8 +23,8 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var taskPredicate: NSPredicate?
     var goalColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
     
-    let FOCUS_TIME = 10
-    let BREAK_TIME = 30
+    let FOCUS_TIME = UserDefaults.standard.integer(forKey: "focusTime")
+    let BREAK_TIME = UserDefaults.standard.integer(forKey: "breakTime")
     var currentCounter = 10
     var timer = Timer()
     var isTimerRunning = false
@@ -39,56 +39,42 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     @IBOutlet weak var taskNameLabel: UILabel!
-    @IBOutlet weak var taskTimerView: UIView!
+    @IBOutlet weak var taskTimerView: TaskIcon!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var previousSessionsTable: UITableView!
     @IBOutlet weak var playButton: PausePlayButton!
     @IBOutlet weak var pauseButton: PausePlayButton!
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var previousSessionsLabel: UILabel!
+    @IBOutlet weak var sneakyWizard: UIButton!
     
-    @IBOutlet weak var testImageLabel: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(pauseByResign), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(returnToApp), name: UIApplication.willEnterForegroundNotification, object: nil)
-
-        
-        // TEST TASK
-        let task1 = Task(context: PersistenceService.context)
-        task1.name = "Be Cool"
-        task1.taskDescription = "I just want to be everyone's friend and like have super cool parteeees."
-        task1.isComplete = false
-        task1.daysAvailable = Array.init(repeating: true, count: 7)
-        task1.deadline = NSDate(timeIntervalSinceNow: 10000)
-        task1.priority = Int16(7)
-        task1.id = UUID()
-        task1.taskDatesAndDurations = [Date(timeIntervalSinceNow: -3600): 360, Date(timeIntervalSinceNow: -28800): 1500]
-        PersistenceService.saveContext()
-        self.taskID = task1.id
         
         // Do any additional setup after loading the view.
         self.previousSessionsTable.delegate = self
         self.previousSessionsTable.dataSource = self
         
-        setUpColors()
+        currentCounter = FOCUS_TIME
         
         // make sure id is UUID
         guard let id = self.taskID else {
             print("id not UIID")
             return
         }
-
-        fetchDataAndSessions(id: id)
         
         // fetch task from UUID
-
-        currentCounter = FOCUS_TIME
+        fetchDataAndSessions(id: id)
         
         // set up buttons
         setUpButtons()
+        
+        setUpColors()
         
         self.previousSessionsTable.reloadData()
         
@@ -125,9 +111,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         } else {
             cell.configure(with: newTaskSessions[row].0, duration: newTaskSessions[row].1, color: goalColor)
         }
-        
-        
-        
+        cell.tintColor = goalColor
         
         return cell
     }
@@ -180,6 +164,8 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             overviewVC.endTime = Date()
             overviewVC.bgColor = self.view.backgroundColor
             overviewVC.reloadDelegate = self
+            overviewVC.goalColor = goalColor
+            overviewVC.taskImage = taskTimerView.iconImage.image
             
             
         }
@@ -249,13 +235,20 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let sessions = task.taskDatesAndDurations {
             self.taskSessions = sortSessionsByDate(sessions: sessions)
         }
+        
+        // set up image and color scheme
+        goalColor = task.goal!.color!
+        
+        if let imageData = task.image {
+            taskTimerView.iconSetup(icon: UIImage(data: imageData as Data), iconColor: goalColor)
+        }
+        
     }
 
     
     private func startStopTimer () {
         
         animatePausePlay(isRunning: isTimerRunning)
-        animateTimer()
         
         if !hasStarted {
             hasStarted = true
@@ -268,11 +261,53 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case false:
             isTimerRunning = true
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-            
         case true:
             isTimerRunning = false
             timer.invalidate()
 
+        }
+        
+        animateTimer()
+        
+        switch currentMode {
+        case .breakMode:
+            if currentCounter == BREAK_TIME {
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                    self.taskTimerView.taskRing.alpha = 0
+                    self.taskTimerView.iconImage.alpha = 0.65
+                }) { (Bool) in
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                        self.taskTimerView.taskRing.alpha = 1.0
+                        self.taskTimerView.iconImage.alpha = 0.30
+                    })
+                    
+                }
+                
+            } else {
+                taskTimerView.animate()
+            }
+        case .focusMode:
+            if currentCounter == FOCUS_TIME {
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                    self.taskTimerView.taskRing.alpha = 0
+                    self.taskTimerView.iconImage.alpha = 0.65
+                }) { (Bool) in
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.taskTimerView.taskRing.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                        self.taskTimerView.taskRing.alpha = 1.0
+                        self.taskTimerView.iconImage.alpha = 0.30
+                    })
+                    
+                }
+                
+            } else {
+                taskTimerView.animate()
+            }
         }
     }
     
@@ -281,10 +316,31 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if currentCounter > 0 {
             currentCounter = currentCounter - 1
             timerLabel.text = currentCounter.secondsToHoursMinutesSeconds()
+            switch currentMode {
+            case .focusMode:
+
+                let amtComplete = CGFloat(FOCUS_TIME-currentCounter) / CGFloat(FOCUS_TIME)
+                taskTimerView.iconImage.alpha = amtComplete * 0.7 + 0.3
+                taskTimerView.redrawRing(completion: amtComplete)
+                
+            case .breakMode:
+                
+                let amtComplete = CGFloat(BREAK_TIME-currentCounter) / CGFloat(BREAK_TIME)
+                taskTimerView.iconImage.alpha = amtComplete * 0.7 + 0.3
+                taskTimerView.redrawRing(completion: amtComplete)
+                
+            }
+            
         } else {
             
             startStopTimer()
+            taskTimerView.iconImage.alpha = 1
             
+            UIView.animate(withDuration: 1.0) {
+                    self.taskTimerView.taskRing.alpha = 1
+            }
+            taskTimerView.taskRing.layer.mask = nil
+            taskTimerView.animate()
             switch currentMode {
                 
             case .focusMode:
@@ -377,15 +433,17 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         alertController.view.layer.borderColor = goalColor.cgColor
         alertController.view.layer.cornerRadius = 15.0
         alertController.view.clipsToBounds = true
+        let subview = (alertController.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+        subview.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     
     func formatAlertText(alertController: UIAlertController, text: String, size: CGFloat, font: String, forKey: String) {
         var myMutableString = NSMutableAttributedString()
-        myMutableString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font:UIFont(name: font, size: size)!])
+        myMutableString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font:UIFont(name: font, size: size)!, NSAttributedString.Key.foregroundColor : goalColor])
         alertController.setValue(myMutableString, forKey: forKey)
     }
     
-    // MARK: - Private Functions
+    // MARK: - Setup and Ops
     
     private func setUpColors() {
         
@@ -398,16 +456,15 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         taskNameLabel.textColor = goalColor
         timerLabel.textColor = goalColor
-
-        let tintedPlay = playButton.currentBackgroundImage!.withRenderingMode(.alwaysTemplate)
+        let tintedPlay = playButton.imageView?.image!.withRenderingMode(.alwaysTemplate)
         playButton.setImage(tintedPlay, for: .normal)
         playButton.tintColor = goalColor
         
-        let tintedPause = pauseButton.currentBackgroundImage!.withRenderingMode(.alwaysTemplate)
+        let tintedPause = pauseButton.imageView?.image!.withRenderingMode(.alwaysTemplate)
         pauseButton.setImage(tintedPause, for: .normal)
         pauseButton.tintColor = goalColor
         
-        let tintedFinish = finishButton.currentBackgroundImage!.withRenderingMode(.alwaysTemplate)
+        let tintedFinish = finishButton.imageView?.image!.withRenderingMode(.alwaysTemplate)
         finishButton.setImage(tintedFinish, for: .normal)
         finishButton.tintColor = goalColor
         
@@ -434,7 +491,6 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.pauseButton.isHidden = true
         
         self.taskNameLabel.text = self.task.name
-        self.testImageLabel.text = self.task.name
         
         self.timerLabel.text = FOCUS_TIME.secondsToHoursMinutesSeconds()
     
@@ -477,7 +533,7 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
             content.categoryIdentifier = "breakOverNotification"
             
             content.title = "\(self.task.name!) break is over!"
-            content.body = "Would you like to return to the app to start a new session?"
+            content.body = "Swipe left to return to Mastery."
             content.sound = UNNotificationSound.default
             
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(triggerTime), repeats: false)
@@ -537,6 +593,8 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         resetButtons()
         resetToFocusMode()
+        taskTimerView.iconImage.alpha = 1.0
+        taskTimerView.taskRing.layer.mask = nil
         newTaskSessions = []
         taskSessions = []
         fetchDataAndSessions(id: task.id!)
@@ -544,6 +602,11 @@ class FocusViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         
     }
+    
+    @IBAction func sneakyWizardButton(_ sender: UIButton) {
+        currentCounter = 5
+    }
+    
 
 }
 
