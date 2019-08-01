@@ -13,4 +13,5 @@ class IconCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var name: UILabel!
     
+    @IBOutlet var iconWithLabel: TaskIconWithLabel!
 }

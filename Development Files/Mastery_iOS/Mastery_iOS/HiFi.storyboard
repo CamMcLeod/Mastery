@@ -22,16 +22,15 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="700"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="175" id="F3N-NX-hgO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="175" id="F3N-NX-hgO" customClass="HomeTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="175"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F3N-NX-hgO" id="rtF-9M-jHX">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="174.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMs-eo-Gr7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Goal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMs-eo-Gr7">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.48627450979999998" green="0.46666666670000001" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,7 +47,7 @@
                                                         <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="b7b-0J-Upq">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iconCell" id="b7b-0J-Upq" customClass="IconCollectionViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="0.0" width="84" height="100"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -70,10 +69,11 @@
                                                                 <constraint firstItem="UOq-qj-g9J" firstAttribute="centerY" secondItem="b7b-0J-Upq" secondAttribute="centerY" id="tmZ-Hk-j8Y"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="iconWithLabel" destination="UOq-qj-g9J" id="aO0-ej-Fa3"/>
                                                                 <segue destination="9vo-bg-Mhh" kind="show" identifier="taskDetailSegue" id="0hp-Eq-oTf"/>
                                                             </connections>
                                                         </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pCL-jE-qao">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskCell" id="pCL-jE-qao" customClass="AddTaskCollectionViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                                             <rect key="frame" x="113.5" y="0.0" width="84" height="100"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -94,9 +94,22 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nMs-eo-Gr7" firstAttribute="leading" secondItem="rtF-9M-jHX" secondAttribute="leading" id="1pV-2z-vUw"/>
+                                                <constraint firstItem="nMs-eo-Gr7" firstAttribute="top" secondItem="rtF-9M-jHX" secondAttribute="top" id="OGh-Lj-4PQ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="Jmc-MU-ial" id="c64-0q-eHw"/>
+                                            <outlet property="details" destination="eQa-hm-YEb" id="nFB-T1-r0e"/>
+                                            <outlet property="name" destination="nMs-eo-Gr7" id="RSq-9j-OWe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ngp-nu-zfc" id="rv2-4d-IAA"/>
+                                    <outlet property="delegate" destination="ngp-nu-zfc" id="3sw-x7-dzA"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vt2-Uf-aio">
                                 <rect key="frame" x="182" y="796" width="50" height="50"/>
@@ -743,7 +756,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="gJZ-Ba-yRb">
                             <connections>
-                                <segue destination="zAn-5o-EHi" kind="show" id="vzt-ro-6Cb"/>
+                                <segue destination="zAn-5o-EHi" kind="show" identifier="addTask" id="vzt-ro-6Cb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

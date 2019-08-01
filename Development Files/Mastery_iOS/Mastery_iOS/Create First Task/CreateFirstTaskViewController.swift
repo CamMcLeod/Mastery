@@ -58,8 +58,9 @@ class CreateFirstTaskViewController: UIViewController {
     
     @IBAction func goBackHome(_ sender: UIBarButtonItem) {
         saveTask()
-        let vc = GoalListTableViewController()
-        self.present(vc, animated: true, completion: nil)
+//        let vc = GoalListTableViewController()
+//        self.present(vc, animated: true, completion: nil)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     

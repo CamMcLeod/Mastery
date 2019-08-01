@@ -117,7 +117,7 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let tableViewCell = cell as? HomeTableViewCell else { return }
-        //        tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
+//                tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -154,13 +154,13 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
             let selectedGoal = goals[collectionView.tag]
             if let values = selectedGoal.tasks?.allObjects {
                 let value = values[indexPath.row] as! Task
-                cell.imageView.image = UIImage(named: "falcon")
-                cell.name.text = value.name
+                cell.iconWithLabel.taskName.text = value.name
+                cell.iconWithLabel.taskIcon.iconImage.image = UIImage(data: value.image! as Data)
                 return cell
             }
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "taskCell", for: indexPath) as! AddTaskCollectionViewCell
-            cell.addTask.text = "+"
+
             return cell
         }
         
