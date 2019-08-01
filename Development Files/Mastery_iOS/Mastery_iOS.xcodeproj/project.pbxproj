@@ -165,6 +165,7 @@
 		625ED63B22F12EE80076DAFF /* photographer.png in Resources */ = {isa = PBXBuildFile; fileRef = 625ED5C722F12EE80076DAFF /* photographer.png */; };
 		625ED63C22F12EE80076DAFF /* fisherman.png in Resources */ = {isa = PBXBuildFile; fileRef = 625ED5C822F12EE80076DAFF /* fisherman.png */; };
 		625ED63D22F12EE80076DAFF /* worker.png in Resources */ = {isa = PBXBuildFile; fileRef = 625ED5C922F12EE80076DAFF /* worker.png */; };
+		626CE38C22F3AC0000DBF46C /* wizard.png in Resources */ = {isa = PBXBuildFile; fileRef = 626CE38B22F3AC0000DBF46C /* wizard.png */; };
 		62828BF622EFE84C00E96E48 /* PausePlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62828BF522EFE84C00E96E48 /* PausePlayButton.swift */; };
 		62828BF822EFE85000E96E48 /* PreviousSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62828BF722EFE85000E96E48 /* PreviousSessionCell.swift */; };
 		629AC69622ED1F85000C137C /* ChangeToday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629AC69522ED1F85000C137C /* ChangeToday.storyboard */; };
@@ -416,6 +417,7 @@
 		625ED5C722F12EE80076DAFF /* photographer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photographer.png; path = "../../../Design Files/Icons/photographer.png"; sourceTree = "<group>"; };
 		625ED5C822F12EE80076DAFF /* fisherman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fisherman.png; path = "../../../Design Files/Icons/fisherman.png"; sourceTree = "<group>"; };
 		625ED5C922F12EE80076DAFF /* worker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = worker.png; path = "../../../Design Files/Icons/worker.png"; sourceTree = "<group>"; };
+		626CE38B22F3AC0000DBF46C /* wizard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wizard.png; path = "../../../Design Files/wizard.png"; sourceTree = "<group>"; };
 		62828BF522EFE84C00E96E48 /* PausePlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PausePlayButton.swift; path = "Mastery_iOS/Focus Views/PausePlayButton.swift"; sourceTree = SOURCE_ROOT; };
 		62828BF722EFE85000E96E48 /* PreviousSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviousSessionCell.swift; path = "Mastery_iOS/Focus Views/PreviousSessionCell.swift"; sourceTree = SOURCE_ROOT; };
 		629AC69522ED1F85000C137C /* ChangeToday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeToday.storyboard; sourceTree = "<group>"; };
@@ -853,6 +855,7 @@
 				9CD53FCC22E0007200210C0F /* Assets.xcassets */,
 				9CD53FCE22E0007200210C0F /* LaunchScreen.storyboard */,
 				9CD53FD122E0007200210C0F /* Info.plist */,
+				626CE38B22F3AC0000DBF46C /* wizard.png */,
 				065216E822E7B66300DC1C44 /* Mastery_iOS.xcdatamodeld */,
 			);
 			path = Mastery_iOS;
@@ -1154,6 +1157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				626CE38C22F3AC0000DBF46C /* wizard.png in Resources */,
 				9C2908AC22ED14CA0021017D /* TaskIconWithLabel.xib in Resources */,
 				9C2908AE22ED18A30021017D /* TaskIcon.xib in Resources */,
 				629AC69622ED1F85000C137C /* ChangeToday.storyboard in Resources */,
