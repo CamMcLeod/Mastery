@@ -43,17 +43,11 @@ class GoalNameTableViewCell: UITableViewCell, UITextFieldDelegate {
         
     }
 
-    
-    func textFieldDidChange(_ textField: UITextField) {
-        print("Is this sucker being called?")
-        
-        
-    }
+
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("OMGOMGOMGOMGOMGOMGOMGGOM")
         self.delegate?.getValueForName(theName: goalName.text!)
-        return false
+        return true
     }
     
     

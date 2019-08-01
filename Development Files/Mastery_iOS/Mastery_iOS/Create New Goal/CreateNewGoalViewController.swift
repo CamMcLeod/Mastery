@@ -89,7 +89,7 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalNameCell", for: indexPath) as! GoalNameTableViewCell
-         
+         cell.delegate = self
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalDescriptionCell", for: indexPath) as! GoalDescriptionTableViewCell
