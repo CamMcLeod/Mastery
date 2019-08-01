@@ -13,7 +13,7 @@
         <!--Goals-->
         <scene sceneID="SiB-1b-i2a">
             <objects>
-                <viewController id="ngp-nu-zfc" customClass="GoalListTableViewController" customModule="Mastery_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ngp-nu-zfc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ecw-at-YER">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,10 +134,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="ngp-nu-zfc" id="UEa-Vt-EW1"/>
-                                    <outlet property="delegate" destination="ngp-nu-zfc" id="Liv-v3-RZW"/>
-                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vt2-Uf-aio">
                                 <rect key="frame" x="182" y="796" width="50" height="50"/>
@@ -186,7 +182,6 @@
                         <barButtonItem key="leftBarButtonItem" id="FqB-nd-jSp"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="kjt-Wc-KWi" id="uId-nl-y5I"/>
                         <segue destination="9Pz-sZ-7QF" kind="show" identifier="addNewTask" id="fi7-Y8-3kV"/>
                     </connections>
                 </viewController>

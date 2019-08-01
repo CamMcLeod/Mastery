@@ -54,13 +54,16 @@ class CreateFirstTaskViewController: UIViewController {
         task.daysAvailable = availability
         goal?.addToTasks(task)
         PersistenceService.saveContext()
+        print(task)
     }
     
     @IBAction func goBackHome(_ sender: UIBarButtonItem) {
         saveTask()
 //        let vc = GoalListTableViewController()
 //        self.present(vc, animated: true, completion: nil)
-        navigationController?.popToRootViewController(animated: true)
+//        navigationController?.popToRootViewController(animated: true)
+       dismiss(animated: true, completion: nil)
+        
     }
     
     

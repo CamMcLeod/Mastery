@@ -14,9 +14,11 @@ protocol GoalNameCellDelegate {
 
 class GoalNameTableViewCell: UITableViewCell, UITextFieldDelegate {
 
-    var delegate: GoalNameCellDelegate?
+   
     
     @IBOutlet weak var goalName: UITextField!
+    
+     var delegate: GoalNameCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,14 +37,25 @@ class GoalNameTableViewCell: UITableViewCell, UITextFieldDelegate {
         return count <= 30
     }
     
-    func textFieldDidChange(_ textField: UITextField) {
-        self.delegate?.getValueForName(theName: goalName.text!)
-        
-    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
     }
+
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        print("Is this sucker being called?")
+        
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("OMGOMGOMGOMGOMGOMGOMGGOM")
+        self.delegate?.getValueForName(theName: goalName.text!)
+        return false
+    }
+    
+    
     
 }

@@ -8,11 +8,15 @@
 
 import UIKit
 
-class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DatePickerTableViewCellDelegate, GoalNameCellDelegate, GoalDescriptionCellDelegate, GoalHoursTableCellDelegate, GoalPriorityTableCellDelegate {
+class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DatePickerTableViewCellDelegate,  GoalDescriptionCellDelegate, GoalHoursTableCellDelegate, GoalPriorityTableCellDelegate, GoalNameCellDelegate {
+   
+    
    
     // protocol methods to pass values from custom table cells decided by user to Goal object
+  
+    
     func getValueForName(theName: String) {
-        tmpName = theName
+        tmpName  = theName
     }
     
     func getValueForDescription(theDescription: String) {
@@ -85,7 +89,7 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalNameCell", for: indexPath) as! GoalNameTableViewCell
-            cell.delegate = self
+         
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalDescriptionCell", for: indexPath) as! GoalDescriptionTableViewCell
@@ -157,6 +161,7 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
         goal.color = getColorFromUserDefaults(colorArray: colorArray)
         goal.tags = tagList
         PersistenceService.saveContext()
+        print("yoyo\n\n\n\n\(goal)")
         return goal
     }
     

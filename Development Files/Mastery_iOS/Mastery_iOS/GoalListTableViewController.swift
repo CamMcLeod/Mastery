@@ -44,6 +44,9 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
+    @IBAction func addNewGoal(_ sender: UIButton) {
+        performSegue(withIdentifier: "showTheGoal", sender: self)
+    }
     //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     //        return 50
     //    }
@@ -96,8 +99,8 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
     //    // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        //        return goals.count
         return 1
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -156,6 +159,8 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
                 let value = values[indexPath.row] as! Task
                 cell.iconWithLabel.taskName.text = value.name
                 cell.iconWithLabel.taskIcon.iconImage.image = UIImage(data: value.image! as Data)
+                cell.iconWithLabel.taskIcon.iconImage = UIImageView(image: UIImage(named: "falcon"))
+                
                 return cell
             }
         } else {
@@ -184,7 +189,7 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
         } else if segue.identifier == "addNewTask" {
             //            let controller = segue.destination as! AddAnotherTaskViewController
             //            controller.goal = goals[goalToPassIndex]
-        } else if segue.identifier == "showGoalDetails" {
+        } else if segue.identifier == "showTheGoal" {
             
         }
     }
