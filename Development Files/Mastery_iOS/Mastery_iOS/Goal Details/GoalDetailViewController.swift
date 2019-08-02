@@ -29,6 +29,8 @@ class GoalDetailViewController : UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1 {
             return 200
+        } else if indexPath.row == 5 {
+            return 250
         }
         return 50
     }
@@ -52,6 +54,8 @@ class GoalDetailViewController : UIViewController, UITableViewDataSource, UITabl
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMMM dd, YYYY"
             cell.goalDeadlineDate.text = dateFormatter.string(for: goal.deadline?.last)
+            print(goal.deadline?.first)
+            print(dateFormatter.string(for: goal.deadline?.last))
             cell.descriptionTitle.textColor = tintColor
             return cell
         case 3:
@@ -78,6 +82,7 @@ class GoalDetailViewController : UIViewController, UITableViewDataSource, UITabl
 extension GoalDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let count = goal?.tags?.count else {return 0}
+        print(count)
         return count
     }
     
@@ -85,6 +90,7 @@ extension GoalDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "displayGoalTags", for: indexPath) as! TagCreatedGoalDetailCollectionViewCell
         guard let goalName = goal?.tags?[indexPath.row] else {return cell}
         cell.tagTitle.text = goalName
+        print(goalName)
         return cell
     }
     

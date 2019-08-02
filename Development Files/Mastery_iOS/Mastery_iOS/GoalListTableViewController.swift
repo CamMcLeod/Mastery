@@ -164,6 +164,7 @@ class GoalListTableViewController: UIViewController, UITableViewDelegate, UITabl
         }  else if segue.identifier == "goalDetailSegue" {
                         let controller = segue.destination as! GoalDetailViewController
                         controller.goal = goalToPass
+            print(goalToPass?.deadline)
         } else if segue.identifier == "taskDetailSegue" {
                         let controller = segue.destination as! TaskDetailViewController
                             controller.task = taskToPass

@@ -83,7 +83,7 @@ class TaskDetailViewController : UIViewController, UITableViewDelegate, UITableV
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "taskDeadlineCell", for: indexPath) as! TaskDetailDeadlineTableViewCell
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "MMMM dd, YYYY"
+                dateFormatter.dateFormat = "MMM dd, YYYY"
                 cell.taskDeadline.text = dateFormatter.string(for: task.deadline)
                 cell.deadlineTitle.textColor = tintColor
                 return cell

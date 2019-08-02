@@ -27,7 +27,7 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM dd, YYYY"
         tmpDateAsString = dateFormatter.string(from: date)
-        tmpDate = date
+        tmpDate = [date]
     }
     
     func getHours(hours: Float) {
@@ -69,7 +69,7 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
     private var tmpName: String?
     private var tmpDescription: String?
     private var tmpDateAsString: String!
-    private var tmpDate: Date?
+    private var tmpDate: [Date]?
     private var tmpHours: Float?
     private var tmpPriority: Int16?
     
@@ -156,11 +156,11 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
         goal.hoursCompleted = 0.0
         goal.priority = tmpPriority ?? 1
         goal.dateOfBirth = Date() as NSDate
-        goal.deadline = [tmpDate] as? [Date]
+        print(tmpDate)
+        goal.deadline = tmpDate
         goal.color = getColorFromUserDefaults(colorArray: colorArray)
         goal.tags = tagList
         PersistenceService.saveContext()
-        print("yoyo\n\n\n\n\(goal)")
         return goal
     }
     
