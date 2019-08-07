@@ -13,6 +13,7 @@ class CreateFirstTaskViewController: UIViewController {
     var goal: Goal?
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     private var image: NSData?
     private var taskName: String?
@@ -21,6 +22,7 @@ class CreateFirstTaskViewController: UIViewController {
     private var timeEstimate: UISegmentedControl!
     private var deadline: Date?
     private var availability: [Bool]?
+    var tintColor = UIColor()
     
     private var pickerisHidden: Bool = true
     var tagList: [String] = [String]()
@@ -37,6 +39,8 @@ class CreateFirstTaskViewController: UIViewController {
         super.viewDidLoad()
         guard let goalTags = goal?.tags else {return}
         tagList.append(contentsOf: goalTags)
+        tintColor = goal!.color!
+        saveButton.isEnabled = false
         // Do any additional setup after loading the view.
     }
     
@@ -83,6 +87,9 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
 
     func getValueForName(theName: String) {
         taskName = theName
+        if taskName != nil && deadline != nil {
+            saveButton.isEnabled = true
+        }
     }
     
     func selectedDates(daysOfWeek: [Bool]) {
@@ -92,6 +99,9 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
     
     func dateChanged(toDate date: Date) {
         deadline = date
+        if taskName != nil && deadline != nil {
+            saveButton.isEnabled = true
+        }
     }
     
     func getPriority(priority: Int16) {
@@ -106,12 +116,7 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
     
     
     func showStatusPickerCell(datePicker: UIDatePicker) {
-        UIView.animate(withDuration: 0.3, animations: {
-            () -> Void in
-            datePicker.isHidden = !datePicker.isHidden
-            self.tableView.beginUpdates()
-            self.tableView.endUpdates()
-        })
+        datePicker.isHidden = !datePicker.isHidden
 
     }
     
@@ -125,7 +130,6 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskIconCell", for: indexPath) as! TaskIconTableViewCell
             cell.goalColor = goal?.color
             cell.delegate = self
-            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskNameCell", for: indexPath) as! TaskNameTableViewCell
@@ -166,16 +170,23 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
             return height
         }
         return 150
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dateIndexPath = IndexPath(row: 3, section: 0)
+        tableView.deselectRow(at: indexPath, animated: false)
         if dateIndexPath == indexPath {
             pickerisHidden = !pickerisHidden
             
         }
-        
-        tableView.deselectRow(at: indexPath, animated: true)
+        let currentOffset = self.tableView.contentOffset
+        //        UIView.setAnimationsEnabled(false)
+        self.tableView.beginUpdates()
+        self.tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .none)
+        tableView.endUpdates()
+        //        UIView.setAnimationsEnabled(true)
+        self.tableView.setContentOffset(currentOffset, animated: true)
     }
     
 }

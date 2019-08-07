@@ -27,7 +27,7 @@ class GoalDeadlineTableViewCell: UITableViewCell {
         datePicker.isHidden = true
         let today = Date()
         let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "MMMM dd, YYYY"
+        dateformatter.dateFormat = "MMM dd, YYYY"
         dateLabel.text = dateformatter.string(from: today)
         // Initialization code
     }
@@ -40,7 +40,7 @@ class GoalDeadlineTableViewCell: UITableViewCell {
 
     @IBAction func selectDate(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM dd, YYYY"
+        dateFormatter.dateFormat = "MMM dd, YYYY"
         dateLabel.text = dateFormatter.string(from: sender.date)
         self.delegate?.dateChanged(toDate: sender.date)
     }

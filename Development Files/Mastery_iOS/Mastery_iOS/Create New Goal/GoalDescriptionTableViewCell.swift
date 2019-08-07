@@ -24,7 +24,6 @@ class GoalDescriptionTableViewCell: UITableViewCell, UITextViewDelegate {
         super.awakeFromNib()
         
         goalDescription.delegate = self
-        goalDescription.frame.size.height = 60
         
     }
     

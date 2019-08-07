@@ -304,7 +304,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
 
         
         
-        for i in 1...50 {
+        for i in 1...6 {
             
             let task1 = Task(context: PersistenceService.context)
             task1.name = allNames[i]
@@ -315,6 +315,7 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
             task1.priority = Int16(arc4random_uniform(10)+1)
             task1.daysAvailable![i % 7] = false
             task1.timeEstimate = 1000
+            task1.tags = ["woof", "hello"]
             task1.id = UUID()
             let val = i % 5
             switch val {
@@ -347,8 +348,8 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         let goal = Goal(context: PersistenceService.context)
         goal.id = UUID()
-        goal.name = "Win by \(i)"
-        goal.goalDescription = "xoxoxoxoxoxoxooxoxoxoxoxoxo"
+        goal.name = allNames[i-1]
+        goal.goalDescription = "do it!"
         goal.isComplete = false
         goal.hoursEstimate = 500 * Float(i)
         goal.hoursCompleted = 0.0

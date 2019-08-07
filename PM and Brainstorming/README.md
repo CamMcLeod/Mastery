@@ -48,6 +48,8 @@ https://app.creately.com/diagram/wc1ZDXYkSbA/view
 
 [ReferenceScreenshots]: https://github.com/marinamcpeak/Mastery/blob/master/PM%20and%20Brainstorming/Reference%20Screenshots.jpg "Current Flow Chart"
 
+https://docs.google.com/spreadsheets/d/1Hah5cjiYYBmzmaz2doA4GMblLRJJ-W0wt7XFpFcLj0U/edit#gid=0
+
 Work in Progress - Project Submission Proposal (current version PDF in this folder):
 https://docs.google.com/document/d/1tXMmslVAZOcbg3vqPG_CMqWt1ryXBrIZbSP0FMO2-ew/edit#
 

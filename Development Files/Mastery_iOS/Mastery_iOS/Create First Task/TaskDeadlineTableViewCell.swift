@@ -29,7 +29,7 @@ class TaskDeadlineTableViewCell: UITableViewCell {
 
     @IBAction func selectDate(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM dd, YYYY"
+        dateFormatter.dateFormat = "MMM dd, YYYY"
         dateLabel.text = dateFormatter.string(from: sender.date)
         self.delegate?.dateChanged(toDate: sender.date)
     }

@@ -32,7 +32,7 @@ class GoalDetailViewController : UIViewController, UITableViewDataSource, UITabl
         } else if indexPath.row == 5 {
             return 250
         }
-        return 50
+        return 90
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let goal = goal else {
@@ -52,7 +52,7 @@ class GoalDetailViewController : UIViewController, UITableViewDataSource, UITabl
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalDeadlineCell", for: indexPath) as! GoalDetailDeadlineTableViewCell
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM dd, YYYY"
+            dateFormatter.dateFormat = "MMM dd, YYYY"
             cell.goalDeadlineDate.text = dateFormatter.string(for: goal.deadline?.last)
             print(goal.deadline?.first)
             print(dateFormatter.string(for: goal.deadline?.last))

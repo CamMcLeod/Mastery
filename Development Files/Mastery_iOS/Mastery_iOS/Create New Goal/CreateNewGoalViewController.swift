@@ -11,47 +11,16 @@ import UIKit
 class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DatePickerTableViewCellDelegate,  GoalDescriptionCellDelegate, GoalHoursTableCellDelegate, GoalPriorityTableCellDelegate, GoalNameCellDelegate {
    
     
-   
-    // protocol methods to pass values from custom table cells decided by user to Goal object
-  
-    
-    func getValueForName(theName: String) {
-        tmpName  = theName
-    }
-    
-    func getValueForDescription(theDescription: String) {
-        tmpDescription = theDescription
-    }
-    
-    func dateChanged(toDate date: Date) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM dd, YYYY"
-        tmpDateAsString = dateFormatter.string(from: date)
-        tmpDate = [date]
-    }
-    
-    func getHours(hours: Float) {
-        tmpHours = hours
-    }
-    
-    func getPriority(priority: Int16) {
-        tmpPriority = priority
-    }
-    
-   private var pickerisHidden: Bool = true
-    func showStatusPickerCell(datePicker: UIDatePicker) {
-        UIView.animate(withDuration: 0.3, animations: {
-            () -> Void in
-            datePicker.isHidden = !datePicker.isHidden
-            self.tableView.beginUpdates()
-            self.tableView.endUpdates()
-        })
-    }
-    
-    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
     var tagList: [String] = [String]()
+    private var tmpName: String?
+    private var tmpDescription: String?
+    private var tmpDateAsString: String!
+    private var tmpDate: [Date]?
+    private var tmpHours: Float?
+    private var tmpPriority: Int16?
     
     private var refreshCollectionView = 0 {
         didSet {
@@ -65,19 +34,56 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
                                  UIColor(red:0.35, green:0.76, blue:0.76, alpha:1.0),
                                  UIColor(red:0.55, green:0.70, blue:0.41, alpha:1.0),
                                  UIColor(red:0.96, green:0.74, blue:0.38, alpha:1.0)]
-    
-    private var tmpName: String?
-    private var tmpDescription: String?
-    private var tmpDateAsString: String!
-    private var tmpDate: [Date]?
-    private var tmpHours: Float?
-    private var tmpPriority: Int16?
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = .none
+        saveButton.isEnabled = false
         
+        
+    }
+    
+    // protocol methods to pass values from custom table cells decided by user to Goal object
+    
+    
+    func getValueForName(theName: String) {
+        tmpName  = theName
+        if tmpName != nil && tmpDate != nil {
+            saveButton.isEnabled = true
+        }
+    }
+    
+    func getValueForDescription(theDescription: String) {
+        tmpDescription = theDescription
+    }
+    
+    func dateChanged(toDate date: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, YYYY"
+        tmpDateAsString = dateFormatter.string(from: date)
+        tmpDate = [date]
+        
+        if tmpName != nil && tmpDate != nil {
+            saveButton.isEnabled = true
+        }
+    }
+    
+    func getHours(hours: Float) {
+        tmpHours = hours
+    }
+    
+    func getPriority(priority: Int16) {
+        tmpPriority = priority
+    }
+    
+    private var pickerisHidden: Bool = true
+    func showStatusPickerCell(datePicker: UIDatePicker) {
+        UIView.animate(withDuration: 0.3, animations: {
+            () -> Void in
+            datePicker.isHidden = !datePicker.isHidden
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -124,17 +130,23 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
             let height: CGFloat = pickerisHidden ? 40.0 : 210
             return height
         }
-        return 150
+        return 220
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dateIndexPath = IndexPath(row: 3, section: 0)
+        tableView.deselectRow(at: indexPath, animated: false)
         if dateIndexPath == indexPath {
             pickerisHidden = !pickerisHidden
             
         }
-        
-        tableView.deselectRow(at: indexPath, animated: true)
+        let currentOffset = self.tableView.contentOffset
+//        UIView.setAnimationsEnabled(false)
+        self.tableView.beginUpdates()
+        self.tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .none)
+        tableView.endUpdates()
+//        UIView.setAnimationsEnabled(true)
+        self.tableView.setContentOffset(currentOffset, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -156,7 +168,6 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
         goal.hoursCompleted = 0.0
         goal.priority = tmpPriority ?? 1
         goal.dateOfBirth = Date() as NSDate
-        print(tmpDate)
         goal.deadline = tmpDate
         goal.color = getColorFromUserDefaults(colorArray: colorArray)
         goal.tags = tagList
