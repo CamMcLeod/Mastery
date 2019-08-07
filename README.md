@@ -11,8 +11,8 @@ My reponsibilities in the project included completion of the "Today's Tasks" and
 
 In the below image there is a task "fence" where the user has chosen a 25 minute focus time:
 
-![alt text](http://url/to/img.png)
+![alt text](readme files/4-inch Screenshot 1.jpg)
 
 In the below image the user has completed their task "weightlifting" and has moved on to their mandatory 5 minute break. if the user sends the app to the background or locks their phone, the app will send a notification when the break is over, if they wish to complete a subsequent session.
 
-![alt text](http://url/to/img.png)
+![alt text](readme files/4-inch Screenshot 2.jpg)
