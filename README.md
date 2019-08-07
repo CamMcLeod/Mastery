@@ -13,6 +13,6 @@ In the below image there is a task "fence" where the user has chosen a 25 minute
 
 ![Alt Text](readme%20files/4-inch%20Screenshot%201.jpg)
 
-In the below image the user has completed their task "weightlifting" and has moved on to their mandatory 5 minute break. if the user sends the app to the background or locks their phone, the app will send a notification when the break is over, if they wish to complete a subsequent session.
+In the below image the user has completed their task "weightlifting" and has moved on to their mandatory 5 minute break. If the user sends the app to the background or locks their phone, the app will send a notification when the break is over, if they wish to complete a subsequent session.
 
 ![Alt Text](readme%20files/4-inch%20Screenshot%202.jpg)
