@@ -11,6 +11,8 @@ import UIKit
 class TaskTagsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tagsLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

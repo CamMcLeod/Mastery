@@ -605,7 +605,7 @@
                                             <outlet property="priorityTitle" destination="Q0U-Zx-OuG" id="rbH-p5-ekV"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalDeadlineCell" rowHeight="38" id="k09-ON-hbP" customClass="GoalDeadlineTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="goalDeadlineCell" rowHeight="38" id="k09-ON-hbP" customClass="GoalDeadlineTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="367" width="394" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k09-ON-hbP" id="L1x-1p-Uyd">
@@ -1353,7 +1353,7 @@
                                             <outlet property="taskDescription" destination="0LN-pT-i6i" id="TDJ-4W-LAv"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskDeadlineCell" rowHeight="46" id="mKm-fA-XxS" customClass="TaskDeadlineTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="taskDeadlineCell" rowHeight="46" id="mKm-fA-XxS" customClass="TaskDeadlineTableViewCell" customModule="Mastery_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="445" width="394" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mKm-fA-XxS" id="RgS-RG-5MJ">
@@ -1670,6 +1670,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="collectionView" destination="JVa-AJ-Hui" id="n8K-DP-N38"/>
+                                            <outlet property="tagsLabel" destination="fzM-Ev-dWB" id="fis-dQ-scw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

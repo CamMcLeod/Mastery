@@ -138,23 +138,27 @@ extension CreateFirstTaskViewController: UITableViewDelegate, UITableViewDataSou
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskDescriptionCell", for: indexPath) as! TaskDescriptionTableViewCell
             cell.delegate = self
+            cell.descriptionTitle.textColor = tintColor
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskDeadlineCell", for: indexPath) as! TaskDeadlineTableViewCell
             cell.delegate = self
-            
+            cell.cellTitle.textColor = tintColor
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskPriorityCell", for: indexPath) as! TaskPriorityTableViewCell
             cell.delegate = self
+            cell.priorityLabel.textColor = tintColor
             return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskAvailabilityCell", for: indexPath) as! TaskAvailabilityTableViewCell
             cell.delegate = self
+            cell.availabilityLabel.textColor = tintColor
             return cell
         case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskTagsCell", for: indexPath) as! TaskTagsTableViewCell
             cell.collectionView.reloadData()
+            cell.tagsLabel.textColor = tintColor
             return cell
             
         default:
