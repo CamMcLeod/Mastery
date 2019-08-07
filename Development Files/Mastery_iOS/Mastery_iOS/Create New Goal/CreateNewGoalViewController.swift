@@ -141,11 +141,9 @@ class CreateNewGoalViewController: UIViewController, UITableViewDataSource, UITa
             
         }
         let currentOffset = self.tableView.contentOffset
-//        UIView.setAnimationsEnabled(false)
         self.tableView.beginUpdates()
         self.tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .none)
         tableView.endUpdates()
-//        UIView.setAnimationsEnabled(true)
         self.tableView.setContentOffset(currentOffset, animated: true)
     }
     
