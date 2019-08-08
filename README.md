@@ -2,7 +2,7 @@
 
 Mastery is a goal tracking app. The application allows the user to create goals and tasks for those goals. When the user wishes to commit time to intentional focus on a task, they choose an amount of time to focus on the task, then begin a session of directed focus.
 
-My reponsibilities in the project included completion of the "Today's Tasks" and focus side of the app, as well as designing the icon picker view, Xibs and animations. 
+My responsibilities in the project included completion of the "Today's Tasks" and focus side of the app, as well as designing the icon picker view, Xibs and animations. 
 
 We needed the icons of each task to represent the goal they belonged to (consistent color scheme) and have their design easily reflect to the user the completion of the task as well as the purpose of the task itself. This lead us to a task icon and  "task ring" design. The icon and ring widget was designed to be color coded to the tasks corresponding goal color. Below is the icon selection view and animation:
 
