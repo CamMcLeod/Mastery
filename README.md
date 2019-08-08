@@ -34,7 +34,10 @@ When the task ends the user begins a mandatory break:
 
 ![Alt Text](readme%20files/sessionEnds.gif)
 
-The user can then add a note for the recorded session:
+The user can then finish the session:
 
 ![Alt Text](readme%20files/addANote1.gif)
+
+Then add a note and save the recorded session:
+
 ![Alt Text](readme%20files/addANote2.gif)
