@@ -112,7 +112,6 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
         }
     }
     
-    
     // MARK: - Collection View
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -130,13 +129,13 @@ class TodayViewController: UIViewController, UICollectionViewDataSource, UIColle
                 let thisTask = self.todayTasks[indexPath.row]
                 let totalTime = (thisTask.deadline?.timeIntervalSince(thisTask.dateOfBirth! as Date))!
                 let timePassed = Date().timeIntervalSince(thisTask.dateOfBirth! as Date)
-                cell.taskView.taskIcon.redrawRingCollection(completion: CGFloat(timePassed/totalTime))
+                cell.taskView.taskIcon.redrawRing(completion: CGFloat(timePassed/totalTime))
                 print(timePassed/totalTime)
                 case 1:
                     
                 let thisTask = self.todayTasks[indexPath.row]
                 let priorityRatio = CGFloat(CGFloat(thisTask.priority) / 10)
-                cell.taskView.taskIcon.drawRingFillCollection(completion: priorityRatio)
+                cell.taskView.taskIcon.drawRingFill(completion: priorityRatio)
                 
                 default:
                 fatalError()
